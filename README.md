@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/592444d4-dd4c-440b-b3b6-738d2ff2c236" width="250" alt="Space Connect Logo" />
+  <img src="https://github.com/user-attachments/assets/592444d4-dd4c-440b-b3b6-738d2ff2c236" width="200" alt="Space Connect Logo" />
 
 
 <h1>Space Connect 🌌</h1>
