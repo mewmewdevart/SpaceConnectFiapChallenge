@@ -26,7 +26,7 @@
 .
 ├── assets/
 │   ├── css/        # Estilos da aplicação
-│   └── js/         # Imagens e ícones
+│   └── img/         # Imagens e ícones
 ├── index.html        # Página principal (Home Page)
 ├── LICENSE           # Licença do projeto
 └── README.md         # Documentação principal do repositório
