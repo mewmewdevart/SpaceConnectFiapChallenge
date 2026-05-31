@@ -20,7 +20,7 @@
   </div>
 
 
-## Introdução e Contexto
+## 📖 Introdução e Contexto
 
 O **Space Connect** foi desenvolvido como parte do **Global Solution (FIAP) | Indústria Espacial**, focando na interseção entre tecnologia, web design e a economia espacial.
 
@@ -32,12 +32,58 @@ O fluxo é dividido em:
 - **Processamento:** O "motor" do sistema, mostrando a saúde e status de purificadores, filtros de osmose reversa e reatores de compostagem.
 - **Saídas (Distribuição):** Roteamento da água limpa para consumo humano ou estufas, e direcionamento de fertilizante orgânico para a produção agrícola.
 
-As telas são organizadas em:
-
+### 🖥️ As Telas do Sistema
+O sistema é composto pelas seguintes interfaces (navegáveis):
+- **`index.html`** — Dashboard principal de Monitoramento Geral.
+- **`flow.html`** — Central de Fluxo Interativo (Controle de Água e Reaproveitamento).
+- **`alerts.html`** — Central de Alertas e Log de Decisões.
+- **`resources.html`** — Gestão Detalhada de Recursos e Níveis de Reservatórios.
+- **`support.html`** — Página de Suporte Técnico da Colônia.
 
 ---
 
-## Estrutura do Projeto
+## 🛠️ Tecnologias Utilizadas
+
+<div align="left">
+  <img src="https://skillicons.dev/icons?i=html" height="54" alt="html logo" />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=css" height="54" alt="css logo" />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=js" height="54" alt="js logo" />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=figma" height="54" alt="figma logo" />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=git" height="54" alt="git logo" />
+</div>
+
+---
+
+## 🚀 Instruções de Uso
+
+### Pré-requisitos
+❗ Certifique-se de ter as seguintes ferramentas instaladas:
+* Git
+* Navegador moderno (Google Chrome, Firefox, Edge, etc.)
+
+### Como executar
+
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/mewmewdevart/SpaceConnectFiapChallenge.git
+   ```
+
+2. Acesse o diretório do projeto:
+   ```sh
+   cd SpaceConnectFiapChallenge/
+   ```
+
+3. Abra o arquivo `index.html` no seu navegador.
+
+---
+
+## 📂 Estrutura do Projeto
+
+Abaixo apresentamos a arquitetura do projeto após a refatoração modular:
 
 ```bash
 .
@@ -58,54 +104,20 @@ As telas são organizadas em:
 ├── support.html        # Página de Suporte
 ├── LICENSE             # Licença do projeto
 └── README.md           # Documentação principal do repositório
-````
+```
 
+---
 
-## Instruções de Uso
-
-### Pré-requisitos
-
-❗ Certifique-se de ter as seguintes ferramentas instaladas:
-
-* Git
-* Navegador (Google Chrome, Firefox, Opera, etc.)
-
-### Como executar
-
-1. Clone o repositório:
-
-   ```sh
-   git clone https://github.com/mewmewdevart/SpaceConnectFiapChallenge.git
-   ```
-
-2. Acesse o diretório do projeto:
-
-   ```sh
-   cd SpaceConnectFiapChallenge/
-   ```
-
-3. Abra o arquivo `index.html` no navegador.
-
-## 🛠️ Tecnologias Utilizadas
-
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=html" height="54" alt="html logo"  />
-  <img width="11" />
-  <img src="https://skillicons.dev/icons?i=css" height="54" alt="css logo"  />
-  <img width="11" />
-  <img src="https://skillicons.dev/icons?i=js" height="54" alt="js logo"  />
-  <img width="11" />
-  <img src="https://skillicons.dev/icons?i=figma" height="54" alt="figma logo"  />
-  <img width="11" />
-  <img src="https://skillicons.dev/icons?i=git" height="54" alt="git logo"  />
-  <img width="11" />
-  <img src="https://skillicons.dev/icons?i=canva" height="54" alt="git logo"  />
-</div>
-
-## Integrantes
+## 👥 Integrantes
 
 * **Ingrid Silva de Lima** — [rm570149@fiap.com.br](mailto:rm570149@fiap.com.br)
 * **Larissa Cristina Benedito** — [rm570970@fiap.com.br](mailto:rm570970@fiap.com.br)
 * **Mayla Mayumi Motobe** — [rm571213@fiap.com.br](mailto:rm571213@fiap.com.br)
 
-## Referências
+---
+
+## 📚 Referências
+
+- [Agência Espacial Europeia (ESA)](https://www.esa.int)
+- [NASA](https://www.nasa.gov/)
+- [International Charter Space and Major Disasters](https://disasterscharter.org)
