@@ -4,140 +4,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
   <title>Space Connect - Gestão Inteligente de Recursos Lunares</title>
-  <meta name="description"
-    content="Space Connect é o sistema definitivo para monitoramento e gestão de recursos em colônias lunares. Acompanhe energia, água e oxigênio em tempo real.">
-  <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
-  <meta name="author" content="Space Connect">
-  <meta name="application-name" content="Space Connect">
-  <meta name="robots" content="index, follow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#0b1021">
-  <meta name="color-scheme" content="light dark">
-
-  <link rel="canonical" href="https://spaceconnect.com.br/">
-
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-  <!-- Open Graph / Redes Sociais -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
-  <meta property="og:description"
-    content="O sistema definitivo para monitoramento e gestão de recursos em colônias lunares. Acompanhe energia, água e oxigênio em tempo real.">
-  <meta property="og:url" content="https://spaceconnect.com.br/">
-  <meta property="og:site_name" content="Space Connect">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="#">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Space Connect - Dashboard de Gestão Lunar">
-
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
-  <meta name="twitter:description"
-    content="O sistema definitivo para monitoramento e gestão de recursos em colônias lunares.">
-  <meta name="twitter:image" content="#">
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-  <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
-
-  <!-- CSS Customizado -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Space Connect",
-        "url": "https://spaceconnect.com.br/",
-        "description": "Sistema de gestão de recursos para colônias lunares e sustentabilidade espacial.",
-        "inLanguage": "pt-BR",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Space Connect",
-          "url": "https://spaceconnect.com.br/"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://spaceconnect.com.br/?search={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-
-  <!-- Tracking e Analytics (Placeholders) -->
-  <!-- Google Analytics (GA4) Placeholder -->
-  <!-- Google Tag Manager Placeholder -->
+  <script src="assets/js/components/head.js"></script>
 </head>
 
 <body>
+  <!-- Sidebar (montada via JS) -->
+  <div id="sidebar-container"></div>
 
-  <!-- Planet -->
-  <svg viewBox="-500 -500 1000 1000">
-    <circle r="450"></circle>
-    <circle class="equator" r="450"></circle>
-    <circle class="meridian" r="450" style="--start:165deg; --end:180deg"></circle>
-    <circle class="meridian" r="450" style="--start:150deg; --end:165deg"></circle>
-    <circle class="meridian" r="450" style="--start:135deg; --end:150deg"></circle>
-    <circle class="meridian" r="450" style="--start:120deg; --end:135deg"></circle>
-    <circle class="meridian" r="450" style="--start:105deg; --end:120deg"></circle>
-    <circle class="meridian" r="450" style="--start:90deg; --end:105deg"></circle>
-    <circle class="meridian" r="450" style="--start:75deg; --end:90deg"></circle>
-    <circle class="meridian" r="450" style="--start:60deg; --end:75deg"></circle>
-    <circle class="meridian" r="450" style="--start:45deg; --end:60deg"></circle>
-    <circle class="meridian" r="450" style="--start:30deg; --end:45deg"></circle>
-    <circle class="meridian" r="450" style="--start:15deg; --end:30deg"></circle>
-    <circle class="meridian" r="450" style="--start:0deg; --end:15deg"></circle>
-  </svg>
+  <!-- Main Content -->
+  <section class="content">
 
-  <!-- Historico de Alertas -->
-  <div class="github-status-box">
-    <div class="github-graph-header">
-      <h4>Historico</h4>
-      <span class="contributions-count">102 variações no ultimo ano</span>
-    </div>
-    <div class="github-graph" id="github-graph"></div>
-    <div class="github-graph-footer">
-      <span>Menos</span>
-      <div class="legend">
-        <span class="square" data-level="0"></span>
-        <span class="square" data-level="1"></span>
-        <span class="square" data-level="2"></span>
-        <span class="square" data-level="3"></span>
-        <span class="square" data-level="4"></span>
+    <main class="main-content">
+      <!-- Planet -->
+      <svg viewBox="-500 -500 1000 1000">
+        <circle r="450"></circle>
+        <circle class="equator" r="450"></circle>
+        <circle class="meridian" r="450" style="--start:165deg; --end:180deg"></circle>
+        <circle class="meridian" r="450" style="--start:150deg; --end:165deg"></circle>
+        <circle class="meridian" r="450" style="--start:135deg; --end:150deg"></circle>
+        <circle class="meridian" r="450" style="--start:120deg; --end:135deg"></circle>
+        <circle class="meridian" r="450" style="--start:105deg; --end:120deg"></circle>
+        <circle class="meridian" r="450" style="--start:90deg; --end:105deg"></circle>
+        <circle class="meridian" r="450" style="--start:75deg; --end:90deg"></circle>
+        <circle class="meridian" r="450" style="--start:60deg; --end:75deg"></circle>
+        <circle class="meridian" r="450" style="--start:45deg; --end:60deg"></circle>
+        <circle class="meridian" r="450" style="--start:30deg; --end:45deg"></circle>
+        <circle class="meridian" r="450" style="--start:15deg; --end:30deg"></circle>
+        <circle class="meridian" r="450" style="--start:0deg; --end:15deg"></circle>
+      </svg>
+    </main>
+
+    <div class="right-panel">
+
+      <div class="github-status-box">
+        <div class="github-graph-header">
+          <h4><span class="symbol">/</span>Historico</h4>
+          <span class="contributions-count">102 variações no ultimo ano</span>
+        </div>
+        <div class="github-graph" id="github-graph"></div>
+        <div class="github-graph-footer">
+          <span>Menos</span>
+          <div class="legend">
+            <span class="square" data-level="0"></span>
+            <span class="square" data-level="1"></span>
+            <span class="square" data-level="2"></span>
+            <span class="square" data-level="3"></span>
+            <span class="square" data-level="4"></span>
+          </div>
+          <span>Mais</span>
+        </div>
       </div>
-      <span>Mais</span>
     </div>
-  </div>
+  </section>
 
-  <script>
-    // Generate "GitHub Graph"
-    const graphContainer = document.getElementById('github-graph');
-    if (graphContainer) {
-      const cols = 22;
-      const rows = 7;
-      for (let i = 0; i < cols * rows; i++) {
-        const square = document.createElement('div');
-        square.classList.add('square');
-        // Randomly generate some activity
-        const level = Math.random() > 0.7 ? Math.floor(Math.random() * 4) + 1 : 0;
-        square.setAttribute('data-level', level);
-        graphContainer.appendChild(square);
-      }
-    }
-  </script>
+  <!-- Bottombar de Telemetria (montada via JS) -->
+  <div id="bottombar-container"></div>
+
+  <!-- Componentes compartilhados -->
+  <script src="assets/js/components/sidebar.js"></script>
+  <script src="assets/js/components/bottombar.js"></script>
+
+  <script src="assets/js/pages/home.js"></script>
 </body>
 
 </html>

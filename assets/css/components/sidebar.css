@@ -1,0 +1,128 @@
+/* ────── Sidebar Navigation ──────── */
+.sidenav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidenav:hover {
+    background-color: var(--cor-fundo-principal);
+    width: 250px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.sidenav a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: var(--cor-texto-menu);
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 0 12px 12px 0;
+    transition: all 0.3s ease;
+    width: 100%;
+    position: relative;
+}
+
+.sidenav a:hover,
+.sidenav a.active {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-fundo-principal);
+    font-weight: bold;
+}
+
+.sidenav a .icon {
+    margin-right: 10px;
+    font-size: 20px;
+    transition: margin-right 0.3s, color 0.3s;
+    color: var(--cor-icone-menu);
+}
+
+.sidenav a:hover .icon,
+.sidenav a.active .icon {
+    color: var(--cor-fundo-principal);
+}
+
+.sidenav a .text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, max-width 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidenav:hover a .text {
+    opacity: 1;
+    max-width: 200px;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 1117px) {
+    .sidenav {
+        width: 100%;
+        height: 60px;
+        top: 0;
+        transform: none;
+        border-radius: 0;
+        background: var(--cor-fundo-principal);
+        border: none;
+        border-bottom: 2px solid var(--cor-borda);
+        display: flex;
+        flex-direction: column;
+        transition: height 0.3s ease;
+    }
+
+    .sidenav:hover {
+        width: 100%;
+    }
+
+    .sidenav.mobile-open {
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+        min-height: 60px;
+        padding: 0 20px;
+        font-size: 24px;
+        color: var(--cor-texto-padrao);
+        cursor: pointer;
+    }
+
+    .hamburger-menu .brand-mobile {
+        margin-left: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sidenav.mobile-open .nav-links {
+        display: flex;
+    }
+
+    .sidenav a {
+        padding: 20px;
+        border-radius: 0;
+    }
+
+    .sidenav a .text {
+        opacity: 1;
+        max-width: none;
+        margin-left: 15px;
+    }
+}

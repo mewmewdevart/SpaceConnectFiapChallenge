@@ -1,0 +1,103 @@
+/* ────── Bottombar (Telemetria) ────── */
+.bottombar {
+    display: flex;
+    align-items: center;
+    padding: 6px 24px;
+    background: var(--cor-fundo-principal);
+    border-top: 2px solid var(--cor-borda);
+    min-height: 32px;
+    flex-shrink: 0;
+    overflow: hidden;
+    z-index: 50;
+    position: relative;
+}
+
+.marquee-window {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
+}
+
+.telem-marquee {
+    display: inline-flex;
+    gap: 24px;
+    align-items: center;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: marquee-scroll 20s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.telem {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--cor-texto-secundario);
+    letter-spacing: .5px;
+    white-space: nowrap;
+}
+
+.telem-title {
+    flex-shrink: 0;
+    padding-right: 15px;
+    z-index: 10;
+}
+
+@keyframes pulse-telem {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 4px var(--cor-primaria);
+    }
+
+    50% {
+        opacity: 0.3;
+        box-shadow: 0 0 1px var(--cor-primaria);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 4px var(--cor-primaria);
+    }
+}
+
+.telem-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cor-primaria);
+    box-shadow: 0 0 4px var(--cor-primaria);
+    margin-right: 4px;
+    vertical-align: middle;
+    animation: pulse-telem 2s infinite;
+}
+
+.telem-clock {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--cor-texto-secundario);
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 1117px) {
+    .bottombar {
+        margin-left: 0;
+        margin-top: 60px;
+        width: 100%;
+        padding: 10px;
+    }
+}

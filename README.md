@@ -25,11 +25,22 @@
 ```bash
 .
 ├── assets/
-│   ├── css/        # Estilos da aplicação
-│   └── img/         # Imagens e ícones
-├── index.html        # Página principal (Home Page)
-├── LICENSE           # Licença do projeto
-└── README.md         # Documentação principal do repositório
+│   ├── css/            # Estilos modulares da aplicação (padrão 7-1 adaptado)
+│   │   ├── base/       # Resets e variáveis root
+│   │   ├── layout/     # Estrutura principal e grids
+│   │   ├── components/ # Estilos de componentes (Sidebar, Bottombar, etc)
+│   │   └── pages/      # CSS específico por página
+│   ├── img/            # Imagens e ícones
+│   └── js/             # Scripts lógicos
+│       ├── components/ # Scripts isolados (ex: head.js para injeção de CSS)
+│       └── pages/      # Lógicas específicas por página (ex: home.js)
+├── index.html          # Página principal (Dashboard de Monitoramento)
+├── alerts.html         # Central de Alertas
+├── flow.html           # Central de Fluxo
+├── resources.html      # Gestão de Recursos
+├── support.html        # Página de Suporte
+├── LICENSE             # Licença do projeto
+└── README.md           # Documentação principal do repositório
 ````
 
 
