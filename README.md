@@ -40,7 +40,6 @@ O sistema é composto pelas seguintes interfaces (navegáveis):
 - **`resources.html`** — Gestão Detalhada de Recursos e Níveis de Reservatórios.
 - **`support.html`** — Página de Suporte Técnico da Colônia.
 
----
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -56,7 +55,6 @@ O sistema é composto pelas seguintes interfaces (navegáveis):
   <img src="https://skillicons.dev/icons?i=git" height="54" alt="git logo" />
 </div>
 
----
 
 ## 🚀 Instruções de Uso
 
@@ -79,7 +77,7 @@ O sistema é composto pelas seguintes interfaces (navegáveis):
 
 3. Abra o arquivo `index.html` no seu navegador.
 
----
+
 
 ## 📂 Estrutura do Projeto
 
@@ -106,7 +104,7 @@ Abaixo apresentamos a arquitetura do projeto após a refatoração modular:
 └── README.md           # Documentação principal do repositório
 ```
 
----
+
 
 ## 👥 Integrantes
 
@@ -114,7 +112,6 @@ Abaixo apresentamos a arquitetura do projeto após a refatoração modular:
 * **Larissa Cristina Benedito** — [rm570970@fiap.com.br](mailto:rm570970@fiap.com.br)
 * **Mayla Mayumi Motobe** — [rm571213@fiap.com.br](mailto:rm571213@fiap.com.br)
 
----
 
 ## 📚 Referências
 
