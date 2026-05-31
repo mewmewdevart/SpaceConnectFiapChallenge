@@ -32,27 +32,8 @@ O fluxo é dividido em:
 - **Processamento:** O "motor" do sistema, mostrando a saúde e status de purificadores, filtros de osmose reversa e reatores de compostagem.
 - **Saídas (Distribuição):** Roteamento da água limpa para consumo humano ou estufas, e direcionamento de fertilizante orgânico para a produção agrícola.
 
-### 🎛️ Elementos Interativos e UX
-A interface garante clareza visual e foca na tomada de decisão rápida e resolução de gargalos operacionais:
-- **Válvulas de Direcionamento:** Controles interativos (switches) para priorizar extrações (ex: maximizar extração de água em detrimento de adubo sólido em picos de necessidade).
-- **Indicadores em Cascata:** Níveis representados por contêineres interligados. Transbordamentos visuais exigem respostas ativas do usuário, como a ativação de filtros auxiliares.
-- **Log de Decisões:** Painel de histórico demonstrando o impacto de métricas das últimas ações (ex: "-20% de adubo gerado, +15% de água recuperada nos últimos 3 ciclos").
+As telas são organizadas em:
 
-### ♿ Acessibilidade (UX Técnica)
-Devido à complexidade dos fluxos de tratamento de resíduos, a experiência visual vai além das cores:
-- **Padrões Visuais (Patterns):** Texturas distintas (tracejados, pontos, ondas) são aplicadas para diferenciar os fluidos (água limpa, água cinza, biomassa).
-- **Semântica HTML e ARIA:** Navegação operável via teclado e status audíveis por screen readers (ex: "Válvula de Água Cinza, status: Aberta para purificador principal").
-- **Estados de Alerta:** Modais de alto contraste com chamadas de ação imediatas ("Isolar Tanque 2") para situações emergenciais, como risco de contaminação.
-
-### 🌍 Conexão com o Mundo Real e ODS
-A mesma lógica projetada para a Lua reflete diretamente o conceito de cidades sustentáveis e infraestrutura inteligente na Terra. A interface pode ser facilmente adaptada para uma estação moderna de tratamento de esgoto para monitorar o reaproveitamento de água industrial e a conversão de lodo em biogás.
-
-Nossa solução dialoga diretamente com os Objetivos de Desenvolvimento Sustentável da ONU:
-- **ODS 2** — Fome zero e agricultura sustentável
-- **ODS 6** — Água potável e saneamento
-- **ODS 9** — Indústria, inovação e infraestrutura
-- **ODS 11** — Cidades e comunidades sustentáveis
-- **ODS 12** — Consumo e produção responsáveis
 
 ---
 
