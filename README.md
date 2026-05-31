@@ -60,12 +60,19 @@
 
 ## 🛠️ Tecnologias Utilizadas
 
-* HTML5
-* CSS3
-* Git & GitHub
-* Figma
-* Miro
-* Canva
+<div align="left">
+  <img src="https://skillicons.dev/icons?i=html" height="54" alt="html logo"  />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=css" height="54" alt="css logo"  />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=js" height="54" alt="js logo"  />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=figma" height="54" alt="figma logo"  />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=git" height="54" alt="git logo"  />
+  <img width="11" />
+  <img src="https://skillicons.dev/icons?i=canva" height="54" alt="git logo"  />
+</div>
 
 ## Integrantes
 
