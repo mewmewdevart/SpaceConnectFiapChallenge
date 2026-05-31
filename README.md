@@ -20,6 +20,42 @@
   </div>
 
 
+## Introdução e Contexto
+
+O **Space Connect** foi desenvolvido como parte do **Global Solution (FIAP) | Indústria Espacial**, focando na interseção entre tecnologia, web design e a economia espacial.
+
+### 🎯 O Foco: Controle de Água e Reaproveitamento
+Nossa solução foca na criação de uma interface para o **tratamento e reaproveitamento de água e resíduos** em uma colônia lunar. Em vez de painéis estáticos, o sistema é desenhado em torno de um **diagrama de fluxo interativo**, permitindo que o usuário compreenda e controle o caminho dos recursos em tempo real.
+
+O fluxo é dividido em:
+- **Entradas (Coleta):** Umidade do ar (condensadores), água cinza (pias/banheiros) e resíduos sólidos (biomassa).
+- **Processamento:** O "motor" do sistema, mostrando a saúde e status de purificadores, filtros de osmose reversa e reatores de compostagem.
+- **Saídas (Distribuição):** Roteamento da água limpa para consumo humano ou estufas, e direcionamento de fertilizante orgânico para a produção agrícola.
+
+### 🎛️ Elementos Interativos e UX
+A interface garante clareza visual e foca na tomada de decisão rápida e resolução de gargalos operacionais:
+- **Válvulas de Direcionamento:** Controles interativos (switches) para priorizar extrações (ex: maximizar extração de água em detrimento de adubo sólido em picos de necessidade).
+- **Indicadores em Cascata:** Níveis representados por contêineres interligados. Transbordamentos visuais exigem respostas ativas do usuário, como a ativação de filtros auxiliares.
+- **Log de Decisões:** Painel de histórico demonstrando o impacto de métricas das últimas ações (ex: "-20% de adubo gerado, +15% de água recuperada nos últimos 3 ciclos").
+
+### ♿ Acessibilidade (UX Técnica)
+Devido à complexidade dos fluxos de tratamento de resíduos, a experiência visual vai além das cores:
+- **Padrões Visuais (Patterns):** Texturas distintas (tracejados, pontos, ondas) são aplicadas para diferenciar os fluidos (água limpa, água cinza, biomassa).
+- **Semântica HTML e ARIA:** Navegação operável via teclado e status audíveis por screen readers (ex: "Válvula de Água Cinza, status: Aberta para purificador principal").
+- **Estados de Alerta:** Modais de alto contraste com chamadas de ação imediatas ("Isolar Tanque 2") para situações emergenciais, como risco de contaminação.
+
+### 🌍 Conexão com o Mundo Real e ODS
+A mesma lógica projetada para a Lua reflete diretamente o conceito de cidades sustentáveis e infraestrutura inteligente na Terra. A interface pode ser facilmente adaptada para uma estação moderna de tratamento de esgoto para monitorar o reaproveitamento de água industrial e a conversão de lodo em biogás.
+
+Nossa solução dialoga diretamente com os Objetivos de Desenvolvimento Sustentável da ONU:
+- **ODS 2** — Fome zero e agricultura sustentável
+- **ODS 6** — Água potável e saneamento
+- **ODS 9** — Indústria, inovação e infraestrutura
+- **ODS 11** — Cidades e comunidades sustentáveis
+- **ODS 12** — Consumo e produção responsáveis
+
+---
+
 ## Estrutura do Projeto
 
 ```bash
