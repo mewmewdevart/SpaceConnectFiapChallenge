@@ -7,6 +7,7 @@
  *      e incluir <script src="assets/js/components/bottombar.js"></script>
  */
 (function () {
+  "use strict";
   // ── HTML do componente ──
   const bottombarHTML = `
     <footer class="bottombar">

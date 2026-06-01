@@ -16,6 +16,7 @@
     <img src="https://img.shields.io/badge/Global_Solution-FIAP-0A1128?style=for-the-badge&logo=rocket&logoColor=white" />
     <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-1F487E?style=for-the-badge&logo=github&logoColor=white" />
     <img src="https://img.shields.io/badge/Acessibilidade-WCAG_2.1-3772FF?style=for-the-badge&logo=w3c&logoColor=white" />
+    <img src="https://img.shields.io/badge/Vanilla_JS-SPA-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   </p>
   </div>
 
@@ -31,6 +32,12 @@ O fluxo é dividido em:
 - **Entradas (Coleta):** Umidade do ar (condensadores), água cinza (pias/banheiros) e resíduos sólidos (biomassa).
 - **Processamento:** O "motor" do sistema, mostrando a saúde e status de purificadores, filtros de osmose reversa e reatores de compostagem.
 - **Saídas (Distribuição):** Roteamento da água limpa para consumo humano ou estufas, e direcionamento de fertilizante orgânico para a produção agrícola.
+
+### ⚡ Alta Performance & SPA (Single Page Application)
+O projeto foi inteiramente re-arquitetado como uma **Single Page Application (SPA)** usando JavaScript puro (Vanilla JS). Ao transitar entre as diferentes telas do sistema, não há recarregamento da página (eliminação de "piscadas"). Um `router.js` intercepta a navegação e faz a injeção do novo conteúdo de forma assíncrona, preservando a interface de telemetria base (footer) e o menu lateral (sidebar) já renderizados.
+
+### ♿ Acessibilidade (a11y) e SEO (Search Engine Optimization)
+A aplicação é otimizada para acessibilidade, implementando componentes semânticos (`<nav>`, `<button>`), navegação detectável para leitores de tela (`aria-current`, `aria-label`, `aria-expanded`) e ocultação de SVGs/gráficos puramente decorativos (`aria-hidden`). Para otimização de busca (SEO) e hierarquia semântica, o projeto aplica tags `<h1>` contextuais geradas dinamicamente com base em metadados injetados via atributos de dados (`data-title`).
 
 ### 🖥️ As Telas do Sistema
 O sistema é composto pelas seguintes interfaces (navegáveis):
@@ -92,8 +99,8 @@ Abaixo apresentamos a arquitetura do projeto após a refatoração modular:
 │   │   ├── components/ # Estilos de componentes (Sidebar, Bottombar, etc)
 │   │   └── pages/      # CSS específico por página
 │   ├── img/            # Imagens e ícones
-│   └── js/             # Scripts lógicos
-│       ├── components/ # Scripts isolados (ex: head.js para injeção de CSS)
+│   └── js/             # Scripts lógicos (Modo Estrito / Strict Mode)
+│       ├── components/ # Scripts isolados (ex: router.js para SPA, sidebar.js)
 │       └── pages/      # Lógicas específicas por página (ex: home.js)
 ├── index.html          # Página principal (Dashboard de Monitoramento)
 ├── alerts.html         # Central de Alertas

@@ -8,6 +8,7 @@
  *      (colocar logo após <meta charset> e <meta viewport> no <head>)
  */
 (function () {
+  "use strict";
   const head = document.head;
 
   // ── Configuração da página ──

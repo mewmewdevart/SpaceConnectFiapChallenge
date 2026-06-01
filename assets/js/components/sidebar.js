@@ -8,6 +8,8 @@
  *      e incluir <script src="assets/js/components/sidebar.js"></script>
  */
 (function () {
+  "use strict";
+
   // ── Definição dos itens do menu ──
   const menuItems = [
     { href: 'index.html', icon: 'fas fa-home', label: 'Home' },
@@ -25,8 +27,9 @@
     // Limpa o href (ex: "./tela-de-fluxos.html" vira "tela-de-fluxos.html")
     const cleanHref = item.href.replace(/^.\//, '');
     const isActive = currentPage === cleanHref ? ' active' : '';
+    const ariaCurrent = currentPage === cleanHref ? ' aria-current="page"' : '';
     return `
-      <a href="${item.href}" class="${isActive}">
+      <a href="${item.href}" class="${isActive}"${ariaCurrent}>
         <span class="icon"><i class="${item.icon}"></i></span>
         <span class="text">${item.label}</span>
       </a>`;
@@ -34,13 +37,13 @@
 
   const sidenavHTML = `
     <div class="sidenav" id="sidenav">
-      <div class="hamburger-menu" id="hamburger-btn">
-        <i class="fas fa-bars"></i>
+      <button type="button" class="hamburger-menu" id="hamburger-btn" aria-expanded="false" aria-label="Abrir menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
         <span class="brand-mobile">Space Connect</span>
-      </div>
-      <div class="nav-links">
+      </button>
+      <nav class="nav-links" aria-label="Menu Principal">
         ${linksHTML}
-      </div>
+      </nav>
     </div>`;
 
   // ── Injetar no DOM ──
@@ -57,7 +60,24 @@
   const sidenav = document.getElementById('sidenav');
   if (hamburgerBtn && sidenav) {
     hamburgerBtn.addEventListener('click', () => {
-      sidenav.classList.toggle('mobile-open');
+      const isOpen = sidenav.classList.toggle('mobile-open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  // ── Atualizar Link Ativo via SPA ──
+  window.updateSidebarActive = function (url) {
+    const page = url.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+      const cleanHref = link.getAttribute('href').replace(/^.\//, '');
+      if (page === cleanHref) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
 })();

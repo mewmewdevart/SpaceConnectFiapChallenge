@@ -16,11 +16,11 @@
   <section class="content">
     <main class="main-content">
       <!-- Header (montada via JS) -->
-      <div id="header-container"></div>
+      <div id="header-container" data-title="Visão Geral do Sistema" data-subtitle="Painel Principal - Mission Control"></div>
 
 
       <!-- Planet -->
-      <svg viewBox="-500 -500 1000 1000">
+      <svg viewBox="-500 -500 1000 1000" aria-hidden="true" focusable="false">
         <circle r="450"></circle>
         <circle class="equator" r="450"></circle>
         <circle class="meridian" r="450" style="--start:165deg; --end:180deg"></circle>
@@ -40,7 +40,7 @@
 
     <div class="right-panel">
 
-      <div class="github-status-box">
+      <div class="github-status-box" aria-label="Gráfico de histórico de variações" role="region">
         <div class="github-graph-header">
           <h4><span class="symbol">/</span>Historico</h4>
           <span class="contributions-count">102 variações no ultimo ano</span>
@@ -70,6 +70,7 @@
   <script src="assets/js/components/header.js"></script>
 
   <script src="assets/js/pages/home.js"></script>
+  <script src="assets/js/components/router.js"></script>
 </body>
 
 </html>

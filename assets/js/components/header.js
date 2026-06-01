@@ -7,10 +7,19 @@
  *      e incluir <script src="assets/js/components/header.js"></script> no final do <body>
  */
 (function () {
-  const headerHTML = `
+  "use strict";
+
+  window.initHeader = function() {
+    const container = document.getElementById('header-container');
+    if (!container) return;
+
+    const title = container.getAttribute('data-title') || 'Visão Geral do Fluxo';
+    const subtitle = container.getAttribute('data-subtitle') || 'Lorem Ipsum - Mission Control';
+
+    const headerHTML = `
       <header class="header-content">
-        <p class="header-text">Lorem Ipsum - Mission Control</p>
-        <h1>Visao Geral do Fluxo</h1>
+        <p class="header-text">${subtitle}</p>
+        <h1>${title}</h1>
 
         <div class="header-block">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -22,9 +31,10 @@
         </div>
       </header>`;
 
-  // ── Injetar no DOM ──
-  const container = document.getElementById('header-container');
-  if (container) {
+    // ── Injetar no DOM ──
     container.outerHTML = headerHTML;
-  }
+  };
+
+  // Inicializa o header na carga inicial
+  window.initHeader();
 })();
