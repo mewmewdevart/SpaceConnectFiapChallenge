@@ -7,11 +7,20 @@
 body {
     font-family: 'Helvetica', sans-serif;
     margin: 0;
-    background: var(--cor-fundo-principal);
-    color: var(--cor-texto-padrao);
+    background: var(--bg-main);
+    color: var(--text-default);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: background-color 0.5s ease;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: smooth;
 }

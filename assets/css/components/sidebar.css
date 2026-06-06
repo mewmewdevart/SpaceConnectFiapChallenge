@@ -5,14 +5,15 @@
     top: 50%;
     transform: translateY(-50%);
     width: 60px;
+    background-color: var(--bg-main);
     overflow: hidden;
     transition: width 0.3s ease-in-out;
     z-index: 1000;
 }
 
 .sidenav:hover {
-    background-color: var(--cor-fundo-principal);
-    width: 250px;
+    background-color: var(--bg-main);
+    width: 300px;
 }
 
 .hamburger-menu {
@@ -23,7 +24,7 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    color: var(--cor-texto-menu);
+    color: var(--text-menu);
     font-size: 18px;
     text-decoration: none;
     border-radius: 0 12px 12px 0;
@@ -34,8 +35,8 @@
 
 .sidenav a:hover,
 .sidenav a.active {
-    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-    color: var(--cor-fundo-principal);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--bg-main);
     font-weight: bold;
 }
 
@@ -43,12 +44,12 @@
     margin-right: 10px;
     font-size: 20px;
     transition: margin-right 0.3s, color 0.3s;
-    color: var(--cor-icone-menu);
+    color: var(--icon-menu);
 }
 
 .sidenav a:hover .icon,
 .sidenav a.active .icon {
-    color: var(--cor-fundo-principal);
+    color: var(--bg-main);
 }
 
 .sidenav a .text {
@@ -72,9 +73,8 @@
         top: 0;
         transform: none;
         border-radius: 0;
-        background: var(--cor-fundo-principal);
         border: none;
-        border-bottom: 2px solid var(--cor-borda);
+        border-bottom: 2px solid var(--border-color);
         display: flex;
         flex-direction: column;
         transition: height 0.3s ease;
@@ -95,8 +95,10 @@
         min-height: 60px;
         padding: 0 20px;
         font-size: 24px;
-        color: var(--cor-texto-padrao);
+        color: var(--text-default);
         cursor: pointer;
+        background-color: var(--bg-main);
+        border: none;
     }
 
     .hamburger-menu .brand-mobile {

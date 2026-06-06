@@ -1,0 +1,715 @@
+(function () {
+    "use strict";
+
+    function hexToRGBA(hex, alpha) {
+        hex = hex.replace('#', '');
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    window.initFlow = function () {
+        const board = document.querySelector('.flow-board');
+        const boardContent = document.getElementById('flow-board-content');
+        const svg = document.querySelector('.flow-svg');
+        const mainContent = document.querySelector('.main-content');
+        if (!board || !svg || !boardContent) return;
+
+        // Clear existing elements (prevent duplication in SPA routing)
+        boardContent.querySelectorAll('.flow-card').forEach(c => c.remove());
+        boardContent.querySelectorAll('.valve-btn').forEach(v => v.remove());
+        svg.innerHTML = '';
+
+        // Zoom & Pan State
+        let zoom = 1.0;
+        let panX = 0;
+        let panY = 0;
+        let boardMoved = false;
+
+        function updateTransform() {
+            boardContent.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+        }
+
+        const getCSSVar = (varName, fallback) => {
+            const val = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+            return val || fallback;
+        };
+
+        // Initial system modules and connection lines
+        let modules = [
+            { id: "greywater_tank", name: "Tanque de Água Cinza", subtitle: "Captação de pias e chuveiros", category: "source", icon: "fa-sink", level: 65, status: "nominal", x: 60, y: 30, fluid: "greywater", color: getCSSVar("--fluid-color-gray", "#81afb5") },
+            { id: "atm_collector", name: "Coletor de Umidade", subtitle: "Condensador de vapor ambiental", category: "source", icon: "fa-cloud", level: 40, status: "nominal", x: 60, y: 175, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
+            { id: "biomass_collector", name: "Coletor de Biomassa", subtitle: "Matéria orgânica sintotrópica", category: "source", icon: "fa-leaf", level: 88, status: "warning", x: 60, y: 320, fluid: "organic", color: getCSSVar("--fluid-color-organic", "#f7e476") },
+
+            { id: "ro_purifier", name: "Purificador Osmose Reversa", subtitle: "Filtragem de membrana avançada", category: "treatment", icon: "fa-filter", level: 55, status: "nominal", x: 340, y: 30, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
+            { id: "uv_sterilizer", name: "Esterilizador UV", subtitle: "Eliminação de patógenos por UV", category: "treatment", icon: "fa-sun", level: 92, status: "warning", x: 340, y: 175, fluid: "disinfected", color: getCSSVar("--fluid-color-disinfected", "#a55eea") },
+            { id: "comp_reactor", name: "Reator Compostador", subtitle: "Decomposição bioativa sintólica", category: "treatment", icon: "fa-recycle", level: 30, status: "nominal", x: 340, y: 320, fluid: "fertilizer", color: getCSSVar("--fluid-color-fertilizer", "#a1e55a") },
+
+            { id: "potable_tank", name: "Tanque de Água Potável", subtitle: "Rede de abastecimento humano", category: "destination", icon: "fa-glass-water", level: 75, status: "nominal", x: 620, y: 30, fluid: "potable", color: getCSSVar("--fluid-color-potable", "#0984e3") },
+            { id: "irrigation_tank", name: "Tanque de Irrigação", subtitle: "Subsistema agrícola hidropônico", category: "destination", icon: "fa-seedling", level: 20, status: "warning", x: 620, y: 175, fluid: "agricultural", color: getCSSVar("--fluid-color-agricultural", "#38b764") },
+            { id: "biotic_fert", name: "Fertilizante Biótico", subtitle: "Rede de distribuição nutritiva", category: "destination", icon: "fa-flask", level: 50, status: "nominal", x: 620, y: 320, fluid: "nutrient", color: getCSSVar("--fluid-color-nutrient", "#26de81") }
+        ];
+
+        let connections = [
+            { id: "conn_1", from: "greywater_tank", to: "ro_purifier", status: "open" },
+            { id: "conn_2", from: "atm_collector", to: "uv_sterilizer", status: "open" },
+            { id: "conn_3", from: "biomass_collector", to: "comp_reactor", status: "open" },
+            { id: "conn_4", from: "ro_purifier", to: "potable_tank", status: "open" },
+            { id: "conn_5", from: "uv_sterilizer", to: "irrigation_tank", status: "closed" },
+            { id: "conn_6", from: "comp_reactor", to: "biotic_fert", status: "open" }
+        ];
+
+        let selectedElement = null;
+        let activeSocketFrom = null;
+
+        function renderCards() {
+            boardContent.querySelectorAll('.flow-card').forEach(c => c.remove());
+
+            modules.forEach(module => {
+                const card = document.createElement('div');
+                card.classList.add('flow-card');
+                card.id = `card-${module.id}`;
+                card.style.left = `${module.x}px`;
+                card.style.top = `${module.y}px`;
+
+                card.style.setProperty('--level-percent', `${module.level}%`);
+                card.style.setProperty('--fluid-color', module.color);
+                card.style.setProperty('--fluid-color-alpha', hexToRGBA(module.color, 0.12));
+                card.style.setProperty('--fluid-color-alpha-more', hexToRGBA(module.color, 0.05));
+
+                if (module.status === 'warning') card.classList.add('status-warning');
+
+                card.innerHTML = `
+                    <div class="card-wave-container">
+                        <div class="card-wave"></div>
+                        <div class="card-wave-back"></div>
+                    </div>
+                    <div class="card-inner">
+                        <div class="card-meta">
+                            <span>${module.category.toUpperCase()}</span>
+                            <div class="card-status-dot"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon"><i class="fa-solid ${module.icon}"></i></div>
+                            <div class="card-text">
+                                <div class="card-title-text">${module.name}</div>
+                                <div class="card-subtitle-text">${module.subtitle}</div>
+                            </div>
+                        </div>
+                        <div class="card-stats">
+                            <span class="card-level-label">VOLUME</span>
+                            <span class="card-level-value">${module.level}%</span>
+                        </div>
+                    </div>
+                `;
+
+                // Add connector sockets dynamically
+                if (module.category !== 'destination') {
+                    const socketOut = document.createElement('div');
+                    socketOut.className = 'socket socket-out';
+                    socketOut.title = "Criar conexão (Saída)";
+                    socketOut.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        handleSocketOutClick(module.id, socketOut);
+                    });
+                    card.appendChild(socketOut);
+                }
+
+                if (module.category !== 'source') {
+                    const socketIn = document.createElement('div');
+                    socketIn.className = 'socket socket-in';
+                    socketIn.title = "Engatar conexão (Entrada)";
+                    socketIn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        handleSocketInClick(module.id, socketIn);
+                    });
+                    card.appendChild(socketIn);
+                }
+
+                setupDragAndDrop(card, module);
+
+                card.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectElement({ type: 'module', data: module, el: card });
+                });
+
+                boardContent.appendChild(card);
+            });
+        }
+
+        // Unified Drag & Drop using Pointer Events (supports mouse and touch smoothly)
+        function setupDragAndDrop(cardEl, module) {
+            cardEl.addEventListener('pointerdown', (e) => {
+                if (e.target.classList.contains('socket')) return;
+                cardEl.setPointerCapture(e.pointerId);
+                e.preventDefault();
+                e.stopPropagation();
+
+                const startX = e.clientX;
+                const startY = e.clientY;
+                const origX = module.x;
+                const origY = module.y;
+
+                board.classList.add('dragging');
+
+                function onPointerMove(ev) {
+                    const dx = (ev.clientX - startX) / zoom;
+                    const dy = (ev.clientY - startY) / zoom;
+                    module.x = origX + dx;
+                    module.y = origY + dy;
+                    cardEl.style.left = `${module.x}px`;
+                    cardEl.style.top = `${module.y}px`;
+                    drawConnections();
+                }
+
+                function onPointerUp() {
+                    board.classList.remove('dragging');
+                    cardEl.releasePointerCapture(e.pointerId);
+                    cardEl.removeEventListener('pointermove', onPointerMove);
+                    cardEl.removeEventListener('pointerup', onPointerUp);
+                    cardEl.removeEventListener('pointercancel', onPointerUp);
+                }
+
+                cardEl.addEventListener('pointermove', onPointerMove);
+                cardEl.addEventListener('pointerup', onPointerUp);
+                cardEl.addEventListener('pointercancel', onPointerUp);
+            });
+        }
+
+        function drawConnections() {
+            svg.innerHTML = '';
+            boardContent.querySelectorAll('.valve-btn').forEach(v => v.remove());
+
+            connections.forEach((conn) => {
+                const fromMod = modules.find(m => m.id === conn.from);
+                const toMod = modules.find(m => m.id === conn.to);
+                if (!fromMod || !toMod) return;
+
+                const x_out = fromMod.x + 200;
+                const y_out = fromMod.y + 115 / 2;
+                const x_in = toMod.x;
+                const y_in = toMod.y + 115 / 2;
+
+                // Cubic Bezier curve control points definition
+                const dx = Math.max(60, Math.abs(x_in - x_out) / 2);
+                const pathData = `M ${x_out} ${y_out} C ${x_out + dx} ${y_out}, ${x_in - dx} ${y_in}, ${x_in} ${y_in}`;
+
+                const pathBg = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                pathBg.setAttribute("d", pathData);
+                pathBg.setAttribute("class", "pipe-bg hoverable");
+                if (selectedElement && selectedElement.type === 'connection' && selectedElement.data.id === conn.id) {
+                    pathBg.classList.add('selected');
+                }
+                pathBg.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectElement({ type: 'connection', data: conn, el: pathBg });
+                });
+                svg.appendChild(pathBg);
+
+                const pathFlow = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                pathFlow.setAttribute("d", pathData);
+                pathFlow.setAttribute("class", "pipe-flow");
+                pathFlow.style.stroke = fromMod.color;
+                if (conn.status === 'closed') pathFlow.classList.add('blocked');
+                svg.appendChild(pathFlow);
+
+                // Algebraic midpoint calculation of the Cubic Bezier curve (t = 0.5) to place the valve button
+                const mid_x = 0.125 * x_out + 0.375 * (x_out + dx) + 0.375 * (x_in - dx) + 0.125 * x_in;
+                const mid_y = 0.125 * y_out + 0.375 * y_out + 0.375 * y_in + 0.125 * y_in;
+
+                const valveBtn = document.createElement('button');
+                valveBtn.className = `valve-btn ${conn.status === 'open' ? 'valve-open' : 'valve-closed'}`;
+                valveBtn.innerHTML = conn.status === 'open'
+                    ? '<i class="fa-solid fa-play"></i> LIVRE'
+                    : '<i class="fa-solid fa-pause"></i> BLOQ.';
+                valveBtn.style.left = `${mid_x}px`;
+                valveBtn.style.top = `${mid_y}px`;
+                valveBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleValve(conn);
+                });
+                boardContent.appendChild(valveBtn);
+            });
+        }
+
+        function toggleValve(conn) {
+            conn.status = conn.status === 'open' ? 'closed' : 'open';
+            
+            drawConnections();
+
+            if (selectedElement && selectedElement.type === 'connection' && selectedElement.data.id === conn.id) {
+                selectElement(selectedElement);
+            }
+            updateMobileView();
+        }
+
+        function handleSocketOutClick(moduleId, socketEl) {
+            const prevSocket = boardContent.querySelector('.socket-selected');
+            if (prevSocket) prevSocket.classList.remove('socket-selected');
+
+            activeSocketFrom = moduleId;
+            socketEl.classList.add('socket-selected');
+            board.classList.add('connecting-mode');
+        }
+
+        function handleSocketInClick(moduleId, socketEl) {
+            if (!activeSocketFrom) return;
+            if (activeSocketFrom === moduleId) {
+                resetConnectionMode();
+                return;
+            }
+
+            if (connections.some(c => c.from === activeSocketFrom && c.to === moduleId)) {
+                resetConnectionMode();
+                return;
+            }
+
+            connections.push({
+                id: `conn_${Date.now()}`,
+                from: activeSocketFrom,
+                to: moduleId,
+                status: "open"
+            });
+
+            resetConnectionMode();
+            drawConnections();
+            updateMobileView();
+        }
+
+        function resetConnectionMode() {
+            activeSocketFrom = null;
+            board.classList.remove('connecting-mode');
+            const prevSocket = boardContent.querySelector('.socket-selected');
+            if (prevSocket) prevSocket.classList.remove('socket-selected');
+        }
+
+        // Zoom on mouse wheel (centered on pointer position)
+        board.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const zoomSpeed = 0.06;
+            let newZoom = Math.max(0.4, Math.min(2.0, zoom + (e.deltaY < 0 ? zoomSpeed : -zoomSpeed)));
+
+            const rect = board.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            const xs = (mouseX - panX) / zoom;
+            const ys = (mouseY - panY) / zoom;
+
+            zoom = newZoom;
+            panX = mouseX - xs * zoom;
+            panY = mouseY - ys * zoom;
+            updateTransform();
+        }, { passive: false });
+
+        // Unified Board Panning using Pointer Events
+        board.addEventListener('pointerdown', (e) => {
+            const target = e.target;
+            if (target !== board && target !== boardContent && target.tagName !== 'svg') return;
+            if (e.button !== 0 && e.pointerType === 'mouse') return;
+
+            board.setPointerCapture(e.pointerId);
+            e.preventDefault();
+            boardMoved = false;
+
+            const startX = e.clientX - panX;
+            const startY = e.clientY - panY;
+            const pointerStartX = e.clientX;
+            const pointerStartY = e.clientY;
+
+            board.style.cursor = 'grabbing';
+
+            function onPointerMove(ev) {
+                panX = ev.clientX - startX;
+                panY = ev.clientY - startY;
+                if (Math.hypot(ev.clientX - pointerStartX, ev.clientY - pointerStartY) > 3) {
+                    boardMoved = true;
+                }
+                updateTransform();
+            }
+
+            function onPointerUp() {
+                board.style.cursor = 'grab';
+                board.releasePointerCapture(e.pointerId);
+                board.removeEventListener('pointermove', onPointerMove);
+                board.removeEventListener('pointerup', onPointerUp);
+                board.removeEventListener('pointercancel', onPointerUp);
+            }
+
+            board.addEventListener('pointermove', onPointerMove);
+            board.addEventListener('pointerup', onPointerUp);
+            board.addEventListener('pointercancel', onPointerUp);
+        });
+
+        board.addEventListener('click', (e) => {
+            if (boardMoved) return;
+            const target = e.target;
+            if (target !== board && target !== boardContent && target.tagName !== 'svg') return;
+
+            if (activeSocketFrom) {
+                resetConnectionMode();
+                addTelemetryLog("Instalação rápida cancelada.", "log-info");
+            }
+            selectElement(null);
+        });
+
+        // Interactive Zoom Panel controls
+        const zoomInBtn = document.getElementById('zoom-in-btn');
+        const zoomOutBtn = document.getElementById('zoom-out-btn');
+        const zoomResetBtn = document.getElementById('zoom-reset-btn');
+
+        function zoomCenter(factor) {
+            let newZoom = Math.max(0.4, Math.min(2.0, zoom * factor));
+            const rect = board.getBoundingClientRect();
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const xs = (centerX - panX) / zoom;
+            const ys = (centerY - panY) / zoom;
+
+            zoom = newZoom;
+            panX = centerX - xs * zoom;
+            panY = centerY - ys * zoom;
+            updateTransform();
+        }
+
+        if (zoomInBtn) zoomInBtn.addEventListener('click', () => zoomCenter(1.15));
+        if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => zoomCenter(0.85));
+        if (zoomResetBtn) {
+            zoomResetBtn.addEventListener('click', () => {
+                zoom = 1.0;
+                panX = 0;
+                panY = 0;
+                updateTransform();
+                addTelemetryLog("Visualização resetada para 1:1.", "log-info");
+            });
+        }
+
+        // Sidebar Inspector management
+        const inspectorPanel = document.querySelector('.right-panel');
+
+        function selectElement(elementObj) {
+            const prevSelectedCard = boardContent.querySelector('.flow-card.selected');
+            if (prevSelectedCard) prevSelectedCard.classList.remove('selected');
+
+            const prevSelectedMobile = document.querySelector('.mobile-card-item.selected');
+            if (prevSelectedMobile) prevSelectedMobile.classList.remove('selected');
+
+            const prevSelectedPipe = svg.querySelector('.pipe-bg.selected');
+            if (prevSelectedPipe) prevSelectedPipe.classList.remove('selected');
+
+            selectedElement = elementObj;
+            if (!inspectorPanel) return;
+
+            if (!elementObj) {
+                inspectorPanel.innerHTML = `
+                    <div class="inspector-panel">
+                        <div class="inspector-header">
+                            <h2><span>/</span>Painel Inspetor</h2>
+                        </div>
+                        <div class="inspector-empty">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <p>Nenhum elemento selecionado.<br>Clique em um módulo ou tubulação para calibrar.</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            if (elementObj.type === 'module') {
+                const moduleId = elementObj.id || (elementObj.data && elementObj.data.id);
+                const module = elementObj.data || modules.find(m => m.id === moduleId);
+                
+                const card = boardContent.querySelector(`#card-${moduleId}`);
+                if (card) card.classList.add('selected');
+
+                const mobileCard = document.querySelector(`.mobile-card-item[data-mod-id="${moduleId}"]`);
+                if (mobileCard) mobileCard.classList.add('selected');
+
+                const moduleData = modules.find(m => m.id === moduleId);
+                inspectorPanel.innerHTML = `
+                    <div class="inspector-panel">
+                        <div class="inspector-header">
+                            <h2>
+                                <i class="fa-solid ${moduleData.icon} inspector-icon" style="color: ${moduleData.color};"></i>
+                                <span>/</span>Calibração
+                            </h2>
+                            <span class="badge inspector-badge">MÓDULO</span>
+                        </div>
+                        <form class="inspector-form" onsubmit="event.preventDefault();">
+                            <div class="form-group">
+                                <label>Nome do Módulo</label>
+                                <input type="text" id="inspect-mod-name" value="${module.name}">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtítulo / Descrição</label>
+                                <input type="text" id="inspect-mod-sub" value="${module.subtitle}">
+                            </div>
+                            <div class="form-group">
+                                <label>Nível de Armazenamento</label>
+                                <div class="slider-container">
+                                    <input type="range" id="inspect-mod-level" min="0" max="100" value="${module.level}">
+                                    <span class="slider-val" id="inspect-mod-level-val">${module.level}%</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Categoria Física</label>
+                                <select id="inspect-mod-cat" disabled>
+                                    <option value="source" ${module.category === 'source' ? 'selected' : ''}>Fontes e Coletores</option>
+                                    <option value="treatment" ${module.category === 'treatment' ? 'selected' : ''}>Sistemas de Tratamento</option>
+                                    <option value="destination" ${module.category === 'destination' ? 'selected' : ''}>Destinos de Consumo</option>
+                                </select>
+                            </div>
+                            <div class="inspector-actions">
+                                <button type="button" class="btn-cancel" id="inspect-btn-cancel">
+                                    <i class="fa-solid fa-xmark"></i> Cancelar
+                                </button>
+                                <button type="button" class="btn-save" id="inspect-btn-save">
+                                    <i class="fa-solid fa-floppy-disk"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                `;
+
+                const nameInput = document.getElementById('inspect-mod-name');
+                const subInput = document.getElementById('inspect-mod-sub');
+                const levelSlider = document.getElementById('inspect-mod-level');
+                const levelVal = document.getElementById('inspect-mod-level-val');
+                const btnSave = document.getElementById('inspect-btn-save');
+                const btnCancel = document.getElementById('inspect-btn-cancel');
+
+                // Visual-only updates during slider drag
+                levelSlider.addEventListener('input', (e) => {
+                    levelVal.textContent = `${e.target.value}%`;
+                });
+
+                // Cancel button deselects the current module
+                btnCancel.addEventListener('click', () => {
+                    selectElement(null);
+                });
+
+                // Save button applies the changes
+                btnSave.addEventListener('click', () => {
+                    const newName = nameInput.value.trim();
+                    const newSub = subInput.value.trim();
+                    const newLvl = parseInt(levelSlider.value);
+
+                    if (!newName) {
+                        alert("O nome do módulo não pode ser vazio.");
+                        return;
+                    }
+
+                    const oldLvl = module.level;
+                    const oldName = module.name;
+                    const oldSub = module.subtitle;
+                    const oldStatus = module.status;
+
+                    // Update module data
+                    module.name = newName;
+                    module.subtitle = newSub;
+                    module.level = newLvl;
+                    module.status = (newLvl < 25 || newLvl > 80) ? 'warning' : 'nominal';
+
+                    // Update card visually
+                    if (card) {
+                        const cardTitle = card.querySelector('.card-title-text');
+                        if (cardTitle) cardTitle.textContent = module.name;
+
+                        const cardSub = card.querySelector('.card-subtitle-text');
+                        if (cardSub) cardSub.textContent = module.subtitle;
+
+                        card.style.setProperty('--level-percent', `${newLvl}%`);
+                        const cardLvlVal = card.querySelector('.card-level-value');
+                        if (cardLvlVal) cardLvlVal.textContent = `${newLvl}%`;
+
+                        if (module.status === 'warning') {
+                            card.classList.add('status-warning');
+                        } else {
+                            card.classList.remove('status-warning');
+                        }
+                    }
+
+                    drawConnections();
+                    updateMobileView();
+                });
+
+            } else if (elementObj.type === 'connection') {
+                const conn = elementObj.data;
+                const fromMod = modules.find(m => m.id === conn.from);
+                const toMod = modules.find(m => m.id === conn.to);
+
+                elementObj.el.classList.add('selected');
+
+                inspectorPanel.innerHTML = `
+                    <div class="inspector-panel">
+                        <div class="inspector-header">
+                            <h2><i class="fa-solid fa-arrow-right-arrow-left inspector-icon"></i><span>/</span>Calibração</h2>
+                            <span class="badge inspector-badge">TUBULAÇÃO</span>
+                        </div>
+                        <div class="inspector-form">
+                            <div class="form-group">
+                                <label>Origem do Fluxo</label>
+                                <input type="text" value="${fromMod.name}" readonly class="input-readonly">
+                            </div>
+                            <div class="form-group">
+                                <label>Destino do Abastecimento</label>
+                                <input type="text" value="${toMod.name}" readonly class="input-readonly">
+                            </div>
+                            <div class="form-group">
+                                <label>Controle de Fluxo</label>
+                                <div class="switch-valve-container">
+                                    <span>Válvula de Fechamento</span>
+                                    <button class="btn-toggle-valve ${conn.status === 'open' ? 'valve-open' : 'valve-closed'}" id="inspect-valve-toggle">
+                                        ${conn.status === 'open' ? 'LIVRE' : 'BLOQUEADA'}
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <button class="btn-action-danger" id="inspect-delete-conn">
+                                <i class="fa-solid fa-trash"></i> Desconectar Tubulação
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('inspect-valve-toggle').addEventListener('click', () => {
+                    toggleValve(conn);
+                });
+
+                document.getElementById('inspect-delete-conn').addEventListener('click', () => {
+                    connections = connections.filter(c => c.id !== conn.id);
+                    selectElement(null);
+                    drawConnections();
+                    updateMobileView();
+                });
+            }
+        }
+
+        selectElement(null);
+        // Mobile list view
+        const mobileViewContainer = document.querySelector('.mobile-view-container');
+        const flowContainer = document.querySelector('.flow-container');
+
+        function updateMobileView() {
+            if (!mobileViewContainer) return;
+            mobileViewContainer.innerHTML = '';
+
+            const categories = [
+                { key: 'source', title: 'Fontes e Coletores' },
+                { key: 'treatment', title: 'Sistemas de Tratamento' },
+                { key: 'destination', title: 'Destinos de Consumo' }
+            ];
+
+            categories.forEach(cat => {
+                const catModules = modules.filter(m => m.category === cat.key);
+                if (catModules.length === 0) return;
+
+                const section = document.createElement('div');
+                section.className = 'mobile-category-section';
+                section.innerHTML = `<h2>${cat.title}</h2>`;
+
+                const list = document.createElement('div');
+                list.className = 'mobile-list';
+
+                catModules.forEach(mod => {
+                    const cardItem = document.createElement('div');
+                    cardItem.className = `mobile-card-item ${mod.status === 'warning' ? 'status-warning' : ''}`;
+                    cardItem.setAttribute('data-mod-id', mod.id);
+                    if (selectedElement && selectedElement.type === 'module' && selectedElement.id === mod.id) {
+                        cardItem.classList.add('selected');
+                    }
+
+                    const outgoingConns = connections.filter(c => c.from === mod.id);
+                    let valveActionsHTML = '';
+
+                    if (outgoingConns.length > 0) {
+                        valveActionsHTML = `
+                            <div class="mobile-card-actions">
+                                <div class="mobile-valve-status">
+                                    Válvulas de Saída:
+                                    ${outgoingConns.map(c => {
+                            const dest = modules.find(m => m.id === c.to);
+                            const statusClass = c.status === 'open' ? 'valve-open' : 'valve-closed';
+                            const statusText = c.status === 'open' ? 'LIVRE' : 'BLOQ';
+                            return `<div class="mobile-valve-item">↳ <b>${dest.name}</b>: <span class="${statusClass}">${statusText}</span></div>`;
+                        }).join('')}
+                                </div>
+                                <div>
+                                    ${outgoingConns.map(c => {
+                            const dest = modules.find(m => m.id === c.to);
+                            const btnLabel = c.status === 'open' ? 'Bloquear' : 'Liberar';
+                            return `
+                                            <button class="btn-toggle-valve btn-toggle-valve-sm ${c.status === 'open' ? 'valve-open' : 'valve-closed'}" 
+                                                    data-conn-id="${c.id}">
+                                                ${btnLabel} ${dest.name.split(' ')[0]}
+                                            </button>
+                                        `;
+                        }).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    cardItem.innerHTML = `
+                        <div class="mobile-card-header">
+                            <span class="mobile-card-name">
+                                <i class="fa-solid ${mod.icon}" style="color: ${mod.color}; margin-right: 6px;"></i>${mod.name}
+                            </span>
+                            <span class="mobile-card-level" style="color: ${mod.color}">${mod.level}%</span>
+                        </div>
+                        <div class="mobile-card-subtitle">${mod.subtitle}</div>
+                        ${valveActionsHTML}
+                    `;
+
+                    cardItem.querySelectorAll('.btn-toggle-valve').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const conn = connections.find(c => c.id === btn.getAttribute('data-conn-id'));
+                            if (conn) toggleValve(conn);
+                        });
+                    });
+
+                    cardItem.addEventListener('click', () => {
+                        selectElement({ type: 'module', id: mod.id });
+                        // Add a small delay so the DOM can paint the new inspector HTML before scrolling
+                        setTimeout(() => {
+                            const rightPanel = document.querySelector('.right-panel');
+                            if (rightPanel) {
+                                rightPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 100);
+                    });
+
+                    list.appendChild(cardItem);
+                });
+
+                section.appendChild(list);
+                mobileViewContainer.appendChild(section);
+            });
+        }
+
+        // Safe window resize listener setup to prevent SPA memory leak
+        if (window.flowResizeHandler) {
+            window.removeEventListener('resize', window.flowResizeHandler);
+        }
+        window.flowResizeHandler = () => {
+            if (flowContainer && window.innerWidth >= 1024) {
+                drawConnections();
+            }
+        };
+        window.addEventListener('resize', window.flowResizeHandler);
+
+        renderCards();
+        drawConnections();
+        updateTransform();
+        updateMobileView();
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', window.initFlow);
+    } else {
+        window.initFlow();
+    }
+})();

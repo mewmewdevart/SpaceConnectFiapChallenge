@@ -9,12 +9,13 @@
 (function () {
   "use strict";
 
-  window.initHeader = function() {
+  window.initHeader = function () {
     const container = document.getElementById('header-container');
     if (!container) return;
 
     const title = container.getAttribute('data-title') || 'Visão Geral do Fluxo';
     const subtitle = container.getAttribute('data-subtitle') || 'Lorem Ipsum - Mission Control';
+    const description = container.getAttribute('data-description') || 'Lorem Ipsum - Mission Control';
 
     const headerHTML = `
       <header class="header-content">
@@ -22,7 +23,7 @@
         <h1>${title}</h1>
 
         <div class="header-block">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>${description}</p>
 
           <div>
             <span>Sistema nominal</span>

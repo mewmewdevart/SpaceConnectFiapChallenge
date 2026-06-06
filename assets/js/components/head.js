@@ -77,11 +77,11 @@
   addMeta({ name: 'twitter:image', content: '#' });
 
   // ── Favicon ──
-  addLink({ rel: 'apple-touch-icon', sizes: '180x180', href: 'assets/img/favicon/apple-touch-icon.png' });
-  addLink({ rel: 'icon', type: 'image/png', sizes: '32x32', href: 'assets/img/favicon/favicon-32x32.png' });
-  addLink({ rel: 'icon', type: 'image/png', sizes: '16x16', href: 'assets/img/favicon/favicon-16x16.png' });
-  addLink({ rel: 'manifest', href: 'assets/img/favicon/site.webmanifest' });
-  addLink({ rel: 'shortcut icon', href: 'assets/img/favicon/favicon.ico' });
+  addLink({ rel: 'apple-touch-icon', sizes: '180x180', href: 'assets/img/favicon_io/apple-touch-icon.png' });
+  addLink({ rel: 'icon', type: 'image/png', sizes: '32x32', href: 'assets/img/favicon_io/favicon-32x32.png' });
+  addLink({ rel: 'icon', type: 'image/png', sizes: '16x16', href: 'assets/img/favicon_io/favicon-16x16.png' });
+  addLink({ rel: 'manifest', href: 'assets/img/favicon_io/site.webmanifest' });
+  addLink({ rel: 'shortcut icon', href: 'assets/img/favicon_io/favicon.ico' });
 
   // ── Icon Libraries ──
   addLink({ rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' });
@@ -94,6 +94,7 @@
   addLink({ rel: 'stylesheet', href: 'assets/css/components/sidebar.css' });
   addLink({ rel: 'stylesheet', href: 'assets/css/components/bottombar.css' });
   addLink({ rel: 'stylesheet', href: 'assets/css/pages/home.css' });
+  addLink({ rel: 'stylesheet', href: 'assets/css/pages/flow.css' });
 
   // ── Structured Data (JSON-LD) ──
   const jsonLd = document.createElement('script');

@@ -9,31 +9,46 @@
 </head>
 
 <body>
-  <!-- Sidebar (montada via JS) -->
   <div id="sidebar-container"></div>
 
-  <!-- Main Content -->
   <section class="content">
-
     <main class="main-content">
-      <!-- Header (montada via JS) -->
-      <div id="header-container" data-title="Fluxo de Interações" data-subtitle="Histórico e Correlações - Mission Control"></div>
+      <div id="header-container" data-title="Fluxo de Interações"
+        data-subtitle="Histórico e Correlações - Mission Control" data-description="Sistema de controle hídrico">
+      </div>
 
+      <div class="flow-container">
+
+
+        <div class="flow-board" id="flow-board">
+          <div class="flow-board-content" id="flow-board-content">
+            <svg class="flow-svg"></svg>
+          </div>
+
+          <div class="zoom-controls" role="toolbar" aria-label="Controles de Zoom">
+            <button id="zoom-in-btn" title="Aumentar Zoom" aria-label="Aumentar Zoom"><i
+                class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <button id="zoom-out-btn" title="Diminuir Zoom" aria-label="Diminuir Zoom"><i
+                class="fa-solid fa-magnifying-glass-minus"></i></button>
+            <button id="zoom-reset-btn" title="Resetar Visualização" aria-label="Resetar Visualização"><i
+                class="fa-solid fa-expand"></i></button>
+          </div>
+        </div>
+
+        <div class="mobile-view-container" id="mobile-view-container"></div>
+      </div>
     </main>
 
-    <div class="right-panel">
-
-    </div>
+    <div class="right-panel"></div>
   </section>
 
-  <!-- Bottombar de Telemetria (montada via JS) -->
   <div id="bottombar-container"></div>
 
-  <!-- Componentes compartilhados -->
   <script src="assets/js/components/sidebar.js"></script>
   <script src="assets/js/components/bottombar.js"></script>
   <script src="assets/js/components/header.js"></script>
   <script src="assets/js/components/router.js"></script>
+  <script src="assets/js/pages/flow.js"></script>
 </body>
 
 </html>

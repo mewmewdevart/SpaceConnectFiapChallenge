@@ -67,20 +67,24 @@
       scripts.forEach(script => {
         const src = script.getAttribute('src');
         if (src && src.includes('pages/')) {
+          // Extrai o nome do script (ex: "home" de "assets/js/pages/home.js")
+          const pageName = src.split('/').pop().replace('.js', '');
+          const initFnName = 'init' + pageName.charAt(0).toUpperCase() + pageName.slice(1);
+
           // Verifica se já não foi carregado
           if (!document.querySelector(`script[src="${src}"]`)) {
             const newScript = document.createElement('script');
             newScript.src = src;
             newScript.onload = () => {
-              if (src.includes('home.js') && typeof window.initHome === 'function') {
-                window.initHome();
+              if (typeof window[initFnName] === 'function') {
+                window[initFnName]();
               }
             };
             document.body.appendChild(newScript);
           } else {
             // Se já existe no DOM, apenas executa a inicialização
-            if (src.includes('home.js') && typeof window.initHome === 'function') {
-              window.initHome();
+            if (typeof window[initFnName] === 'function') {
+              window[initFnName]();
             }
           }
         }

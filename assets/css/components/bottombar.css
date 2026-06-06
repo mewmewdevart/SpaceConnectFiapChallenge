@@ -3,8 +3,8 @@
     display: flex;
     align-items: center;
     padding: 6px 24px;
-    background: var(--cor-fundo-principal);
-    border-top: 2px solid var(--cor-borda);
+    background: var(--bg-main);
+    border-top: 2px solid var(--border-color);
     min-height: 32px;
     flex-shrink: 0;
     overflow: hidden;
@@ -44,8 +44,8 @@
 
 .telem {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--cor-texto-secundario);
+    font-size: 12px;
+    color: var(--text-secondary);
     letter-spacing: .5px;
     white-space: nowrap;
 }
@@ -59,17 +59,17 @@
 @keyframes pulse-telem {
     0% {
         opacity: 1;
-        box-shadow: 0 0 4px var(--cor-primaria);
+        box-shadow: 0 0 4px var(--color-primary);
     }
 
     50% {
         opacity: 0.3;
-        box-shadow: 0 0 1px var(--cor-primaria);
+        box-shadow: 0 0 1px var(--color-primary);
     }
 
     100% {
         opacity: 1;
-        box-shadow: 0 0 4px var(--cor-primaria);
+        box-shadow: 0 0 4px var(--color-primary);
     }
 }
 
@@ -78,8 +78,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--cor-primaria);
-    box-shadow: 0 0 4px var(--cor-primaria);
+    background: var(--color-primary);
+    box-shadow: 0 0 4px var(--color-primary);
     margin-right: 4px;
     vertical-align: middle;
     animation: pulse-telem 2s infinite;
@@ -87,8 +87,8 @@
 
 .telem-clock {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: var(--cor-texto-secundario);
+    font-size: 12px;
+    color: var(--text-secondary);
     margin-left: auto;
     white-space: nowrap;
 }
@@ -101,3 +101,4 @@
         padding: 10px;
     }
 }
+

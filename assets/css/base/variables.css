@@ -1,26 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
+    /* Island Joy - https://lospec.com/palette-list/island-joy-16*/
+    --white: #ffffff;
+    --mint: #6df7c1;
+    --cyan: #11adc1;
+    --gray-blue: #606c81;
+    --dark-purple: #393457;
+    --teal: #1e8875;
+    --green: #5bb361;
+    --lime: #a1e55a;
+    --yellow: #f7e476;
+    --orange: #f99252;
+    --salmon: #cb4d68;
+    --purple: #6a3771;
+    --magenta: #c92464;
+    --pink: #f48cb6;
+    --peach: #f7b69e;
+    --olive-gray: #9b9c82;
+
+
     /* Cores Principais */
-    --cor-primaria: #38b764;
-    --cor-secundaria: #f7e476;
-    --cor-fundo-principal: #1a1c2c;
-    --cor-fundo-painel: var(--cor-fundo-principal);
+    --color-primary: #38b764;
+    --color-secondary: var(--yellow);
+    --bg-main: #1a1c2c;
+    --bg-panel: var(--bg-main);
 
     /* Cores de Texto */
-    --cor-texto-primario: #ffffff;
-    --cor-texto-secundario: #81afb5;
-    --cor-texto-padrao: #e0e0e0;
-    --cor-texto-menu: #f5f5f5;
-    --cor-icone-menu: #9e9e9e;
-
+    --text-primary: var(--white);
+    --text-secondary: #c0c2a5;
+    /* Ajustado para Acessibilidade (Contraste) */
+    --text-default: #e0e0e0;
+    --text-menu: #f5f5f5;
+    --icon-menu: #c0c0c0;
+    /* Melhorado para Acessibilidade */
 
     /* Gráfico de Contribuições */
-    --cor-grafico-nv0: #1a1c2c;
-    --cor-grafico-nv1: #1e8875;
-    --cor-grafico-nv2: #5bb361;
-    --cor-grafico-nv3: #a1e55a;
-    --cor-grafico-nv4: #f7e476;
+    --graph-color-lv0: #1a1c2c;
+    --graph-color-lv1: var(--teal);
+    --graph-color-lv2: var(--green);
+    --graph-color-lv3: var(--lime);
+    --graph-color-lv4: var(--yellow);
 
     /* Efeitos e Bordas */
-    --cor-borda: rgba(255, 255, 255, 0.1);
-    --cor-outline: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --outline-color: rgba(255, 255, 255, 0.05);
+
+    /* Cores dos Fluidos (Fluxo Hídrico) */
+    --fluid-color-gray: var(--text-secondary);
+    --fluid-color-pure: var(--mint);
+    --fluid-color-organic: var(--yellow);
+    --fluid-color-disinfected: var(--salmon);
+    --fluid-color-fertilizer: var(--lime);
+    --fluid-color-potable: var(--cyan);
+    --fluid-color-agricultural: var(--green);
+    --fluid-color-nutrient: var(--green);
 }
