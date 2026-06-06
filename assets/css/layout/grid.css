@@ -20,6 +20,20 @@
     border: 2px solid var(--border-color);
 }
 
+.main-content-resources {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border-color);
+}
+
+.main-content-alerts {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border-color);
+}
+
 .header-content {
     display: flex;
     flex-direction: column;
