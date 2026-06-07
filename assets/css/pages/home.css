@@ -1,128 +1,204 @@
-/* ----------------------------- Planet SVG ----------------------------- */
-.symbol {
-    color: var(--color-primary);
-    padding-right: 5px;
+:root {
+    --hud-cyan: #00f2ff;
+    --hud-green: #38b764;
+    --hud-bg-opacity: rgba(26, 28, 44, 0.6);
+    --hud-border: rgba(0, 242, 255, 0.2);
 }
 
-svg {
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    padding: 20px 60px;
+    height: calc(100vh - 100px);
     width: 100%;
-    max-width: min(70vh, 55vw);
-    height: auto;
-    aspect-ratio: 1 / 1;
-    perspective: 50px;
+    box-sizing: border-box;
 }
 
-circle {
-    stroke: var(--color-primary);
-    stroke-width: 3px;
-    fill: none;
-    transition: stroke 0.5s ease;
+.main-content, 
+.right-panel {
+    background: var(--hud-bg-opacity);
+    border: 1px solid var(--hud-border);
+    backdrop-filter: blur(10px);
+    position: relative;
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
 }
 
-.equator {
-    transform: rotateZ(-20deg) rotateX(125deg);
+.main-content {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 800px;
 }
 
-.meridian {
-    animation: turn 1s infinite linear;
-    transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--start));
+.right-panel {
+    flex: 0.8;
+    min-width: 420px;
+    max-width: 480px;
 }
 
-@keyframes turn {
-    100% {
-        transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--end));
-    }
+.main-content::before, 
+.right-panel::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 20px; height: 20px;
+    border-top: 2px solid var(--hud-cyan);
+    border-left: 2px solid var(--hud-cyan);
+    pointer-events: none;
 }
 
+#lunar-system-container {
+    position: center;
+    width: 850px;
+    height: 750px;
 
-/* ----------------------------- GitHub Status Box ----------------------------- */
-.github-status-box {
-    background: var(--bg-panel);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 15px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    color: var(--text-primary);
+}
+
+.moon-render {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.water-node {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed var(--hud-green);
+    cursor: pointer;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    pointer-events: auto;
+}
+
+.water-node::after {
+    content: "";
+    position: absolute;
+    width: 130%; height: 130%;
+    border: 1px solid rgba(56, 183, 100, 0.2);
+    border-radius: 50%;
+    animation: radarPulse 2s infinite;
+}
+
+@keyframes radarPulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+.water-node:hover, 
+.water-node.active {
+    background: rgba(56, 183, 100, 0.2);
+    border: 2px solid #fff;
+    box-shadow: 0 0 30px var(--hud-green);
+}
+
+.panel-content {
+    height: 100%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: auto;
+    gap: 15px;
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 1117px) {
-    .github-status-box {
-        width: 320px;
-    }
+.hud-block {
+    background: rgba(0, 242, 255, 0.03);
+    border: 1px solid var(--hud-border);
+    padding: 16px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
 }
 
-.github-graph-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hud-block::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 10px; height: 10px;
+    border-top: 2px solid var(--hud-cyan);
+    border-left: 2px solid var(--hud-cyan);
 }
 
-.github-graph-header h2 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-primary);
+.hero-stat .val { color: #fff; font-size: 44px; font-weight: bold; margin: 10px 0; }
+.hero-stat .val small { font-size: 16px; opacity: 0.5; margin-left: 6px; }
+
+.wave-wrap {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 40px;
+    opacity: 0.4;
 }
 
-.github-graph-header .contributions-count {
-    font-size: 12px;
-    color: var(--text-secondary);
+.wave-line {
+    width: 200%; height: 100%;
+    fill: var(--hud-cyan);
+    animation: waveMove 4s linear infinite;
 }
 
-.github-graph {
+@keyframes waveMove { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.unit-item { margin-bottom: 15px; }
+.unit-meta { display: flex; justify-content: space-between; font-size: 9px; color: #fff; margin-bottom: 5px; }
+.progress-rail { background: rgba(255,255,255,0.05); height: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--hud-green); box-shadow: 0 0 10px var(--hud-green); }
+
+.history-box { margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+.history-grid {
     display: grid;
-    grid-template-rows: repeat(7, 10px);
+    grid-template-rows: repeat(5, 12px);
     grid-auto-flow: column;
-    grid-auto-columns: 10px;
-    gap: 3px;
+    grid-auto-columns: 12px;
+    gap: 4px;
+    margin: 15px 0;
 }
 
-.github-graph .square,
-.legend .square {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    background-color: var(--graph-color-lv0);
-    outline: 1px solid var(--outline-color);
-    outline-offset: -1px;
-}
+.sq { width: 12px; height: 12px; background: #1a1c2c; border-radius: 2px; }
+.sq.lv1 { background: #1e8875; }
+.sq.lv2 { background: #5bb361; }
+.sq.lv4 { background: #f7e476; }
 
-.github-graph .square[data-level="1"],
-.legend .square[data-level="1"] {
-    background-color: var(--graph-color-lv1);
-}
-
-.github-graph .square[data-level="2"],
-.legend .square[data-level="2"] {
-    background-color: var(--graph-color-lv2);
-}
-
-.github-graph .square[data-level="3"],
-.legend .square[data-level="3"] {
-    background-color: var(--graph-color-lv3);
-}
-
-.github-graph .square[data-level="4"],
-.legend .square[data-level="4"] {
-    background-color: var(--graph-color-lv4);
-}
-
-.github-graph-footer {
+.scanner-container {
+    height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    gap: 5px;
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-top: 5px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.github-graph-footer .legend {
-    display: flex;
-    gap: 3px;
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--hud-green);
+    box-shadow: 0 0 20px var(--hud-green);
+    animation: scanMove 4s ease-in-out infinite;
 }
+
+@keyframes scanMove {
+    0%, 100% { top: 15%; }
+    50% { top: 85%; }
+}
+
+.btn-hud {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--hud-cyan);
+    color: var(--hud-cyan);
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+.btn-hud:hover { background: var(--hud-cyan); color: #000; }
