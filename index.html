@@ -1,76 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Space Connect - Gestão Inteligente de Recursos Lunares</title>
+  <title>Space Connect - Gestão de Recursos Lunares</title>
   <script src="assets/js/components/head.js"></script>
 </head>
-
 <body>
-  <!-- Sidebar (montada via JS) -->
   <div id="sidebar-container"></div>
 
-  <!-- Main Content -->
   <section class="content">
     <main class="main-content">
-      <!-- Header (montada via JS) -->
       <div id="header-container" data-title="Visão Geral do Sistema" data-subtitle="Painel Principal - Mission Control"></div>
-
-
-      <!-- Planet -->
-      <svg viewBox="-500 -500 1000 1000" aria-hidden="true" focusable="false">
-        <circle r="450"></circle>
-        <circle class="equator" r="450"></circle>
-        <circle class="meridian" r="450" style="--start:165deg; --end:180deg"></circle>
-        <circle class="meridian" r="450" style="--start:150deg; --end:165deg"></circle>
-        <circle class="meridian" r="450" style="--start:135deg; --end:150deg"></circle>
-        <circle class="meridian" r="450" style="--start:120deg; --end:135deg"></circle>
-        <circle class="meridian" r="450" style="--start:105deg; --end:120deg"></circle>
-        <circle class="meridian" r="450" style="--start:90deg; --end:105deg"></circle>
-        <circle class="meridian" r="450" style="--start:75deg; --end:90deg"></circle>
-        <circle class="meridian" r="450" style="--start:60deg; --end:75deg"></circle>
-        <circle class="meridian" r="450" style="--start:45deg; --end:60deg"></circle>
-        <circle class="meridian" r="450" style="--start:30deg; --end:45deg"></circle>
-        <circle class="meridian" r="450" style="--start:15deg; --end:30deg"></circle>
-        <circle class="meridian" r="450" style="--start:0deg; --end:15deg"></circle>
-      </svg>
+      <div id="lunar-system-container">
+        <img src="assets/img/lua.gif" alt="Moon Surface" class="moon-render">
+        <div id="nodes-overlay"></div>
+      </div>
     </main>
 
-    <div class="right-panel">
-
-      <div class="github-status-box" aria-label="Gráfico de histórico de variações" role="region">
-        <div class="github-graph-header">
-          <h2><span class="symbol">/</span>Historico</h2>
-          <span class="contributions-count">102 variações no ultimo ano</span>
-        </div>
-        <div class="github-graph" id="github-graph"></div>
-        <div class="github-graph-footer">
-          <span>Menos</span>
-          <div class="legend">
-            <span class="square" data-level="0"></span>
-            <span class="square" data-level="1"></span>
-            <span class="square" data-level="2"></span>
-            <span class="square" data-level="3"></span>
-            <span class="square" data-level="4"></span>
-          </div>
-          <span>Mais</span>
-        </div>
-      </div>
-    </div>
+    <aside class="right-panel" id="side-info-panel">
+      <!-- Injeção via home.js -->
+    </aside>
   </section>
 
-  <!-- Bottombar de Telemetria (montada via JS) -->
   <div id="bottombar-container"></div>
 
-  <!-- Componentes compartilhados -->
   <script src="assets/js/components/sidebar.js"></script>
   <script src="assets/js/components/bottombar.js"></script>
   <script src="assets/js/components/header.js"></script>
-
   <script src="assets/js/pages/home.js"></script>
   <script src="assets/js/components/router.js"></script>
 </body>
-
 </html>
