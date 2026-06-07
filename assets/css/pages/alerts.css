@@ -1,4 +1,4 @@
-/* ---- CONTEÚDO PRINCIPAL (ALERTAS) ---- */
+﻿
 .painel-alertas {
     width: 100%;
     padding: 20px;
@@ -8,7 +8,7 @@
     gap: 20px;
 }
 
-/* ---- CARTÕES DE RESUMO ---- */
+
 .painel-alertas__linha-resumo {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -16,7 +16,7 @@
 }
 
 .painel-alertas__cartao-resumo {
-    background: var(--bg-panel);
+    background: rgb(var(--bg-panel));
     border: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 16px 20px;
@@ -35,14 +35,14 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    background: linear-gradient(90deg, transparent, rgb(var(--cyan)), transparent);
     opacity: 0;
     transition: opacity 0.3s;
 }
 
 .painel-alertas__cartao-resumo:hover {
     border-color: var(--outline-color);
-    box-shadow: 0 0 20px rgba(17, 173, 193, 0.07);
+    box-shadow: 0 0 20px rgba(var(--cyan), 0.07);
 }
 
 .painel-alertas__cartao-resumo:hover::before {
@@ -51,41 +51,41 @@
 
 .painel-alertas__rotulo-resumo {
 
-    font-size: 9px;
+    font-size: var(--text-micro);
     letter-spacing: 0.14em;
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
 }
 
 .painel-alertas__valor-resumo {
 
-    font-size: 32px;
+    font-size: var(--text-heading-2);
     font-weight: 700;
     line-height: 1;
 }
 
 .painel-alertas__texto-auxiliar {
-    font-size: 11px;
-    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
 }
 
 .painel-alertas__valor-resumo--critico {
-    color: var(--magenta);
-    text-shadow: 0 0 16px rgba(201, 36, 100, 0.4);
+    color: rgb(var(--magenta));
+    text-shadow: 0 0 16px rgba(var(--magenta), 0.4);
 }
 
 .painel-alertas__valor-resumo--aviso {
-    color: var(--yellow);
-    text-shadow: 0 0 16px rgba(247, 228, 118, 0.4);
+    color: rgb(var(--yellow));
+    text-shadow: 0 0 16px rgba(var(--yellow), 0.4);
 }
 
 .painel-alertas__valor-resumo--info {
-    color: var(--cyan);
-    text-shadow: 0 0 16px rgba(17, 173, 193, 0.4);
+    color: rgb(var(--cyan));
+    text-shadow: 0 0 16px rgba(var(--cyan), 0.4);
 }
 
-/* ---- SEÇÃO LINHA DO TEMPO ---- */
+
 .linha-tempo {
-    background: var(--bg-panel);
+    background: rgb(var(--bg-panel));
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 24px;
@@ -110,28 +110,28 @@
 .linha-tempo__marcador {
     width: 4px;
     height: 24px;
-    background: var(--cyan);
-    box-shadow: 0 0 10px var(--cyan);
+    background: rgb(var(--cyan));
+    box-shadow: 0 0 10px rgb(var(--cyan));
     border-radius: 2px;
 }
 
 .linha-tempo__titulo {
 
-    font-size: 13px;
+    font-size: var(--text-sm);
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: var(--white);
+    color: rgb(var(--white));
 }
 
 .linha-tempo__contador-eventos {
 
-    font-size: 10px;
-    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
     margin-top: 2px;
 }
 
 
-/* ---- ITEM DE ALERTA ---- */
+
 .alerta {
     display: flex;
     gap: 16px;
@@ -142,38 +142,38 @@
     transition: all 0.3s ease;
 }
 
-/* Níveis de alerta */
+
 .alerta--critico {
-    background: rgba(201, 36, 100, 0.05);
-    border: 1px solid rgba(201, 36, 100, 0.3);
+    background: rgba(var(--magenta), 0.05);
+    border: 1px solid rgba(var(--magenta), 0.3);
 }
 
 .alerta--critico:hover {
-    border-color: var(--magenta);
-    box-shadow: 0 0 20px rgba(201, 36, 100, 0.15);
+    border-color: rgb(var(--magenta));
+    box-shadow: 0 0 20px rgba(var(--magenta), 0.15);
 }
 
 .alerta--aviso {
-    background: rgba(247, 228, 118, 0.05);
-    border: 1px solid rgba(247, 228, 118, 0.3);
+    background: rgba(var(--yellow), 0.05);
+    border: 1px solid rgba(var(--yellow), 0.3);
 }
 
 .alerta--aviso:hover {
-    border-color: var(--yellow);
-    box-shadow: 0 0 20px rgba(247, 228, 118, 0.15);
+    border-color: rgb(var(--yellow));
+    box-shadow: 0 0 20px rgba(var(--yellow), 0.15);
 }
 
 .alerta--info {
-    background: rgba(17, 173, 193, 0.05);
-    border: 1px solid rgba(17, 173, 193, 0.3);
+    background: rgba(var(--cyan), 0.05);
+    border: 1px solid rgba(var(--cyan), 0.3);
 }
 
 .alerta--info:hover {
-    border-color: var(--cyan);
-    box-shadow: 0 0 20px rgba(17, 173, 193, 0.15);
+    border-color: rgb(var(--cyan));
+    box-shadow: 0 0 20px rgba(var(--cyan), 0.15);
 }
 
-/* Indicador lateral */
+
 .alerta__indicador-lateral {
     width: 44px;
     height: 44px;
@@ -190,30 +190,30 @@
 }
 
 .alerta--critico .alerta__indicador-lateral {
-    background: rgba(201, 36, 100, 0.2);
+    background: rgba(var(--magenta), 0.2);
 }
 
 .alerta--critico .alerta__icone-svg {
-    color: var(--magenta);
+    color: rgb(var(--magenta));
 }
 
 .alerta--aviso .alerta__indicador-lateral {
-    background: rgba(247, 228, 118, 0.2);
+    background: rgba(var(--yellow), 0.2);
 }
 
 .alerta--aviso .alerta__icone-svg {
-    color: var(--yellow);
+    color: rgb(var(--yellow));
 }
 
 .alerta--info .alerta__indicador-lateral {
-    background: rgba(17, 173, 193, 0.2);
+    background: rgba(var(--cyan), 0.2);
 }
 
 .alerta--info .alerta__icone-svg {
-    color: var(--cyan);
+    color: rgb(var(--cyan));
 }
 
-/* Corpo do Alerta */
+
 .alerta__corpo {
     width: 100%;
     display: flex;
@@ -235,43 +235,43 @@
 
 .alerta__badge {
 
-    font-size: 13px;
+    font-size: var(--text-sm);
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
 .alerta__badge--critico {
-    color: var(--magenta);
+    color: rgb(var(--magenta));
 }
 
 .alerta__badge--aviso {
-    color: var(--yellow);
+    color: rgb(var(--yellow));
 }
 
 .alerta__badge--info {
-    color: var(--cyan);
+    color: rgb(var(--cyan));
 }
 
 .alerta__codigo-evento {
 
-    font-size: 12px;
-    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    color: rgb(var(--text-secondary));
     opacity: 0.7;
 }
 
 .alerta__tempo-evento {
 
-    font-size: 11px;
-    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
     opacity: 0.8;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
 .alerta__texto-evento {
-    font-size: 13px;
-    color: var(--white);
+    font-size: var(--text-sm);
+    color: rgb(var(--white));
     font-weight: 400;
     margin-bottom: 6px;
     line-height: 1.4;
@@ -279,15 +279,15 @@
 
 .alerta__fonte-evento {
 
-    font-size: 10px;
-    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
     opacity: 0.5;
     margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-/* Botões de ação */
+
 .alerta__acoes {
     display: flex;
     gap: 10px;
@@ -295,7 +295,7 @@
 
 .alerta__botao-acao {
 
-    font-size: 10px;
+    font-size: var(--text-xs);
     font-weight: 600;
     letter-spacing: 0.08em;
     padding: 6px 14px;
@@ -306,52 +306,52 @@
     text-transform: uppercase;
 }
 
-/* Estilos de botão específicos por severidade */
+
 .alerta--critico .alerta__botao-acao {
-    border: 1px solid rgba(201, 36, 100, 0.5);
-    color: var(--magenta);
+    border: 1px solid rgba(var(--magenta), 0.5);
+    color: rgb(var(--magenta));
 }
 
 .alerta--critico .alerta__botao-acao:hover {
-    background: rgba(201, 36, 100, 0.1);
+    background: rgba(var(--magenta), 0.1);
 }
 
 .alerta--critico .alerta__botao-acao--protocolo {
-    background: var(--magenta);
-    color: var(--white);
+    background: rgb(var(--magenta));
+    color: rgb(var(--white));
 }
 
 .alerta--aviso .alerta__botao-acao {
-    border: 1px solid rgba(247, 228, 118, 0.5);
-    color: var(--yellow);
+    border: 1px solid rgba(var(--yellow), 0.5);
+    color: rgb(var(--yellow));
 }
 
 .alerta--aviso .alerta__botao-acao:hover {
-    background: rgba(247, 228, 118, 0.1);
+    background: rgba(var(--yellow), 0.1);
 }
 
 .alerta--aviso .alerta__botao-acao--confirmar {
-    background: var(--yellow);
-    color: var(--bg-main);
+    background: rgb(var(--yellow));
+    color: rgb(var(--bg-main));
 }
 
 .alerta--info .alerta__botao-acao {
-    border: 1px solid rgba(17, 173, 193, 0.5);
-    color: var(--cyan);
+    border: 1px solid rgba(var(--cyan), 0.5);
+    color: rgb(var(--cyan));
 }
 
 .alerta--info .alerta__botao-acao:hover {
-    background: rgba(17, 173, 193, 0.1);
+    background: rgba(var(--cyan), 0.1);
 }
 
 .alerta__botao-acao--desabilitado {
-    color: var(--text-secondary) !important;
+    color: rgb(var(--text-secondary)) !important;
     border-color: var(--border-color) !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(var(--white), 0.05) !important;
     cursor: not-allowed;
 }
 
-/* ---- RESPONSIVO ---- */
+
 @media (max-width: 1100px) {
     .painel-alertas__linha-resumo {
         grid-template-columns: repeat(2, minmax(0, 1fr));

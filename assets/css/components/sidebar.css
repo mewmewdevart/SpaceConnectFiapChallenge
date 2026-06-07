@@ -1,18 +1,18 @@
-/* ────── Sidebar Navigation (Menu Lateral) ──────── */
+﻿
 .menu-lateral {
     position: fixed;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 60px;
-    background-color: var(--bg-main);
+    background-color: rgb(var(--bg-main));
     overflow: hidden;
     transition: width 0.3s ease-in-out;
     z-index: 1000;
 }
 
 .menu-lateral:hover, .menu-lateral--aberto {
-    background-color: var(--bg-main);
+    background-color: rgb(var(--bg-main));
     width: 300px;
 }
 
@@ -29,8 +29,8 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    color: var(--text-menu);
-    font-size: 18px;
+    color: rgb(var(--text-menu));
+    font-size: var(--text-lg);
     text-decoration: none;
     border-radius: 0 12px 12px 0;
     transition: all 0.3s ease;
@@ -40,8 +40,8 @@
 
 .menu-lateral__link:hover,
 .menu-lateral__link--ativo {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    color: var(--bg-main);
+    background: linear-gradient(135deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+    color: rgb(var(--bg-main));
     font-weight: bold;
 }
 
@@ -49,12 +49,12 @@
     margin-right: 10px;
     font-size: 20px;
     transition: margin-right 0.3s, color 0.3s;
-    color: var(--icon-menu);
+    color: rgb(var(--icon-menu));
 }
 
 .menu-lateral__link:hover .menu-lateral__icone,
 .menu-lateral__link--ativo .menu-lateral__icone {
-    color: var(--bg-main);
+    color: rgb(var(--bg-main));
 }
 
 .menu-lateral__texto {
@@ -100,16 +100,16 @@
         align-items: center;
         min-height: 60px;
         padding: 0 20px;
-        font-size: 24px;
-        color: var(--text-default);
+        font-size: var(--text-xl);
+        color: rgb(var(--text-default));
         cursor: pointer;
-        background-color: var(--bg-main);
+        background-color: rgb(var(--bg-main));
         border: none;
     }
 
     .menu-lateral__marca-mobile {
         margin-left: 15px;
-        font-size: 18px;
+        font-size: var(--text-lg);
         font-weight: bold;
     }
 

@@ -1,6 +1,6 @@
-/* ────── Tela de Fluxo de Interações ────── */
+﻿
 
-/* ── Container Principal ── */
+
 .fluxo-container {
     display: flex;
     flex-direction: column;
@@ -10,13 +10,13 @@
     overflow: hidden;
 }
 
-/* ── Área do Quadro Interativo (Canvas 2D Híbrido) ── */
+
 .fluxo-quadro {
     position: relative;
     flex: 1;
     width: 100%;
     overflow: hidden;
-    background: radial-gradient(circle at center, rgba(26, 28, 44, 0.3) 0%, rgba(10, 12, 22, 0.9) 100%);
+    background: radial-gradient(circle at center, rgba(var(--bg-main), 0.3) 0%, rgba(10, 12, 22, 0.9) 100%);
     background-image: radial-gradient(rgba(56, 183, 100, 0.08) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
     user-select: none;
@@ -31,7 +31,7 @@
     cursor: cell;
 }
 
-/* Container que sofre Pan e Zoom */
+
 .fluxo-quadro__conteudo {
     position: absolute;
     top: 0;
@@ -48,7 +48,7 @@
     pointer-events: auto;
 }
 
-/* SVG de Tubulações */
+
 .fluxo-quadro svg.fluxo-svg {
     position: absolute !important;
     top: 0 !important;
@@ -64,9 +64,9 @@
     z-index: 1 !important;
 }
 
-/* Caminhos das Tubulações */
+
 .fluxo-tubo-bg {
-    stroke: rgba(255, 255, 255, 0.12);
+    stroke: rgba(var(--white), 0.12);
     stroke-width: 8px;
     fill: none;
     stroke-linecap: round;
@@ -84,7 +84,7 @@
 }
 
 .fluxo-tubo-bg.interativo:hover {
-    stroke: rgba(255, 255, 255, 0.25);
+    stroke: rgba(var(--white), 0.25);
     stroke-width: 9px;
 }
 
@@ -100,7 +100,7 @@
 .fluxo-tubo-fluxo.bloqueado {
     animation-play-state: paused;
     stroke-dasharray: 0;
-    stroke: var(--gray-blue) !important;
+    stroke: rgb(var(--gray-blue)) !important;
     opacity: 0.6;
 }
 
@@ -110,13 +110,13 @@
     }
 }
 
-/* ── Válvulas de Bloqueio Flutuantes ── */
+
 .fluxo-valvula-btn {
     position: absolute;
     transform: translate(-50%, -50%);
     padding: 3px 8px;
 
-    font-size: 12px;
+    font-size: var(--text-sm);
     border-radius: 4px;
     font-weight: bold;
     border: 1px solid var(--border-color);
@@ -127,34 +127,34 @@
 }
 
 .fluxo-valvula-btn.valvula-aberta {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    color: rgb(var(--color-primary));
+    border-color: rgb(var(--color-primary));
     background: rgba(56, 183, 100, 0.1);
 }
 
 .fluxo-valvula-btn.valvula-aberta:hover {
-    background: var(--color-primary);
-    color: var(--bg-main);
+    background: rgb(var(--color-primary));
+    color: rgb(var(--bg-main));
 }
 
 .fluxo-valvula-btn.valvula-fechada {
-    color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    color: rgb(var(--color-secondary));
+    border-color: rgb(var(--color-secondary));
     background: rgba(165, 94, 234, 0.1);
 }
 
 .fluxo-valvula-btn.valvula-fechada:hover {
-    background: var(--color-secondary);
-    color: var(--bg-main);
+    background: rgb(var(--color-secondary));
+    color: rgb(var(--bg-main));
 }
 
-/* ── Módulos de Operação (Cards) ── */
+
 .fluxo-cartao {
     position: absolute;
     width: 200px;
     height: 115px;
     background: linear-gradient(145deg, rgba(22, 25, 45, 0.85) 0%, rgba(12, 14, 25, 0.95) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(var(--white), 0.08);
     border-radius: 12px;
     padding: 10px 12px;
     display: flex;
@@ -178,11 +178,11 @@
 }
 
 .fluxo-cartao.selecionado {
-    border-color: var(--color-primary);
+    border-color: rgb(var(--color-primary));
     transform: translateY(-2px);
 }
 
-/* Ondas de Líquido no Fundo dos Cards */
+
 .fluxo-cartao__onda-container {
     position: absolute;
     top: 0;
@@ -243,7 +243,7 @@
     }
 }
 
-/* Conteúdo Interno do Card */
+
 .fluxo-cartao__interior {
     position: relative;
     z-index: 3;
@@ -262,10 +262,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
     font-weight: 600;
 }
 
@@ -273,7 +273,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--color-primary);
+    background: rgb(var(--color-primary));
 }
 
 .fluxo-cartao--aviso {
@@ -310,8 +310,8 @@
 }
 
 .fluxo-cartao__icone {
-    font-size: 14px;
-    color: var(--fluid-color, var(--text-secondary));
+    font-size: var(--text-paragraph);
+    color: var(--fluid-color, rgb(var(--text-secondary)));
     background: color-mix(in srgb, var(--fluid-color) 15%, transparent);
     border: 1px solid color-mix(in srgb, var(--fluid-color) 25%, transparent);
     border-radius: 8px;
@@ -331,16 +331,16 @@
 }
 
 .fluxo-cartao__titulo {
-    font-size: 12px;
+    font-size: var(--text-sm);
     font-weight: 700;
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
     line-height: 1.3;
     letter-spacing: 0.3px;
 }
 
 .fluxo-cartao__subtitulo {
-    font-size: 12px;
-    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    color: rgb(var(--text-secondary));
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -356,28 +356,28 @@
 }
 
 .fluxo-cartao__rotulo-nivel {
-    font-size: 12px;
+    font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
 }
 
 .fluxo-cartao__valor-nivel {
 
-    font-size: 15px;
+    font-size: var(--text-paragraph);
     font-weight: bold;
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
     text-shadow: 0 0 10px var(--fluid-color);
 }
 
-/* ── Soquetes de Conexão Rápida ── */
+
 .fluxo-soquete {
     position: absolute;
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.7) 15%, var(--bg-main) 40%);
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background: radial-gradient(circle at center, rgba(var(--white), 0.7) 15%, rgb(var(--bg-main)) 40%);
+    border: 1.5px solid rgba(var(--white), 0.3);
     z-index: 10;
     cursor: crosshair;
     pointer-events: auto;
@@ -386,7 +386,7 @@
 
 .fluxo-soquete:hover {
     transform: scale(1.3);
-    border-color: var(--color-primary);
+    border-color: rgb(var(--color-primary));
 }
 
 .fluxo-soquete--entrada {
@@ -402,8 +402,8 @@
 }
 
 .fluxo-soquete--selecionado {
-    background: var(--color-primary);
-    border-color: var(--text-primary);
+    background: rgb(var(--color-primary));
+    border-color: rgb(var(--text-primary));
     transform: scale(1.4);
     animation: animacao-pulso-soquete 1s infinite alternate;
 }
@@ -414,7 +414,7 @@
     to {}
 }
 
-/* ── Controle de Zoom ── */
+
 .fluxo-zoom {
     position: absolute;
     bottom: 20px;
@@ -431,7 +431,7 @@
     border-radius: 4px;
     background: rgba(11, 16, 33, 0.8);
     border: 1px solid var(--border-color);
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -440,19 +440,19 @@
 }
 
 .fluxo-zoom__botao:hover {
-    background: var(--color-primary);
-    color: var(--bg-main);
-    border-color: var(--color-primary);
+    background: rgb(var(--color-primary));
+    color: rgb(var(--bg-main));
+    border-color: rgb(var(--color-primary));
 }
 
-/* ── Painel Inspetor de Elemento (Lado Direito) ── */
+
 .inspetor-painel {
     display: flex;
     flex-direction: column;
     height: 100%;
     padding: 20px;
     gap: 20px;
-    color: var(--text-default);
+    color: rgb(var(--text-default));
 }
 
 .inspetor-painel__cabecalho {
@@ -465,12 +465,12 @@
 
 .inspetor-painel__cabecalho h2 {
     margin: 0;
-    font-size: 14px;
+    font-size: var(--text-paragraph);
     font-weight: 600;
 }
 
 .inspetor-painel__cabecalho h2 span {
-    color: var(--color-primary);
+    color: rgb(var(--color-primary));
     padding-right: 5px;
 }
 
@@ -481,13 +481,13 @@
     justify-content: center;
     flex: 1;
     text-align: center;
-    color: var(--text-secondary);
-    font-size: 12px;
+    color: rgb(var(--text-secondary));
+    font-size: var(--text-sm);
     gap: 10px;
 }
 
 .inspetor-painel__vazio i {
-    font-size: 28px;
+    font-size: var(--text-heading-3);
     opacity: 0.5;
 }
 
@@ -504,28 +504,28 @@
 }
 
 .inspetor-painel__grupo-form label {
-    font-size: 12px;
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
     font-weight: 600;
 }
 
 .inspetor-painel__grupo-form input[type="text"],
 .inspetor-painel__grupo-form select {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(var(--white), 0.04);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 8px 12px;
-    font-size: 13px;
-    color: var(--text-primary);
+    font-size: var(--text-sm);
+    color: rgb(var(--text-primary));
     transition: border-color 0.2s;
     width: 100%;
 }
 
 .inspetor-painel__grupo-form input[type="text"]:focus,
 .inspetor-painel__grupo-form select:focus {
-    border-color: var(--color-primary);
+    border-color: rgb(var(--color-primary));
     outline: none;
 }
 
@@ -537,13 +537,13 @@
 
 .inspetor-painel__container-deslizante input[type="range"] {
     flex: 1;
-    accent-color: var(--color-primary);
+    accent-color: rgb(var(--color-primary));
     cursor: pointer;
 }
 
 .inspetor-painel__valor-deslizante {
 
-    font-size: 13px;
+    font-size: var(--text-sm);
     font-weight: bold;
     min-width: 40px;
     text-align: right;
@@ -553,7 +553,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(var(--white), 0.02);
     border: 1px solid var(--border-color);
     padding: 10px;
     border-radius: 4px;
@@ -561,7 +561,7 @@
 
 .inspetor-painel__btn-valvula {
     padding: 6px 12px;
-    font-size: 12px;
+    font-size: var(--text-sm);
     border-radius: 4px;
     border: 1px solid var(--border-color);
     font-weight: bold;
@@ -572,8 +572,8 @@
 
 .inspetor-painel__btn-valvula.livre {
     background: rgba(46, 204, 113, 0.2);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: rgb(var(--color-primary));
+    color: rgb(var(--color-primary));
 }
 
 .inspetor-painel__btn-valvula.bloqueada {
@@ -587,7 +587,7 @@
     border: 1px solid var(--color-alert);
     color: var(--color-alert);
     padding: 8px 12px;
-    font-size: 12px;
+    font-size: var(--text-sm);
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
@@ -597,7 +597,7 @@
 
 .inspetor-painel__btn-perigo:hover {
     background: var(--color-alert);
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
 }
 
 .inspetor-painel__acoes {
@@ -609,10 +609,10 @@
 .inspetor-painel__btn-salvar {
     flex: 1;
     background: rgba(56, 183, 100, 0.15);
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    border: 1px solid rgb(var(--color-primary));
+    color: rgb(var(--color-primary));
     padding: 10px 16px;
-    font-size: 13px;
+    font-size: var(--text-sm);
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
@@ -624,17 +624,17 @@
 }
 
 .inspetor-painel__btn-salvar:hover {
-    background: var(--color-primary);
-    color: var(--bg-main);
+    background: rgb(var(--color-primary));
+    color: rgb(var(--bg-main));
 }
 
 .inspetor-painel__btn-cancelar {
     flex: 1;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(var(--white), 0.03);
     border: 1px solid var(--border-color);
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
     padding: 10px 16px;
-    font-size: 13px;
+    font-size: var(--text-sm);
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
@@ -646,12 +646,12 @@
 }
 
 .inspetor-painel__btn-cancelar:hover {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--text-primary);
-    border-color: var(--text-secondary);
+    background: rgba(var(--white), 0.08);
+    color: rgb(var(--text-primary));
+    border-color: rgb(var(--text-secondary));
 }
 
-/* ── Visualização Responsiva: Lista Mobile ── */
+
 .fluxo-mobile-container {
     display: none;
     width: 100%;
@@ -665,10 +665,10 @@
 }
 
 .fluxo-mobile-categoria h2 {
-    font-size: 13px;
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--text-secondary);
+    color: rgb(var(--text-secondary));
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 6px;
     margin-bottom: 12px;
@@ -682,7 +682,7 @@
 }
 
 .fluxo-mobile-cartao {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(var(--white), 0.03);
     border: 1.5px solid var(--border-color);
     border-radius: 8px;
     padding: 12px 15px;
@@ -696,12 +696,12 @@
 }
 
 .fluxo-mobile-cartao:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(var(--white), 0.05);
+    border-color: rgba(var(--white), 0.2);
 }
 
 .fluxo-mobile-cartao.selecionado {
-    border-color: var(--color-primary);
+    border-color: rgb(var(--color-primary));
     box-shadow: 0 0 10px rgba(56, 183, 100, 0.2);
 }
 
@@ -716,14 +716,14 @@
 }
 
 .fluxo-mobile-cartao__nome {
-    font-size: 14px;
+    font-size: var(--text-paragraph);
     font-weight: bold;
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
 }
 
 .fluxo-mobile-cartao__nivel {
 
-    font-size: 13px;
+    font-size: var(--text-sm);
     font-weight: bold;
 }
 
@@ -731,14 +731,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(var(--white), 0.05);
     padding-top: 8px;
     margin-top: 2px;
 }
 
 .fluxo-mobile-cartao__status-valvula {
-    font-size: 12px;
-    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    color: rgb(var(--text-secondary));
 }
 
 .fluxo-mobile-cartao__status-valvula span {
@@ -746,16 +746,16 @@
 }
 
 .fluxo-mobile-cartao__status-valvula span.valvula-aberta {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    color: rgb(var(--color-primary));
+    border-color: rgb(var(--color-primary));
 }
 
 .fluxo-mobile-cartao__status-valvula span.valvula-fechada {
-    color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    color: rgb(var(--color-secondary));
+    border-color: rgb(var(--color-secondary));
 }
 
-/* Responsividade de Tela Geral (Abaixo de 1024px) */
+
 @media screen and (max-width: 1023px) {
     .fluxo-quadro {
         display: none !important;

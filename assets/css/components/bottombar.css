@@ -1,9 +1,9 @@
-/* ────── Bottombar (Barra de Telemetria) ────── */
+﻿
 .barra-telemetria {
     display: flex;
     align-items: center;
     padding: 6px 24px;
-    background: var(--bg-main);
+    background: rgb(var(--bg-main));
     border-top: 2px solid var(--border-color);
     min-height: 32px;
     flex-shrink: 0;
@@ -45,8 +45,8 @@
 .barra-telemetria__titulo,
 .barra-telemetria__relogio {
 
-    font-size: 12px;
-    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    color: rgb(var(--text-secondary));
     letter-spacing: .5px;
     white-space: nowrap;
 }
@@ -60,17 +60,17 @@
 @keyframes barra-telemetria-pulse {
     0% {
         opacity: 1;
-        box-shadow: 0 0 4px var(--color-primary);
+        box-shadow: 0 0 4px rgb(var(--color-primary));
     }
 
     50% {
         opacity: 0.3;
-        box-shadow: 0 0 1px var(--color-primary);
+        box-shadow: 0 0 1px rgb(var(--color-primary));
     }
 
     100% {
         opacity: 1;
-        box-shadow: 0 0 4px var(--color-primary);
+        box-shadow: 0 0 4px rgb(var(--color-primary));
     }
 }
 
@@ -79,8 +79,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--color-primary);
-    box-shadow: 0 0 4px var(--color-primary);
+    background: rgb(var(--color-primary));
+    box-shadow: 0 0 4px rgb(var(--color-primary));
     margin-right: 4px;
     vertical-align: middle;
     animation: barra-telemetria-pulse 2s infinite;
