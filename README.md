@@ -21,6 +21,21 @@
   </div>
 
 
+## 📖 Índice
+
+- [📖 Introdução e Contexto](#-introdução-e-contexto)
+- [🎯 O Foco: Controle de Água e Reaproveitamento](#-o-foco-controle-de-água-e-reaproveitamento)
+- [⚡ Alta Performance & SPA (Single Page Application)](#-alta-performance--spa-single-page-application)
+- [♿ Acessibilidade (a11y) e SEO (Search Engine Optimization)](#-acessibilidade-a11y-e-seo-search-engine-optimization)
+- [🖥️ As Telas do Sistema](#️-as-telas-do-sistema)
+- [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- [🚀 Instruções de Uso](#-instruções-de-uso)
+- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
+- [👥 Integrantes](#-integrantes)
+- [📚 Referências](#-referências)
+
+---
+
 ## 📖 Introdução e Contexto
 
 O **Space Connect** foi desenvolvido como parte do **Global Solution (FIAP) | Indústria Espacial**, focando na interseção entre tecnologia, web design e a economia espacial.
@@ -37,7 +52,10 @@ O fluxo é dividido em:
 O projeto foi inteiramente re-arquitetado como uma **Single Page Application (SPA)** usando JavaScript puro (Vanilla JS). Ao transitar entre as diferentes telas do sistema, não há recarregamento da página (eliminação de "piscadas"). Um `router.js` intercepta a navegação e faz a injeção do novo conteúdo de forma assíncrona, preservando a interface de telemetria base (footer) e o menu lateral (sidebar) já renderizados.
 
 ### ♿ Acessibilidade (a11y) e SEO (Search Engine Optimization)
-A aplicação é otimizada para acessibilidade, implementando componentes semânticos (`<nav>`, `<button>`), navegação detectável para leitores de tela (`aria-current`, `aria-label`, `aria-expanded`) e ocultação de SVGs/gráficos puramente decorativos (`aria-hidden`). Para otimização de busca (SEO) e hierarquia semântica, o projeto aplica tags `<h1>` contextuais geradas dinamicamente com base em metadados injetados via atributos de dados (`data-title`).
+A aplicação é fortemente otimizada para acessibilidade e motores de busca:
+- **Semântica:** Utilização de tags HTML5 como `<main>`, `<nav>`, `<aside>`, `<time>`, `<data>` e `<article>`, garantindo uma hierarquia coesa da página.
+- **Leitores de Tela:** Suporte avançado via atributos ARIA (`aria-label`, `aria-hidden="true"`, `aria-current="page"`, `aria-live="polite"` em componentes dinâmicos de telemetria) permitindo que o foco e os anúncios sejam precisos e amigáveis para deficientes visuais.
+- **SEO & Metadados Avançados:** Implementação de Open Graph tags (`og:title`, `og:description`, `og:url`) e `Twitter Cards` para previews ricos em redes sociais e indexação robusta, além de marcação de link `canonical` em todas as páginas e `h1` semântico gerenciado em toda a aplicação SPA.
 
 ### 🖥️ As Telas do Sistema
 O sistema é composto pelas seguintes interfaces (navegáveis):

@@ -5,10 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
-  <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+  <meta name="keywords" content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
   <meta name="author" content="Space Connect">
   <meta name="theme-color" content="#0b1021">
+  
+  <!-- SEO & Open Graph -->
+  <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
+  <meta property="og:title" content="Space Connect - Central de Alertas">
+  <meta property="og:description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Space Connect - Central de Alertas">
+  <meta name="twitter:description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+
   <title>Space Connect - Central de Alertas</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,14 +131,14 @@
                   <span class="alerta__badge alerta__badge--critico">Crítico</span>
                   <span class="alerta__codigo-evento">A-241</span>
                 </div>
-                <span class="alerta__tempo-evento">T-00:02:47</span>
+                <time class="alerta__tempo-evento" datetime="PT2M47S" aria-label="Tempo decorrido: 2 minutos e 47 segundos">T-00:02:47</time>
               </div>
               <p class="alerta__texto-evento">RV-04 perdeu telemetria por 2m47s durante perfuração</p>
               <span class="alerta__fonte-evento">Fonte: Haworth</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar">Confirmar</button>
-                <button class="alerta__botao-acao">Detalhes</button>
-                <button class="alerta__botao-acao alerta__botao-acao--protocolo">Acionar Protocolo</button>
+                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar alerta A-241">Confirmar</button>
+                <button class="alerta__botao-acao" aria-label="Ver detalhes do alerta A-241">Detalhes</button>
+                <button class="alerta__botao-acao alerta__botao-acao--protocolo" aria-label="Acionar protocolo para alerta A-241">Acionar Protocolo</button>
               </div>
             </div>
           </article>
@@ -147,13 +157,13 @@
                   <span class="alerta__badge alerta__badge--aviso">Aviso</span>
                   <span class="alerta__codigo-evento">A-240</span>
                 </div>
-                <span class="alerta__tempo-evento">T-00:10:02</span>
+                <time class="alerta__tempo-evento" datetime="PT10M2S" aria-label="Tempo decorrido: 10 minutos e 2 segundos">T-00:10:02</time>
               </div>
               <p class="alerta__texto-evento">Sublimação acima do limite em CRY-04 (0.34%/d)</p>
               <span class="alerta__fonte-evento">Fonte: Cryo Reserve</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar">Confirmar</button>
-                <button class="alerta__botao-acao">Detalhes</button>
+                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar aviso A-240">Confirmar</button>
+                <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-240">Detalhes</button>
               </div>
             </div>
           </article>
@@ -172,13 +182,13 @@
                   <span class="alerta__badge alerta__badge--aviso">Aviso</span>
                   <span class="alerta__codigo-evento">A-239</span>
                 </div>
-                <span class="alerta__tempo-evento">T-01:04:11</span>
+                <time class="alerta__tempo-evento" datetime="PT1H4M11S" aria-label="Tempo decorrido: 1 hora, 4 minutos e 11 segundos">T-01:04:11</time>
               </div>
               <p class="alerta__texto-evento">Cryo Vault Alpha acima de 78% – agendar transferência</p>
               <span class="alerta__fonte-evento">Fonte: Cry-01</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar">Confirmar</button>
-                <button class="alerta__botao-acao">Detalhes</button>
+                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar aviso A-239">Confirmar</button>
+                <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-239">Detalhes</button>
               </div>
             </div>
           </article>
@@ -197,13 +207,13 @@
                   <span class="alerta__badge alerta__badge--info">Info</span>
                   <span class="alerta__codigo-evento">A-238</span>
                 </div>
-                <span class="alerta__tempo-evento">T-01:42:30</span>
+                <time class="alerta__tempo-evento" datetime="PT1H42M30S" aria-label="Tempo decorrido: 1 hora, 42 minutos e 30 segundos">T-01:42:30</time>
               </div>
               <p class="alerta__texto-evento">RV-03 iniciou ciclo de recarga solar na cratera de Cabeus</p>
               <span class="alerta__fonte-evento">Fonte: Cabeus</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--desabilitado">Confirmar</button>
-                <button class="alerta__botao-acao">Detalhes</button>
+                <button class="alerta__botao-acao alerta__botao-acao--desabilitado" aria-label="Confirmação de evento A-238 desabilitada" disabled>Confirmar</button>
+                <button class="alerta__botao-acao" aria-label="Ver detalhes do evento A-238">Detalhes</button>
               </div>
             </div>
           </article>
@@ -222,13 +232,13 @@
                   <span class="alerta__badge alerta__badge--aviso">Aviso</span>
                   <span class="alerta__codigo-evento">A-237</span>
                 </div>
-                <span class="alerta__tempo-evento">T-02:10:55</span>
+                <time class="alerta__tempo-evento" datetime="PT2H10M55S" aria-label="Tempo decorrido: 2 horas, 10 minutos e 55 segundos">T-02:10:55</time>
               </div>
               <p class="alerta__texto-evento">Pressão no CRY-02 acima do nominal — variação de +0.09 kPa</p>
               <span class="alerta__fonte-evento">Fonte: Cryo Vault Beta</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar">Confirmar</button>
-                <button class="alerta__botao-acao">Detalhes</button>
+                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar aviso A-237">Confirmar</button>
+                <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-237">Detalhes</button>
               </div>
             </div>
           </article>
@@ -241,7 +251,7 @@
   <footer class="barra-telemetria">
     <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
     <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro">
+      <div class="barra-telemetria__letreiro" aria-hidden="true">
         <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
         <span class="barra-telemetria__item">POWER 96.4 kW</span>
         <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
@@ -250,7 +260,7 @@
         <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
       </div>
     </div>
-    <span class="barra-telemetria__relogio" id="relogio-telemetria">PRIME SOL 0427 · 00:00:00</span>
+    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
   </footer>
 
   <script src="assets/js/main.js"></script>

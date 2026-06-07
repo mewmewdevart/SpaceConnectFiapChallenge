@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     "use strict";
 
     function hexToRGBA(hex, alpha) {
@@ -109,6 +109,9 @@
                     const socketOut = document.createElement('div');
                     socketOut.className = 'fluxo-soquete fluxo-soquete--saida';
                     socketOut.title = "Criar conexão (Saída)";
+                    socketOut.setAttribute("aria-label", `Soquete de saída de ${module.name}`);
+                    socketOut.setAttribute("role", "button");
+                    socketOut.setAttribute("tabindex", "0");
                     socketOut.addEventListener('click', (e) => {
                         e.stopPropagation();
                         handleSocketOutClick(module.id, socketOut);
@@ -120,6 +123,9 @@
                     const socketIn = document.createElement('div');
                     socketIn.className = 'fluxo-soquete fluxo-soquete--entrada';
                     socketIn.title = "Engatar conexão (Entrada)";
+                    socketIn.setAttribute("aria-label", `Soquete de entrada de ${module.name}`);
+                    socketIn.setAttribute("role", "button");
+                    socketIn.setAttribute("tabindex", "0");
                     socketIn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         handleSocketInClick(module.id, socketIn);
@@ -220,9 +226,10 @@
 
                 const valveBtn = document.createElement('button');
                 valveBtn.className = `fluxo-valvula-btn ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}`;
+                valveBtn.setAttribute('aria-label', `Alternar válvula de ${fromMod.name} para ${toMod.name}. Status atual: ${conn.status === 'open' ? 'Livre' : 'Bloqueada'}`);
                 valveBtn.innerHTML = conn.status === 'open'
-                    ? '<i class="fa-solid fa-play"></i> LIVRE'
-                    : '<i class="fa-solid fa-pause"></i> BLOQ.';
+                    ? '<i class="fa-solid fa-play" aria-hidden="true"></i> LIVRE'
+                    : '<i class="fa-solid fa-pause" aria-hidden="true"></i> BLOQ.';
                 valveBtn.style.left = `${mid_x}px`;
                 valveBtn.style.top = `${mid_y}px`;
                 valveBtn.addEventListener('click', (e) => {

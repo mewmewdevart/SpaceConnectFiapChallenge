@@ -5,11 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Histórico e correlações do sistema de controle hídrico.">
-  <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+  <meta name="keywords" content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
   <meta name="author" content="Space Connect">
   <meta name="theme-color" content="#0b1021">
-  <title>Space Connect - Central de Recursos</title>
+  
+  <!-- SEO & Open Graph -->
+  <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
+  <meta property="og:title" content="Space Connect - Fluxo de Interações">
+  <meta property="og:description" content="Histórico e correlações do sistema de controle hídrico.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Space Connect - Fluxo de Interações">
+  <meta name="twitter:description" content="Histórico e correlações do sistema de controle hídrico.">
+
+  <title>Space Connect - Fluxo de Interações</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -102,7 +112,7 @@
   <footer class="barra-telemetria">
     <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
     <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro">
+      <div class="barra-telemetria__letreiro" aria-hidden="true">
         <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
         <span class="barra-telemetria__item">POWER 96.4 kW</span>
         <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
@@ -111,7 +121,7 @@
         <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
       </div>
     </div>
-    <span class="barra-telemetria__relogio" id="relogio-telemetria">PRIME SOL 0427 · 00:00:00</span>
+    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
   </footer>
 
   <script src="assets/js/main.js"></script>
