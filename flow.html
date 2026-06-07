@@ -4,50 +4,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Histórico e correlações do sistema de controle hídrico.">
+  <meta name="keywords"
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+  <meta name="author" content="Space Connect">
+  <meta name="theme-color" content="#0b1021">
   <title>Space Connect - Central de Recursos</title>
-  <script src="assets/js/components/head.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/sidebar.css">
+  <link rel="stylesheet" href="assets/css/components/bottombar.css">
+  <link rel="stylesheet" href="assets/css/pages/flow.css">
 </head>
 
 <body>
-  <div id="sidebar-container"></div>
+  <div class="linhas-varredura" aria-hidden="true"></div>
+  <!-- Sidebar -->
+  <aside class="menu-lateral" id="menu-lateral">
+    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
+      aria-label="Abrir menu">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+      <span class="menu-lateral__marca-mobile">Space Connect</span>
+    </button>
+    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
+      <a href="index.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
+        <span class="menu-lateral__texto">Home</span>
+      </a>
+      <a href="flow.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
+        <span class="menu-lateral__texto">Fluxo de Interações</span>
+      </a>
+      <a href="resources.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
+        <span class="menu-lateral__texto">Gestão de Recursos</span>
+      </a>
+      <a href="alerts.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
+        <span class="menu-lateral__texto">Central de Alertas</span>
+      </a>
+      <a href="support.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
+        <span class="menu-lateral__texto">Suporte</span>
+      </a>
+    </nav>
+  </aside>
 
-  <section class="content">
-    <main class="main-content">
-      <div id="header-container" data-title="Fluxo de Interações"
-        data-subtitle="Histórico e Correlações - Mission Control" data-description="Sistema de controle hídrico">
-      </div>
+  <!-- Main Content -->
+  <section class="conteudo">
+    <main class="conteudo__principal">
+      <!-- Header -->
+      <header class="cabecalho-conteudo">
+        <div class="cabecalho-conteudo__cabecalho">
+          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
+              Fluxo</span></p>
+        </div>
+        <h1 class="cabecalho-conteudo__titulo">Fluxo de Interações</h1>
 
-      <div class="flow-container">
+        <div class="cabecalho-conteudo__bloco">
+          <p class="cabecalho-conteudo__descricao">Gestão de Recursos e Reservatórios</p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo"> XPTO Alertas</span>
+        </div>
+      </header>
 
+      <div class="fluxo-container">
 
-        <div class="flow-board" id="flow-board">
-          <div class="flow-board-content" id="flow-board-content">
-            <svg class="flow-svg"></svg>
+        <div class="fluxo-quadro" id="fluxo-quadro">
+          <div class="fluxo-quadro__conteudo" id="fluxo-quadro__conteudo">
+            <svg class="fluxo-svg"></svg>
           </div>
 
-          <div class="zoom-controls" role="toolbar" aria-label="Controles de Zoom">
-            <button id="zoom-in-btn" title="Aumentar Zoom" aria-label="Aumentar Zoom"><i
+          <div class="fluxo-zoom" role="toolbar" aria-label="Controles de Zoom">
+            <button class="fluxo-zoom__botao" id="zoom-in-btn" title="Aumentar Zoom" aria-label="Aumentar Zoom"><i
                 class="fa-solid fa-magnifying-glass-plus"></i></button>
-            <button id="zoom-out-btn" title="Diminuir Zoom" aria-label="Diminuir Zoom"><i
+            <button class="fluxo-zoom__botao" id="zoom-out-btn" title="Diminuir Zoom" aria-label="Diminuir Zoom"><i
                 class="fa-solid fa-magnifying-glass-minus"></i></button>
-            <button id="zoom-reset-btn" title="Resetar Visualização" aria-label="Resetar Visualização"><i
-                class="fa-solid fa-expand"></i></button>
+            <button class="fluxo-zoom__botao" id="zoom-reset-btn" title="Resetar Visualização"
+              aria-label="Resetar Visualização"><i class="fa-solid fa-expand"></i></button>
           </div>
         </div>
 
-        <div class="mobile-view-container" id="mobile-view-container"></div>
+        <div class="fluxo-mobile-container" id="mobile-view-container"></div>
       </div>
     </main>
 
-    <div class="right-panel"></div>
+    <aside class="painel-direito"></aside>
   </section>
 
-  <div id="bottombar-container"></div>
+  <!-- Bottombar de Telemetria -->
+  <footer class="barra-telemetria">
+    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
+    <div class="barra-telemetria__janela-letreiro">
+      <div class="barra-telemetria__letreiro">
+        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
+        <span class="barra-telemetria__item">POWER 96.4 kW</span>
+        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
+        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
+        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
+        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
+      </div>
+    </div>
+    <span class="barra-telemetria__relogio" id="relogio-telemetria">PRIME SOL 0427 · 00:00:00</span>
+  </footer>
 
-  <script src="assets/js/components/sidebar.js"></script>
-  <script src="assets/js/components/bottombar.js"></script>
-  <script src="assets/js/components/header.js"></script>
-  <script src="assets/js/components/router.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/pages/flow.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     "use strict";
 
     function hexToRGBA(hex, alpha) {
@@ -10,15 +10,15 @@
     }
 
     window.initFlow = function () {
-        const board = document.querySelector('.flow-board');
-        const boardContent = document.getElementById('flow-board-content');
-        const svg = document.querySelector('.flow-svg');
-        const mainContent = document.querySelector('.main-content');
+        const board = document.querySelector('.fluxo-quadro');
+        const boardContent = document.getElementById('fluxo-quadro__conteudo');
+        const svg = document.querySelector('.fluxo-svg');
+        const mainContent = document.querySelector('.conteudo__principal');
         if (!board || !svg || !boardContent) return;
 
         // Clear existing elements (prevent duplication in SPA routing)
-        boardContent.querySelectorAll('.flow-card').forEach(c => c.remove());
-        boardContent.querySelectorAll('.valve-btn').forEach(v => v.remove());
+        boardContent.querySelectorAll('.fluxo-cartao').forEach(c => c.remove());
+        boardContent.querySelectorAll('.fluxo-valvula-btn').forEach(v => v.remove());
         svg.innerHTML = '';
 
         // Zoom & Pan State
@@ -64,11 +64,11 @@
         let activeSocketFrom = null;
 
         function renderCards() {
-            boardContent.querySelectorAll('.flow-card').forEach(c => c.remove());
+            boardContent.querySelectorAll('.fluxo-cartao').forEach(c => c.remove());
 
             modules.forEach(module => {
                 const card = document.createElement('div');
-                card.classList.add('flow-card');
+                card.classList.add('fluxo-cartao');
                 card.id = `card-${module.id}`;
                 card.style.left = `${module.x}px`;
                 card.style.top = `${module.y}px`;
@@ -78,28 +78,28 @@
                 card.style.setProperty('--fluid-color-alpha', hexToRGBA(module.color, 0.12));
                 card.style.setProperty('--fluid-color-alpha-more', hexToRGBA(module.color, 0.05));
 
-                if (module.status === 'warning') card.classList.add('status-warning');
+                if (module.status === 'warning') card.classList.add('fluxo-cartao--aviso');
 
                 card.innerHTML = `
-                    <div class="card-wave-container">
-                        <div class="card-wave"></div>
-                        <div class="card-wave-back"></div>
+                    <div class="fluxo-cartao__onda-container">
+                        <div class="fluxo-cartao__onda"></div>
+                        <div class="fluxo-cartao__onda-tras"></div>
                     </div>
-                    <div class="card-inner">
-                        <div class="card-meta">
+                    <div class="fluxo-cartao__interior">
+                        <div class="fluxo-cartao__meta">
                             <span>${module.category.toUpperCase()}</span>
-                            <div class="card-status-dot"></div>
+                            <div class="fluxo-cartao__ponto-status"></div>
                         </div>
-                        <div class="card-content">
-                            <div class="card-icon"><i class="fa-solid ${module.icon}"></i></div>
-                            <div class="card-text">
-                                <div class="card-title-text">${module.name}</div>
-                                <div class="card-subtitle-text">${module.subtitle}</div>
+                        <div class="fluxo-cartao__conteudo">
+                            <div class="fluxo-cartao__icone"><i class="fa-solid ${module.icon}"></i></div>
+                            <div class="fluxo-cartao__texto">
+                                <div class="fluxo-cartao__titulo">${module.name}</div>
+                                <div class="fluxo-cartao__subtitulo">${module.subtitle}</div>
                             </div>
                         </div>
-                        <div class="card-stats">
-                            <span class="card-level-label">VOLUME</span>
-                            <span class="card-level-value">${module.level}%</span>
+                        <div class="fluxo-cartao__estatisticas">
+                            <span class="fluxo-cartao__rotulo-nivel">VOLUME</span>
+                            <span class="fluxo-cartao__valor-nivel">${module.level}%</span>
                         </div>
                     </div>
                 `;
@@ -107,7 +107,7 @@
                 // Add connector sockets dynamically
                 if (module.category !== 'destination') {
                     const socketOut = document.createElement('div');
-                    socketOut.className = 'socket socket-out';
+                    socketOut.className = 'fluxo-soquete fluxo-soquete--saida';
                     socketOut.title = "Criar conexão (Saída)";
                     socketOut.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -118,7 +118,7 @@
 
                 if (module.category !== 'source') {
                     const socketIn = document.createElement('div');
-                    socketIn.className = 'socket socket-in';
+                    socketIn.className = 'fluxo-soquete fluxo-soquete--entrada';
                     socketIn.title = "Engatar conexão (Entrada)";
                     socketIn.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -141,7 +141,7 @@
         // Unified Drag & Drop using Pointer Events (supports mouse and touch smoothly)
         function setupDragAndDrop(cardEl, module) {
             cardEl.addEventListener('pointerdown', (e) => {
-                if (e.target.classList.contains('socket')) return;
+                if (e.target.classList.contains('fluxo-soquete')) return;
                 cardEl.setPointerCapture(e.pointerId);
                 e.preventDefault();
                 e.stopPropagation();
@@ -151,7 +151,7 @@
                 const origX = module.x;
                 const origY = module.y;
 
-                board.classList.add('dragging');
+                board.classList.add('arrastando');
 
                 function onPointerMove(ev) {
                     const dx = (ev.clientX - startX) / zoom;
@@ -164,7 +164,7 @@
                 }
 
                 function onPointerUp() {
-                    board.classList.remove('dragging');
+                    board.classList.remove('arrastando');
                     cardEl.releasePointerCapture(e.pointerId);
                     cardEl.removeEventListener('pointermove', onPointerMove);
                     cardEl.removeEventListener('pointerup', onPointerUp);
@@ -179,7 +179,7 @@
 
         function drawConnections() {
             svg.innerHTML = '';
-            boardContent.querySelectorAll('.valve-btn').forEach(v => v.remove());
+            boardContent.querySelectorAll('.fluxo-valvula-btn').forEach(v => v.remove());
 
             connections.forEach((conn) => {
                 const fromMod = modules.find(m => m.id === conn.from);
@@ -197,9 +197,9 @@
 
                 const pathBg = document.createElementNS("http://www.w3.org/2000/svg", "path");
                 pathBg.setAttribute("d", pathData);
-                pathBg.setAttribute("class", "pipe-bg hoverable");
+                pathBg.setAttribute("class", "fluxo-tubo-bg interativo");
                 if (selectedElement && selectedElement.type === 'connection' && selectedElement.data.id === conn.id) {
-                    pathBg.classList.add('selected');
+                    pathBg.classList.add('selecionado');
                 }
                 pathBg.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -209,9 +209,9 @@
 
                 const pathFlow = document.createElementNS("http://www.w3.org/2000/svg", "path");
                 pathFlow.setAttribute("d", pathData);
-                pathFlow.setAttribute("class", "pipe-flow");
+                pathFlow.setAttribute("class", "fluxo-tubo-fluxo");
                 pathFlow.style.stroke = fromMod.color;
-                if (conn.status === 'closed') pathFlow.classList.add('blocked');
+                if (conn.status === 'closed') pathFlow.classList.add('bloqueado');
                 svg.appendChild(pathFlow);
 
                 // Algebraic midpoint calculation of the Cubic Bezier curve (t = 0.5) to place the valve button
@@ -219,7 +219,7 @@
                 const mid_y = 0.125 * y_out + 0.375 * y_out + 0.375 * y_in + 0.125 * y_in;
 
                 const valveBtn = document.createElement('button');
-                valveBtn.className = `valve-btn ${conn.status === 'open' ? 'valve-open' : 'valve-closed'}`;
+                valveBtn.className = `fluxo-valvula-btn ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}`;
                 valveBtn.innerHTML = conn.status === 'open'
                     ? '<i class="fa-solid fa-play"></i> LIVRE'
                     : '<i class="fa-solid fa-pause"></i> BLOQ.';
@@ -245,12 +245,12 @@
         }
 
         function handleSocketOutClick(moduleId, socketEl) {
-            const prevSocket = boardContent.querySelector('.socket-selected');
-            if (prevSocket) prevSocket.classList.remove('socket-selected');
+            const prevSocket = boardContent.querySelector('.fluxo-soquete--selecionado');
+            if (prevSocket) prevSocket.classList.remove('fluxo-soquete--selecionado');
 
             activeSocketFrom = moduleId;
-            socketEl.classList.add('socket-selected');
-            board.classList.add('connecting-mode');
+            socketEl.classList.add('fluxo-soquete--selecionado');
+            board.classList.add('modo-conexao');
         }
 
         function handleSocketInClick(moduleId, socketEl) {
@@ -279,9 +279,9 @@
 
         function resetConnectionMode() {
             activeSocketFrom = null;
-            board.classList.remove('connecting-mode');
-            const prevSocket = boardContent.querySelector('.socket-selected');
-            if (prevSocket) prevSocket.classList.remove('socket-selected');
+            board.classList.remove('modo-conexao');
+            const prevSocket = boardContent.querySelector('.fluxo-soquete--selecionado');
+            if (prevSocket) prevSocket.classList.remove('fluxo-soquete--selecionado');
         }
 
         // Zoom on mouse wheel (centered on pointer position)
@@ -387,28 +387,28 @@
         }
 
         // Sidebar Inspector management
-        const inspectorPanel = document.querySelector('.right-panel');
+        const inspectorPanel = document.querySelector('.painel-direito');
 
         function selectElement(elementObj) {
-            const prevSelectedCard = boardContent.querySelector('.flow-card.selected');
-            if (prevSelectedCard) prevSelectedCard.classList.remove('selected');
+            const prevSelectedCard = boardContent.querySelector('.fluxo-cartao.selecionado');
+            if (prevSelectedCard) prevSelectedCard.classList.remove('selecionado');
 
-            const prevSelectedMobile = document.querySelector('.mobile-card-item.selected');
-            if (prevSelectedMobile) prevSelectedMobile.classList.remove('selected');
+            const prevSelectedMobile = document.querySelector('.fluxo-mobile-cartao.selecionado');
+            if (prevSelectedMobile) prevSelectedMobile.classList.remove('selecionado');
 
-            const prevSelectedPipe = svg.querySelector('.pipe-bg.selected');
-            if (prevSelectedPipe) prevSelectedPipe.classList.remove('selected');
+            const prevSelectedPipe = svg.querySelector('.fluxo-tubo-bg.selecionado');
+            if (prevSelectedPipe) prevSelectedPipe.classList.remove('selecionado');
 
             selectedElement = elementObj;
             if (!inspectorPanel) return;
 
             if (!elementObj) {
                 inspectorPanel.innerHTML = `
-                    <div class="inspector-panel">
-                        <div class="inspector-header">
+                    <div class="inspetor-painel">
+                        <div class="inspetor-painel__cabecalho">
                             <h2><span>/</span>Painel Inspetor</h2>
                         </div>
-                        <div class="inspector-empty">
+                        <div class="inspetor-painel__vazio">
                             <i class="fa-solid fa-circle-info"></i>
                             <p>Nenhum elemento selecionado.<br>Clique em um módulo ou tubulação para calibrar.</p>
                         </div>
@@ -422,38 +422,38 @@
                 const module = elementObj.data || modules.find(m => m.id === moduleId);
                 
                 const card = boardContent.querySelector(`#card-${moduleId}`);
-                if (card) card.classList.add('selected');
+                if (card) card.classList.add('selecionado');
 
-                const mobileCard = document.querySelector(`.mobile-card-item[data-mod-id="${moduleId}"]`);
-                if (mobileCard) mobileCard.classList.add('selected');
+                const mobileCard = document.querySelector(`.fluxo-mobile-cartao[data-mod-id="${moduleId}"]`);
+                if (mobileCard) mobileCard.classList.add('selecionado');
 
                 const moduleData = modules.find(m => m.id === moduleId);
                 inspectorPanel.innerHTML = `
-                    <div class="inspector-panel">
-                        <div class="inspector-header">
+                    <div class="inspetor-painel">
+                        <div class="inspetor-painel__cabecalho">
                             <h2>
-                                <i class="fa-solid ${moduleData.icon} inspector-icon" style="color: ${moduleData.color};"></i>
+                                <i class="fa-solid ${moduleData.icon} inspetor-painel__icone" style="color: ${moduleData.color};"></i>
                                 <span>/</span>Calibração
                             </h2>
-                            <span class="badge inspector-badge">MÓDULO</span>
+                            <span class="badge inspetor-painel__badge">MÓDULO</span>
                         </div>
-                        <form class="inspector-form" onsubmit="event.preventDefault();">
-                            <div class="form-group">
+                        <form class="inspetor-painel__formulario" onsubmit="event.preventDefault();">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Nome do Módulo</label>
                                 <input type="text" id="inspect-mod-name" value="${module.name}">
                             </div>
-                            <div class="form-group">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Subtítulo / Descrição</label>
                                 <input type="text" id="inspect-mod-sub" value="${module.subtitle}">
                             </div>
-                            <div class="form-group">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Nível de Armazenamento</label>
-                                <div class="slider-container">
+                                <div class="inspetor-painel__container-deslizante">
                                     <input type="range" id="inspect-mod-level" min="0" max="100" value="${module.level}">
-                                    <span class="slider-val" id="inspect-mod-level-val">${module.level}%</span>
+                                    <span class="inspetor-painel__valor-deslizante" id="inspect-mod-level-val">${module.level}%</span>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Categoria Física</label>
                                 <select id="inspect-mod-cat" disabled>
                                     <option value="source" ${module.category === 'source' ? 'selected' : ''}>Fontes e Coletores</option>
@@ -461,11 +461,11 @@
                                     <option value="destination" ${module.category === 'destination' ? 'selected' : ''}>Destinos de Consumo</option>
                                 </select>
                             </div>
-                            <div class="inspector-actions">
-                                <button type="button" class="btn-cancel" id="inspect-btn-cancel">
+                            <div class="inspetor-painel__acoes">
+                                <button type="button" class="inspetor-painel__btn-cancelar" id="inspect-inspetor-painel__btn-cancelar">
                                     <i class="fa-solid fa-xmark"></i> Cancelar
                                 </button>
-                                <button type="button" class="btn-save" id="inspect-btn-save">
+                                <button type="button" class="inspetor-painel__btn-salvar" id="inspect-inspetor-painel__btn-salvar">
                                     <i class="fa-solid fa-floppy-disk"></i> Salvar
                                 </button>
                             </div>
@@ -477,8 +477,8 @@
                 const subInput = document.getElementById('inspect-mod-sub');
                 const levelSlider = document.getElementById('inspect-mod-level');
                 const levelVal = document.getElementById('inspect-mod-level-val');
-                const btnSave = document.getElementById('inspect-btn-save');
-                const btnCancel = document.getElementById('inspect-btn-cancel');
+                const btnSave = document.getElementById('inspect-inspetor-painel__btn-salvar');
+                const btnCancel = document.getElementById('inspect-inspetor-painel__btn-cancelar');
 
                 // Visual-only updates during slider drag
                 levelSlider.addEventListener('input', (e) => {
@@ -514,20 +514,20 @@
 
                     // Update card visually
                     if (card) {
-                        const cardTitle = card.querySelector('.card-title-text');
+                        const cardTitle = card.querySelector('.fluxo-cartao__titulo');
                         if (cardTitle) cardTitle.textContent = module.name;
 
-                        const cardSub = card.querySelector('.card-subtitle-text');
+                        const cardSub = card.querySelector('.fluxo-cartao__subtitulo');
                         if (cardSub) cardSub.textContent = module.subtitle;
 
                         card.style.setProperty('--level-percent', `${newLvl}%`);
-                        const cardLvlVal = card.querySelector('.card-level-value');
+                        const cardLvlVal = card.querySelector('.fluxo-cartao__valor-nivel');
                         if (cardLvlVal) cardLvlVal.textContent = `${newLvl}%`;
 
                         if (module.status === 'warning') {
-                            card.classList.add('status-warning');
+                            card.classList.add('fluxo-cartao--aviso');
                         } else {
-                            card.classList.remove('status-warning');
+                            card.classList.remove('fluxo-cartao--aviso');
                         }
                     }
 
@@ -540,34 +540,34 @@
                 const fromMod = modules.find(m => m.id === conn.from);
                 const toMod = modules.find(m => m.id === conn.to);
 
-                elementObj.el.classList.add('selected');
+                elementObj.el.classList.add('selecionado');
 
                 inspectorPanel.innerHTML = `
-                    <div class="inspector-panel">
-                        <div class="inspector-header">
-                            <h2><i class="fa-solid fa-arrow-right-arrow-left inspector-icon"></i><span>/</span>Calibração</h2>
-                            <span class="badge inspector-badge">TUBULAÇÃO</span>
+                    <div class="inspetor-painel">
+                        <div class="inspetor-painel__cabecalho">
+                            <h2><i class="fa-solid fa-arrow-right-arrow-left inspetor-painel__icone"></i><span>/</span>Calibração</h2>
+                            <span class="badge inspetor-painel__badge">TUBULAÇÃO</span>
                         </div>
-                        <div class="inspector-form">
-                            <div class="form-group">
+                        <div class="inspetor-painel__formulario">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Origem do Fluxo</label>
                                 <input type="text" value="${fromMod.name}" readonly class="input-readonly">
                             </div>
-                            <div class="form-group">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Destino do Abastecimento</label>
                                 <input type="text" value="${toMod.name}" readonly class="input-readonly">
                             </div>
-                            <div class="form-group">
+                            <div class="inspetor-painel__grupo-form">
                                 <label>Controle de Fluxo</label>
-                                <div class="switch-valve-container">
+                                <div class="inspetor-painel__container-valvula">
                                     <span>Válvula de Fechamento</span>
-                                    <button class="btn-toggle-valve ${conn.status === 'open' ? 'valve-open' : 'valve-closed'}" id="inspect-valve-toggle">
+                                    <button class="inspetor-painel__btn-valvula ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" id="inspect-valve-toggle">
                                         ${conn.status === 'open' ? 'LIVRE' : 'BLOQUEADA'}
                                     </button>
                                 </div>
                             </div>
                             
-                            <button class="btn-action-danger" id="inspect-delete-conn">
+                            <button class="inspetor-painel__btn-perigo" id="inspect-delete-conn">
                                 <i class="fa-solid fa-trash"></i> Desconectar Tubulação
                             </button>
                         </div>
@@ -589,8 +589,8 @@
 
         selectElement(null);
         // Mobile list view
-        const mobileViewContainer = document.querySelector('.mobile-view-container');
-        const flowContainer = document.querySelector('.flow-container');
+        const mobileViewContainer = document.querySelector('.fluxo-mobile-container');
+        const flowContainer = document.querySelector('.fluxo-container');
 
         function updateMobileView() {
             if (!mobileViewContainer) return;
@@ -607,18 +607,18 @@
                 if (catModules.length === 0) return;
 
                 const section = document.createElement('div');
-                section.className = 'mobile-category-section';
+                section.className = 'fluxo-mobile-categoria';
                 section.innerHTML = `<h2>${cat.title}</h2>`;
 
                 const list = document.createElement('div');
-                list.className = 'mobile-list';
+                list.className = 'fluxo-mobile-lista';
 
                 catModules.forEach(mod => {
                     const cardItem = document.createElement('div');
-                    cardItem.className = `mobile-card-item ${mod.status === 'warning' ? 'status-warning' : ''}`;
+                    cardItem.className = `fluxo-mobile-cartao ${mod.status === 'warning' ? 'fluxo-cartao--aviso' : ''}`;
                     cardItem.setAttribute('data-mod-id', mod.id);
                     if (selectedElement && selectedElement.type === 'module' && selectedElement.id === mod.id) {
-                        cardItem.classList.add('selected');
+                        cardItem.classList.add('selecionado');
                     }
 
                     const outgoingConns = connections.filter(c => c.from === mod.id);
@@ -626,14 +626,14 @@
 
                     if (outgoingConns.length > 0) {
                         valveActionsHTML = `
-                            <div class="mobile-card-actions">
-                                <div class="mobile-valve-status">
+                            <div class="fluxo-mobile-cartao__acoes">
+                                <div class="fluxo-mobile-cartao__status-valvula">
                                     Válvulas de Saída:
                                     ${outgoingConns.map(c => {
                             const dest = modules.find(m => m.id === c.to);
-                            const statusClass = c.status === 'open' ? 'valve-open' : 'valve-closed';
+                            const statusClass = c.status === 'open' ? 'valvula-aberta' : 'valvula-fechada';
                             const statusText = c.status === 'open' ? 'LIVRE' : 'BLOQ';
-                            return `<div class="mobile-valve-item">↳ <b>${dest.name}</b>: <span class="${statusClass}">${statusText}</span></div>`;
+                            return `<div class="fluxo-mobile-cartao__item-valvula">↳ <b>${dest.name}</b>: <span class="${statusClass}">${statusText}</span></div>`;
                         }).join('')}
                                 </div>
                                 <div>
@@ -641,7 +641,7 @@
                             const dest = modules.find(m => m.id === c.to);
                             const btnLabel = c.status === 'open' ? 'Bloquear' : 'Liberar';
                             return `
-                                            <button class="btn-toggle-valve btn-toggle-valve-sm ${c.status === 'open' ? 'valve-open' : 'valve-closed'}" 
+                                            <button class="inspetor-painel__btn-valvula inspetor-painel__btn-valvula-sm ${c.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" 
                                                     data-conn-id="${c.id}">
                                                 ${btnLabel} ${dest.name.split(' ')[0]}
                                             </button>
@@ -653,17 +653,17 @@
                     }
 
                     cardItem.innerHTML = `
-                        <div class="mobile-card-header">
-                            <span class="mobile-card-name">
+                        <div class="fluxo-mobile-cartao__cabecalho">
+                            <span class="fluxo-mobile-cartao__nome">
                                 <i class="fa-solid ${mod.icon}" style="color: ${mod.color}; margin-right: 6px;"></i>${mod.name}
                             </span>
-                            <span class="mobile-card-level" style="color: ${mod.color}">${mod.level}%</span>
+                            <span class="fluxo-mobile-cartao__nivel" style="color: ${mod.color}">${mod.level}%</span>
                         </div>
-                        <div class="mobile-card-subtitle">${mod.subtitle}</div>
+                        <div class="fluxo-mobile-cartao__subtitulo">${mod.subtitle}</div>
                         ${valveActionsHTML}
                     `;
 
-                    cardItem.querySelectorAll('.btn-toggle-valve').forEach(btn => {
+                    cardItem.querySelectorAll('.inspetor-painel__btn-valvula').forEach(btn => {
                         btn.addEventListener('click', (e) => {
                             e.stopPropagation();
                             const conn = connections.find(c => c.id === btn.getAttribute('data-conn-id'));
@@ -675,7 +675,7 @@
                         selectElement({ type: 'module', id: mod.id });
                         // Add a small delay so the DOM can paint the new inspector HTML before scrolling
                         setTimeout(() => {
-                            const rightPanel = document.querySelector('.right-panel');
+                            const rightPanel = document.querySelector('.painel-direito');
                             if (rightPanel) {
                                 rightPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }
@@ -713,3 +713,5 @@
         window.initFlow();
     }
 })();
+
+

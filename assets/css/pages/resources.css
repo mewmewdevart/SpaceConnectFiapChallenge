@@ -1,241 +1,6 @@
-/* ================================================
-   ICE-MINING DASHBOARD · resources.css
-   Painel de telemetria holográfica sci-fi
-   ================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
-
-/* ---- RESET & BASE ---- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --cor-fundo-profundo: #030d12;
-    --cor-fundo-painel: #05141c;
-    --cor-fundo-cartao: #071a24;
-    --cor-fundo-hover: #0a2030;
-    --cor-borda: #0d3347;
-    --cor-borda-clara: #0e4460;
-
-    --ciano: #00e5ff;
-    --ciano-escuro: #00b8cc;
-    --ciano-brilho: rgba(0, 229, 255, 0.15);
-    --ciano-brilho-suave: rgba(0, 229, 255, 0.08);
-
-    --verde: #00ff99;
-    --verde-escuro: #00cc7a;
-    --verde-brilho: rgba(0, 255, 153, 0.15);
-
-    --amarelo: #ffc107;
-    --amarelo-escuro: #d4a017;
-    --amarelo-brilho: rgba(255, 193, 7, 0.2);
-
-    --vermelho: #ff3b5c;
-    --vermelho-escuro: #cc2244;
-    --vermelho-brilho: rgba(255, 59, 92, 0.2);
-
-    --texto-principal: #d4eef8;
-    --texto-fraco: #4a7a92;
-    --texto-mudo: #2a4a5a;
-
-    --fonte-display: 'Orbitron', monospace;
-    --fonte-mono: 'Share Tech Mono', monospace;
-    --fonte-corpo: 'Inter', sans-serif;
-}
-
-html,
-body {
-    height: 100%;
-    background-color: var(--cor-fundo-profundo);
-    color: var(--texto-principal);
-    font-family: var(--fonte-corpo);
-    font-size: 14px;
-    overflow-x: hidden;
-}
-
-/* ---- LINHAS DE VARREDURA ---- */
-.linhas-varredura {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-    background: repeating-linear-gradient(to bottom,
-            transparent 0px,
-            transparent 2px,
-            rgba(0, 0, 0, 0.07) 2px,
-            rgba(0, 0, 0, 0.07) 4px);
-}
-
-/* ---- CABEÇALHO ---- */
-.cabecalho {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 18px 28px 14px;
-    background: linear-gradient(180deg, rgba(0, 20, 30, 0.95) 0%, rgba(5, 20, 28, 0.9) 100%);
-    border-bottom: 1px solid var(--cor-borda-clara);
-    position: relative;
-    overflow: hidden;
-}
-
-.cabecalho::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--ciano-escuro), transparent);
-    opacity: 0.6;
-}
-
-.cabecalho::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at 10% 50%, rgba(0, 229, 255, 0.04) 0%, transparent 60%);
-    pointer-events: none;
-}
-
-/* Navegação de migalhas */
-.navegacao-migalhas {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 6px;
-}
-
-.migalha-item {
-    font-family: var(--fonte-mono);
-    font-size: 10px;
-    color: var(--texto-fraco);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.migalha-item.ativo {
-    color: var(--ciano-escuro);
-}
-
-.migalha-separador {
-    color: var(--texto-mudo);
-    font-size: 11px;
-}
-
-/* Título */
-.cabecalho-titulo {
-    font-family: var(--fonte-display);
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
-    line-height: 1.1;
-}
-
-.cabecalho-titulo .ponto {
-    color: var(--ciano);
-    margin: 0 6px;
-}
-
-.cabecalho-subtitulo {
-    font-family: var(--fonte-mono);
-    font-size: 10px;
-    color: var(--texto-fraco);
-    letter-spacing: 0.1em;
-    margin-top: 5px;
-}
-
-/* Emblemas de status */
-.cabecalho-direita {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    padding-bottom: 6px;
-}
-
-.emblema-status {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-family: var(--fonte-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    padding: 5px 12px;
-    border-radius: 3px;
-    border: 1px solid;
-}
-
-.emblema-status.nominal {
-    color: var(--verde);
-    border-color: rgba(0, 255, 153, 0.3);
-    background: rgba(0, 255, 153, 0.05);
-}
-
-.emblema-status.alerta {
-    color: var(--amarelo);
-    border-color: rgba(255, 193, 7, 0.3);
-    background: rgba(255, 193, 7, 0.05);
-}
-
-.ponto-status {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.pulso-verde {
-    background: var(--verde);
-    box-shadow: 0 0 0 0 var(--verde);
-    animation: animacaoPulsoVerde 2s infinite;
-}
-
-.pulso-amarelo {
-    background: var(--amarelo);
-    box-shadow: 0 0 0 0 var(--amarelo);
-    animation: animacaoPulsoAmarelo 1.5s infinite;
-}
-
-@keyframes animacaoPulsoVerde {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 255, 153, 0.6);
-    }
-
-    70% {
-        box-shadow: 0 0 0 6px rgba(0, 255, 153, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 255, 153, 0);
-    }
-}
-
-@keyframes animacaoPulsoAmarelo {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 6px rgba(255, 193, 7, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
-    }
-}
-
 /* ---- LAYOUT DO PAINEL ---- */
-.painel {
-    padding: 20px 28px;
+.recursos-painel {
+    padding: 20px;
     min-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
@@ -243,15 +8,15 @@ body {
 }
 
 /* ---- LINHA DE ESTATÍSTICAS ---- */
-.linha-estatisticas {
+.recursos-estatisticas {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 14px;
 }
 
-.cartao-estatistica {
-    background: var(--cor-fundo-cartao);
-    border: 1px solid var(--cor-borda);
+.recursos-cartao-estatistica {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 16px 18px;
     position: relative;
@@ -259,93 +24,93 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.cartao-estatistica::before {
+.recursos-cartao-estatistica::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--ciano-escuro), transparent);
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-.cartao-estatistica:hover {
-    border-color: var(--cor-borda-clara);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.07);
+.recursos-cartao-estatistica:hover {
+    border-color: var(--outline-color);
+    box-shadow: 0 0 20px rgba(17, 173, 193, 0.07);
 }
 
-.cartao-estatistica:hover::before {
+.recursos-cartao-estatistica:hover::before {
     opacity: 1;
 }
 
-.cabecalho-estatistica {
+.recursos-cartao-estatistica__cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.rotulo-estatistica {
-    font-family: var(--fonte-mono);
+.recursos-cartao-estatistica__rotulo {
+
     font-size: 9px;
     letter-spacing: 0.14em;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     text-transform: uppercase;
 }
 
-.icone-estatistica {
+.recursos-cartao-estatistica__icone {
     width: 16px;
     height: 16px;
-    color: var(--texto-fraco);
-    stroke: var(--texto-fraco);
+    color: var(--text-secondary);
+    stroke: var(--text-secondary);
 }
 
-.valor-estatistica {
-    font-family: var(--fonte-display);
+.recursos-cartao-estatistica__valor {
+
     font-size: 28px;
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.01em;
 }
 
-.valor-estatistica.ciano {
-    color: var(--ciano);
-    text-shadow: 0 0 16px rgba(0, 229, 255, 0.5);
+.recursos-cartao-estatistica__valor--ciano {
+    color: var(--cyan);
+    text-shadow: 0 0 16px rgba(17, 173, 193, 0.5);
 }
 
-.valor-estatistica.verde {
-    color: var(--verde);
-    text-shadow: 0 0 16px rgba(0, 255, 153, 0.5);
+.recursos-cartao-estatistica__valor--verde {
+    color: var(--mint);
+    text-shadow: 0 0 16px rgba(109, 247, 193, 0.5);
 }
 
-.unidade-estatistica {
+.recursos-cartao-estatistica__unidade {
     font-size: 14px;
     font-weight: 400;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     letter-spacing: 0.05em;
 }
 
-.sub-estatistica {
-    font-family: var(--fonte-mono);
+.recursos-cartao-estatistica__sub {
+
     font-size: 10px;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     margin-top: 5px;
     letter-spacing: 0.05em;
 }
 
 /* ---- GRADE DE COFRES ---- */
-.grade-cofres {
+.recursos-grade-cofres {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
 
 /* ---- CARTÃO DE COFRE ---- */
-.cartao-cofre {
-    background: var(--cor-fundo-cartao);
-    border: 1px solid var(--cor-borda);
+.recursos-cofre {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     padding: 0;
     overflow: hidden;
@@ -353,57 +118,56 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.cartao-cofre::after {
+.recursos-cofre::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 80% 20%, rgba(0, 229, 255, 0.04) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 80% 20%, rgba(17, 173, 193, 0.04) 0%, transparent 60%);
     pointer-events: none;
 }
 
-.cartao-cofre:hover {
-    border-color: var(--cor-borda-clara);
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.07);
+.recursos-cofre:hover {
+    border-color: var(--outline-color);
+    box-shadow: 0 0 30px rgba(17, 173, 193, 0.07);
 }
 
-.cartao-cofre.cofre-alerta {
-    border-color: rgba(255, 59, 92, 0.3);
+.recursos-cofre--alerta {
+    border-color: rgba(201, 36, 100, 0.3);
 }
 
-.cartao-cofre.cofre-alerta:hover {
-    border-color: rgba(255, 59, 92, 0.6);
-    box-shadow: 0 0 30px rgba(255, 59, 92, 0.1);
+.recursos-cofre--alerta:hover {
+    border-color: rgba(201, 36, 100, 0.6);
+    box-shadow: 0 0 30px rgba(201, 36, 100, 0.1);
 }
 
 /* Cabeçalho do cofre */
-.cabecalho-cofre {
+.recursos-cofre__cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 18px;
-    border-bottom: 1px solid var(--cor-borda);
-    background: rgba(0, 20, 30, 0.5);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.identificador-cofre {
-    font-family: var(--fonte-mono);
+.recursos-cofre__identificador {
+
     font-size: 10px;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     letter-spacing: 0.12em;
     display: block;
     margin-bottom: 3px;
 }
 
-.nome-cofre {
-    font-family: var(--fonte-display);
+.recursos-cofre__nome {
+
     font-size: 15px;
     font-weight: 600;
-    color: var(--texto-principal);
+    color: var(--white);
     letter-spacing: 0.05em;
 }
 
-.taxa-cofre {
-    font-family: var(--fonte-mono);
+.recursos-cofre__taxa {
+
     font-size: 10px;
     letter-spacing: 0.1em;
     padding: 4px 10px;
@@ -411,111 +175,96 @@ body {
     border: 1px solid;
 }
 
-.taxa-verde {
-    color: var(--verde);
-    border-color: rgba(0, 255, 153, 0.35);
-    background: rgba(0, 255, 153, 0.06);
+.recursos-cofre__taxa--verde {
+    color: var(--mint);
+    border-color: rgba(109, 247, 193, 0.35);
+    background: rgba(109, 247, 193, 0.06);
 }
 
-.taxa-amarelo {
-    color: var(--amarelo);
-    border-color: rgba(255, 193, 7, 0.35);
-    background: rgba(255, 193, 7, 0.06);
+.recursos-cofre__taxa--amarelo {
+    color: var(--yellow);
+    border-color: rgba(247, 228, 118, 0.35);
+    background: rgba(247, 228, 118, 0.06);
 }
 
-.taxa-vermelho {
-    color: var(--vermelho);
-    border-color: rgba(255, 59, 92, 0.35);
-    background: rgba(255, 59, 92, 0.06);
-    animation: animacaoPulsoVermelho 2s ease-in-out infinite;
-}
-
-@keyframes animacaoPulsoVermelho {
-
-    0%,
-    100% {
-        box-shadow: none;
-    }
-
-    50% {
-        box-shadow: 0 0 10px rgba(255, 59, 92, 0.4);
-    }
+.recursos-cofre__taxa--vermelho {
+    color: var(--magenta);
+    border-color: rgba(201, 36, 100, 0.35);
+    background: rgba(201, 36, 100, 0.06);
 }
 
 /* Corpo do cofre */
-.corpo-cofre {
+.recursos-cofre__corpo {
     display: flex;
     padding: 18px;
     gap: 16px;
 }
 
-.informacoes-cofre {
+.recursos-cofre__informacoes {
     flex: 1;
 }
 
 /* Exibição de massa */
-.massa-cofre {
+.recursos-cofre__massa {
     display: flex;
     align-items: baseline;
     gap: 6px;
     margin-bottom: 8px;
 }
 
-.valor-massa {
-    font-family: var(--fonte-display);
+.recursos-cofre__valor-massa {
     font-size: 36px;
     font-weight: 700;
-    color: var(--ciano);
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    color: var(--cyan);
+    text-shadow: 0 0 20px rgba(17, 173, 193, 0.5);
     line-height: 1;
     letter-spacing: -0.02em;
 }
 
-.massa-maxima {
-    font-family: var(--fonte-mono);
+.recursos-cofre__massa-maxima {
     font-size: 13px;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
 }
 
 /* Percentual */
-.percentual-cofre {
-    font-family: var(--fonte-mono);
+.recursos-cofre__percentual {
+
     font-size: 11px;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     margin-bottom: 8px;
     text-align: right;
 }
 
 /* Barra de progresso */
-.barra-progresso {
+.recursos-cofre__barra-progresso {
     height: 10px;
-    background: rgba(0, 20, 30, 0.8);
+    background: var(--bg-panel);
     border-radius: 2px;
-    border: 1px solid var(--cor-borda);
+    border: 1px solid var(--border-color);
     overflow: hidden;
     position: relative;
     margin-bottom: 16px;
 }
 
-.preenchimento-progresso {
+.recursos-cofre__preenchimento-progresso {
     height: 100%;
     border-radius: 1px;
     position: relative;
     transition: width 1s ease;
 }
 
-.preenchimento-ciano {
-    background: linear-gradient(90deg, var(--ciano-escuro), var(--ciano));
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+.recursos-cofre__preenchimento-progresso--ciano {
+    background: linear-gradient(90deg, var(--teal), var(--cyan));
+    box-shadow: 0 0 10px rgba(17, 173, 193, 0.5);
 }
 
-.preenchimento-amarelo {
-    background: linear-gradient(90deg, var(--amarelo-escuro), var(--amarelo));
-    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+.recursos-cofre__preenchimento-progresso--amarelo {
+    background: linear-gradient(90deg, var(--orange), var(--yellow));
+    box-shadow: 0 0 10px rgba(247, 228, 118, 0.5);
 }
 
 /* Marcações */
-.marcacoes-progresso {
+.recursos-cofre__marcacoes-progresso {
     position: absolute;
     inset: 0;
     display: flex;
@@ -524,94 +273,81 @@ body {
     pointer-events: none;
 }
 
-.marcacoes-progresso span {
+.recursos-cofre__marcacoes-progresso span {
     width: 1px;
     background: rgba(0, 0, 0, 0.5);
 }
 
 /* Métricas do cofre */
-.metricas-cofre {
+.recursos-cofre__metricas {
     display: flex;
     gap: 22px;
     margin-bottom: 14px;
 }
 
-.metrica {
+.recursos-cofre__metrica {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.icone-metrica {
+.recursos-cofre__icone-metrica {
     font-size: 10px;
     opacity: 0.5;
     margin-bottom: 2px;
 }
 
-.rotulo-metrica {
-    font-family: var(--fonte-mono);
+.recursos-cofre__rotulo-metrica {
+
     font-size: 8px;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
-.valor-metrica {
-    font-family: var(--fonte-mono);
+.recursos-cofre__valor-metrica {
+
     font-size: 12px;
-    color: var(--texto-principal);
+    color: var(--white);
     letter-spacing: 0.05em;
 }
 
 /* Rodapé do cofre */
-.rodape-cofre {
+.recursos-cofre__rodape {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 12px;
-    border-top: 1px solid var(--cor-borda);
+    border-top: 1px solid var(--border-color);
 }
 
-.rotulo-transferencia {
-    font-family: var(--fonte-mono);
+.recursos-cofre__rotulo-transferencia {
+
     font-size: 9px;
-    color: var(--texto-fraco);
+    color: var(--text-secondary);
     letter-spacing: 0.08em;
 }
 
-.status-cofre {
-    font-family: var(--fonte-mono);
+.recursos-cofre__status {
+
     font-size: 9px;
     letter-spacing: 0.1em;
 }
 
-.status-cofre.lacrado {
-    color: var(--ciano-escuro);
+.recursos-cofre__status--lacrado {
+    color: var(--cyan);
 }
 
-.status-cofre.ativo {
-    color: var(--verde);
+.recursos-cofre__status--ativo {
+    color: var(--mint);
 }
 
-.status-cofre.aviso {
-    color: var(--vermelho);
-    animation: animacaoPiscar 1.5s step-end infinite;
-}
-
-@keyframes animacaoPiscar {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.3;
-    }
+.recursos-cofre__status--aviso {
+    color: var(--magenta);
 }
 
 /* ---- TANQUE DO COFRE ---- */
-.tanque-cofre {
+.recursos-cofre__tanque {
     width: 64px;
     flex-shrink: 0;
     display: flex;
@@ -619,22 +355,22 @@ body {
     justify-content: center;
 }
 
-.corpo-tanque {
+.recursos-cofre__corpo-tanque {
     width: 54px;
     height: 120px;
-    background: #04111a;
-    border: 1px solid var(--cor-borda-clara);
+    background: var(--bg-panel);
+    border: 1px solid var(--outline-color);
     border-radius: 6px 6px 4px 4px;
     position: relative;
     overflow: hidden;
     box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.7),
-        0 0 12px rgba(0, 229, 255, 0.08);
+        0 0 12px rgba(17, 173, 193, 0.08);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-.corpo-tanque::before {
+.recursos-cofre__corpo-tanque::before {
     content: '';
     position: absolute;
     top: 4px;
@@ -648,7 +384,7 @@ body {
 }
 
 /* Textura de fibra de carbono */
-.corpo-tanque::after {
+.recursos-cofre__corpo-tanque::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -659,60 +395,45 @@ body {
     pointer-events: none;
 }
 
-.preenchimento-tanque {
-    background: linear-gradient(180deg, rgba(0, 180, 220, 0.35) 0%, rgba(0, 229, 255, 0.2) 100%);
-    border-top: 1px solid rgba(0, 229, 255, 0.5);
+.recursos-cofre__preenchimento-tanque {
+    background: linear-gradient(180deg, rgba(17, 173, 193, 0.35) 0%, rgba(17, 173, 193, 0.2) 100%);
+    border-top: 1px solid rgba(17, 173, 193, 0.5);
     position: relative;
     z-index: 3;
     transition: height 1.5s ease;
     overflow: hidden;
 }
 
-.preenchimento-tanque::before {
+.recursos-cofre__preenchimento-tanque::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 2px;
-    background: rgba(0, 229, 255, 0.7);
-    animation: animacaoOnda 2s ease-in-out infinite;
+    background: rgba(17, 173, 193, 0.7);
 }
 
-@keyframes animacaoOnda {
-
-    0%,
-    100% {
-        transform: scaleX(1) translateX(0);
-        opacity: 0.8;
-    }
-
-    50% {
-        transform: scaleX(0.95) translateX(2px);
-        opacity: 1;
-    }
+.recursos-cofre__preenchimento-tanque--amarelo {
+    background: linear-gradient(180deg, rgba(247, 228, 118, 0.35) 0%, rgba(247, 228, 118, 0.2) 100%);
+    border-top-color: rgba(247, 228, 118, 0.5);
 }
 
-.tanque-amarelo {
-    background: linear-gradient(180deg, rgba(220, 160, 0, 0.35) 0%, rgba(255, 193, 7, 0.2) 100%);
-    border-top-color: rgba(255, 193, 7, 0.5);
+.recursos-cofre__preenchimento-tanque--amarelo::before {
+    background: rgba(247, 228, 118, 0.7);
 }
 
-.tanque-amarelo::before {
-    background: rgba(255, 193, 7, 0.7);
+.recursos-cofre__preenchimento-tanque--baixo {
+    background: linear-gradient(180deg, rgba(201, 36, 100, 0.25) 0%, rgba(201, 36, 100, 0.15) 100%);
+    border-top-color: rgba(201, 36, 100, 0.5);
 }
 
-.tanque-baixo {
-    background: linear-gradient(180deg, rgba(255, 80, 80, 0.25) 0%, rgba(255, 59, 92, 0.15) 100%);
-    border-top-color: rgba(255, 59, 92, 0.5);
-}
-
-.tanque-baixo::before {
-    background: rgba(255, 59, 92, 0.7);
+.recursos-cofre__preenchimento-tanque--baixo::before {
+    background: rgba(201, 36, 100, 0.7);
 }
 
 /* Bolhas */
-.bolhas-tanque {
+.recursos-cofre__bolhas-tanque {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -720,130 +441,56 @@ body {
     top: 0;
 }
 
-.bolhas-tanque span {
+.recursos-cofre__bolhas-tanque span {
     position: absolute;
     width: 4px;
     height: 4px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
-    animation: animacaoSubida 3s ease-in infinite;
 }
 
-.bolhas-tanque span:nth-child(1) {
+.recursos-cofre__bolhas-tanque span:nth-child(1) {
     left: 20%;
-    animation-delay: 0s;
-    animation-duration: 2.5s;
 }
 
-.bolhas-tanque span:nth-child(2) {
+.recursos-cofre__bolhas-tanque span:nth-child(2) {
     left: 50%;
-    animation-delay: 1s;
-    animation-duration: 3.5s;
     width: 3px;
     height: 3px;
 }
 
-.bolhas-tanque span:nth-child(3) {
+.recursos-cofre__bolhas-tanque span:nth-child(3) {
     left: 75%;
-    animation-delay: 0.5s;
-    animation-duration: 4s;
     width: 2px;
     height: 2px;
 }
 
-@keyframes animacaoSubida {
-    0% {
-        bottom: 5%;
-        opacity: 0.4;
-    }
-
-    80% {
-        opacity: 0.2;
-    }
-
-    100% {
-        bottom: 95%;
-        opacity: 0;
-    }
-}
-
 /* Ícone do tanque */
-.icone-tanque {
+.recursos-cofre__icone-tanque {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 18px;
-    color: rgba(0, 229, 255, 0.4);
+    color: rgba(17, 173, 193, 0.4);
     z-index: 4;
     pointer-events: none;
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
-}
-
-/* ---- BARRA DE RODAPÉ ---- */
-.barra-rodape {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 8px 28px;
-    background: rgba(3, 13, 18, 0.95);
-    border-top: 1px solid var(--cor-borda);
-    font-family: var(--fonte-mono);
-    font-size: 9px;
-    color: var(--texto-fraco);
-    letter-spacing: 0.1em;
-    position: sticky;
-    bottom: 0;
-}
-
-.item-rodape:first-child {
-    color: var(--verde);
-    animation: animacaoPiscarDevagar 3s step-end infinite;
-}
-
-@keyframes animacaoPiscarDevagar {
-
-    0%,
-    90%,
-    100% {
-        opacity: 1;
-    }
-
-    95% {
-        opacity: 0.5;
-    }
-}
-
-.separador-rodape {
-    color: var(--texto-mudo);
-}
-
-.rodape-direita {
-    margin-left: auto;
+    text-shadow: 0 0 10px rgba(17, 173, 193, 0.3);
 }
 
 /* ---- RESPONSIVO ---- */
-@media (max-width: 1200px) {
-    .linha-estatisticas {
-        grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1100px) {
+    .recursos-estatisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 900px) {
-    .grade-cofres {
+    .recursos-estatisticas {
         grid-template-columns: 1fr;
     }
 
-    .linha-estatisticas {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cabecalho {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .cabecalho-titulo {
-        font-size: 18px;
+    .recursos-grade-cofres {
+        grid-template-columns: 1fr;
     }
 }

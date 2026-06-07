@@ -1,10 +1,10 @@
-/* ----------------------------- Planet SVG ----------------------------- */
-.symbol {
+/* ----------------------------- Planeta SVG ----------------------------- */
+.planeta__simbolo {
     color: var(--color-primary);
     padding-right: 5px;
 }
 
-svg {
+.planeta {
     width: 100%;
     max-width: min(70vh, 55vw);
     height: auto;
@@ -12,37 +12,36 @@ svg {
     perspective: 50px;
 }
 
-circle {
+.planeta circle {
     stroke: var(--color-primary);
     stroke-width: 3px;
     fill: none;
     transition: stroke 0.5s ease;
 }
 
-.equator {
+.planeta__equador {
     transform: rotateZ(-20deg) rotateX(125deg);
 }
 
-.meridian {
-    animation: turn 1s infinite linear;
+.planeta__meridiano {
+    animation: planeta-girar 1s infinite linear;
     transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--start));
 }
 
-@keyframes turn {
+@keyframes planeta-girar {
     100% {
         transform: rotateZ(-20deg) rotateX(35deg) rotateY(var(--end));
     }
 }
 
 
-/* ----------------------------- GitHub Status Box ----------------------------- */
-.github-status-box {
+/* ----------------------------- Gráfico de Histórico ----------------------------- */
+.grafico-github {
     background: var(--bg-panel);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 15px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     color: var(--text-primary);
     display: flex;
     flex-direction: column;
@@ -51,30 +50,35 @@ circle {
 }
 
 @media screen and (max-width: 1117px) {
-    .github-status-box {
+    .grafico-github {
         width: 320px;
     }
 }
 
-.github-graph-header {
+.grafico-github__cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.github-graph-header h2 {
+.grafico-github__titulo {
     margin: 0;
     font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
 }
 
-.github-graph-header .contributions-count {
+.grafico-github__simbolo {
+    color: var(--color-primary);
+    padding-right: 5px;
+}
+
+.grafico-github__contribuicoes {
     font-size: 12px;
     color: var(--text-secondary);
 }
 
-.github-graph {
+.grafico-github__grade {
     display: grid;
     grid-template-rows: repeat(7, 10px);
     grid-auto-flow: column;
@@ -82,8 +86,7 @@ circle {
     gap: 3px;
 }
 
-.github-graph .square,
-.legend .square {
+.grafico-github__quadrado {
     width: 10px;
     height: 10px;
     border-radius: 2px;
@@ -92,27 +95,23 @@ circle {
     outline-offset: -1px;
 }
 
-.github-graph .square[data-level="1"],
-.legend .square[data-level="1"] {
+.grafico-github__quadrado[data-level="1"] {
     background-color: var(--graph-color-lv1);
 }
 
-.github-graph .square[data-level="2"],
-.legend .square[data-level="2"] {
+.grafico-github__quadrado[data-level="2"] {
     background-color: var(--graph-color-lv2);
 }
 
-.github-graph .square[data-level="3"],
-.legend .square[data-level="3"] {
+.grafico-github__quadrado[data-level="3"] {
     background-color: var(--graph-color-lv3);
 }
 
-.github-graph .square[data-level="4"],
-.legend .square[data-level="4"] {
+.grafico-github__quadrado[data-level="4"] {
     background-color: var(--graph-color-lv4);
 }
 
-.github-graph-footer {
+.grafico-github__rodape {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -122,7 +121,7 @@ circle {
     margin-top: 5px;
 }
 
-.github-graph-footer .legend {
+.grafico-github__legenda {
     display: flex;
     gap: 3px;
 }

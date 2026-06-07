@@ -1,5 +1,5 @@
-/* ────── Sidebar Navigation ──────── */
-.sidenav {
+/* ────── Sidebar Navigation (Menu Lateral) ──────── */
+.menu-lateral {
     position: fixed;
     left: 0;
     top: 50%;
@@ -11,16 +11,21 @@
     z-index: 1000;
 }
 
-.sidenav:hover {
+.menu-lateral:hover, .menu-lateral--aberto {
     background-color: var(--bg-main);
     width: 300px;
 }
 
-.hamburger-menu {
+.menu-lateral__hamburguer {
     display: none;
 }
 
-.sidenav a {
+.menu-lateral__navegacao {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-lateral__link {
     display: flex;
     align-items: center;
     padding: 15px;
@@ -33,26 +38,26 @@
     position: relative;
 }
 
-.sidenav a:hover,
-.sidenav a.active {
+.menu-lateral__link:hover,
+.menu-lateral__link--ativo {
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     color: var(--bg-main);
     font-weight: bold;
 }
 
-.sidenav a .icon {
+.menu-lateral__icone {
     margin-right: 10px;
     font-size: 20px;
     transition: margin-right 0.3s, color 0.3s;
     color: var(--icon-menu);
 }
 
-.sidenav a:hover .icon,
-.sidenav a.active .icon {
+.menu-lateral__link:hover .menu-lateral__icone,
+.menu-lateral__link--ativo .menu-lateral__icone {
     color: var(--bg-main);
 }
 
-.sidenav a .text {
+.menu-lateral__texto {
     opacity: 0;
     max-width: 0;
     overflow: hidden;
@@ -60,14 +65,15 @@
     transition: opacity 0.3s ease, max-width 0.3s ease, margin-left 0.3s ease;
 }
 
-.sidenav:hover a .text {
+.menu-lateral:hover .menu-lateral__texto,
+.menu-lateral--aberto .menu-lateral__texto {
     opacity: 1;
     max-width: 200px;
     margin-left: 15px;
 }
 
 @media screen and (max-width: 1117px) {
-    .sidenav {
+    .menu-lateral {
         width: 100%;
         height: 60px;
         top: 0;
@@ -80,16 +86,16 @@
         transition: height 0.3s ease;
     }
 
-    .sidenav:hover {
+    .menu-lateral:hover {
         width: 100%;
     }
 
-    .sidenav.mobile-open {
+    .menu-lateral--aberto {
         min-height: 100vh;
         overflow-y: auto;
     }
 
-    .hamburger-menu {
+    .menu-lateral__hamburguer {
         display: flex;
         align-items: center;
         min-height: 60px;
@@ -101,28 +107,28 @@
         border: none;
     }
 
-    .hamburger-menu .brand-mobile {
+    .menu-lateral__marca-mobile {
         margin-left: 15px;
         font-size: 18px;
         font-weight: bold;
     }
 
-    .nav-links {
+    .menu-lateral__navegacao {
         display: none;
         flex-direction: column;
         width: 100%;
     }
 
-    .sidenav.mobile-open .nav-links {
+    .menu-lateral--aberto .menu-lateral__navegacao {
         display: flex;
     }
 
-    .sidenav a {
+    .menu-lateral__link {
         padding: 20px;
         border-radius: 0;
     }
 
-    .sidenav a .text {
+    .menu-lateral__link .menu-lateral__texto {
         opacity: 1;
         max-width: none;
         margin-left: 15px;

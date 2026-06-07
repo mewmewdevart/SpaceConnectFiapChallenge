@@ -4,36 +4,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Suporte técnico e atendimento especializado.">
+  <meta name="keywords"
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+  <meta name="author" content="Space Connect">
+  <meta name="theme-color" content="#0b1021">
   <title>Space Connect - Suporte</title>
-  <script src="assets/js/components/head.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="assets/css/base/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/sidebar.css">
+  <link rel="stylesheet" href="assets/css/components/bottombar.css">
 </head>
 
 <body>
-  <!-- Sidebar (montada via JS) -->
-  <div id="sidebar-container"></div>
+  <div class="linhas-varredura" aria-hidden="true"></div>
+  <!-- Sidebar -->
+  <aside class="menu-lateral" id="menu-lateral">
+    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
+      aria-label="Abrir menu">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+      <span class="menu-lateral__marca-mobile">Space Connect</span>
+    </button>
+    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
+      <a href="index.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
+        <span class="menu-lateral__texto">Home</span>
+      </a>
+      <a href="flow.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
+        <span class="menu-lateral__texto">Fluxo de Interações</span>
+      </a>
+      <a href="resources.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
+        <span class="menu-lateral__texto">Gestão de Recursos</span>
+      </a>
+      <a href="alerts.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
+        <span class="menu-lateral__texto">Central de Alertas</span>
+      </a>
+      <a href="support.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
+        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
+        <span class="menu-lateral__texto">Suporte</span>
+      </a>
+    </nav>
+  </aside>
 
   <!-- Main Content -->
-  <section class="content">
+  <section class="conteudo">
+    <main class="conteudo__principal">
+      <!-- Header -->
+      <header class="cabecalho-conteudo">
+        <div class="cabecalho-conteudo__cabecalho">
+          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
+              Suporte</span></p>
+        </div>
+        <h1 class="cabecalho-conteudo__titulo">Suporte</h1>
 
-    <main class="main-content">
-      <!-- Header (montada via JS) -->
-      <div id="header-container" data-title="Suporte Técnico" data-subtitle="Atendimento Especializado - Mission Control"></div>
-
+        <div class="cabecalho-conteudo__bloco">
+          <p class="cabecalho-conteudo__descricao">Gestão de Recursos e Reservatórios</p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo"> XPTO Alertas</span>
+        </div>
+      </header>
     </main>
-
-    <div class="right-panel">
-
-    </div>
   </section>
 
-  <!-- Bottombar de Telemetria (montada via JS) -->
-  <div id="bottombar-container"></div>
+  <!-- Bottombar de Telemetria -->
+  <footer class="barra-telemetria">
+    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
+    <div class="barra-telemetria__janela-letreiro">
+      <div class="barra-telemetria__letreiro">
+        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
+        <span class="barra-telemetria__item">POWER 96.4 kW</span>
+        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
+        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
+        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
+        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
+      </div>
+    </div>
+    <span class="barra-telemetria__relogio" id="relogio-telemetria">PRIME SOL 0427 · 00:00:00</span>
+  </footer>
 
-  <!-- Componentes compartilhados -->
-  <script src="assets/js/components/sidebar.js"></script>
-  <script src="assets/js/components/bottombar.js"></script>
-  <script src="assets/js/components/header.js"></script>
-  <script src="assets/js/components/router.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
