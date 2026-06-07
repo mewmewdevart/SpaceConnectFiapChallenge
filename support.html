@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="assets/css/layout/grid.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
+  <link rel="stylesheet" href="assets/css/pages/support.css">
 </head>
 
 <body>
@@ -68,10 +69,110 @@
         <h1 class="cabecalho-conteudo__titulo">Suporte</h1>
 
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Gestão de Recursos e Reservatórios</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo"> XPTO Alertas</span>
+          <p class="cabecalho-conteudo__descricao">Abertura e Acompanhamento de Chamados</p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--info"> Atendimento Online</span>
         </div>
       </header>
+
+      <div class="painel-suporte">
+        <div class="painel-suporte__linha-resumo">
+          <article class="painel-suporte__cartao-resumo">
+            <span class="painel-suporte__rotulo-resumo">CHAMADOS TOTAIS</span>
+            <strong class="painel-suporte__valor-resumo valor-suporte--total">142</strong>
+            <span class="painel-suporte__texto-auxiliar">Últimos 30 dias</span>
+          </article>
+
+          <article class="painel-suporte__cartao-resumo">
+            <span class="painel-suporte__rotulo-resumo">EM ANDAMENTO</span>
+            <strong class="painel-suporte__valor-resumo valor-suporte--andamento">12</strong>
+            <span class="painel-suporte__texto-auxiliar">Aguardando técnicos</span>
+          </article>
+
+          <article class="painel-suporte__cartao-resumo">
+            <span class="painel-suporte__rotulo-resumo">RESOLVIDOS</span>
+            <strong class="painel-suporte__valor-resumo valor-suporte--resolvido">130</strong>
+            <span class="painel-suporte__texto-auxiliar">Encerrados com sucesso</span>
+          </article>
+        </div>
+
+        <div class="painel-suporte__conteudo-duplo">
+          <!-- Form to open a ticket -->
+          <section class="secao-suporte">
+            <h2 class="secao-titulo"><i class="fa-solid fa-headset"></i> Abrir Novo Chamado</h2>
+            <form class="formulario-suporte" onsubmit="event.preventDefault();">
+              <div class="formulario-grupo">
+                <label for="assunto" class="formulario-label">Categoria do Problema</label>
+                <select id="assunto" class="formulario-input" required>
+                  <option value="" disabled selected>Selecione uma categoria...</option>
+                  <option value="hardware">Falha de Hardware/Equipamento</option>
+                  <option value="software">Erro de Sistema / Software</option>
+                  <option value="recursos">Problema de Gestão de Recursos</option>
+                  <option value="telemetria">Perda de Telemetria / Conexão</option>
+                  <option value="outro">Outro...</option>
+                </select>
+              </div>
+              <div class="formulario-grupo">
+                <label for="prioridade" class="formulario-label">Prioridade</label>
+                <select id="prioridade" class="formulario-input">
+                  <option value="baixa">Baixa</option>
+                  <option value="media" selected>Média</option>
+                  <option value="alta">Alta</option>
+                  <option value="critica">Crítica (Emergência)</option>
+                </select>
+              </div>
+              <div class="formulario-grupo">
+                <label for="descricao" class="formulario-label">Descrição do Problema</label>
+                <textarea id="descricao" class="formulario-textarea" placeholder="Descreva o problema com o máximo de detalhes possível, incluindo módulos afetados e logs (se houver)..." required></textarea>
+              </div>
+              <button type="submit" class="botao-primario">
+                <i class="fa-solid fa-paper-plane"></i> Enviar Chamado
+              </button>
+            </form>
+          </section>
+
+          <!-- List of recent tickets -->
+          <section class="secao-suporte">
+            <h2 class="secao-titulo"><i class="fa-solid fa-list-check"></i> Chamados Recentes</h2>
+            <div class="lista-chamados">
+              <article class="chamado-cartao">
+                <div class="chamado-cartao__cabecalho">
+                  <span class="chamado-cartao__id">#TKT-8942</span>
+                  <span class="badge-status badge-status--aberto">Aberto</span>
+                </div>
+                <h3 class="chamado-cartao__titulo">Falha na Bomba de Recirculação H2O</h3>
+                <p class="chamado-cartao__meta">Aberto em: 07/06/2026 - 10:24 | Prioridade: Alta</p>
+                <div class="chamado-cartao__acoes">
+                  <button class="botao-acao-chamado">Ver Detalhes</button>
+                </div>
+              </article>
+
+              <article class="chamado-cartao">
+                <div class="chamado-cartao__cabecalho">
+                  <span class="chamado-cartao__id">#TKT-8935</span>
+                  <span class="badge-status badge-status--andamento">Em Andamento</span>
+                </div>
+                <h3 class="chamado-cartao__titulo">Atualização do Firmware de Telemetria (DSN)</h3>
+                <p class="chamado-cartao__meta">Aberto em: 06/06/2026 - 14:15 | Prioridade: Média</p>
+                <div class="chamado-cartao__acoes">
+                  <button class="botao-acao-chamado">Ver Detalhes</button>
+                </div>
+              </article>
+
+              <article class="chamado-cartao">
+                <div class="chamado-cartao__cabecalho">
+                  <span class="chamado-cartao__id">#TKT-8910</span>
+                  <span class="badge-status badge-status--resolvido">Resolvido</span>
+                </div>
+                <h3 class="chamado-cartao__titulo">Sublimação Anômala no Cryo Vault Alpha</h3>
+                <p class="chamado-cartao__meta">Aberto em: 05/06/2026 - 08:30 | Prioridade: Crítica</p>
+                <div class="chamado-cartao__acoes">
+                  <button class="botao-acao-chamado">Ver Detalhes</button>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
   </section>
 
