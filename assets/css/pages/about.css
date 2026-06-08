@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Page: About (Metadados do Projeto)
+   ========================================================================== */
+
+/* Typography */
+.secao-titulo {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgb(var(--white));
+}
+
+.secao-titulo i {
+    color: rgb(var(--cyan));
+}
+
+/* Sections */
+.secao-sobre {
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sobre-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sobre-texto-bloco {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sobre-paragrafo {
+    color: rgb(var(--text-secondary));
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    max-width: 650px;
+    margin-bottom: 12px;
+}
+
+.sobre-destaque-cyan {
+    color: rgb(var(--cyan));
+}
+
+.sobre-controles {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.sobre-controles-label {
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.sobre-controles .botao-dsn {
+    background: rgba(var(--magenta), 0.1);
+    border: 1px solid rgb(var(--magenta));
+    color: rgb(var(--magenta));
+    box-shadow: 0 0 10px rgba(var(--magenta), 0.1);
+}
+
+.sobre-controles .botao-dsn:hover {
+    background: rgba(var(--magenta), 0.2);
+    box-shadow: 0 0 15px rgba(var(--magenta), 0.3);
+}
+
+/* ODS Grid */
+.sobre-ods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.ods-card {
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    transition: transform 0.3s ease;
+}
+
+.ods-card:hover {
+    transform: translateY(-5px);
+}
+
+.ods-card--cyan { border-left: 3px solid rgb(var(--cyan)); }
+.ods-card--green { border-left: 3px solid rgb(var(--green)); }
+.ods-card--yellow { border-left: 3px solid rgb(var(--yellow)); }
+
+.ods-card__icone {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.ods-card__icone--cyan { color: rgb(var(--cyan)); }
+.ods-card__icone--green { color: rgb(var(--green)); }
+.ods-card__icone--yellow { color: rgb(var(--yellow)); }
+
+.ods-card__titulo {
+    font-size: var(--text-sm);
+    color: rgb(var(--white));
+    margin-bottom: 6px;
+}
+
+.ods-card__descricao {
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
+    line-height: 1.5;
+}
+
+/* Team Section */
+.secao-equipe {
+    margin-top: 24px;
+    gap: 20px;
+}
+
+.equipe-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgb(var(--text-secondary));
+}
+
+.equipe-lista {
+    list-style-type: none;
+    padding-left: 10px;
+    border-left: 2px solid rgb(var(--cyan));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

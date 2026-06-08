@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Histórico e correlações do sistema de controle hídrico.">
+  <meta name="description" content="Acompanhe sinais vitais, O2 e localização dos astronautas da colônia.">
   <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+    content="Gestão de recursos, colônia lunar, monitoramento de tripulação, sustentabilidade espacial, dashboard espacial, Space Connect">
   <meta name="author" content="Space Connect">
   <meta name="theme-color" content="#0b1021">
 
   <!-- SEO & Open Graph -->
-  <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
-  <meta property="og:title" content="Space Connect - Fluxo de Interações">
-  <meta property="og:description" content="Histórico e correlações do sistema de controle hídrico.">
+  <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/crew.html">
+  <meta property="og:title" content="Space Connect - Gestão de Tripulação">
+  <meta property="og:description" content="Acompanhe sinais vitais, O2 e localização dos astronautas da colônia.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
+  <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/crew.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Fluxo de Interações">
-  <meta name="twitter:description" content="Histórico e correlações do sistema de controle hídrico.">
+  <meta name="twitter:title" content="Space Connect - Gestão de Tripulação">
+  <meta name="twitter:description" content="Acompanhe sinais vitais, O2 e localização dos astronautas da colônia.">
 
-  <title>Space Connect - Fluxo de Interações</title>
+  <title>Space Connect - Gestão de Tripulação</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
-  <link rel="stylesheet" href="assets/css/pages/flow.css">
+  <link rel="stylesheet" href="assets/css/pages/crew.css">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
         <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
         <span class="menu-lateral__texto">Home</span>
       </a>
-      <a href="flow.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
+      <a href="flow.html" class="menu-lateral__link">
         <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
         <span class="menu-lateral__texto">Fluxo de Interações</span>
       </a>
@@ -62,7 +62,7 @@
         <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
         <span class="menu-lateral__texto">Central de Alertas</span>
       </a>
-      <a href="crew.html" class="menu-lateral__link">
+      <a href="crew.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
         <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
         <span class="menu-lateral__texto">Tripulação</span>
       </a>
@@ -89,7 +89,7 @@
     <div class="menu-superior__buscar">
       <div class="menu-superior__buscar-container">
         <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
+        <input type="text" placeholder="Buscar membros, especialidades..." aria-label="Buscar membros e especialidades">
 
       </div>
     </div>
@@ -100,8 +100,6 @@
         <span class="status-dot"></span>
         <span class="status-text">Nominal</span>
       </div>
-
-
 
       <!-- Notificações -->
       <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
@@ -135,39 +133,92 @@
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
-              Interações</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> / RH e
+              Sistema</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Malha de Tratamento e Biomassa</h1>
+        <h1 class="cabecalho-conteudo__titulo">Centro de Operações Biológicas</h1>
+
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Controle interativo do ciclo de água, osmose reversa e reatores de
-            compostagem.</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Fluxo Contínuo Ativo</span>
+          <p class="cabecalho-conteudo__descricao">Monitoramento sistêmico de tripulação, impacto de recursos e missões
+            ativas.</p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--nominal">Nó Ativo</span>
         </div>
       </header>
 
-      <div class="fluxo-container">
+      <div class="painel-crew">
+        <!-- Visão Macro (Saúde da Colônia) -->
+        <section class="macro-grid" aria-label="Saúde da Colônia">
 
-        <div class="fluxo-quadro" id="fluxo-quadro">
-          <div class="fluxo-quadro__conteudo" id="fluxo-quadro__conteudo">
-            <svg class="fluxo-svg"></svg>
+          <div class="macro-card macro-card--cyan card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">92%</span>
+              <span class="macro-card__label">Produtividade Geral</span>
+            </div>
           </div>
 
-          <div class="fluxo-zoom" role="toolbar" aria-label="Controles de Zoom">
-            <button class="fluxo-zoom__botao" id="zoom-in-btn" title="Aumentar Zoom" aria-label="Aumentar Zoom"><i
-                class="fa-solid fa-magnifying-glass-plus"></i></button>
-            <button class="fluxo-zoom__botao" id="zoom-out-btn" title="Diminuir Zoom" aria-label="Diminuir Zoom"><i
-                class="fa-solid fa-magnifying-glass-minus"></i></button>
-            <button class="fluxo-zoom__botao" id="zoom-reset-btn" title="Resetar Visualização"
-              aria-label="Resetar Visualização"><i class="fa-solid fa-expand"></i></button>
+          <div class="macro-card macro-card--yellow card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-battery-half"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">31%</span>
+              <span class="macro-card__label">Fadiga Média</span>
+            </div>
           </div>
-        </div>
 
-        <div class="fluxo-mobile-container" id="mobile-view-container"></div>
+          <div class="macro-card macro-card--cyan card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">126<span class="macro-card__unidade">L</span></span>
+              <span class="macro-card__label">Consumo Diário (H2O)</span>
+            </div>
+          </div>
+
+          <div class="macro-card macro-card--cyan card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">84<span class="macro-card__unidade">kg</span></span>
+              <span class="macro-card__label">Consumo Diário (O2)</span>
+            </div>
+          </div>
+
+          <div class="crew-distribuicao">
+            <span class="crew-distribuicao__tag"><i class="fa-solid fa-users"></i> 17 Membros</span>
+            <span class="crew-distribuicao__tag"><i class="fa-solid fa-wrench"></i> 6 Engenharia</span>
+            <span class="crew-distribuicao__tag"><i class="fa-solid fa-flask"></i> 4 Ciência</span>
+            <span class="crew-distribuicao__tag"><i class="fa-solid fa-leaf"></i> 3 Agricultura</span>
+            <span class="crew-distribuicao__tag"><i class="fa-solid fa-staff-snake"></i> 2 Saúde</span>
+            <span class="crew-distribuicao__tag"><i class="fa-solid fa-jet-fighter-up"></i> 2 Comando</span>
+          </div>
+
+        </section>
+
+        <!-- Filtros e Paginação -->
+        <section class="crew-controls" aria-label="Controles da Tripulação">
+          <div class="crew-controls__pesquisa card-glass ">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="crew-search" placeholder="Buscar por nome, função ou setor..."
+              aria-label="Pesquisar tripulante">
+          </div>
+          <div class="crew-controls__paginacao" id="crew-pagination">
+            <!-- Renderizado via JS -->
+          </div>
+        </section>
+
+        <!-- Grid de Roster (Tripulantes Detalhados) -->
+        <section class="crew-roster" id="crew-roster-container" aria-label="Lista de Tripulantes Operacionais">
+          <!-- Renderizado via assets/js/pages/crew.js -->
+        </section>
+
       </div>
     </main>
-
-    <aside class="painel-direito"></aside>
   </section>
 
   <!-- Bottombar de Telemetria -->
@@ -187,8 +238,8 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/crew.js"></script>
 
-  <script src="assets/js/pages/flow.js"></script>
 </body>
 
 </html>

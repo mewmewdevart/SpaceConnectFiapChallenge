@@ -56,7 +56,7 @@
             { id: "conn_2", from: "atm_collector", to: "uv_sterilizer", status: "open" },
             { id: "conn_3", from: "biomass_collector", to: "comp_reactor", status: "open" },
             { id: "conn_4", from: "ro_purifier", to: "potable_tank", status: "open" },
-            { id: "conn_5", from: "uv_sterilizer", to: "irrigation_tank", status: "closed" },
+            { id: "conn_5", from: "uv_sterilizer", to: "irrigation_tank", status: "open" },
             { id: "conn_6", from: "comp_reactor", to: "biotic_fert", status: "open" }
         ];
 
@@ -68,7 +68,7 @@
 
             modules.forEach(module => {
                 const card = document.createElement('div');
-                card.classList.add('fluxo-cartao');
+                card.classList.add('fluxo-cartao', 'card-glass', 'hud-corners');
                 card.id = `card-${module.id}`;
                 card.style.left = `${module.x}px`;
                 card.style.top = `${module.y}px`;
@@ -242,13 +242,20 @@
 
         function toggleValve(conn) {
             conn.status = conn.status === 'open' ? 'closed' : 'open';
-            
+
             drawConnections();
 
             if (selectedElement && selectedElement.type === 'connection' && selectedElement.data.id === conn.id) {
                 selectElement(selectedElement);
             }
             updateMobileView();
+
+            const fromMod = modules.find(m => m.id === conn.from);
+            const toMod = modules.find(m => m.id === conn.to);
+            if (fromMod && toMod && window.addTelemetryLog) {
+                const acao = conn.status === 'open' ? 'ABERTA' : 'FECHADA';
+                window.addTelemetryLog(`Válvula de ${fromMod.name} para ${toMod.name} foi ${acao}`);
+            }
         }
 
         function handleSocketOutClick(moduleId, socketEl) {
@@ -427,7 +434,7 @@
             if (elementObj.type === 'module') {
                 const moduleId = elementObj.id || (elementObj.data && elementObj.data.id);
                 const module = elementObj.data || modules.find(m => m.id === moduleId);
-                
+
                 const card = boardContent.querySelector(`#card-${moduleId}`);
                 if (card) card.classList.add('selecionado');
 
@@ -452,13 +459,6 @@
                             <div class="inspetor-painel__grupo-form">
                                 <label>Subtítulo / Descrição</label>
                                 <input type="text" id="inspect-mod-sub" value="${module.subtitle}">
-                            </div>
-                            <div class="inspetor-painel__grupo-form">
-                                <label>Nível de Armazenamento</label>
-                                <div class="inspetor-painel__container-deslizante">
-                                    <input type="range" id="inspect-mod-level" min="0" max="100" value="${module.level}">
-                                    <span class="inspetor-painel__valor-deslizante" id="inspect-mod-level-val">${module.level}%</span>
-                                </div>
                             </div>
                             <div class="inspetor-painel__grupo-form">
                                 <label>Categoria Física</label>
@@ -622,7 +622,7 @@
 
                 catModules.forEach(mod => {
                     const cardItem = document.createElement('div');
-                    cardItem.className = `fluxo-mobile-cartao ${mod.status === 'warning' ? 'fluxo-cartao--aviso' : ''}`;
+                    cardItem.className = `fluxo-mobile-cartao card-glass  ${mod.status === 'warning' ? 'fluxo-cartao--aviso' : ''}`;
                     cardItem.setAttribute('data-mod-id', mod.id);
                     if (selectedElement && selectedElement.type === 'module' && selectedElement.id === mod.id) {
                         cardItem.classList.add('selecionado');
@@ -707,6 +707,77 @@
             }
         };
         window.addEventListener('resize', window.flowResizeHandler);
+
+        // --- SIMULAÇÃO DE FÍSICA DE FLUIDOS E BACKPRESSURE ---
+        function simulateFlow() {
+            const transferRate = 6;
+
+            const getModule = (id) => modules.find(m => m.id === id);
+
+            modules.forEach(m => {
+                const incomings = connections.filter(c => c.to === m.id);
+                const outgoings = connections.filter(c => c.from === m.id);
+
+                // isReceiving: se for fonte primária (sem entradas) ou tiver alguma entrada aberta
+                const isReceiving = incomings.length === 0 || incomings.some(c => c.status === 'open');
+
+                // canDischarge: se for destino final (sem saídas, simula consumo da colônia) ou tiver alguma saída livre indo para um tanque não-cheio (< 100)
+                const canDischarge = outgoings.length === 0 || outgoings.some(c => c.status === 'open' && getModule(c.to).level < 100);
+
+                if (!isReceiving) {
+                    // CONDIÇÃO 1: PAUSADO (Sem suprimento)
+                    // Fica pausado na numeração exata em que estava
+                } else if (isReceiving && !canDischarge) {
+                    // CONDIÇÃO 2: ACÚMULO E BACKPRESSURE (Sem ter pra onde escoar)
+                    // O tanque recebe mas não descarrega (ou porque bloquearam a saída, ou porque o tanque da frente está 100%).
+                    m.level += transferRate;
+                    if (m.level >= 100) m.level = 100;
+                } else if (isReceiving && canDischarge) {
+                    // CONDIÇÃO 3: FLUXO NORMAL LIVRE
+                    // Caso venha de um destravamento recente (estava em 100), reduz um pouco para mostrar que destravou
+                    if (m.level >= 100) m.level -= transferRate;
+
+                    // Oscila levemente
+                    m.level += (Math.random() * 2 - 1);
+
+                    if (m.level < 1) m.level = 1;
+                    if (m.level > 99) m.level = 99;
+                }
+
+                // Renderização visual
+                const card = boardContent.querySelector(`#card-${m.id}`);
+                if (card) {
+                    const displayLevel = Math.round(m.level);
+                    card.style.setProperty('--level-percent', `${displayLevel}%`);
+                    const cardLvlVal = card.querySelector('.fluxo-cartao__valor-nivel');
+                    if (cardLvlVal) cardLvlVal.textContent = `${displayLevel}%`;
+
+                    // Alerta apenas quando entupir por completo
+                    if (m.level === 100) {
+                        card.classList.add('fluxo-cartao--aviso');
+                    } else {
+                        card.classList.remove('fluxo-cartao--aviso');
+                    }
+                }
+            });
+
+            if (selectedElement && selectedElement.type === 'module') {
+                const m = selectedElement.data;
+                const levelSlider = document.getElementById('inspect-mod-level');
+                const levelVal = document.getElementById('inspect-mod-level-val');
+                if (levelSlider && levelVal) {
+                    const roundedLvl = Math.round(m.level);
+                    levelSlider.value = roundedLvl;
+                    levelVal.textContent = `${roundedLvl}%`;
+                }
+            }
+        }
+
+        if (window.flowSimulationInterval) {
+            clearInterval(window.flowSimulationInterval);
+        }
+        window.flowSimulationInterval = setInterval(simulateFlow, 1000);
+        // --- FIM DA SIMULAÇÃO ---
 
         renderCards();
         drawConnections();

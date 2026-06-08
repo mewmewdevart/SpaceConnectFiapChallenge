@@ -31,12 +31,13 @@
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
+  <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/support.css">
 </head>
 
 <body>
-  <div class="linhas-varredura" aria-hidden="true"></div>
+
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
     <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
@@ -61,12 +62,72 @@
         <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
         <span class="menu-lateral__texto">Central de Alertas</span>
       </a>
+      <a href="crew.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
+        <span class="menu-lateral__texto">Tripulação</span>
+      </a>
       <a href="support.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
         <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
         <span class="menu-lateral__texto">Suporte</span>
       </a>
+      <div class="menu-lateral__separador"></div>
+      <a href="about.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
+        <span class="menu-lateral__texto">Sobre</span>
+      </a>
     </nav>
   </aside>
+
+  <!-- Topbar -->
+  <header class="menu-superior">
+    <div class="menu-superior__esquerda">
+      <span class="menu-superior__logo">
+        <i class="fa-solid fa-moon"></i> Space Connect
+      </span>
+    </div>
+
+    <div class="menu-superior__buscar">
+      <div class="menu-superior__buscar-container">
+        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
+        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
+
+      </div>
+    </div>
+
+    <div class="menu-superior__direita">
+      <!-- Status -->
+      <div class="menu-superior__status menu-superior__status--nominal">
+        <span class="status-dot"></span>
+        <span class="status-text">Nominal</span>
+      </div>
+
+
+
+      <!-- Notificações -->
+      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+        <i class="fa-solid fa-bell"></i>
+        <span class="menu-superior__badge">3</span>
+      </button>
+
+      <!-- Usuário Dropdown -->
+      <div class="menu-superior__usuario-dropdown">
+        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+          <div class="menu-superior__avatar">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <span class="menu-superior__nome">Administrador</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="menu-superior__dropdown-menu card-glass " role="menu">
+          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
+          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
+          <div class="dropdown-divisor"></div>
+          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
+            Desconectar</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Main Content -->
   <section class="conteudo">
@@ -74,41 +135,56 @@
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
-              Suporte</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> / Suporte
+              Operacional</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Suporte</h1>
+        <h1 class="cabecalho-conteudo__titulo">Central de Comunicações DSN</h1>
 
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Abertura e Acompanhamento de Chamados</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo"> XPTO Alertas</span>
+          <p class="cabecalho-conteudo__descricao">Protocolos de Engenharia Terra-Lua e Acompanhamento de Chamados</p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Link DSN Estável</span>
         </div>
       </header>
 
       <div class="painel-suporte">
-        <div class="painel-suporte__linha-resumo">
-          <article class="painel-suporte__cartao-resumo">
-            <span class="painel-suporte__rotulo-resumo">CHAMADOS TOTAIS</span>
-            <strong class="painel-suporte__valor-resumo valor-suporte--total">142</strong>
-            <span class="painel-suporte__texto-auxiliar">Últimos 30 dias</span>
+        <div class="macro-grid">
+          <article class="macro-card macro-card--cyan card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor macro-card__valor--destaque">142</span>
+              <span class="macro-card__label">Chamados Totais</span>
+              <span class="macro-card__sub">Últimos 30 dias</span>
+            </div>
           </article>
 
-          <article class="painel-suporte__cartao-resumo">
-            <span class="painel-suporte__rotulo-resumo">EM ANDAMENTO</span>
-            <strong class="painel-suporte__valor-resumo valor-suporte--andamento">12</strong>
-            <span class="painel-suporte__texto-auxiliar">Aguardando técnicos</span>
+          <article class="macro-card macro-card--yellow card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor macro-card__valor--destaque">12</span>
+              <span class="macro-card__label">Em Andamento</span>
+              <span class="macro-card__sub">Aguardando técnicos</span>
+            </div>
           </article>
 
-          <article class="painel-suporte__cartao-resumo">
-            <span class="painel-suporte__rotulo-resumo">RESOLVIDOS</span>
-            <strong class="painel-suporte__valor-resumo valor-suporte--resolvido">130</strong>
-            <span class="painel-suporte__texto-auxiliar">Encerrados com sucesso</span>
+          <article class="macro-card macro-card--green card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-check-double"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor macro-card__valor--destaque">130</span>
+              <span class="macro-card__label">Resolvidos</span>
+              <span class="macro-card__sub">Encerrados com sucesso</span>
+            </div>
           </article>
         </div>
 
         <div class="painel-suporte__conteudo-duplo">
           <!-- Form to open a ticket -->
-          <section class="secao-suporte">
+          <section class="secao-suporte panel-glass-heavy ">
             <h2 class="secao-titulo"><i class="fa-solid fa-headset"></i> Abrir Novo Chamado</h2>
             <form class="formulario-suporte" onsubmit="event.preventDefault();">
               <div class="formulario-grupo">
@@ -144,10 +220,10 @@
           </section>
 
           <!-- List of recent tickets -->
-          <section class="secao-suporte">
+          <section class="secao-suporte panel-glass-heavy ">
             <h2 class="secao-titulo"><i class="fa-solid fa-list-check"></i> Chamados Recentes</h2>
             <div class="lista-chamados">
-              <article class="chamado-cartao">
+              <article class="chamado-cartao card-glass ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8942</span>
                   <span class="badge-status badge-status--aberto">Aberto</span>
@@ -160,7 +236,7 @@
                 </div>
               </article>
 
-              <article class="chamado-cartao">
+              <article class="chamado-cartao card-glass ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8935</span>
                   <span class="badge-status badge-status--andamento">Em Andamento</span>
@@ -173,12 +249,12 @@
                 </div>
               </article>
 
-              <article class="chamado-cartao">
+              <article class="chamado-cartao card-glass ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8910</span>
                   <span class="badge-status badge-status--resolvido">Resolvido</span>
                 </div>
-                <h3 class="chamado-cartao__titulo">Sublimação Anômala no Cryo Vault Alpha</h3>
+                <h3 class="chamado-cartao__titulo">Vazamento contido no Silo de Biomassa (BIO-01)</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-05T08:30">05/06/2026 - 08:30</time> |
                   Prioridade: Crítica</p>
                 <div class="chamado-cartao__acoes">
@@ -194,7 +270,7 @@
 
   <!-- Bottombar de Telemetria -->
   <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
+    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
     <div class="barra-telemetria__janela-letreiro">
       <div class="barra-telemetria__letreiro" aria-hidden="true">
         <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
@@ -209,6 +285,9 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/components/sidebar.js"></script>
+  <script src="assets/js/pages/support.js"></script>
+
 </body>
 
 </html>

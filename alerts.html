@@ -5,19 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
-  <meta name="keywords" content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+  <meta name="keywords"
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
   <meta name="author" content="Space Connect">
   <meta name="theme-color" content="#0b1021">
-  
+
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
   <meta property="og:title" content="Space Connect - Central de Alertas">
-  <meta property="og:description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+  <meta property="og:description"
+    content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Space Connect - Central de Alertas">
-  <meta name="twitter:description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+  <meta name="twitter:description"
+    content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
 
   <title>Space Connect - Central de Alertas</title>
 
@@ -30,12 +33,13 @@
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
+  <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/alerts.css">
 </head>
 
 <body>
-  <div class="linhas-varredura" aria-hidden="true"></div>
+
 
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
@@ -61,12 +65,72 @@
         <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
         <span class="menu-lateral__texto">Central de Alertas</span>
       </a>
+      <a href="crew.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
+        <span class="menu-lateral__texto">Tripulação</span>
+      </a>
       <a href="support.html" class="menu-lateral__link">
         <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
         <span class="menu-lateral__texto">Suporte</span>
       </a>
+      <div class="menu-lateral__separador"></div>
+      <a href="about.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
+        <span class="menu-lateral__texto">Sobre</span>
+      </a>
     </nav>
   </aside>
+
+  <!-- Topbar -->
+  <header class="menu-superior">
+    <div class="menu-superior__esquerda">
+      <span class="menu-superior__logo">
+        <i class="fa-solid fa-moon"></i> Space Connect
+      </span>
+    </div>
+
+    <div class="menu-superior__buscar">
+      <div class="menu-superior__buscar-container">
+        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
+        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
+
+      </div>
+    </div>
+
+    <div class="menu-superior__direita">
+      <!-- Status -->
+      <div class="menu-superior__status menu-superior__status--nominal">
+        <span class="status-dot"></span>
+        <span class="status-text">Nominal</span>
+      </div>
+
+
+
+      <!-- Notificações -->
+      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+        <i class="fa-solid fa-bell"></i>
+        <span class="menu-superior__badge">3</span>
+      </button>
+
+      <!-- Usuário Dropdown -->
+      <div class="menu-superior__usuario-dropdown">
+        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+          <div class="menu-superior__avatar">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <span class="menu-superior__nome">Administrador</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="menu-superior__dropdown-menu card-glass " role="menu">
+          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
+          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
+          <div class="dropdown-divisor"></div>
+          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
+            Desconectar</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Main Content -->
   <section class="conteudo">
@@ -77,36 +141,53 @@
           <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
               Alertas</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Central de Alertas</h1>
+        <h1 class="cabecalho-conteudo__titulo">Registro de Alertas e Decisões</h1>
 
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Gestão de Recursos e Reservatórios</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo"> XPTO Alertas</span>
+          <p class="cabecalho-conteudo__descricao">Log operacional de incidentes e resoluções do sistema de suporte a
+            vida
+          </p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">2 Alertas Críticos</span>
         </div>
       </header>
 
       <div class="painel-alertas">
-        <div class="painel-alertas__linha-resumo">
-          <article class="painel-alertas__cartao-resumo">
-            <span class="painel-alertas__rotulo-resumo">CRÍTICOS</span>
-            <strong class="painel-alertas__valor-resumo painel-alertas__valor-resumo--critico">1</strong>
-            <span class="painel-alertas__texto-auxiliar">Incidente ativo</span>
+        <div class="macro-grid">
+          <article class="macro-card macro-card--magenta card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor macro-card__valor--destaque">1</span>
+              <span class="macro-card__label">Críticos</span>
+              <span class="macro-card__sub">Incidente ativo</span>
+            </div>
           </article>
 
-          <article class="painel-alertas__cartao-resumo">
-            <span class="painel-alertas__rotulo-resumo">AVISOS</span>
-            <strong class="painel-alertas__valor-resumo painel-alertas__valor-resumo--aviso">3</strong>
-            <span class="painel-alertas__texto-auxiliar">Ações sugeridas</span>
+          <article class="macro-card macro-card--yellow card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor macro-card__valor--destaque">3</span>
+              <span class="macro-card__label">Avisos</span>
+              <span class="macro-card__sub">Ações sugeridas</span>
+            </div>
           </article>
 
-          <article class="painel-alertas__cartao-resumo">
-            <span class="painel-alertas__rotulo-resumo">INFORMATIVOS</span>
-            <strong class="painel-alertas__valor-resumo painel-alertas__valor-resumo--info">3</strong>
-            <span class="painel-alertas__texto-auxiliar">Eventos recentes</span>
+          <article class="macro-card macro-card--cyan card-glass ">
+            <div class="macro-card__icone">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor macro-card__valor--destaque">1</span>
+              <span class="macro-card__label">Informativos</span>
+              <span class="macro-card__sub">Eventos recentes</span>
+            </div>
           </article>
         </div>
 
-        <section class="linha-tempo">
+        <section class="linha-tempo panel-glass-heavy ">
           <div class="linha-tempo__cabecalho">
             <div class="linha-tempo__titulo-container">
               <span class="linha-tempo__marcador"></span>
@@ -117,7 +198,7 @@
             </div>
           </div>
 
-          <article class="alerta alerta--critico">
+          <article class="alerta alerta--critico ">
             <div class="alerta__indicador-lateral" aria-hidden="true">
               <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -131,19 +212,20 @@
                   <span class="alerta__badge alerta__badge--critico">Crítico</span>
                   <span class="alerta__codigo-evento">A-241</span>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT2M47S" aria-label="Tempo decorrido: 2 minutos e 47 segundos">T-00:02:47</time>
+                <time class="alerta__tempo-evento" datetime="PT2M47S"
+                  aria-label="Tempo decorrido: 2 minutos e 47 segundos">T-00:02:47</time>
               </div>
               <p class="alerta__texto-evento">RV-04 perdeu telemetria por 2m47s durante perfuração</p>
               <span class="alerta__fonte-evento">Fonte: Haworth</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar alerta A-241">Confirmar</button>
                 <button class="alerta__botao-acao" aria-label="Ver detalhes do alerta A-241">Detalhes</button>
-                <button class="alerta__botao-acao alerta__botao-acao--protocolo" aria-label="Acionar protocolo para alerta A-241">Acionar Protocolo</button>
+                <button class="alerta__botao-acao alerta__botao-acao--protocolo"
+                  aria-label="Acionar protocolo para alerta A-241">Acionar Protocolo</button>
               </div>
             </div>
           </article>
 
-          <article class="alerta alerta--aviso">
+          <article class="alerta alerta--aviso ">
             <div class="alerta__indicador-lateral" aria-hidden="true">
               <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -157,18 +239,18 @@
                   <span class="alerta__badge alerta__badge--aviso">Aviso</span>
                   <span class="alerta__codigo-evento">A-240</span>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT10M2S" aria-label="Tempo decorrido: 10 minutos e 2 segundos">T-00:10:02</time>
+                <time class="alerta__tempo-evento" datetime="PT10M2S"
+                  aria-label="Tempo decorrido: 10 minutos e 2 segundos">T-00:10:02</time>
               </div>
-              <p class="alerta__texto-evento">Sublimação acima do limite em CRY-04 (0.34%/d)</p>
-              <span class="alerta__fonte-evento">Fonte: Cryo Reserve</span>
+              <p class="alerta__texto-evento">Pressão acima do limite no Tanque de Irrigação (AGR-01)</p>
+              <span class="alerta__fonte-evento">Fonte: Sistema de Irrigação</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar aviso A-240">Confirmar</button>
                 <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-240">Detalhes</button>
               </div>
             </div>
           </article>
 
-          <article class="alerta alerta--aviso">
+          <article class="alerta alerta--aviso ">
             <div class="alerta__indicador-lateral" aria-hidden="true">
               <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -182,18 +264,20 @@
                   <span class="alerta__badge alerta__badge--aviso">Aviso</span>
                   <span class="alerta__codigo-evento">A-239</span>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT1H4M11S" aria-label="Tempo decorrido: 1 hora, 4 minutos e 11 segundos">T-01:04:11</time>
+                <time class="alerta__tempo-evento" datetime="PT1H4M11S"
+                  aria-label="Tempo decorrido: 1 hora, 4 minutos e 11 segundos">T-01:04:11</time>
               </div>
-              <p class="alerta__texto-evento">Cryo Vault Alpha acima de 78% – agendar transferência</p>
-              <span class="alerta__fonte-evento">Fonte: Cry-01</span>
+              <p class="alerta__texto-evento">Tanque de Água Potável (H2O-01) acima de 78% – agendar filtragem</p>
+              <span class="alerta__fonte-evento">Fonte: Sistema H2O Principal</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar aviso A-239">Confirmar</button>
+                <button class="alerta__botao-acao alerta__botao-acao--confirmar"
+                  aria-label="Confirmar aviso A-239">Confirmar</button>
                 <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-239">Detalhes</button>
               </div>
             </div>
           </article>
 
-          <article class="alerta alerta--info">
+          <article class="alerta alerta--info ">
             <div class="alerta__indicador-lateral" aria-hidden="true">
               <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -207,18 +291,18 @@
                   <span class="alerta__badge alerta__badge--info">Info</span>
                   <span class="alerta__codigo-evento">A-238</span>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT1H42M30S" aria-label="Tempo decorrido: 1 hora, 42 minutos e 30 segundos">T-01:42:30</time>
+                <time class="alerta__tempo-evento" datetime="PT1H42M30S"
+                  aria-label="Tempo decorrido: 1 hora, 42 minutos e 30 segundos">T-01:42:30</time>
               </div>
               <p class="alerta__texto-evento">RV-03 iniciou ciclo de recarga solar na cratera de Cabeus</p>
               <span class="alerta__fonte-evento">Fonte: Cabeus</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--desabilitado" aria-label="Confirmação de evento A-238 desabilitada" disabled>Confirmar</button>
                 <button class="alerta__botao-acao" aria-label="Ver detalhes do evento A-238">Detalhes</button>
               </div>
             </div>
           </article>
 
-          <article class="alerta alerta--aviso">
+          <article class="alerta alerta--aviso ">
             <div class="alerta__indicador-lateral" aria-hidden="true">
               <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -232,12 +316,12 @@
                   <span class="alerta__badge alerta__badge--aviso">Aviso</span>
                   <span class="alerta__codigo-evento">A-237</span>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT2H10M55S" aria-label="Tempo decorrido: 2 horas, 10 minutos e 55 segundos">T-02:10:55</time>
+                <time class="alerta__tempo-evento" datetime="PT2H10M55S"
+                  aria-label="Tempo decorrido: 2 horas, 10 minutos e 55 segundos">T-02:10:55</time>
               </div>
-              <p class="alerta__texto-evento">Pressão no CRY-02 acima do nominal — variação de +0.09 kPa</p>
-              <span class="alerta__fonte-evento">Fonte: Cryo Vault Beta</span>
+              <p class="alerta__texto-evento">Pressão no Reservatório de Água Cinza (H2O-02) acima do nominal</p>
+              <span class="alerta__fonte-evento">Fonte: Coletor de Efluentes</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar" aria-label="Confirmar aviso A-237">Confirmar</button>
                 <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-237">Detalhes</button>
               </div>
             </div>
@@ -249,7 +333,7 @@
 
   <!-- Bottombar de Telemetria -->
   <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
+    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
     <div class="barra-telemetria__janela-letreiro">
       <div class="barra-telemetria__letreiro" aria-hidden="true">
         <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
@@ -264,6 +348,10 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/components/sidebar.js"></script>
+  <script src="assets/js/pages/alerts.js"></script>
+
 </body>
 
 </html>

@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Visão de recursos disponíveis.">
-  <meta name="keywords" content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
+  <meta name="keywords"
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
   <meta name="author" content="Space Connect">
   <meta name="theme-color" content="#0b1021">
-  
+
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/resources.html">
   <meta property="og:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
@@ -25,20 +26,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+
 
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
+  <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/resources.css">
 </head>
 
 <body>
-  <div class="linhas-varredura" aria-hidden="true"></div>
+
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
     <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
@@ -63,27 +63,87 @@
         <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
         <span class="menu-lateral__texto">Central de Alertas</span>
       </a>
+      <a href="crew.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
+        <span class="menu-lateral__texto">Tripulação</span>
+      </a>
       <a href="support.html" class="menu-lateral__link">
         <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
         <span class="menu-lateral__texto">Suporte</span>
       </a>
+      <div class="menu-lateral__separador"></div>
+      <a href="about.html" class="menu-lateral__link">
+        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
+        <span class="menu-lateral__texto">Sobre</span>
+      </a>
     </nav>
   </aside>
 
+  <!-- Topbar -->
+  <header class="menu-superior">
+    <div class="menu-superior__esquerda">
+      <span class="menu-superior__logo">
+        <i class="fa-solid fa-moon"></i> Space Connect
+      </span>
+    </div>
+
+    <div class="menu-superior__buscar">
+      <div class="menu-superior__buscar-container">
+        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
+        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
+
+      </div>
+    </div>
+
+    <div class="menu-superior__direita">
+      <!-- Status -->
+      <div class="menu-superior__status menu-superior__status--nominal">
+        <span class="status-dot"></span>
+        <span class="status-text">Nominal</span>
+      </div>
+
+
+
+      <!-- Notificações -->
+      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+        <i class="fa-solid fa-bell"></i>
+        <span class="menu-superior__badge">3</span>
+      </button>
+
+      <!-- Usuário Dropdown -->
+      <div class="menu-superior__usuario-dropdown">
+        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+          <div class="menu-superior__avatar">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <span class="menu-superior__nome">Administrador</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="menu-superior__dropdown-menu card-glass " role="menu">
+          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
+          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
+          <div class="dropdown-divisor"></div>
+          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
+            Desconectar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <!-- Main Content -->
   <section class="conteudo">
-    <main class="conteudo__principal-recursos">
+    <main class="conteudo__principal">
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
           <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
               Recursos</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Visão dos Recursos Disponíveis</h1>
+        <h1 class="cabecalho-conteudo__titulo">Gestão de Recursos Críticos</h1>
 
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Gestão de Recursos e Reservatórios</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo"> XPTO Alertas</span>
+          <p class="cabecalho-conteudo__descricao">Monitoramento de Capacidade, Estoque e Tendências Bióticas</p>
+          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Telemetria DSN Ativa</span>
         </div>
       </header>
 
@@ -92,83 +152,83 @@
       <div class="recursos-painel">
 
         <!-- LINHA DE ESTATÍSTICAS SUPERIORES -->
-        <section class="recursos-estatisticas" aria-label="Estatísticas Gerais">
-          <div class="recursos-cartao-estatistica" id="stat-capacidade">
-            <div class="recursos-cartao-estatistica__cabecalho">
-              <span class="recursos-cartao-estatistica__rotulo">CAPACIDADE TOTAL</span>
-              <svg class="recursos-cartao-estatistica__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.5">
+        <section class="macro-grid" aria-label="Estatísticas Gerais">
+          <div class="macro-card macro-card--cyan card-glass " id="stat-capacidade">
+            <div class="macro-card__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M12 2C8 2 5 5.5 5 9c0 5 4 8 7 10 3-2 7-5 7-10 0-3.5-3-7-7-7z" />
                 <path d="M12 7v5l3 2" stroke-width="2" />
               </svg>
             </div>
-            <div class="recursos-cartao-estatistica__valor recursos-cartao-estatistica__valor--ciano">36 <span
-                class="recursos-cartao-estatistica__unidade">t</span></div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">36<span class="macro-card__unidade">t</span></span>
+              <span class="macro-card__label">Capacidade Total</span>
+            </div>
           </div>
 
-          <div class="recursos-cartao-estatistica" id="stat-estoque">
-            <div class="recursos-cartao-estatistica__cabecalho">
-              <span class="recursos-cartao-estatistica__rotulo">ESTOQUE ATUAL</span>
-              <svg class="recursos-cartao-estatistica__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.5">
+          <div class="macro-card macro-card--green card-glass " id="stat-estoque">
+            <div class="macro-card__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
             </div>
-            <div class="recursos-cartao-estatistica__valor recursos-cartao-estatistica__valor--verde">24.4 <span
-                class="recursos-cartao-estatistica__unidade">t</span></div>
-            <div class="recursos-cartao-estatistica__sub">67.6% ocupado</div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">24.4<span class="macro-card__unidade">t</span></span>
+              <span class="macro-card__label">Estoque Atual</span>
+              <span class="macro-card__sub">67.6% ocupado</span>
+            </div>
           </div>
 
-          <div class="recursos-cartao-estatistica" id="stat-temp">
-            <div class="recursos-cartao-estatistica__cabecalho">
-              <span class="recursos-cartao-estatistica__rotulo">TEMP. MÉDIA</span>
-              <svg class="recursos-cartao-estatistica__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.5">
+          <div class="macro-card macro-card--cyan card-glass " id="stat-temp">
+            <div class="macro-card__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
               </svg>
             </div>
-            <div class="recursos-cartao-estatistica__valor recursos-cartao-estatistica__valor--ciano">39.8 <span
-                class="recursos-cartao-estatistica__unidade">K</span></div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">39.8<span class="macro-card__unidade">K</span></span>
+              <span class="macro-card__label">Temp. Média</span>
+            </div>
           </div>
 
-          <div class="recursos-cartao-estatistica" id="stat-pressao">
-            <div class="recursos-cartao-estatistica__cabecalho">
-              <span class="recursos-cartao-estatistica__rotulo">PRESSÃO MÉDIA</span>
-              <svg class="recursos-cartao-estatistica__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.5">
+          <div class="macro-card macro-card--cyan card-glass " id="stat-pressao">
+            <div class="macro-card__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 8v4l3 3" />
               </svg>
             </div>
-            <div class="recursos-cartao-estatistica__valor recursos-cartao-estatistica__valor--ciano">0.97 <span
-                class="recursos-cartao-estatistica__unidade">kPa</span></div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">0.97<span class="macro-card__unidade">kPa</span></span>
+              <span class="macro-card__label">Pressão Média</span>
+            </div>
           </div>
 
-          <div class="recursos-cartao-estatistica" id="stat-perda">
-            <div class="recursos-cartao-estatistica__cabecalho">
-              <span class="recursos-cartao-estatistica__rotulo">PERDA DIÁRIA</span>
-              <svg class="recursos-cartao-estatistica__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.5">
+          <div class="macro-card macro-card--cyan card-glass " id="stat-perda">
+            <div class="macro-card__icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                 <polyline points="17 6 23 6 23 12" />
               </svg>
             </div>
-            <div class="recursos-cartao-estatistica__valor recursos-cartao-estatistica__valor--ciano">46 <span
-                class="recursos-cartao-estatistica__unidade">kg/s</span></div>
+            <div class="macro-card__dados">
+              <span class="macro-card__valor">46<span class="macro-card__unidade">kg/s</span></span>
+              <span class="macro-card__label">Perda Diária</span>
+            </div>
           </div>
         </section>
 
         <!-- GRADE DE COFRES CRIOGÊNICOS -->
         <section class="recursos-grade-cofres" aria-label="Cofres Criogênicos">
 
-          <!-- CRY-01 Cryo Vault Alpha -->
-          <article class="recursos-cofre" id="vault-alpha">
+          <!-- H2O-01 Tanque de Água Potável -->
+          <article class="recursos-cofre panel-glass-heavy " id="tank-potable">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
-                <span class="recursos-cofre__identificador">CRY-01</span>
-                <h2 class="recursos-cofre__nome">Cryo Vault Alpha</h2>
+                <span class="recursos-cofre__identificador">H2O-01</span>
+                <h2 class="recursos-cofre__nome">Tanque de Água Potável</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--verde">↑ 0.18%/D</div>
+              <div class="recursos-cofre__taxa recursos-cofre__taxa--verde">↑ 2.5%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -193,23 +253,23 @@
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">🌡</span>
                     <span class="recursos-cofre__rotulo-metrica">TEMP</span>
-                    <span class="recursos-cofre__valor-metrica">38 K</span>
+                    <span class="recursos-cofre__valor-metrica">18 °C</span>
                   </div>
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">⊙</span>
                     <span class="recursos-cofre__rotulo-metrica">PRESSÃO</span>
-                    <span class="recursos-cofre__valor-metrica">0.92 kPa</span>
+                    <span class="recursos-cofre__valor-metrica">1.0 atm</span>
                   </div>
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">↘</span>
-                    <span class="recursos-cofre__rotulo-metrica">PERDA</span>
-                    <span class="recursos-cofre__valor-metrica">17 kg/d</span>
+                    <span class="recursos-cofre__rotulo-metrica">CONSUMO</span>
+                    <span class="recursos-cofre__valor-metrica">420 L/d</span>
                   </div>
                 </div>
 
                 <div class="recursos-cofre__rodape">
-                  <span class="recursos-cofre__rotulo-transferencia">Próxima transferência: SOL+0.5</span>
-                  <span class="recursos-cofre__status recursos-cofre__status--lacrado">● LACRADO</span>
+                  <span class="recursos-cofre__rotulo-transferencia">Próxima filtragem: SOL+0.2</span>
+                  <span class="recursos-cofre__status recursos-cofre__status--lacrado">● ESTÁVEL</span>
                 </div>
               </div>
 
@@ -220,20 +280,20 @@
                       <span></span><span></span><span></span>
                     </div>
                   </div>
-                  <div class="recursos-cofre__icone-tanque">❄</div>
+                  <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-glass-water"></i></div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- CRY-02 Cryo Vault Beta -->
-          <article class="recursos-cofre" id="vault-beta">
+          <!-- H2O-02 Reservatório de Água Cinza -->
+          <article class="recursos-cofre panel-glass-heavy " id="tank-grey">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
-                <span class="recursos-cofre__identificador">CRY-02</span>
-                <h2 class="recursos-cofre__nome">Cryo Vault Beta</h2>
+                <span class="recursos-cofre__identificador">H2O-02</span>
+                <h2 class="recursos-cofre__nome">Reservatório Água Cinza</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--amarelo">↑ 0.27%/D</div>
+              <div class="recursos-cofre__taxa recursos-cofre__taxa--amarelo">↑ 4.2%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -258,23 +318,23 @@
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">🌡</span>
                     <span class="recursos-cofre__rotulo-metrica">TEMP</span>
-                    <span class="recursos-cofre__valor-metrica">41 K</span>
+                    <span class="recursos-cofre__valor-metrica">22 °C</span>
                   </div>
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">⊙</span>
                     <span class="recursos-cofre__rotulo-metrica">PRESSÃO</span>
-                    <span class="recursos-cofre__valor-metrica">1.01 kPa</span>
+                    <span class="recursos-cofre__valor-metrica">1.0 atm</span>
                   </div>
                   <div class="recursos-cofre__metrica">
-                    <span class="recursos-cofre__icone-metrica">↘</span>
-                    <span class="recursos-cofre__rotulo-metrica">PERDA</span>
-                    <span class="recursos-cofre__valor-metrica">17 kg/d</span>
+                    <span class="recursos-cofre__icone-metrica">↗</span>
+                    <span class="recursos-cofre__rotulo-metrica">CAPTAÇÃO</span>
+                    <span class="recursos-cofre__valor-metrica">380 L/d</span>
                   </div>
                 </div>
 
                 <div class="recursos-cofre__rodape">
-                  <span class="recursos-cofre__rotulo-transferencia">Próxima transferência: SOL+0.5</span>
-                  <span class="recursos-cofre__status recursos-cofre__status--lacrado">● LACRADO</span>
+                  <span class="recursos-cofre__rotulo-transferencia">Purificação RO: SOL+0.5</span>
+                  <span class="recursos-cofre__status recursos-cofre__status--lacrado">● RECEBENDO</span>
                 </div>
               </div>
 
@@ -285,20 +345,20 @@
                       <span></span><span></span><span></span>
                     </div>
                   </div>
-                  <div class="recursos-cofre__icone-tanque">❄</div>
+                  <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-sink"></i></div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- CRY-03 Cryo Vault Gamma -->
-          <article class="recursos-cofre" id="vault-gamma">
+          <!-- BIO-01 Silo de Biomassa -->
+          <article class="recursos-cofre panel-glass-heavy " id="silo-biomass">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
-                <span class="recursos-cofre__identificador">CRY-03</span>
-                <h2 class="recursos-cofre__nome">Cryo Vault Gamma</h2>
+                <span class="recursos-cofre__identificador">BIO-01</span>
+                <h2 class="recursos-cofre__nome">Silo de Biomassa</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--verde">↑ 0.12%/D</div>
+              <div class="recursos-cofre__taxa recursos-cofre__taxa--verde">↑ 1.2%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -323,22 +383,22 @@
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">🌡</span>
                     <span class="recursos-cofre__rotulo-metrica">TEMP</span>
-                    <span class="recursos-cofre__valor-metrica">36 K</span>
+                    <span class="recursos-cofre__valor-metrica">35 °C</span>
                   </div>
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">⊙</span>
                     <span class="recursos-cofre__rotulo-metrica">PRESSÃO</span>
-                    <span class="recursos-cofre__valor-metrica">0.88 kPa</span>
+                    <span class="recursos-cofre__valor-metrica">1.2 atm</span>
                   </div>
                   <div class="recursos-cofre__metrica">
-                    <span class="recursos-cofre__icone-metrica">↘</span>
-                    <span class="recursos-cofre__rotulo-metrica">PERDA</span>
-                    <span class="recursos-cofre__valor-metrica">9 kg/d</span>
+                    <span class="recursos-cofre__icone-metrica">↗</span>
+                    <span class="recursos-cofre__rotulo-metrica">PRODUÇÃO</span>
+                    <span class="recursos-cofre__valor-metrica">45 kg/d</span>
                   </div>
                 </div>
 
                 <div class="recursos-cofre__rodape">
-                  <span class="recursos-cofre__rotulo-transferencia">Próxima transferência: SOL+1.2</span>
+                  <span class="recursos-cofre__rotulo-transferencia">Compostagem ativa</span>
                   <span class="recursos-cofre__status recursos-cofre__status--ativo">● ATIVO</span>
                 </div>
               </div>
@@ -351,20 +411,20 @@
                       <span></span><span></span><span></span>
                     </div>
                   </div>
-                  <div class="recursos-cofre__icone-tanque">❄</div>
+                  <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-leaf"></i></div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- CRY-04 Cryo Reserve Delta -->
-          <article class="recursos-cofre recursos-cofre--alerta" id="vault-delta">
+          <!-- AGR-01 Reservatório de Irrigação -->
+          <article class="recursos-cofre recursos-cofre--alerta panel-glass-heavy " id="tank-irrigation">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
-                <span class="recursos-cofre__identificador">CRY-04</span>
-                <h2 class="recursos-cofre__nome">Cryo Reserve Delta</h2>
+                <span class="recursos-cofre__identificador">AGR-01</span>
+                <h2 class="recursos-cofre__nome">Tanque de Irrigação</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--vermelho">↑ 0.345%/D</div>
+              <div class="recursos-cofre__taxa recursos-cofre__taxa--vermelho">↓ -5.5%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -389,22 +449,22 @@
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">🌡</span>
                     <span class="recursos-cofre__rotulo-metrica">TEMP</span>
-                    <span class="recursos-cofre__valor-metrica">44 K</span>
+                    <span class="recursos-cofre__valor-metrica">20 °C</span>
                   </div>
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">⊙</span>
                     <span class="recursos-cofre__rotulo-metrica">PRESSÃO</span>
-                    <span class="recursos-cofre__valor-metrica">1.08 kPa</span>
+                    <span class="recursos-cofre__valor-metrica">1.5 atm</span>
                   </div>
                   <div class="recursos-cofre__metrica">
                     <span class="recursos-cofre__icone-metrica">↘</span>
-                    <span class="recursos-cofre__rotulo-metrica">PERDA</span>
-                    <span class="recursos-cofre__valor-metrica">3 kg/d</span>
+                    <span class="recursos-cofre__rotulo-metrica">CONSUMO</span>
+                    <span class="recursos-cofre__valor-metrica">150 L/d</span>
                   </div>
                 </div>
 
                 <div class="recursos-cofre__rodape">
-                  <span class="recursos-cofre__rotulo-transferencia">Próxima transferência: SOL+2.0</span>
+                  <span class="recursos-cofre__rotulo-transferencia">Abastecimento hidro.: SOL+0.1</span>
                   <span class="recursos-cofre__status recursos-cofre__status--aviso">⚠ ALERTA</span>
                 </div>
               </div>
@@ -417,9 +477,122 @@
                       <span></span>
                     </div>
                   </div>
-                  <div class="recursos-cofre__icone-tanque">❄</div>
+                  <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-seedling"></i></div>
                 </div>
               </div>
+            </div>
+          </article>
+
+        </section>
+
+        <!-- ANÁLISE E DISTRIBUIÇÃO -->
+        <section class="recursos-analise" aria-label="Análise e Distribuição de Recursos">
+
+          <!-- Gráfico de Tendência -->
+          <article class="recursos-grafico panel-glass-heavy">
+            <div class="recursos-analise__cabecalho">
+              <h3 class="recursos-analise__titulo">Tendência de Ciclo Hídrico</h3>
+              <div class="recursos-grafico__legendas">
+                <span class="recursos-grafico__legenda-item"><span class="legenda-cor legenda-cor--captacao"></span>
+                  Captação</span>
+                <span class="recursos-grafico__legenda-item"><span class="legenda-cor legenda-cor--consumo"></span>
+                  Consumo</span>
+              </div>
+            </div>
+
+            <div class="recursos-grafico__corpo">
+              <svg viewBox="0 0 800 200" preserveAspectRatio="none" class="recursos-svg-grafico">
+                <defs>
+                  <linearGradient id="grad-captacao" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(var(--mint), 0.3)" />
+                    <stop offset="100%" stop-color="rgba(var(--mint), 0)" />
+                  </linearGradient>
+
+                  <linearGradient id="grad-consumo" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(var(--cyan), 0.3)" />
+                    <stop offset="100%" stop-color="rgba(var(--cyan), 0)" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Grid lines -->
+                <line x1="0" y1="40" x2="800" y2="40" class="svg-grid-line" />
+                <line x1="0" y1="90" x2="800" y2="90" class="svg-grid-line" />
+                <line x1="0" y1="140" x2="800" y2="140" class="svg-grid-line" />
+
+                <!-- Area Captação -->
+                <path
+                  d="M 0 190 L 0 140 C 100 130, 200 160, 300 120 C 400 80, 500 140, 600 100 C 700 60, 800 90, 800 90 L 800 190 Z"
+                  fill="url(#grad-captacao)" />
+                <!-- Line Captação -->
+                <path d="M 0 140 C 100 130, 200 160, 300 120 C 400 80, 500 140, 600 100 C 700 60, 800 90, 800 90"
+                  fill="none" stroke="rgb(var(--mint))" stroke-width="3"
+                  style="filter: drop-shadow(0 0 8px rgba(var(--mint), 0.6));" class="svg-path-anim" />
+
+                <!-- Area Consumo -->
+                <path
+                  d="M 0 190 L 0 160 C 100 150, 200 120, 300 140 C 400 160, 500 100, 600 130 C 700 160, 800 110, 800 110 L 800 190 Z"
+                  fill="url(#grad-consumo)" />
+                <!-- Line Consumo -->
+                <path d="M 0 160 C 100 150, 200 120, 300 140 C 400 160, 500 100, 600 130 C 700 160, 800 110, 800 110"
+                  fill="none" stroke="rgb(var(--cyan))" stroke-width="3"
+                  style="filter: drop-shadow(0 0 8px rgba(var(--cyan), 0.6));"
+                  class="svg-path-anim svg-path-anim-delay" />
+              </svg>
+
+              <div class="recursos-grafico__eixo-x">
+                <span>SOL -6</span>
+                <span>SOL -5</span>
+                <span>SOL -4</span>
+                <span>SOL -3</span>
+                <span>SOL -2</span>
+                <span>SOL -1</span>
+                <span>HOJE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Distribuição Setorial -->
+          <article class="recursos-alocacao panel-glass-heavy">
+            <div class="recursos-analise__cabecalho">
+              <h3 class="recursos-analise__titulo">Alocação de Recursos</h3>
+              <span class="recursos-alocacao__badge">H₂O / BIO</span>
+            </div>
+
+            <div class="recursos-alocacao__lista">
+              <div class="recursos-alocacao__item">
+                <div class="recursos-alocacao__item-cabecalho">
+                  <span class="recursos-alocacao__nome"><i class="fa-solid fa-house"></i> Habitação</span>
+                  <span class="recursos-alocacao__porcentagem">45%</span>
+                </div>
+                <div class="recursos-alocacao__barra-container">
+                  <div class="recursos-alocacao__barra recursos-alocacao__barra--hab" style="width: 45%;"></div>
+                </div>
+              </div>
+
+              <div class="recursos-alocacao__item">
+                <div class="recursos-alocacao__item-cabecalho">
+                  <span class="recursos-alocacao__nome"><i class="fa-solid fa-leaf"></i> Estufas/Botânica</span>
+                  <span class="recursos-alocacao__porcentagem">35%</span>
+                </div>
+                <div class="recursos-alocacao__barra-container">
+                  <div class="recursos-alocacao__barra recursos-alocacao__barra--bot" style="width: 35%;"></div>
+                </div>
+              </div>
+
+              <div class="recursos-alocacao__item">
+                <div class="recursos-alocacao__item-cabecalho">
+                  <span class="recursos-alocacao__nome"><i class="fa-solid fa-microscope"></i> Laboratórios</span>
+                  <span class="recursos-alocacao__porcentagem">20%</span>
+                </div>
+                <div class="recursos-alocacao__barra-container">
+                  <div class="recursos-alocacao__barra recursos-alocacao__barra--lab" style="width: 20%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="recursos-alocacao__alerta">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span>Consumo da Botânica está 5% acima do baseline estimado para o ciclo atual.</span>
             </div>
           </article>
 
@@ -430,7 +603,7 @@
 
   <!-- Bottombar de Telemetria -->
   <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span> LIVE TELEMETRY</span>
+    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
     <div class="barra-telemetria__janela-letreiro">
       <div class="barra-telemetria__letreiro" aria-hidden="true">
         <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
@@ -445,6 +618,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

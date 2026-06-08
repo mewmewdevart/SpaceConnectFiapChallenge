@@ -26,4 +26,38 @@
 
   updateClock();
   setInterval(updateClock, 1000);
+
+  // Lógica de Log da Telemetria Dinâmica
+  window.telemetryQueue = ["SISTEMA INICIADO", "LEITURA NOMINAL", "AGUARDANDO COMANDOS..."];
+
+  window.addTelemetryLog = function(message, severityClass = "") {
+    // Adiciona a nova mensagem no final da fila
+    window.telemetryQueue.push(`[ AÇÃO ] ${message}`);
+    
+    // Mantém no máximo as últimas 10 ações no histórico para não quebrar a animação
+    if (window.telemetryQueue.length > 10) {
+      window.telemetryQueue.shift();
+    }
+
+    const letreiroContainers = document.querySelectorAll('.barra-telemetria__letreiro');
+    
+    letreiroContainers.forEach(container => {
+      container.innerHTML = '';
+      
+      // Para o marquee não ficar vazio caso a fila seja curta, podemos repetir a fila algumas vezes
+      for (let i = 0; i < 3; i++) {
+        window.telemetryQueue.forEach(logText => {
+          const span = document.createElement('span');
+          span.className = `barra-telemetria__item ${severityClass}`;
+          span.textContent = logText;
+          span.style.color = 'rgb(var(--color-primary))';
+          container.appendChild(span);
+        });
+      }
+    });
+  };
+
+  // Inicializa o letreiro na primeira vez
+  window.addTelemetryLog("SISTEMAS ONLINE");
+
 })();

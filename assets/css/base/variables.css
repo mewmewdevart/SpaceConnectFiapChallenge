@@ -1,7 +1,7 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap');
 
 :root {
-    
+
     --white: 255, 255, 255;
     --black: 0, 0, 0;
     --mint: 109, 247, 193;
@@ -21,11 +21,11 @@
     --olive-gray: 155, 156, 130;
 
 
-    
-    --font-primary: 'Audiowide', sans-serif;
-    --font-secondary: 'Inter', sans-serif;
 
-    
+    --font-primary: 'Inter', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
+
+
     --text-micro: 9px;
     --text-xs: 10px;
     --text-sm: 12px;
@@ -38,45 +38,103 @@
     --text-4xl: 36px;
     --text-hero: 44px;
 
-    
+
     --text-paragraph: var(--text-base);
     --text-heading-1: var(--text-4xl);
     --text-heading-2: var(--text-3xl);
     --text-heading-3: var(--text-2xl);
 
-    
+
     --color-primary: var(--green);
     --color-secondary: var(--yellow);
+    --color-alert: var(--salmon);
+    --color-danger: var(--magenta);
+    --color-success: var(--green);
+    --color-warning: var(--yellow);
+    --color-info: var(--cyan);
     --bg-main: 26, 28, 44;
     --bg-panel: var(--bg-main);
 
-    
+
     --text-primary: var(--white);
     --text-secondary: 192, 194, 165;
-    
+
     --text-default: 224, 224, 224;
     --text-menu: 245, 245, 245;
     --icon-menu: 192, 192, 192;
-    
 
-    
+
+
     --graph-color-lv0: 26, 28, 44;
     --graph-color-lv1: var(--teal);
     --graph-color-lv2: var(--green);
     --graph-color-lv3: var(--lime);
     --graph-color-lv4: var(--yellow);
 
-    
-    --border-color: rgba(var(--white), 0.1);
-    --outline-color: rgba(var(--white), 0.05);
 
-    
+    --border-color: rgba(var(--white), 0.1);
+
+
     --fluid-color-gray: var(--text-secondary);
     --fluid-color-pure: var(--mint);
     --fluid-color-organic: var(--yellow);
     --fluid-color-disinfected: var(--salmon);
     --fluid-color-fertilizer: var(--lime);
     --fluid-color-potable: var(--cyan);
-    --fluid-color-agricultural: var(--green);
     --fluid-color-nutrient: var(--green);
+
+    /* Glassmorphism & Sci-Fi Panels */
+    --bg-glass-light: rgba(var(--bg-main), 0.4);
+    --bg-glass-medium: rgba(var(--bg-main), 0.6);
+    --bg-glass-heavy: rgba(var(--bg-main), 0.85);
+    --panel-border: 2px solid rgba(var(--cyan), 0.08);
+
+    /* HUD and Glow Effects */
+    --glow-cyan: 0 0 10px rgba(var(--cyan), 0.5), 0 0 20px rgba(var(--cyan), 0.3);
+    --glow-green: 0 0 10px rgba(var(--green), 0.5), 0 0 20px rgba(var(--green), 0.3);
+    --glow-yellow: 0 0 10px rgba(var(--yellow), 0.5), 0 0 20px rgba(var(--yellow), 0.3);
+    --glow-salmon: 0 0 10px rgba(var(--salmon), 0.5), 0 0 20px rgba(var(--salmon), 0.3);
+
+    /* Technical Lines (HUD) */
+    --hud-line: linear-gradient(90deg, transparent 0%, rgba(var(--cyan), 0.2) 50%, transparent 100%);
+    --hud-line-vertical: linear-gradient(180deg, transparent 0%, rgba(var(--cyan), 0.2) 50%, transparent 100%);
+
+    /* Border Radius for Technical Panels */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spacing Scale */
+    --space-2xs: 4px;
+    --space-xs: 6px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 20px;
+    --space-2xl: 24px;
+    --space-3xl: 32px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+    /* Z-Index Layers */
+    --z-base: 1;
+    --z-dropdown: 50;
+    --z-sticky: 100;
+    --z-overlay: 500;
+    --z-sidebar: 1000;
+
+    /* Font Weights */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
 }

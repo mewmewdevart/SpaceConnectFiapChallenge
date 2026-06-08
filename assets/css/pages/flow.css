@@ -1,6 +1,3 @@
-﻿
-
-
 .fluxo-container {
     display: flex;
     flex-direction: column;
@@ -74,7 +71,7 @@
 }
 
 .fluxo-tubo-bg.selecionado {
-    stroke: rgba(56, 183, 100, 0.25);
+    stroke: rgba(var(--color-primary), 0.25);
     stroke-width: 11px;
 }
 
@@ -129,7 +126,7 @@
 .fluxo-valvula-btn.valvula-aberta {
     color: rgb(var(--color-primary));
     border-color: rgb(var(--color-primary));
-    background: rgba(56, 183, 100, 0.1);
+    background: rgba(var(--color-primary), 0.1);
 }
 
 .fluxo-valvula-btn.valvula-aberta:hover {
@@ -140,7 +137,7 @@
 .fluxo-valvula-btn.valvula-fechada {
     color: rgb(var(--color-secondary));
     border-color: rgb(var(--color-secondary));
-    background: rgba(165, 94, 234, 0.1);
+    background: rgba(var(--color-secondary), 0.1);
 }
 
 .fluxo-valvula-btn.valvula-fechada:hover {
@@ -153,23 +150,19 @@
     position: absolute;
     width: 200px;
     height: 115px;
-    background: linear-gradient(145deg, rgba(22, 25, 45, 0.85) 0%, rgba(12, 14, 25, 0.95) 100%);
-    border: 1px solid rgba(var(--white), 0.08);
-    border-radius: 12px;
     padding: 10px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: grab;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+
     z-index: 2;
     transition: border-color 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .fluxo-cartao:hover {
     transform: translateY(-2px);
+    border-color: rgba(var(--cyan), 0.5);
 }
 
 .fluxo-cartao:active {
@@ -178,7 +171,7 @@
 }
 
 .fluxo-cartao.selecionado {
-    border-color: rgb(var(--color-primary));
+    border-color: rgb(var(--cyan));
     transform: translateY(-2px);
 }
 
@@ -363,7 +356,6 @@
 }
 
 .fluxo-cartao__valor-nivel {
-
     font-size: var(--text-paragraph);
     font-weight: bold;
     color: rgb(var(--text-primary));
@@ -429,7 +421,7 @@
     width: 36px;
     height: 36px;
     border-radius: 4px;
-    background: rgba(11, 16, 33, 0.8);
+    background: rgba(var(--bg-main), 0.8);
     border: 1px solid var(--border-color);
     color: rgb(var(--text-secondary));
     cursor: pointer;
@@ -571,21 +563,21 @@
 }
 
 .inspetor-painel__btn-valvula.livre {
-    background: rgba(46, 204, 113, 0.2);
+    background: rgba(var(--color-success), 0.2);
     border-color: rgb(var(--color-primary));
     color: rgb(var(--color-primary));
 }
 
 .inspetor-painel__btn-valvula.bloqueada {
-    background: rgba(231, 76, 60, 0.2);
-    border-color: var(--color-alert);
-    color: var(--color-alert);
+    background: rgba(var(--color-alert), 0.2);
+    border-color: rgb(var(--color-alert));
+    color: rgb(var(--color-alert));
 }
 
 .inspetor-painel__btn-perigo {
-    background: rgba(231, 76, 60, 0.1);
-    border: 1px solid var(--color-alert);
-    color: var(--color-alert);
+    background: rgba(var(--color-alert), 0.1);
+    border: 1px solid rgb(var(--color-alert));
+    color: rgb(var(--color-alert));
     padding: 8px 12px;
     font-size: var(--text-sm);
     border-radius: 4px;
@@ -596,7 +588,7 @@
 }
 
 .inspetor-painel__btn-perigo:hover {
-    background: var(--color-alert);
+    background: rgb(var(--color-alert));
     color: rgb(var(--text-primary));
 }
 
@@ -608,7 +600,7 @@
 
 .inspetor-painel__btn-salvar {
     flex: 1;
-    background: rgba(56, 183, 100, 0.15);
+    background: rgba(var(--color-primary), 0.15);
     border: 1px solid rgb(var(--color-primary));
     color: rgb(var(--color-primary));
     padding: 10px 16px;
@@ -682,27 +674,20 @@
 }
 
 .fluxo-mobile-cartao {
-    background: rgba(var(--white), 0.03);
-    border: 1.5px solid var(--border-color);
-    border-radius: 8px;
     padding: 12px 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    position: relative;
-    overflow: hidden;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
 .fluxo-mobile-cartao:hover {
-    background: rgba(var(--white), 0.05);
-    border-color: rgba(var(--white), 0.2);
+    background: var(--bg-glass-heavy);
+    border-color: rgba(var(--cyan), 0.5);
 }
 
 .fluxo-mobile-cartao.selecionado {
-    border-color: rgb(var(--color-primary));
-    box-shadow: 0 0 10px rgba(56, 183, 100, 0.2);
+    border-color: rgb(var(--cyan));
 }
 
 .fluxo-mobile-cartao.status-aviso {
@@ -771,4 +756,48 @@
         height: auto !important;
         overflow: visible !important;
     }
+}
+
+/* --- ALERTA DE TRANSBORDAMENTO --- */
+.fluxo-cartao--transbordando {
+    border-color: rgb(var(--color-alert));
+    box-shadow: 0 0 25px rgba(var(--color-alert), 0.6), inset 0 0 15px rgba(var(--color-alert), 0.3);
+    animation: animacao-transbordar 0.5s infinite alternate;
+}
+
+.fluxo-cartao--transbordando .fluxo-cartao__onda-container::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: radial-gradient(circle, rgba(var(--color-alert), 0.5) 0%, transparent 70%);
+    animation: animacao-vazamento 1s infinite ease-out;
+}
+
+@keyframes animacao-transbordar {
+    from {
+        transform: scale(1) translateY(-2px);
+    }
+
+    to {
+        transform: scale(1.03) translateY(-4px);
+    }
+}
+
+@keyframes animacao-vazamento {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-30px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+#inspect-mod-cat {
+    cursor: not-allowed;
 }

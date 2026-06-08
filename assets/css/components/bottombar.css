@@ -1,14 +1,15 @@
-﻿
 .barra-telemetria {
     display: flex;
     align-items: center;
     padding: 6px 24px;
-    background: rgb(var(--bg-main));
-    border-top: 2px solid var(--border-color);
+    background: var(--bg-glass-heavy);
+    backdrop-filter: blur(10px);
+
+    border-top: var(--panel-border);
     min-height: 32px;
     flex-shrink: 0;
     overflow: hidden;
-    z-index: 50;
+    z-index: var(--z-dropdown);
     position: relative;
 }
 
@@ -28,7 +29,7 @@
     align-items: center;
     white-space: nowrap;
     padding-left: 100%;
-    animation: barra-telemetria-scroll 20s linear infinite;
+    animation: barra-telemetria-scroll 60s linear infinite;
 }
 
 @keyframes barra-telemetria-scroll {
@@ -46,9 +47,11 @@
 .barra-telemetria__relogio {
 
     font-size: var(--text-sm);
-    color: rgb(var(--text-secondary));
-    letter-spacing: .5px;
+    color: rgb(var(--cyan));
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
     white-space: nowrap;
+    text-shadow: 0 0 4px rgba(var(--cyan), 0.4);
 }
 
 .barra-telemetria__titulo {

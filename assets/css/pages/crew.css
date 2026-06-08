@@ -1,0 +1,407 @@
+/* ==========================================================================
+   CREW.CSS - Estilos Específicos para a Tela de Tripulação (Crew 2.0)
+   ========================================================================== */
+
+.painel-crew {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+
+
+/* Distribuição de Equipe */
+.crew-distribuicao {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: rgba(var(--bg-main), 0.3);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(var(--white), 0.05);
+}
+
+.crew-distribuicao__tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--text-xs);
+    color: rgb(var(--text-default));
+    background: rgba(var(--white), 0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(var(--white), 0.1);
+}
+
+.crew-distribuicao__tag i {
+    color: rgb(var(--cyan));
+}
+
+
+/* ==========================================================================
+   1.5 CONTROLES (PESQUISA E PAGINAÇÃO)
+   ========================================================================== */
+.crew-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.crew-controls__pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.crew-controls__pesquisa i {
+    color: rgb(var(--cyan));
+    font-size: var(--text-lg);
+}
+
+.crew-controls__pesquisa input {
+    background: transparent;
+    border: none;
+    color: rgb(var(--white));
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+    width: 100%;
+    outline: none;
+}
+
+.crew-controls__pesquisa input::placeholder {
+    color: rgba(var(--white), 0.3);
+}
+
+.crew-controls__paginacao {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.crew-btn-page {
+    background: rgba(var(--white), 0.05);
+    border: 1px solid rgba(var(--white), 0.1);
+    color: rgb(var(--white));
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.crew-btn-page:hover:not(:disabled) {
+    background: rgba(var(--cyan), 0.1);
+    border-color: rgba(var(--cyan), 0.4);
+    color: rgb(var(--cyan));
+}
+
+.crew-btn-page--ativo {
+    background: rgb(var(--cyan));
+    border-color: rgb(var(--cyan));
+    color: rgb(var(--bg-main));
+}
+
+.crew-btn-page:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================================================
+   2. GRID DE TRIPULANTES (Crew Roster 2.0)
+   ========================================================================== */
+.crew-roster {
+    display: grid;
+    /* Cartões grandes, no desktop serão 2 por linha, em telas menores 1 por linha */
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 24px;
+}
+
+.crew-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.crew-card:hover {
+    border-color: rgba(var(--cyan), 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), var(--glow-cyan);
+}
+
+.crew-card--alerta {
+    border-color: rgba(var(--salmon), 0.3);
+}
+
+.crew-card--alerta:hover {
+    border-color: rgba(var(--salmon), 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), var(--glow-salmon);
+}
+
+/* Header do Cartão (Perfil) */
+.crew-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid rgba(var(--white), 0.05);
+    background: linear-gradient(90deg, rgba(var(--bg-main), 0.8), rgba(var(--cyan), 0.02));
+}
+
+.crew-card__perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.crew-card__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    background: rgba(var(--cyan), 0.1);
+    border: 1px solid rgba(var(--cyan), 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: rgb(var(--cyan));
+    position: relative;
+}
+
+.crew-card__status-dot {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgb(var(--green));
+    border: 3px solid rgb(var(--bg-main));
+}
+
+.crew-card--alerta .crew-card__status-dot {
+    background: rgb(var(--salmon));
+}
+
+.crew-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.crew-card__nome {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: rgb(var(--white));
+    line-height: 1;
+}
+
+.crew-card__funcao {
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.crew-card__setor {
+    background: rgba(var(--cyan), 0.1);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    color: rgb(var(--cyan));
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(var(--cyan), 0.3);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* Corpo do Cartão (Colunas de Dados) */
+.crew-card__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Coluna Padrão */
+.crew-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.crew-coluna__titulo {
+    font-size: var(--text-xs);
+    color: rgb(var(--text-secondary));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(var(--white), 0.1);
+}
+
+/* Linha de Dado (Comum em Saúde e Impacto) */
+.crew-dado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.crew-dado__label {
+    font-size: var(--text-sm);
+    color: rgb(var(--text-default));
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.crew-dado__label i {
+    color: rgb(var(--cyan));
+    width: 16px;
+    text-align: center;
+}
+
+.crew-dado__valor {
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+    font-weight: 700;
+    color: rgb(var(--white));
+}
+
+.crew-dado__valor--positivo {
+    color: rgb(var(--green));
+}
+
+.crew-dado__valor--alerta {
+    color: rgb(var(--yellow));
+}
+
+.crew-dado__valor--critico {
+    color: rgb(var(--salmon));
+}
+
+
+/* Impacto Operacional - Estilos Específicos */
+.crew-impacto {
+    background: rgba(var(--bg-main), 0.4);
+    border: 1px solid rgba(var(--white), 0.05);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Contexto de Missão e Responsabilidades */
+.crew-missao {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.crew-missao__card {
+    background: rgba(var(--white), 0.02);
+    border: 1px solid rgba(var(--white), 0.1);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.crew-missao__nome {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: rgb(var(--white));
+}
+
+.crew-missao__progresso {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.crew-missao__barra {
+    flex: 1;
+    height: 4px;
+    background: rgba(var(--white), 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.crew-missao__fill {
+    height: 100%;
+    background: rgb(var(--cyan));
+}
+
+.crew-missao__pct {
+    font-family: var(--font-primary);
+    font-size: var(--text-xs);
+    color: rgb(var(--cyan));
+}
+
+.crew-responsabilidades {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.crew-responsabilidades__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--text-xs);
+    color: rgb(var(--text-default));
+}
+
+.crew-responsabilidades__item i {
+    color: rgb(var(--green));
+}
+
+
+/* ==========================================================================
+   3. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .crew-card__body {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .crew-card__body>.crew-coluna:last-child {
+        grid-column: 1 / -1;
+        /* Missão ocupa a linha de baixo inteira */
+    }
+}
+
+@media (max-width: 768px) {
+    .crew-roster {
+        grid-template-columns: 1fr;
+    }
+
+    .crew-card__header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .crew-card__body {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Histórico e correlações do sistema de controle hídrico.">
-  <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
-  <meta name="author" content="Space Connect">
-  <meta name="theme-color" content="#0b1021">
-
-  <!-- SEO & Open Graph -->
-  <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
-  <meta property="og:title" content="Space Connect - Fluxo de Interações">
-  <meta property="og:description" content="Histórico e correlações do sistema de controle hídrico.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Fluxo de Interações">
-  <meta name="twitter:description" content="Histórico e correlações do sistema de controle hídrico.">
-
-  <title>Space Connect - Fluxo de Interações</title>
-
+  <meta name="description" content="Sobre o projeto Space Connect.">
+  <title>Space Connect - Sobre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
-  <link rel="stylesheet" href="assets/css/pages/flow.css">
+  <link rel="stylesheet" href="assets/css/pages/about.css">
 </head>
-
 <body>
-
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
     <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
@@ -50,7 +29,7 @@
         <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
         <span class="menu-lateral__texto">Home</span>
       </a>
-      <a href="flow.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
+      <a href="flow.html" class="menu-lateral__link">
         <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
         <span class="menu-lateral__texto">Fluxo de Interações</span>
       </a>
@@ -71,7 +50,7 @@
         <span class="menu-lateral__texto">Suporte</span>
       </a>
       <div class="menu-lateral__separador"></div>
-      <a href="about.html" class="menu-lateral__link">
+      <a href="about.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
         <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
         <span class="menu-lateral__texto">Sobre</span>
       </a>
@@ -90,26 +69,18 @@
       <div class="menu-superior__buscar-container">
         <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
         <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
-
       </div>
     </div>
 
     <div class="menu-superior__direita">
-      <!-- Status -->
       <div class="menu-superior__status menu-superior__status--nominal">
         <span class="status-dot"></span>
         <span class="status-text">Nominal</span>
       </div>
-
-
-
-      <!-- Notificações -->
       <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
         <span class="menu-superior__badge">3</span>
       </button>
-
-      <!-- Usuário Dropdown -->
       <div class="menu-superior__usuario-dropdown">
         <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
@@ -118,7 +89,7 @@
           <span class="menu-superior__nome">Administrador</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
-        <div class="menu-superior__dropdown-menu card-glass " role="menu">
+        <div class="menu-superior__dropdown-menu card-glass" role="menu">
           <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
           <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
           <div class="dropdown-divisor"></div>
@@ -129,45 +100,84 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <section class="conteudo">
     <main class="conteudo__principal">
-      <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
-              Interações</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> / Metadados</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Malha de Tratamento e Biomassa</h1>
+        <h1 class="cabecalho-conteudo__titulo">Sobre o Projeto</h1>
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Controle interativo do ciclo de água, osmose reversa e reatores de
-            compostagem.</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Fluxo Contínuo Ativo</span>
+          <p class="cabecalho-conteudo__descricao">Informações de contexto para avaliação e arquitetura do sistema</p>
         </div>
       </header>
 
-      <div class="fluxo-container">
-
-        <div class="fluxo-quadro" id="fluxo-quadro">
-          <div class="fluxo-quadro__conteudo" id="fluxo-quadro__conteudo">
-            <svg class="fluxo-svg"></svg>
+      <!-- Seção ODS e Controles de Simulação -->
+      <section class="panel-glass-heavy secao-sobre">
+        
+        <div class="sobre-cabecalho">
+          <!-- Texto Explicativo -->
+          <div class="sobre-texto-bloco">
+            <!-- Título padronizado globalmente -->
+            <h2 class="secao-titulo"><i class="fa-solid fa-graduation-cap"></i> Contexto Acadêmico & ODS</h2>
+            
+            <p class="sobre-paragrafo">
+              <span class="sobre-destaque-cyan"><i class="fa-solid fa-flask"></i> <strong>Nota de Simulação:</strong></span> Este ambiente é um <strong>protótipo navegável simulado</strong>, concebido exclusivamente para a avaliação <strong>Global Solution (FIAP) - Indústria Espacial</strong>. Os dados de recursos e telemetria aqui exibidos são fictícios e não requerem integração backend real.
+            </p>
+            
+            <p class="sobre-paragrafo">
+              O <strong>Space Connect</strong> atende aos requisitos do desafio conectando-se a múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU. A proposta é que as tecnologias de sobrevivência espacial idealizadas aqui sejam aplicáveis aos desafios urbanos terrestres.
+            </p>
           </div>
 
-          <div class="fluxo-zoom" role="toolbar" aria-label="Controles de Zoom">
-            <button class="fluxo-zoom__botao" id="zoom-in-btn" title="Aumentar Zoom" aria-label="Aumentar Zoom"><i
-                class="fa-solid fa-magnifying-glass-plus"></i></button>
-            <button class="fluxo-zoom__botao" id="zoom-out-btn" title="Diminuir Zoom" aria-label="Diminuir Zoom"><i
-                class="fa-solid fa-magnifying-glass-minus"></i></button>
-            <button class="fluxo-zoom__botao" id="zoom-reset-btn" title="Resetar Visualização"
-              aria-label="Resetar Visualização"><i class="fa-solid fa-expand"></i></button>
+          <!-- Controle Simulação -->
+          <div class="sobre-controles">
+            <span class="sobre-controles-label">Controles de Avaliação</span>
+            <button id="btn-dsn-loss" class="botao-primario botao-dsn">
+              <i class="fa-solid fa-satellite-dish"></i> Simular Perda de DSN
+            </button>
           </div>
         </div>
 
-        <div class="fluxo-mobile-container" id="mobile-view-container"></div>
-      </div>
-    </main>
+        <!-- Cards ODS FontAwesome -->
+        <div class="sobre-ods-grid">
+          <!-- ODS 6 -->
+          <div class="card-glass ods-card ods-card--cyan">
+            <div class="ods-card__icone ods-card__icone--cyan"><i class="fa-solid fa-droplet"></i></div>
+            <h3 class="ods-card__titulo">ODS 6</h3>
+            <p class="ods-card__descricao">Água Potável e Saneamento via malha hídrica e osmose contínua.</p>
+          </div>
+          
+          <!-- ODS 2 -->
+          <div class="card-glass ods-card ods-card--green">
+            <div class="ods-card__icone ods-card__icone--green"><i class="fa-solid fa-leaf"></i></div>
+            <h3 class="ods-card__titulo">ODS 2</h3>
+            <p class="ods-card__descricao">Agricultura Sustentável através de controle de estufas e biomassa.</p>
+          </div>
+          
+          <!-- ODS 11 -->
+          <div class="card-glass ods-card ods-card--yellow">
+            <div class="ods-card__icone ods-card__icone--yellow"><i class="fa-solid fa-city"></i></div>
+            <h3 class="ods-card__titulo">ODS 11</h3>
+            <p class="ods-card__descricao">Cidades Sustentáveis escalando tecnologias de infraestrutura extrema.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Equipe -->
+      <section class="panel-glass-heavy secao-sobre secao-equipe">
+        <h2 class="secao-titulo"><i class="fa-solid fa-users"></i> Equipe Desenvolvedora</h2>
+        <div class="equipe-container">
+          <p>Projeto SPA desenvolvido para a avaliação FIAP Global Solution.</p>
+          <ul class="equipe-lista">
+            <li><strong>Integrante 1:</strong> Preencha seu nome</li>
+            <li><strong>Integrante 2:</strong> Preencha seu nome</li>
+            <li><strong>Integrante 3:</strong> Preencha seu nome</li>
+          </ul>
+        </div>
+      </section>
 
-    <aside class="painel-direito"></aside>
+    </main>
   </section>
 
   <!-- Bottombar de Telemetria -->
@@ -177,18 +187,13 @@
       <div class="barra-telemetria__letreiro" aria-hidden="true">
         <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
         <span class="barra-telemetria__item">POWER 96.4 kW</span>
-        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
-        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
-        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
-        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
       </div>
     </div>
     <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
   </footer>
 
   <script src="assets/js/main.js"></script>
-
-  <script src="assets/js/pages/flow.js"></script>
+  <script src="assets/js/components/sidebar.js"></script>
+  <script src="assets/js/pages/about.js"></script>
 </body>
-
 </html>
