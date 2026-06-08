@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,26 @@
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/about.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
+
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
-      aria-label="Abrir menu">
+    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
+      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Space Connect</span>
     </button>
@@ -73,16 +84,21 @@
     </div>
 
     <div class="menu-superior__direita">
-      <div class="menu-superior__status menu-superior__status--nominal">
-        <span class="status-dot"></span>
+      <span class="badge badge--danger">
+        <span class="badge__dot"></span>
+        1 Alerta Críticos
+      </span>
+      <div class="badge badge--success">
+        <span class="badge__dot"></span>
         <span class="status-text">Nominal</span>
       </div>
-      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
+        aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">3</span>
+        <span class="menu-superior__badge">5</span>
       </button>
       <div class="menu-superior__usuario-dropdown">
-        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
@@ -102,41 +118,30 @@
 
   <section class="conteudo">
     <main class="conteudo__principal">
-      <header class="cabecalho-conteudo">
-        <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> / Metadados</span></p>
-        </div>
-        <h1 class="cabecalho-conteudo__titulo">Sobre o Projeto</h1>
-        <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Informações de contexto para avaliação e arquitetura do sistema</p>
-        </div>
-      </header>
 
       <!-- Seção ODS e Controles de Simulação -->
       <section class="panel-glass-heavy secao-sobre">
-        
+
         <div class="sobre-cabecalho">
           <!-- Texto Explicativo -->
           <div class="sobre-texto-bloco">
             <!-- Título padronizado globalmente -->
             <h2 class="secao-titulo"><i class="fa-solid fa-graduation-cap"></i> Contexto Acadêmico & ODS</h2>
-            
+
             <p class="sobre-paragrafo">
-              <span class="sobre-destaque-cyan"><i class="fa-solid fa-flask"></i> <strong>Nota de Simulação:</strong></span> Este ambiente é um <strong>protótipo navegável simulado</strong>, concebido exclusivamente para a avaliação <strong>Global Solution (FIAP) - Indústria Espacial</strong>. Os dados de recursos e telemetria aqui exibidos são fictícios e não requerem integração backend real.
+              <span class="sobre-destaque-cyan"><i class="fa-solid fa-flask"></i> <strong>Nota de
+                  Simulação:</strong></span> Este ambiente é um <strong>protótipo navegável simulado</strong>, concebido
+              exclusivamente para a avaliação <strong>Global Solution (FIAP) - Indústria Espacial</strong>. Os dados de
+              recursos e telemetria aqui exibidos são fictícios e não requerem integração backend real.
             </p>
-            
+
             <p class="sobre-paragrafo">
-              O <strong>Space Connect</strong> atende aos requisitos do desafio conectando-se a múltiplos Objetivos de Desenvolvimento Sustentável (ODS) da ONU. A proposta é que as tecnologias de sobrevivência espacial idealizadas aqui sejam aplicáveis aos desafios urbanos terrestres.
+              O <strong>Space Connect</strong> atende aos requisitos do desafio conectando-se a múltiplos Objetivos de
+              Desenvolvimento Sustentável (ODS) da ONU. A proposta é que as tecnologias de sobrevivência espacial
+              idealizadas aqui sejam aplicáveis aos desafios urbanos terrestres.
             </p>
           </div>
 
-          <!-- Controle Simulação -->
-          <div class="sobre-controles">
-            <span class="sobre-controles-label">Controles de Avaliação</span>
-            <button id="btn-dsn-loss" class="botao-primario botao-dsn">
-              <i class="fa-solid fa-satellite-dish"></i> Simular Perda de DSN
-            </button>
-          </div>
         </div>
 
         <!-- Cards ODS FontAwesome -->
@@ -147,14 +152,14 @@
             <h3 class="ods-card__titulo">ODS 6</h3>
             <p class="ods-card__descricao">Água Potável e Saneamento via malha hídrica e osmose contínua.</p>
           </div>
-          
+
           <!-- ODS 2 -->
           <div class="card-glass ods-card ods-card--green">
             <div class="ods-card__icone ods-card__icone--green"><i class="fa-solid fa-leaf"></i></div>
             <h3 class="ods-card__titulo">ODS 2</h3>
             <p class="ods-card__descricao">Agricultura Sustentável através de controle de estufas e biomassa.</p>
           </div>
-          
+
           <!-- ODS 11 -->
           <div class="card-glass ods-card ods-card--yellow">
             <div class="ods-card__icone ods-card__icone--yellow"><i class="fa-solid fa-city"></i></div>
@@ -163,16 +168,16 @@
           </div>
         </div>
       </section>
-      
+
       <!-- Equipe -->
       <section class="panel-glass-heavy secao-sobre secao-equipe">
         <h2 class="secao-titulo"><i class="fa-solid fa-users"></i> Equipe Desenvolvedora</h2>
         <div class="equipe-container">
           <p>Projeto SPA desenvolvido para a avaliação FIAP Global Solution.</p>
           <ul class="equipe-lista">
-            <li><strong>Integrante 1:</strong> Preencha seu nome</li>
-            <li><strong>Integrante 2:</strong> Preencha seu nome</li>
-            <li><strong>Integrante 3:</strong> Preencha seu nome</li>
+            <li><strong>Integrante 1:</strong> Ingrid</li>
+            <li><strong>Integrante 2:</strong> Larissa</li>
+            <li><strong>Integrante 3:</strong> Mayla</li>
           </ul>
         </div>
       </section>
@@ -193,7 +198,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/components/sidebar.js"></script>
-  <script src="assets/js/pages/about.js"></script>
 </body>
+
 </html>

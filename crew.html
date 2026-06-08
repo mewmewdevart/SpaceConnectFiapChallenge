@@ -25,23 +25,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/macro-card.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/crew.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
-      aria-label="Abrir menu">
+    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
+      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Space Connect</span>
     </button>
@@ -96,20 +104,25 @@
 
     <div class="menu-superior__direita">
       <!-- Status -->
-      <div class="menu-superior__status menu-superior__status--nominal">
-        <span class="status-dot"></span>
+      <span class="badge badge--danger">
+        <span class="badge__dot"></span>
+        1 Alerta Críticos
+      </span>
+      <div class="badge badge--success">
+        <span class="badge__dot"></span>
         <span class="status-text">Nominal</span>
       </div>
 
       <!-- Notificações -->
-      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
+        aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">3</span>
+        <span class="menu-superior__badge">5</span>
       </button>
 
       <!-- Usuário Dropdown -->
       <div class="menu-superior__usuario-dropdown">
-        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
@@ -141,7 +154,10 @@
         <div class="cabecalho-conteudo__bloco">
           <p class="cabecalho-conteudo__descricao">Monitoramento sistêmico de tripulação, impacto de recursos e missões
             ativas.</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--nominal">Nó Ativo</span>
+          <span class="cabecalho-conteudo__status badge badge--success">
+            <span class="badge__dot"></span>
+            Nó Ativo
+          </span>
         </div>
       </header>
 
@@ -149,72 +165,89 @@
         <!-- Visão Macro (Saúde da Colônia) -->
         <section class="macro-grid" aria-label="Saúde da Colônia">
 
-          <div class="macro-card macro-card--cyan card-glass ">
+          <article class="macro-card macro-card--cyan card-glass ">
             <div class="macro-card__icone">
               <i class="fa-solid fa-chart-line"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">92%</span>
+              <span class="macro-card__valor macro-card__valor--destaque">92%</span>
               <span class="macro-card__label">Produtividade Geral</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--yellow card-glass ">
+          <article class="macro-card macro-card--yellow card-glass ">
             <div class="macro-card__icone">
               <i class="fa-solid fa-battery-half"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">31%</span>
+              <span class="macro-card__valor macro-card__valor--destaque">31%</span>
               <span class="macro-card__label">Fadiga Média</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--cyan card-glass ">
+          <article class="macro-card macro-card--cyan card-glass ">
             <div class="macro-card__icone">
               <i class="fa-solid fa-droplet"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">126<span class="macro-card__unidade">L</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">126<span
+                  class="macro-card__unidade">L</span></span>
               <span class="macro-card__label">Consumo Diário (H2O)</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--cyan card-glass ">
+          <article class="macro-card macro-card--cyan card-glass ">
             <div class="macro-card__icone">
               <i class="fa-solid fa-wind"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">84<span class="macro-card__unidade">kg</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">84<span
+                  class="macro-card__unidade">kg</span></span>
               <span class="macro-card__label">Consumo Diário (O2)</span>
             </div>
-          </div>
+          </article>
 
-          <div class="crew-distribuicao">
-            <span class="crew-distribuicao__tag"><i class="fa-solid fa-users"></i> 17 Membros</span>
-            <span class="crew-distribuicao__tag"><i class="fa-solid fa-wrench"></i> 6 Engenharia</span>
-            <span class="crew-distribuicao__tag"><i class="fa-solid fa-flask"></i> 4 Ciência</span>
-            <span class="crew-distribuicao__tag"><i class="fa-solid fa-leaf"></i> 3 Agricultura</span>
-            <span class="crew-distribuicao__tag"><i class="fa-solid fa-staff-snake"></i> 2 Saúde</span>
-            <span class="crew-distribuicao__tag"><i class="fa-solid fa-jet-fighter-up"></i> 2 Comando</span>
+          <div class="crew-distribuicao" id="crew-filters">
+            <button class="botao botao--tab crew-distribuicao__tag crew-distribuicao__tag--ativo" data-department="All"
+              aria-pressed="true"><i class="fa-solid fa-users"></i> 17 Membros</button>
+            <button class="botao botao--tab crew-distribuicao__tag" data-department="Engenharia" aria-pressed="false"><i
+                class="fa-solid fa-wrench"></i> 6
+              Engenharia</button>
+            <button class="botao botao--tab crew-distribuicao__tag" data-department="Ciência" aria-pressed="false"><i
+                class="fa-solid fa-flask"></i> 4
+              Ciência</button>
+            <button class="botao botao--tab crew-distribuicao__tag" data-department="Agricultura"
+              aria-pressed="false"><i class="fa-solid fa-leaf"></i> 3
+              Agricultura</button>
+            <button class="botao botao--tab crew-distribuicao__tag" data-department="Saúde" aria-pressed="false"><i
+                class="fa-solid fa-staff-snake"></i> 2
+              Saúde</button>
+            <button class="botao botao--tab crew-distribuicao__tag" data-department="Comando" aria-pressed="false"><i
+                class="fa-solid fa-jet-fighter-up"></i>
+              2 Comando</button>
           </div>
 
         </section>
 
-        <!-- Filtros e Paginação -->
+        <!-- Filtros e Pesquisa -->
         <section class="crew-controls" aria-label="Controles da Tripulação">
-          <div class="crew-controls__pesquisa card-glass ">
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="menu-superior__buscar-container crew-busca-expansivel">
+            <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
             <input type="text" id="crew-search" placeholder="Buscar por nome, função ou setor..."
               aria-label="Pesquisar tripulante">
-          </div>
-          <div class="crew-controls__paginacao" id="crew-pagination">
-            <!-- Renderizado via JS -->
           </div>
         </section>
 
         <!-- Grid de Roster (Tripulantes Detalhados) -->
         <section class="crew-roster" id="crew-roster-container" aria-label="Lista de Tripulantes Operacionais">
           <!-- Renderizado via assets/js/pages/crew.js -->
+        </section>
+
+        <!-- Paginação movida para o final -->
+        <section class="crew-controls crew-controls--centro">
+          <div class="crew-controls__paginacao" id="crew-pagination">
+            <!-- Renderizado via JS -->
+          </div>
         </section>
 
       </div>

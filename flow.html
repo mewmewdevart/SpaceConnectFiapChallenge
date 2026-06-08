@@ -25,23 +25,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/flow.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
-      aria-label="Abrir menu">
+    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
+      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Space Connect</span>
     </button>
@@ -96,22 +103,27 @@
 
     <div class="menu-superior__direita">
       <!-- Status -->
-      <div class="menu-superior__status menu-superior__status--nominal">
-        <span class="status-dot"></span>
+      <span class="badge badge--danger">
+        <span class="badge__dot"></span>
+        1 Alerta Críticos
+      </span>
+      <div class="badge badge--success">
+        <span class="badge__dot"></span>
         <span class="status-text">Nominal</span>
       </div>
 
 
 
       <!-- Notificações -->
-      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
+        aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">3</span>
+        <span class="menu-superior__badge">5</span>
       </button>
 
       <!-- Usuário Dropdown -->
       <div class="menu-superior__usuario-dropdown">
-        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
@@ -142,7 +154,10 @@
         <div class="cabecalho-conteudo__bloco">
           <p class="cabecalho-conteudo__descricao">Controle interativo do ciclo de água, osmose reversa e reatores de
             compostagem.</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Fluxo Contínuo Ativo</span>
+          <span class="cabecalho-conteudo__status badge badge--warning">
+            <span class="badge__dot"></span>
+            Fluxo Contínuo Ativo
+          </span>
         </div>
       </header>
 
@@ -154,12 +169,12 @@
           </div>
 
           <div class="fluxo-zoom" role="toolbar" aria-label="Controles de Zoom">
-            <button class="fluxo-zoom__botao" id="zoom-in-btn" title="Aumentar Zoom" aria-label="Aumentar Zoom"><i
-                class="fa-solid fa-magnifying-glass-plus"></i></button>
-            <button class="fluxo-zoom__botao" id="zoom-out-btn" title="Diminuir Zoom" aria-label="Diminuir Zoom"><i
-                class="fa-solid fa-magnifying-glass-minus"></i></button>
-            <button class="fluxo-zoom__botao" id="zoom-reset-btn" title="Resetar Visualização"
-              aria-label="Resetar Visualização"><i class="fa-solid fa-expand"></i></button>
+            <button class="botao botao--ghost botao--icone fluxo-zoom__botao" id="zoom-in-btn" title="Aumentar Zoom"
+              aria-label="Aumentar Zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+            <button class="botao botao--ghost botao--icone fluxo-zoom__botao" id="zoom-out-btn" title="Diminuir Zoom"
+              aria-label="Diminuir Zoom"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+            <button class="botao botao--ghost botao--icone fluxo-zoom__botao" id="zoom-reset-btn"
+              title="Resetar Visualização" aria-label="Resetar Visualização"><i class="fa-solid fa-expand"></i></button>
           </div>
         </div>
 

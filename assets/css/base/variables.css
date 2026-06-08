@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap');
+/* Google Fonts carregado via <link> nos HTMLs para não bloquear parsing CSS */
 
 :root {
 
@@ -71,9 +71,7 @@
     --graph-color-lv3: var(--lime);
     --graph-color-lv4: var(--yellow);
 
-
     --border-color: rgba(var(--white), 0.1);
-
 
     --fluid-color-gray: var(--text-secondary);
     --fluid-color-pure: var(--mint);
@@ -137,4 +135,16 @@
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
+
+    /* Buttons Design System */
+    --btn-height-sm: 32px;
+    --btn-height-md: 40px;
+    --btn-height-lg: 48px;
+    --btn-height-mobile: 44px; /* Touch safe */
+
+    --btn-padding-sm: 0 var(--space-md);
+    --btn-padding-md: 0 var(--space-lg);
+    --btn-padding-lg: 0 var(--space-xl);
+
+    --btn-gap: var(--space-sm);
 }

@@ -11,7 +11,7 @@
 .recursos-grade-cofres {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px;
+    gap: 20px;
 }
 
 
@@ -68,30 +68,7 @@
     letter-spacing: 0.05em;
 }
 
-.recursos-cofre__taxa {
-    font-size: var(--text-xs);
-    letter-spacing: 0.1em;
-    padding: 4px 10px;
-    border-radius: 3px;
-}
 
-.recursos-cofre__taxa--verde {
-    color: rgb(var(--mint));
-    border-color: rgba(var(--mint), 0.35);
-    background: rgba(var(--mint), 0.06);
-}
-
-.recursos-cofre__taxa--amarelo {
-    color: rgb(var(--yellow));
-    border-color: rgba(var(--yellow), 0.35);
-    background: rgba(var(--yellow), 0.06);
-}
-
-.recursos-cofre__taxa--vermelho {
-    color: rgb(var(--magenta));
-    border-color: rgba(var(--magenta), 0.35);
-    background: rgba(var(--magenta), 0.06);
-}
 
 
 .recursos-cofre__corpo {
@@ -109,7 +86,7 @@
     display: flex;
     align-items: baseline;
     gap: 6px;
-    margin-bottom: 8px;
+
 }
 
 .recursos-cofre__valor-massa {
@@ -130,7 +107,7 @@
 
     font-size: var(--text-xs);
     color: rgb(var(--text-secondary));
-    margin-bottom: 8px;
+
     text-align: right;
 }
 
@@ -141,7 +118,6 @@
     border-radius: 2px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 16px;
 }
 
 .recursos-cofre__preenchimento-progresso {
@@ -224,23 +200,7 @@
     letter-spacing: 0.08em;
 }
 
-.recursos-cofre__status {
 
-    font-size: var(--text-micro);
-    letter-spacing: 0.1em;
-}
-
-.recursos-cofre__status--lacrado {
-    color: rgb(var(--cyan));
-}
-
-.recursos-cofre__status--ativo {
-    color: rgb(var(--mint));
-}
-
-.recursos-cofre__status--aviso {
-    color: rgb(var(--magenta));
-}
 
 
 .recursos-cofre__tanque {
@@ -376,8 +336,7 @@
 .recursos-analise {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 18px;
-    margin-top: 18px;
+    gap: 20px;
 }
 
 .recursos-grafico,
@@ -487,15 +446,7 @@
 }
 
 /* Alocações */
-.recursos-alocacao__badge {
-    background: rgba(var(--cyan), 0.1);
-    color: rgb(var(--cyan));
-    border: 1px solid rgba(var(--cyan), 0.3);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: var(--text-micro);
-    letter-spacing: 0.1em;
-}
+
 
 .recursos-alocacao__lista {
     display: flex;

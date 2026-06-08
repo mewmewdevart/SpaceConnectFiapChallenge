@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mantém estado de DSN Loss caso exista
-    if (localStorage.getItem('dsnLoss') === 'true') {
-        document.body.classList.add('dsn-loss');
-    }
 
     // Lógica para confirmar alertas
     const confirmButtons = document.querySelectorAll('.alerta__botao-acao--confirmar');

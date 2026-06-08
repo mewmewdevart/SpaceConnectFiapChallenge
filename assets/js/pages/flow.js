@@ -22,9 +22,9 @@
         svg.innerHTML = '';
 
         // Zoom & Pan State
-        let zoom = 1.0;
-        let panX = 0;
-        let panY = 0;
+        let zoom = 0.8;
+        let panX = 20;
+        let panY = 20;
         let boardMoved = false;
 
         function updateTransform() {
@@ -38,13 +38,13 @@
 
         // Initial system modules and connection lines
         let modules = [
-            { id: "greywater_tank", name: "Tanque de Água Cinza", subtitle: "Captação de pias e chuveiros", category: "source", icon: "fa-sink", level: 65, status: "nominal", x: 60, y: 30, fluid: "greywater", color: getCSSVar("--fluid-color-gray", "#81afb5") },
-            { id: "atm_collector", name: "Coletor de Umidade", subtitle: "Condensador de vapor ambiental", category: "source", icon: "fa-cloud", level: 40, status: "nominal", x: 60, y: 175, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
-            { id: "biomass_collector", name: "Coletor de Biomassa", subtitle: "Matéria orgânica sintotrópica", category: "source", icon: "fa-leaf", level: 88, status: "warning", x: 60, y: 320, fluid: "organic", color: getCSSVar("--fluid-color-organic", "#f7e476") },
+            { id: "greywater_tank", name: "Tanque de Água Cinza", subtitle: "Captação de pias e chuveiros", category: "source", icon: "fa-sink", level: 65, status: "nominal", x: 20, y: 20, fluid: "greywater", color: getCSSVar("--fluid-color-gray", "#81afb5") },
+            { id: "atm_collector", name: "Coletor de Umidade", subtitle: "Condensador de vapor ambiental", category: "source", icon: "fa-cloud", level: 40, status: "nominal", x: 20, y: 165, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
+            { id: "biomass_collector", name: "Coletor de Biomassa", subtitle: "Matéria orgânica sintotrópica", category: "source", icon: "fa-leaf", level: 88, status: "warning", x: 20, y: 310, fluid: "organic", color: getCSSVar("--fluid-color-organic", "#f7e476") },
 
-            { id: "ro_purifier", name: "Purificador Osmose Reversa", subtitle: "Filtragem de membrana avançada", category: "treatment", icon: "fa-filter", level: 55, status: "nominal", x: 340, y: 30, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
-            { id: "uv_sterilizer", name: "Esterilizador UV", subtitle: "Eliminação de patógenos por UV", category: "treatment", icon: "fa-sun", level: 92, status: "warning", x: 340, y: 175, fluid: "disinfected", color: getCSSVar("--fluid-color-disinfected", "#a55eea") },
-            { id: "comp_reactor", name: "Reator Compostador", subtitle: "Decomposição bioativa sintólica", category: "treatment", icon: "fa-recycle", level: 30, status: "nominal", x: 340, y: 320, fluid: "fertilizer", color: getCSSVar("--fluid-color-fertilizer", "#a1e55a") },
+            { id: "ro_purifier", name: "Purificador Osmose Reversa", subtitle: "Filtragem de membrana avançada", category: "treatment", icon: "fa-filter", level: 55, status: "nominal", x: 330, y: 30, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
+            { id: "uv_sterilizer", name: "Esterilizador UV", subtitle: "Eliminação de patógenos por UV", category: "treatment", icon: "fa-sun", level: 92, status: "warning", x: 330, y: 175, fluid: "disinfected", color: getCSSVar("--fluid-color-disinfected", "#a55eea") },
+            { id: "comp_reactor", name: "Reator Compostador", subtitle: "Decomposição bioativa sintólica", category: "treatment", icon: "fa-recycle", level: 30, status: "nominal", x: 330, y: 310, fluid: "fertilizer", color: getCSSVar("--fluid-color-fertilizer", "#a1e55a") },
 
             { id: "potable_tank", name: "Tanque de Água Potável", subtitle: "Rede de abastecimento humano", category: "destination", icon: "fa-glass-water", level: 75, status: "nominal", x: 620, y: 30, fluid: "potable", color: getCSSVar("--fluid-color-potable", "#0984e3") },
             { id: "irrigation_tank", name: "Tanque de Irrigação", subtitle: "Subsistema agrícola hidropônico", category: "destination", icon: "fa-seedling", level: 20, status: "warning", x: 620, y: 175, fluid: "agricultural", color: getCSSVar("--fluid-color-agricultural", "#38b764") },
@@ -225,7 +225,7 @@
                 const mid_y = 0.125 * y_out + 0.375 * y_out + 0.375 * y_in + 0.125 * y_in;
 
                 const valveBtn = document.createElement('button');
-                valveBtn.className = `fluxo-valvula-btn ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}`;
+                valveBtn.className = `fluxo-valvula-btn botao botao--sm ${conn.status === 'open' ? 'botao--sucesso' : 'botao--alerta'}`;
                 valveBtn.setAttribute('aria-label', `Alternar válvula de ${fromMod.name} para ${toMod.name}. Status atual: ${conn.status === 'open' ? 'Livre' : 'Bloqueada'}`);
                 valveBtn.innerHTML = conn.status === 'open'
                     ? '<i class="fa-solid fa-play" aria-hidden="true"></i> LIVRE'
@@ -392,7 +392,7 @@
         if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => zoomCenter(0.85));
         if (zoomResetBtn) {
             zoomResetBtn.addEventListener('click', () => {
-                zoom = 1.0;
+                zoom = 1;
                 panX = 0;
                 panY = 0;
                 updateTransform();
@@ -469,10 +469,10 @@
                                 </select>
                             </div>
                             <div class="inspetor-painel__acoes">
-                                <button type="button" class="inspetor-painel__btn-cancelar" id="inspect-inspetor-painel__btn-cancelar">
+                                <button type="button" class="botao botao--secundario inspetor-painel__btn-cancelar" id="inspect-inspetor-painel__btn-cancelar">
                                     <i class="fa-solid fa-xmark"></i> Cancelar
                                 </button>
-                                <button type="button" class="inspetor-painel__btn-salvar" id="inspect-inspetor-painel__btn-salvar">
+                                <button type="button" class="botao botao--primario inspetor-painel__btn-salvar" id="inspect-inspetor-painel__btn-salvar">
                                     <i class="fa-solid fa-floppy-disk"></i> Salvar
                                 </button>
                             </div>
@@ -568,13 +568,13 @@
                                 <label>Controle de Fluxo</label>
                                 <div class="inspetor-painel__container-valvula">
                                     <span>Válvula de Fechamento</span>
-                                    <button class="inspetor-painel__btn-valvula ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" id="inspect-valve-toggle">
+                                    <button class="botao botao--outline botao--valvula inspetor-painel__btn-valvula ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" id="inspect-valve-toggle" aria-pressed="${conn.status === 'open' ? 'true' : 'false'}">
                                         ${conn.status === 'open' ? 'LIVRE' : 'BLOQUEADA'}
                                     </button>
                                 </div>
                             </div>
                             
-                            <button class="inspetor-painel__btn-perigo" id="inspect-delete-conn">
+                            <button class="botao botao--perigo inspetor-painel__btn-perigo" id="inspect-delete-conn">
                                 <i class="fa-solid fa-trash"></i> Desconectar Tubulação
                             </button>
                         </div>
@@ -648,8 +648,8 @@
                             const dest = modules.find(m => m.id === c.to);
                             const btnLabel = c.status === 'open' ? 'Bloquear' : 'Liberar';
                             return `
-                                            <button class="inspetor-painel__btn-valvula inspetor-painel__btn-valvula-sm ${c.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" 
-                                                    data-conn-id="${c.id}">
+                                            <button class="botao botao--outline botao--valvula botao--sm inspetor-painel__btn-valvula inspetor-painel__btn-valvula-sm ${c.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" 
+                                                    data-conn-id="${c.id}" aria-pressed="${c.status === 'open' ? 'true' : 'false'}">
                                                 ${btnLabel} ${dest.name.split(' ')[0]}
                                             </button>
                                         `;

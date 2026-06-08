@@ -56,12 +56,16 @@
     gap: 16px;
     align-items: stretch;
     padding: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     border-radius: var(--radius-sm);
     transition: all var(--transition-normal);
     position: relative;
 }
 
+
+.alerta:last-child {
+    margin-bottom: 0;
+}
 
 .alerta--critico {
     background: linear-gradient(90deg, rgba(var(--magenta), 0.1) 0%, rgba(var(--magenta), 0.02) 100%);
@@ -152,25 +156,7 @@
     gap: 8px;
 }
 
-.alerta__badge {
 
-    font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.alerta__badge--critico {
-    color: rgb(var(--magenta));
-}
-
-.alerta__badge--aviso {
-    color: rgb(var(--yellow));
-}
-
-.alerta__badge--info {
-    color: rgb(var(--cyan));
-}
 
 .alerta__codigo-evento {
 
@@ -273,10 +259,6 @@
     transition: opacity 0.4s ease, filter 0.4s ease;
     pointer-events: none;
     filter: grayscale(0.8);
-}
-
-@media (max-width: 1100px) {
-    /* (removido painel-alertas__linha-resumo media queries) */
 }
 
 @media (max-width: 900px) {

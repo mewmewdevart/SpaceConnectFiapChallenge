@@ -74,18 +74,6 @@
     color: rgb(var(--green));
 }
 
-.cabecalho-conteudo__status span:first-child {
-    padding: 0 16px;
-    border: 2px solid rgb(var(--color-primary));
-    color: rgb(var(--color-primary));
-}
-
-.cabecalho-conteudo__status span:last-child {
-    padding: 0 16px;
-    border: 2px solid rgb(var(--color-secondary));
-    color: rgb(var(--color-secondary));
-}
-
 .painel-direito {
     width: 320px;
     flex-shrink: 0;
@@ -98,7 +86,6 @@
     background: var(--bg-glass-light);
     backdrop-filter: blur(10px);
     border: var(--panel-border);
-    border-radius: var(--radius-lg);
 }
 
 @media screen and (max-width: 1117px) {
@@ -125,22 +112,6 @@
     .painel-direito {
         width: 100%;
     }
-}
-
-.cabecalho-conteudo__status--verde {
-    color: rgb(var(--mint));
-    border-color: rgba(var(--mint), 0.35);
-    background: rgba(var(--mint), 0.06);
-}
-
-.cabecalho-conteudo__status--amarelo {
-    color: rgb(var(--yellow));
-    border-color: rgba(var(--yellow), 0.35);
-    background: rgba(var(--yellow), 0.06);
-    font-size: var(--text-xs);
-    letter-spacing: 0.1em;
-    padding: 4px 10px;
-    border: 1px solid;
 }
 
 /* -------------------------------------- */
@@ -173,100 +144,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
-    margin-bottom: 16px;
 }
 
-.macro-card {
-    --macro-color: var(--cyan);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-    transition: all var(--transition-normal);
-}
-
-.macro-card::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, rgba(var(--macro-color), 0.15), transparent 70%);
-}
-
-.macro-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(var(--macro-color), 0.4);
-}
-
-.macro-card__icone {
-    width: 50px;
-    height: 50px;
-    border-radius: var(--radius-sm);
-    background: rgba(var(--bg-main), 0.5);
-    border: 1px solid rgba(var(--white), 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: rgb(var(--macro-color));
-    flex-shrink: 0;
-}
-
-.macro-card__dados {
-    display: flex;
-    flex-direction: column;
-}
-
-.macro-card__valor {
-    font-size: var(--text-3xl);
-    font-family: var(--font-primary);
-    font-weight: 700;
-    color: rgb(var(--white));
-    line-height: 1;
-    margin-bottom: 4px;
-}
-
-.macro-card__valor--destaque {
-    color: rgb(var(--macro-color));
-    text-shadow: 0 0 16px rgba(var(--macro-color), 0.4);
-}
-
-.macro-card__unidade {
-    font-size: 0.5em;
-    color: rgb(var(--text-secondary));
-    font-weight: 400;
-}
-
-.macro-card__label {
-    font-size: var(--text-xs);
-    color: rgb(var(--text-secondary));
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.macro-card__sub {
-    font-size: var(--text-micro);
-    color: rgb(var(--text-secondary));
-    margin-top: 4px;
-}
-
-/* Colors */
-.macro-card--magenta {
-    --macro-color: var(--magenta);
-}
-
-.macro-card--yellow {
-    --macro-color: var(--yellow);
-}
-
-.macro-card--green {
-    --macro-color: var(--green);
-}
-
-.macro-card--cyan {
-    --macro-color: var(--cyan);
-}
+/* Macro-card componentizado para assets/css/components/macro-card.css */

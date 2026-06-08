@@ -25,23 +25,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/macro-card.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/support.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
-      aria-label="Abrir menu">
+    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
+      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Space Connect</span>
     </button>
@@ -96,22 +104,27 @@
 
     <div class="menu-superior__direita">
       <!-- Status -->
-      <div class="menu-superior__status menu-superior__status--nominal">
-        <span class="status-dot"></span>
+      <span class="badge badge--danger">
+        <span class="badge__dot"></span>
+        1 Alerta Críticos
+      </span>
+      <div class="badge badge--success">
+        <span class="badge__dot"></span>
         <span class="status-text">Nominal</span>
       </div>
 
 
 
       <!-- Notificações -->
-      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
+        aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">3</span>
+        <span class="menu-superior__badge">5</span>
       </button>
 
       <!-- Usuário Dropdown -->
       <div class="menu-superior__usuario-dropdown">
-        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
@@ -142,7 +155,10 @@
 
         <div class="cabecalho-conteudo__bloco">
           <p class="cabecalho-conteudo__descricao">Protocolos de Engenharia Terra-Lua e Acompanhamento de Chamados</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Link DSN Estável</span>
+          <span class="cabecalho-conteudo__status badge badge--warning">
+            <span class="badge__dot"></span>
+            Link DSN Estável
+          </span>
         </div>
       </header>
 
@@ -153,7 +169,7 @@
               <i class="fa-solid fa-layer-group"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">142</span>
+              <span class="macro-card__valor macro-card__valor--destaque">3</span>
               <span class="macro-card__label">Chamados Totais</span>
               <span class="macro-card__sub">Últimos 30 dias</span>
             </div>
@@ -164,7 +180,7 @@
               <i class="fa-solid fa-spinner fa-spin-pulse"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">12</span>
+              <span class="macro-card__valor macro-card__valor--destaque">2</span>
               <span class="macro-card__label">Em Andamento</span>
               <span class="macro-card__sub">Aguardando técnicos</span>
             </div>
@@ -175,7 +191,7 @@
               <i class="fa-solid fa-check-double"></i>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">130</span>
+              <span class="macro-card__valor macro-card__valor--destaque">1</span>
               <span class="macro-card__label">Resolvidos</span>
               <span class="macro-card__sub">Encerrados com sucesso</span>
             </div>
@@ -188,8 +204,8 @@
             <h2 class="secao-titulo"><i class="fa-solid fa-headset"></i> Abrir Novo Chamado</h2>
             <form class="formulario-suporte" onsubmit="event.preventDefault();">
               <div class="formulario-grupo">
-                <label for="assunto" class="formulario-label">Categoria do Problema</label>
-                <select id="assunto" class="formulario-input" required>
+                <label for="assunto" class="campo-label">Categoria do Problema</label>
+                <select id="assunto" class="campo" required>
                   <option value="" disabled selected>Selecione uma categoria...</option>
                   <option value="hardware">Falha de Hardware/Equipamento</option>
                   <option value="software">Erro de Sistema / Software</option>
@@ -199,8 +215,8 @@
                 </select>
               </div>
               <div class="formulario-grupo">
-                <label for="prioridade" class="formulario-label">Prioridade</label>
-                <select id="prioridade" class="formulario-input">
+                <label for="prioridade" class="campo-label">Prioridade</label>
+                <select id="prioridade" class="campo">
                   <option value="baixa">Baixa</option>
                   <option value="media" selected>Média</option>
                   <option value="alta">Alta</option>
@@ -208,12 +224,12 @@
                 </select>
               </div>
               <div class="formulario-grupo">
-                <label for="descricao" class="formulario-label">Descrição do Problema</label>
-                <textarea id="descricao" class="formulario-textarea"
+                <label for="descricao" class="campo-label">Descrição do Problema</label>
+                <textarea id="descricao" class="campo campo--textarea"
                   placeholder="Descreva o problema com o máximo de detalhes possível, incluindo módulos afetados e logs (se houver)..."
                   required></textarea>
               </div>
-              <button type="submit" class="botao-primario">
+              <button type="submit" class="botao botao--primario">
                 <i class="fa-solid fa-paper-plane"></i> Enviar Chamado
               </button>
             </form>
@@ -226,39 +242,42 @@
               <article class="chamado-cartao card-glass ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8942</span>
-                  <span class="badge-status badge-status--aberto">Aberto</span>
+                  <span class="badge badge--danger">Aberto</span>
                 </div>
                 <h3 class="chamado-cartao__titulo">Falha na Bomba de Recirculação H2O</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-07T10:24">07/06/2026 - 10:24</time> |
                   Prioridade: Alta</p>
                 <div class="chamado-cartao__acoes">
-                  <button class="botao-acao-chamado" aria-label="Ver detalhes do chamado TKT-8942">Ver Detalhes</button>
+                  <button class="botao botao--primario botao--sm" aria-label="Ver detalhes do chamado TKT-8942">Ver
+                    Detalhes</button>
                 </div>
               </article>
 
               <article class="chamado-cartao card-glass ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8935</span>
-                  <span class="badge-status badge-status--andamento">Em Andamento</span>
+                  <span class="badge badge--warning">Em Andamento</span>
                 </div>
                 <h3 class="chamado-cartao__titulo">Atualização do Firmware de Telemetria (DSN)</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-06T14:15">06/06/2026 - 14:15</time> |
                   Prioridade: Média</p>
                 <div class="chamado-cartao__acoes">
-                  <button class="botao-acao-chamado" aria-label="Ver detalhes do chamado TKT-8935">Ver Detalhes</button>
+                  <button class="botao botao--primario botao--sm" aria-label="Ver detalhes do chamado TKT-8935">Ver
+                    Detalhes</button>
                 </div>
               </article>
 
               <article class="chamado-cartao card-glass ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8910</span>
-                  <span class="badge-status badge-status--resolvido">Resolvido</span>
+                  <span class="badge badge--success">Resolvido</span>
                 </div>
                 <h3 class="chamado-cartao__titulo">Vazamento contido no Silo de Biomassa (BIO-01)</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-05T08:30">05/06/2026 - 08:30</time> |
                   Prioridade: Crítica</p>
                 <div class="chamado-cartao__acoes">
-                  <button class="botao-acao-chamado" aria-label="Ver detalhes do chamado TKT-8910">Ver Detalhes</button>
+                  <button class="botao botao--primario botao--sm" aria-label="Ver detalhes do chamado TKT-8910">Ver
+                    Detalhes</button>
                 </div>
               </article>
             </div>
@@ -285,9 +304,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/components/sidebar.js"></script>
-  <script src="assets/js/pages/support.js"></script>
-
 </body>
 
 </html>

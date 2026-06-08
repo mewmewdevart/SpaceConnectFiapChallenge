@@ -24,21 +24,7 @@
     border: 1px solid rgba(var(--white), 0.05);
 }
 
-.crew-distribuicao__tag {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: var(--text-xs);
-    color: rgb(var(--text-default));
-    background: rgba(var(--white), 0.05);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(var(--white), 0.1);
-}
 
-.crew-distribuicao__tag i {
-    color: rgb(var(--cyan));
-}
 
 
 /* ==========================================================================
@@ -49,37 +35,11 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    margin-bottom: 8px;
+
     flex-wrap: wrap;
 }
 
-.crew-controls__pesquisa {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    flex: 1;
-    min-width: 250px;
-}
-
-.crew-controls__pesquisa i {
-    color: rgb(var(--cyan));
-    font-size: var(--text-lg);
-}
-
-.crew-controls__pesquisa input {
-    background: transparent;
-    border: none;
-    color: rgb(var(--white));
-    font-family: var(--font-primary);
-    font-size: var(--text-md);
-    width: 100%;
-    outline: none;
-}
-
-.crew-controls__pesquisa input::placeholder {
-    color: rgba(var(--white), 0.3);
-}
+/* A caixa de pesquisa usará as classes padrão menu-superior__buscar-container */
 
 .crew-controls__paginacao {
     display: flex;
@@ -87,38 +47,7 @@
     align-items: center;
 }
 
-.crew-btn-page {
-    background: rgba(var(--white), 0.05);
-    border: 1px solid rgba(var(--white), 0.1);
-    color: rgb(var(--white));
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-family: var(--font-primary);
-    font-weight: 600;
-    transition: all var(--transition-fast);
-}
 
-.crew-btn-page:hover:not(:disabled) {
-    background: rgba(var(--cyan), 0.1);
-    border-color: rgba(var(--cyan), 0.4);
-    color: rgb(var(--cyan));
-}
-
-.crew-btn-page--ativo {
-    background: rgb(var(--cyan));
-    border-color: rgb(var(--cyan));
-    color: rgb(var(--bg-main));
-}
-
-.crew-btn-page:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
 
 
 /* ==========================================================================
@@ -127,8 +56,8 @@
 .crew-roster {
     display: grid;
     /* Cartões grandes, no desktop serão 2 por linha, em telas menores 1 por linha */
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: 20px;
 }
 
 .crew-card {
@@ -404,4 +333,13 @@
     .crew-card__body {
         grid-template-columns: 1fr;
     }
+}
+
+.crew-busca-expansivel {
+    flex: 1;
+    max-width: 400px;
+}
+
+.crew-controls--centro {
+    justify-content: center;
 }

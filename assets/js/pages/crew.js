@@ -288,6 +288,7 @@ const crewDatabase = [
 let filteredCrew = [];
 let currentPage = 1;
 const itemsPerPage = 4;
+let currentDepartmentFilter = 'All';
 
 function getStatusIcon(statusText) {
   if (statusText === 'ok') return '<i class="fa-solid fa-check"></i>';
@@ -327,17 +328,17 @@ function renderPagination() {
   let html = '';
 
   // Botão Anterior
-  html += `<button class="crew-btn-page" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+  html += `<button class="botao botao--ghost botao--icone botao--sm crew-btn-page" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
             <i class="fa-solid fa-chevron-left"></i>
           </button>`;
 
   // Botões numéricos (simplificado para mostrar todos se forem poucos)
   for (let i = 1; i <= totalPages; i++) {
-    html += `<button class="crew-btn-page ${currentPage === i ? 'crew-btn-page--ativo' : ''}" onclick="changePage(${i})">${i}</button>`;
+    html += `<button class="botao ${currentPage === i ? 'botao--primario' : 'botao--ghost'} botao--icone botao--sm crew-btn-page" onclick="changePage(${i})">${i}</button>`;
   }
 
   // Botão Próximo
-  html += `<button class="crew-btn-page" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+  html += `<button class="botao botao--ghost botao--icone botao--sm crew-btn-page" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
             <i class="fa-solid fa-chevron-right"></i>
           </button>`;
 
@@ -376,15 +377,15 @@ function renderCrew() {
     const isAlert = member.status === 'atencao';
 
     let cardClass = 'crew-card card-glass ';
-    let headerStyle = '';
     let statusIcon = '<i class="fa-solid fa-location-dot"></i>';
+    let badgeClass = 'badge--success';
 
     if (isCritical) {
       cardClass += ' crew-card--alerta';
-      headerStyle = 'color: rgb(var(--salmon)); border-color: rgba(var(--salmon), 0.3); background: rgba(var(--salmon), 0.1);';
+      badgeClass = 'badge--danger';
       statusIcon = '<i class="fa-solid fa-triangle-exclamation"></i>';
     } else if (isAlert) {
-      headerStyle = 'color: rgb(var(--yellow)); border-color: rgba(var(--yellow), 0.3); background: rgba(var(--yellow), 0.1);';
+      badgeClass = 'badge--warning';
       statusIcon = '<i class="fa-solid fa-triangle-exclamation"></i>';
     }
 
@@ -409,7 +410,7 @@ function renderCrew() {
               <span class="crew-card__funcao">${member.role}</span>
             </div>
           </div>
-          <div class="crew-card__setor" style="${headerStyle}">
+          <div class="badge ${badgeClass}">
             ${statusIcon} ${member.location}
           </div>
         </header>
@@ -496,15 +497,20 @@ function renderCrew() {
   renderPagination();
 }
 
-function handleSearch(e) {
-  const term = e.target.value.toLowerCase();
+function applyFilters() {
+  const searchInput = document.getElementById('crew-search');
+  const term = searchInput ? searchInput.value.toLowerCase() : '';
 
-  filteredCrew = crewDatabase.filter(m =>
-    m.name.toLowerCase().includes(term) ||
-    m.role.toLowerCase().includes(term) ||
-    m.department.toLowerCase().includes(term) ||
-    m.location.toLowerCase().includes(term)
-  );
+  filteredCrew = crewDatabase.filter(m => {
+    const matchesText = m.name.toLowerCase().includes(term) ||
+                        m.role.toLowerCase().includes(term) ||
+                        m.department.toLowerCase().includes(term) ||
+                        m.location.toLowerCase().includes(term);
+    
+    const matchesDept = currentDepartmentFilter === 'All' || m.department === currentDepartmentFilter;
+
+    return matchesText && matchesDept;
+  });
 
   currentPage = 1;
   renderCrew();
@@ -517,6 +523,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const searchInput = document.getElementById('crew-search');
   if (searchInput) {
-    searchInput.addEventListener('input', handleSearch);
+    searchInput.addEventListener('input', applyFilters);
   }
+
+  const filterButtons = document.querySelectorAll('#crew-filters button');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      filterButtons.forEach(b => {
+        b.classList.remove('crew-distribuicao__tag--ativo');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      const target = e.currentTarget;
+      target.classList.add('crew-distribuicao__tag--ativo');
+      target.setAttribute('aria-pressed', 'true');
+      
+      currentDepartmentFilter = target.getAttribute('data-department');
+      applyFilters();
+    });
+  });
 });

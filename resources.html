@@ -25,24 +25,84 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/macro-card.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/resources.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/input.css">
+  <style>
+    .prog-hab-width {
+      width: 78.5%;
+    }
+
+    .prog-hab-height {
+      height: 78.5%;
+    }
+
+    .prog-bot-width {
+      width: 51.7%;
+    }
+
+    .prog-bot-height {
+      height: 51.7%;
+    }
+
+    .prog-lab-width {
+      width: 96.8%;
+    }
+
+    .prog-lab-height {
+      height: 96.8%;
+    }
+
+    .prog-med-width {
+      width: 24.5%;
+    }
+
+    .prog-med-height {
+      height: 24.5%;
+    }
+
+    .svg-drop-mint {
+      filter: drop-shadow(0 0 8px rgba(var(--mint), 0.6));
+    }
+
+    .svg-drop-cyan {
+      filter: drop-shadow(0 0 8px rgba(var(--cyan), 0.6));
+    }
+
+    .aloc-hab-width {
+      width: 45%;
+    }
+
+    .aloc-bot-width {
+      width: 35%;
+    }
+
+    .aloc-lab-width {
+      width: 20%;
+    }
+  </style>
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
-      aria-label="Abrir menu">
+    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
+      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Space Connect</span>
     </button>
@@ -97,22 +157,27 @@
 
     <div class="menu-superior__direita">
       <!-- Status -->
-      <div class="menu-superior__status menu-superior__status--nominal">
-        <span class="status-dot"></span>
+      <span class="badge badge--danger">
+        <span class="badge__dot"></span>
+        1 Alerta Críticos
+      </span>
+      <div class="badge badge--success">
+        <span class="badge__dot"></span>
         <span class="status-text">Nominal</span>
       </div>
 
 
 
       <!-- Notificações -->
-      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
+        aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">3</span>
+        <span class="menu-superior__badge">5</span>
       </button>
 
       <!-- Usuário Dropdown -->
       <div class="menu-superior__usuario-dropdown">
-        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
@@ -143,7 +208,10 @@
 
         <div class="cabecalho-conteudo__bloco">
           <p class="cabecalho-conteudo__descricao">Monitoramento de Capacidade, Estoque e Tendências Bióticas</p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">Telemetria DSN Ativa</span>
+          <span class="cabecalho-conteudo__status badge badge--warning">
+            <span class="badge__dot"></span>
+            Telemetria DSN Ativa
+          </span>
         </div>
       </header>
 
@@ -153,7 +221,7 @@
 
         <!-- LINHA DE ESTATÍSTICAS SUPERIORES -->
         <section class="macro-grid" aria-label="Estatísticas Gerais">
-          <div class="macro-card macro-card--cyan card-glass " id="stat-capacidade">
+          <article class="macro-card macro-card--cyan card-glass " id="stat-capacidade">
             <div class="macro-card__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M12 2C8 2 5 5.5 5 9c0 5 4 8 7 10 3-2 7-5 7-10 0-3.5-3-7-7-7z" />
@@ -161,37 +229,40 @@
               </svg>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">36<span class="macro-card__unidade">t</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">36<span
+                  class="macro-card__unidade">t</span></span>
               <span class="macro-card__label">Capacidade Total</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--green card-glass " id="stat-estoque">
+          <article class="macro-card macro-card--green card-glass " id="stat-estoque">
             <div class="macro-card__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">24.4<span class="macro-card__unidade">t</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">24.4<span
+                  class="macro-card__unidade">t</span></span>
               <span class="macro-card__label">Estoque Atual</span>
               <span class="macro-card__sub">67.6% ocupado</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--cyan card-glass " id="stat-temp">
+          <article class="macro-card macro-card--cyan card-glass " id="stat-temp">
             <div class="macro-card__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
               </svg>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">39.8<span class="macro-card__unidade">K</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">39.8<span
+                  class="macro-card__unidade">K</span></span>
               <span class="macro-card__label">Temp. Média</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--cyan card-glass " id="stat-pressao">
+          <article class="macro-card macro-card--cyan card-glass " id="stat-pressao">
             <div class="macro-card__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <circle cx="12" cy="12" r="10" />
@@ -199,12 +270,13 @@
               </svg>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">0.97<span class="macro-card__unidade">kPa</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">0.97<span
+                  class="macro-card__unidade">kPa</span></span>
               <span class="macro-card__label">Pressão Média</span>
             </div>
-          </div>
+          </article>
 
-          <div class="macro-card macro-card--cyan card-glass " id="stat-perda">
+          <article class="macro-card macro-card--cyan card-glass " id="stat-perda">
             <div class="macro-card__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
@@ -212,10 +284,11 @@
               </svg>
             </div>
             <div class="macro-card__dados">
-              <span class="macro-card__valor">46<span class="macro-card__unidade">kg/s</span></span>
+              <span class="macro-card__valor macro-card__valor--destaque">46<span
+                  class="macro-card__unidade">kg/s</span></span>
               <span class="macro-card__label">Perda Diária</span>
             </div>
-          </div>
+          </article>
         </section>
 
         <!-- GRADE DE COFRES CRIOGÊNICOS -->
@@ -228,7 +301,7 @@
                 <span class="recursos-cofre__identificador">H2O-01</span>
                 <h2 class="recursos-cofre__nome">Tanque de Água Potável</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--verde">↑ 2.5%/D</div>
+              <div class="badge badge--success">↑ 2.5%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -240,7 +313,7 @@
                 <div class="recursos-cofre__percentual">78.5%</div>
                 <div class="recursos-cofre__barra-progresso">
                   <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--ciano"
-                    style="width: 78.5%"></div>
+                    class="prog-hab-width"></div>
                   <div class="recursos-cofre__marcacoes-progresso">
                     <span></span><span></span><span></span><span></span><span></span>
                     <span></span><span></span><span></span><span></span><span></span>
@@ -269,13 +342,13 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Próxima filtragem: SOL+0.2</span>
-                  <span class="recursos-cofre__status recursos-cofre__status--lacrado">● ESTÁVEL</span>
+                  <span class="badge badge--info">● ESTÁVEL</span>
                 </div>
               </div>
 
               <div class="recursos-cofre__tanque">
                 <div class="recursos-cofre__corpo-tanque">
-                  <div class="recursos-cofre__preenchimento-tanque" style="height: 78.5%">
+                  <div class="recursos-cofre__preenchimento-tanque prog-hab-height">
                     <div class="recursos-cofre__bolhas-tanque">
                       <span></span><span></span><span></span>
                     </div>
@@ -293,7 +366,7 @@
                 <span class="recursos-cofre__identificador">H2O-02</span>
                 <h2 class="recursos-cofre__nome">Reservatório Água Cinza</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--amarelo">↑ 4.2%/D</div>
+              <div class="badge badge--warning">↑ 4.2%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -305,7 +378,7 @@
                 <div class="recursos-cofre__percentual">51.7%</div>
                 <div class="recursos-cofre__barra-progresso">
                   <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--ciano"
-                    style="width: 51.7%"></div>
+                    class="prog-bot-width"></div>
                   <div class="recursos-cofre__marcacoes-progresso">
                     <span></span><span></span><span></span><span></span><span></span>
                     <span></span><span></span><span></span><span></span><span></span>
@@ -334,13 +407,13 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Purificação RO: SOL+0.5</span>
-                  <span class="recursos-cofre__status recursos-cofre__status--lacrado">● RECEBENDO</span>
+                  <span class="badge badge--info">● RECEBENDO</span>
                 </div>
               </div>
 
               <div class="recursos-cofre__tanque">
                 <div class="recursos-cofre__corpo-tanque">
-                  <div class="recursos-cofre__preenchimento-tanque" style="height: 51.7%">
+                  <div class="recursos-cofre__preenchimento-tanque prog-bot-height">
                     <div class="recursos-cofre__bolhas-tanque">
                       <span></span><span></span><span></span>
                     </div>
@@ -358,7 +431,7 @@
                 <span class="recursos-cofre__identificador">BIO-01</span>
                 <h2 class="recursos-cofre__nome">Silo de Biomassa</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--verde">↑ 1.2%/D</div>
+              <div class="badge badge--success">↑ 1.2%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -370,7 +443,7 @@
                 <div class="recursos-cofre__percentual">96.8%</div>
                 <div class="recursos-cofre__barra-progresso">
                   <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--amarelo"
-                    style="width: 96.8%"></div>
+                    class="prog-lab-width"></div>
                   <div class="recursos-cofre__marcacoes-progresso">
                     <span></span><span></span><span></span><span></span><span></span>
                     <span></span><span></span><span></span><span></span><span></span>
@@ -399,7 +472,7 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Compostagem ativa</span>
-                  <span class="recursos-cofre__status recursos-cofre__status--ativo">● ATIVO</span>
+                  <span class="badge badge--success">● ATIVO</span>
                 </div>
               </div>
 
@@ -424,7 +497,7 @@
                 <span class="recursos-cofre__identificador">AGR-01</span>
                 <h2 class="recursos-cofre__nome">Tanque de Irrigação</h2>
               </div>
-              <div class="recursos-cofre__taxa recursos-cofre__taxa--vermelho">↓ -5.5%/D</div>
+              <div class="badge badge--danger">↓ -5.5%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -436,7 +509,7 @@
                 <div class="recursos-cofre__percentual">24.5%</div>
                 <div class="recursos-cofre__barra-progresso">
                   <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--ciano"
-                    style="width: 24.5%"></div>
+                    class="prog-med-width"></div>
                   <div class="recursos-cofre__marcacoes-progresso">
                     <span></span><span></span><span></span><span></span><span></span>
                     <span></span><span></span><span></span><span></span><span></span>
@@ -465,7 +538,7 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Abastecimento hidro.: SOL+0.1</span>
-                  <span class="recursos-cofre__status recursos-cofre__status--aviso">⚠ ALERTA</span>
+                  <span class="badge badge--danger">⚠ ALERTA</span>
                 </div>
               </div>
 
@@ -525,8 +598,7 @@
                   fill="url(#grad-captacao)" />
                 <!-- Line Captação -->
                 <path d="M 0 140 C 100 130, 200 160, 300 120 C 400 80, 500 140, 600 100 C 700 60, 800 90, 800 90"
-                  fill="none" stroke="rgb(var(--mint))" stroke-width="3"
-                  style="filter: drop-shadow(0 0 8px rgba(var(--mint), 0.6));" class="svg-path-anim" />
+                  fill="none" stroke="rgb(var(--mint))" stroke-width="3" class="svg-path-anim svg-drop-mint" />
 
                 <!-- Area Consumo -->
                 <path
@@ -535,8 +607,7 @@
                 <!-- Line Consumo -->
                 <path d="M 0 160 C 100 150, 200 120, 300 140 C 400 160, 500 100, 600 130 C 700 160, 800 110, 800 110"
                   fill="none" stroke="rgb(var(--cyan))" stroke-width="3"
-                  style="filter: drop-shadow(0 0 8px rgba(var(--cyan), 0.6));"
-                  class="svg-path-anim svg-path-anim-delay" />
+                  class="svg-path-anim svg-path-anim-delay svg-drop-cyan" class="svg-path-anim svg-path-anim-delay" />
               </svg>
 
               <div class="recursos-grafico__eixo-x">
@@ -555,7 +626,7 @@
           <article class="recursos-alocacao panel-glass-heavy">
             <div class="recursos-analise__cabecalho">
               <h3 class="recursos-analise__titulo">Alocação de Recursos</h3>
-              <span class="recursos-alocacao__badge">H₂O / BIO</span>
+              <span class="badge badge--info">H₂O / BIO</span>
             </div>
 
             <div class="recursos-alocacao__lista">
@@ -565,7 +636,7 @@
                   <span class="recursos-alocacao__porcentagem">45%</span>
                 </div>
                 <div class="recursos-alocacao__barra-container">
-                  <div class="recursos-alocacao__barra recursos-alocacao__barra--hab" style="width: 45%;"></div>
+                  <div class="recursos-alocacao__barra recursos-alocacao__barra--hab aloc-hab-width"></div>
                 </div>
               </div>
 
@@ -575,7 +646,7 @@
                   <span class="recursos-alocacao__porcentagem">35%</span>
                 </div>
                 <div class="recursos-alocacao__barra-container">
-                  <div class="recursos-alocacao__barra recursos-alocacao__barra--bot" style="width: 35%;"></div>
+                  <div class="recursos-alocacao__barra recursos-alocacao__barra--bot aloc-bot-width"></div>
                 </div>
               </div>
 
@@ -585,7 +656,7 @@
                   <span class="recursos-alocacao__porcentagem">20%</span>
                 </div>
                 <div class="recursos-alocacao__barra-container">
-                  <div class="recursos-alocacao__barra recursos-alocacao__barra--lab" style="width: 20%;"></div>
+                  <div class="recursos-alocacao__barra recursos-alocacao__barra--lab aloc-lab-width"></div>
                 </div>
               </div>
             </div>

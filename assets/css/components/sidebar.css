@@ -17,7 +17,7 @@
     width: 300px;
 }
 
-.menu-lateral__hamburguer {
+.menu-lateral .menu-lateral__hamburguer {
     display: none;
 }
 
@@ -105,7 +105,7 @@
         overflow-y: auto;
     }
 
-    .menu-lateral__hamburguer {
+    .menu-lateral .menu-lateral__hamburguer {
         display: flex;
         align-items: center;
         min-height: 60px;

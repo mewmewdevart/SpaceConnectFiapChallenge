@@ -1,0 +1,55 @@
+/* ==========================================================================
+   INPUT COMPONENT — Estilos unificados para campos de formulário
+   ========================================================================== */
+
+.campo {
+    background: rgba(var(--bg-main), 0.5);
+    border: 1px solid rgba(var(--white), 0.08);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    color: rgb(var(--text-primary));
+    font-size: var(--text-paragraph);
+    font-family: var(--font-primary);
+    transition: all var(--transition-normal);
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.campo:focus {
+    border-color: rgb(var(--cyan));
+    background: rgba(var(--cyan), 0.05);
+    box-shadow: 0 0 12px rgba(var(--cyan), 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.campo--textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.campo--select {
+    cursor: pointer;
+}
+
+.campo--readonly {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Label */
+.campo-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: rgb(var(--text-secondary));
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Grupo (label + input) */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}

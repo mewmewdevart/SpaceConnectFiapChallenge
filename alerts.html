@@ -27,24 +27,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
+  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/macro-card.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/pages/alerts.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
 
   <!-- Sidebar -->
   <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false"
-      aria-label="Abrir menu">
+    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
+      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Space Connect</span>
     </button>
@@ -99,22 +107,27 @@
 
     <div class="menu-superior__direita">
       <!-- Status -->
-      <div class="menu-superior__status menu-superior__status--nominal">
-        <span class="status-dot"></span>
+      <span class="badge badge--danger">
+        <span class="badge__dot"></span>
+        1 Alerta Críticos
+      </span>
+      <div class="badge badge--success">
+        <span class="badge__dot"></span>
         <span class="status-text">Nominal</span>
       </div>
 
 
 
       <!-- Notificações -->
-      <button class="menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
+        aria-label="Notificações">
         <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">3</span>
+        <span class="menu-superior__badge">5</span>
       </button>
 
       <!-- Usuário Dropdown -->
       <div class="menu-superior__usuario-dropdown">
-        <button class="menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
           <div class="menu-superior__avatar">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
@@ -147,7 +160,10 @@
           <p class="cabecalho-conteudo__descricao">Log operacional de incidentes e resoluções do sistema de suporte a
             vida
           </p>
-          <span class="cabecalho-conteudo__status cabecalho-conteudo__status--amarelo">2 Alertas Críticos</span>
+          <span class="cabecalho-conteudo__status badge badge--danger">
+            <span class="badge__dot"></span>
+            1 Alerta Críticos
+          </span>
         </div>
       </header>
 
@@ -193,7 +209,7 @@
               <span class="linha-tempo__marcador"></span>
               <div>
                 <h2 class="linha-tempo__titulo">Linha do Tempo</h2>
-                <div class="linha-tempo__contador-eventos">7 eventos</div>
+                <div class="linha-tempo__contador-eventos">5 eventos</div>
               </div>
             </div>
           </div>
@@ -209,7 +225,7 @@
             <div class="alerta__corpo">
               <div class="alerta__linha-topo">
                 <div class="alerta__grupo-esquerdo">
-                  <span class="alerta__badge alerta__badge--critico">Crítico</span>
+                  <span class="badge badge--danger">Crítico</span>
                   <span class="alerta__codigo-evento">A-241</span>
                 </div>
                 <time class="alerta__tempo-evento" datetime="PT2M47S"
@@ -218,8 +234,9 @@
               <p class="alerta__texto-evento">RV-04 perdeu telemetria por 2m47s durante perfuração</p>
               <span class="alerta__fonte-evento">Fonte: Haworth</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao" aria-label="Ver detalhes do alerta A-241">Detalhes</button>
-                <button class="alerta__botao-acao alerta__botao-acao--protocolo"
+                <button class="botao botao--primario botao--sm"
+                  aria-label="Ver detalhes do alerta A-241">Detalhes</button>
+                <button class="botao botao--perigo botao--icone"
                   aria-label="Acionar protocolo para alerta A-241">Acionar Protocolo</button>
               </div>
             </div>
@@ -236,7 +253,7 @@
             <div class="alerta__corpo">
               <div class="alerta__linha-topo">
                 <div class="alerta__grupo-esquerdo">
-                  <span class="alerta__badge alerta__badge--aviso">Aviso</span>
+                  <span class="badge badge--warning">Aviso</span>
                   <span class="alerta__codigo-evento">A-240</span>
                 </div>
                 <time class="alerta__tempo-evento" datetime="PT10M2S"
@@ -245,7 +262,8 @@
               <p class="alerta__texto-evento">Pressão acima do limite no Tanque de Irrigação (AGR-01)</p>
               <span class="alerta__fonte-evento">Fonte: Sistema de Irrigação</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-240">Detalhes</button>
+                <button class="botao botao--primario botao--sm"
+                  aria-label="Ver detalhes do aviso A-240">Detalhes</button>
               </div>
             </div>
           </article>
@@ -261,7 +279,7 @@
             <div class="alerta__corpo">
               <div class="alerta__linha-topo">
                 <div class="alerta__grupo-esquerdo">
-                  <span class="alerta__badge alerta__badge--aviso">Aviso</span>
+                  <span class="badge badge--warning">Aviso</span>
                   <span class="alerta__codigo-evento">A-239</span>
                 </div>
                 <time class="alerta__tempo-evento" datetime="PT1H4M11S"
@@ -270,9 +288,9 @@
               <p class="alerta__texto-evento">Tanque de Água Potável (H2O-01) acima de 78% – agendar filtragem</p>
               <span class="alerta__fonte-evento">Fonte: Sistema H2O Principal</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao alerta__botao-acao--confirmar"
-                  aria-label="Confirmar aviso A-239">Confirmar</button>
-                <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-239">Detalhes</button>
+                <button class="botao botao--alerta botao--icone" aria-label="Confirmar aviso A-239">Confirmar</button>
+                <button class="botao botao--primario botao--sm"
+                  aria-label="Ver detalhes do aviso A-239">Detalhes</button>
               </div>
             </div>
           </article>
@@ -288,7 +306,7 @@
             <div class="alerta__corpo">
               <div class="alerta__linha-topo">
                 <div class="alerta__grupo-esquerdo">
-                  <span class="alerta__badge alerta__badge--info">Info</span>
+                  <span class="badge badge--info">Info</span>
                   <span class="alerta__codigo-evento">A-238</span>
                 </div>
                 <time class="alerta__tempo-evento" datetime="PT1H42M30S"
@@ -297,7 +315,8 @@
               <p class="alerta__texto-evento">RV-03 iniciou ciclo de recarga solar na cratera de Cabeus</p>
               <span class="alerta__fonte-evento">Fonte: Cabeus</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao" aria-label="Ver detalhes do evento A-238">Detalhes</button>
+                <button class="botao botao--primario botao--sm"
+                  aria-label="Ver detalhes do evento A-238">Detalhes</button>
               </div>
             </div>
           </article>
@@ -313,7 +332,7 @@
             <div class="alerta__corpo">
               <div class="alerta__linha-topo">
                 <div class="alerta__grupo-esquerdo">
-                  <span class="alerta__badge alerta__badge--aviso">Aviso</span>
+                  <span class="badge badge--warning">Aviso</span>
                   <span class="alerta__codigo-evento">A-237</span>
                 </div>
                 <time class="alerta__tempo-evento" datetime="PT2H10M55S"
@@ -322,7 +341,8 @@
               <p class="alerta__texto-evento">Pressão no Reservatório de Água Cinza (H2O-02) acima do nominal</p>
               <span class="alerta__fonte-evento">Fonte: Coletor de Efluentes</span>
               <div class="alerta__acoes">
-                <button class="alerta__botao-acao" aria-label="Ver detalhes do aviso A-237">Detalhes</button>
+                <button class="botao botao--primario botao--sm"
+                  aria-label="Ver detalhes do aviso A-237">Detalhes</button>
               </div>
             </div>
           </article>
@@ -349,7 +369,6 @@
 
   <script src="assets/js/main.js"></script>
   <!-- Scripts -->
-  <script src="assets/js/components/sidebar.js"></script>
   <script src="assets/js/pages/alerts.js"></script>
 
 </body>
