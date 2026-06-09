@@ -13,6 +13,11 @@
     transition: all var(--transition-normal);
 }
 
+.cartao-variacao {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
 .cartao-macro::before {
     content: '';
     position: absolute;
@@ -95,4 +100,14 @@
 
 .cartao-macro--cyan {
     --macro-color: var(--cyan);
+}
+
+.cartao-variacao {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.cartao-variacao:hover {
+    transform: translateY(0);
 }

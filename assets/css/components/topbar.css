@@ -1,4 +1,4 @@
-﻿.menu-superior {
+.menu-superior {
     position: sticky;
     top: 0;
     z-index: var(--z-sticky);
@@ -35,6 +35,11 @@
     color: rgb(var(--cyan));
     font-size: 20px;
     filter: drop-shadow(0 0 5px rgba(var(--cyan), 0.5));
+}
+
+.menu-superior__logo-img {
+    height: 80px;
+    width: auto;
 }
 
 .menu-superior__buscar {

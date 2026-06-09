@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return currentPath === path ? 'menu-lateral__link--ativo' : '';
   }
 
-  // Definição do Sidebar
+  // Definiï¿½ï¿½o do Sidebar
   const sidebarHTML = `
-    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <a href="#main-content" class="skip-link">Pular para o conteï¿½do</a>
     <aside class="menu-lateral" id="menu-lateral">
       <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
         <i class="fas fa-bars" aria-hidden="true"></i>
@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
         <a href="flow.html" class="${getActiveClass('flow.html')} menu-lateral__link" ${currentPath === 'flow.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-          <span class="menu-lateral__texto">Fluxo de Interações</span>
+          <span class="menu-lateral__texto">Fluxo de Interaï¿½ï¿½es</span>
         </a>
         <a href="resources.html" class="${getActiveClass('resources.html')} menu-lateral__link" ${currentPath === 'resources.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-          <span class="menu-lateral__texto">Gestão de Recursos</span>
+          <span class="menu-lateral__texto">Gestï¿½o de Recursos</span>
         </a>
         <a href="alerts.html" class="${getActiveClass('alerts.html')} menu-lateral__link" ${currentPath === 'alerts.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
         <a href="crew.html" class="${getActiveClass('crew.html')} menu-lateral__link" ${currentPath === 'crew.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-          <span class="menu-lateral__texto">Tripulação</span>
+          <span class="menu-lateral__texto">Tripulaï¿½ï¿½o</span>
         </a>
         <a href="support.html" class="${getActiveClass('support.html')} menu-lateral__link" ${currentPath === 'support.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
@@ -48,19 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
     </aside>
   `;
 
-  // Definição da Topbar
+  // Definiï¿½ï¿½o da Topbar
   const topbarHTML = `
     <header class="menu-superior">
       <div class="menu-superior__esquerda">
         <span class="menu-superior__logo">
-          <i class="fa-solid fa-moon"></i> Y-JACI
+          <img src="assets/img/2.png" alt="Logo" class="menu-superior__logo-img"> Y-JACI
         </span>
       </div>
 
       <div class="menu-superior__buscar">
         <div class="menu-superior__buscar-container">
           <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-          <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
+          <input type="text" placeholder="Buscar mï¿½dulos, recursos..." aria-label="Buscar mï¿½dulos e recursos">
         </div>
       </div>
 
@@ -68,20 +68,20 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Status -->
         <span class="etiqueta etiqueta--perigo">
           <span class="etiqueta__dot"></span>
-          1 Alerta Crítico
+          1 Alerta Crï¿½tico
         </span>
         <div class="etiqueta etiqueta--sucesso">
           <span class="etiqueta__dot"></span>
           <span class="status-text">Nominal</span>
         </div>
 
-        <!-- Notificações -->
-        <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
+        <!-- Notificaï¿½ï¿½es -->
+        <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes" aria-label="Notificaï¿½ï¿½es">
           <i class="fa-solid fa-bell"></i>
           <span class="menu-superior__etiqueta">5</span>
         </button>
 
-        <!-- Usuário Dropdown -->
+        <!-- Usuï¿½rio Dropdown -->
         <div class="menu-superior__usuario-dropdown">
           <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
             <div class="menu-superior__avatar">
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </button>
           <div class="menu-superior__dropdown-menu cartao-vidro" role="menu">
             <a href="#" role="menuitem"><i class="fa-solid fa-id-etiqueta"></i> Meu Perfil</a>
-            <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
+            <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferï¿½ncias</a>
             <div class="dropdown-divisor"></div>
             <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i> Desconectar</a>
           </div>
@@ -101,24 +101,24 @@ document.addEventListener("DOMContentLoaded", function () {
     </header>
   `;
 
-  // Definição da Bottombar (Telemetria)
+  // Definiï¿½ï¿½o da Bottombar (Telemetria)
   const bottombarHTML = `
     <footer class="barra-telemetria">
       <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
       <div class="barra-telemetria__janela-letreiro">
         <div class="barra-telemetria__letreiro" aria-hidden="true">
-          <!-- Os itens são gerados pelo main.js -->
+          <!-- Os itens sï¿½o gerados pelo main.js -->
         </div>
       </div>
-      <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
+      <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 ï¿½ 00:00:00</time>
     </footer>
   `;
 
   // Injetar elementos no body
   // Vamos encapsular o conteudo principal, inserindo o layout antes e depois dele.
-  // Assumimos que cada página tem um elemento principal como <div class="conteudo"> ou <section class="conteudo"> ou algo assim
+  // Assumimos que cada pï¿½gina tem um elemento principal como <div class="conteudo"> ou <section class="conteudo"> ou algo assim
   // Ou simplesmente inserimos usando insertAdjacentHTML no body.
-  
+
   const body = document.body;
   body.insertAdjacentHTML('afterbegin', topbarHTML);
   body.insertAdjacentHTML('afterbegin', sidebarHTML);
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicializar listeners para o Menu Mobile que acabaram de ser injetados
   const hamburgerBtn = document.getElementById('btn-hamburguer');
   const sidenav = document.getElementById('menu-lateral');
-  
+
   if (hamburgerBtn && sidenav) {
     hamburgerBtn.addEventListener('click', () => {
       const isOpen = sidenav.classList.toggle('menu-lateral--aberto');
