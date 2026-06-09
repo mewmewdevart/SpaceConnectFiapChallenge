@@ -37,28 +37,48 @@
         };
 
         // Initial system modules and connection lines
-        let modules = [
-            { id: "greywater_tank", name: "Tanque de Água Cinza", subtitle: "Captação de pias e chuveiros", category: "source", icon: "fa-sink", level: 65, status: "nominal", x: 20, y: 20, fluid: "greywater", color: getCSSVar("--fluid-color-gray", "#81afb5") },
-            { id: "atm_collector", name: "Coletor de Umidade", subtitle: "Condensador de vapor ambiental", category: "source", icon: "fa-cloud", level: 40, status: "nominal", x: 20, y: 165, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
-            { id: "biomass_collector", name: "Coletor de Biomassa", subtitle: "Matéria orgânica sintotrópica", category: "source", icon: "fa-leaf", level: 88, status: "warning", x: 20, y: 310, fluid: "organic", color: getCSSVar("--fluid-color-organic", "#f7e476") },
+        let layoutNodes = [
+            { sysId: "URC-01", category: "fonte", level: 65, status: "nominal", x: 20, y: 20, fluid: "greywater", color: getCSSVar("--fluid-color-gray", "#81afb5") },
+            { sysId: "CCA-04", category: "fonte", level: 40, status: "nominal", x: 20, y: 165, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
+            { sysId: "CVB-09", category: "fonte", level: 88, status: "warning", x: 20, y: 310, fluid: "organic", color: getCSSVar("--fluid-color-organic", "#f7e476") },
 
-            { id: "ro_purifier", name: "Purificador Osmose Reversa", subtitle: "Filtragem de membrana avançada", category: "treatment", icon: "fa-filter", level: 55, status: "nominal", x: 330, y: 30, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
-            { id: "uv_sterilizer", name: "Esterilizador UV", subtitle: "Eliminação de patógenos por UV", category: "treatment", icon: "fa-sun", level: 92, status: "warning", x: 330, y: 175, fluid: "disinfected", color: getCSSVar("--fluid-color-disinfected", "#a55eea") },
-            { id: "comp_reactor", name: "Reator Compostador", subtitle: "Decomposição bioativa sintólica", category: "treatment", icon: "fa-recycle", level: 30, status: "nominal", x: 330, y: 310, fluid: "fertilizer", color: getCSSVar("--fluid-color-fertilizer", "#a1e55a") },
+            { sysId: "RO-01", category: "tratamento", icon: "fa-filter", level: 55, status: "nominal", x: 330, y: 30, fluid: "pure_water", color: getCSSVar("--fluid-color-pure", "#00d2ff") },
+            { sysId: "UV-02", category: "tratamento", icon: "fa-sun", level: 92, status: "warning", x: 330, y: 175, fluid: "disinfected", color: getCSSVar("--fluid-color-disinfected", "#a55eea") },
+            { sysId: "BIO-03", category: "tratamento", icon: "fa-recycle", level: 30, status: "nominal", x: 330, y: 310, fluid: "fertilizer", color: getCSSVar("--fluid-color-fertilizer", "#a1e55a") },
 
-            { id: "potable_tank", name: "Tanque de Água Potável", subtitle: "Rede de abastecimento humano", category: "destination", icon: "fa-glass-water", level: 75, status: "nominal", x: 620, y: 30, fluid: "potable", color: getCSSVar("--fluid-color-potable", "#0984e3") },
-            { id: "irrigation_tank", name: "Tanque de Irrigação", subtitle: "Subsistema agrícola hidropônico", category: "destination", icon: "fa-seedling", level: 20, status: "warning", x: 620, y: 175, fluid: "agricultural", color: getCSSVar("--fluid-color-agricultural", "#38b764") },
-            { id: "biotic_fert", name: "Fertilizante Biótico", subtitle: "Rede de distribuição nutritiva", category: "destination", icon: "fa-flask", level: 50, status: "nominal", x: 620, y: 320, fluid: "nutrient", color: getCSSVar("--fluid-color-nutrient", "#26de81") }
+            { sysId: "TK-POT", category: "destino", icon: "fa-glass-water", level: 75, status: "nominal", x: 620, y: 30, fluid: "potable", color: getCSSVar("--fluid-color-potable", "#0984e3") },
+            { sysId: "SIS-02", category: "destino", level: 20, status: "warning", x: 620, y: 175, fluid: "agricultural", color: getCSSVar("--fluid-color-agricultural", "#38b764") },
+            { sysId: "FRT-01", category: "destino", icon: "fa-flask", level: 50, status: "nominal", x: 620, y: 320, fluid: "nutrient", color: getCSSVar("--fluid-color-nutrient", "#26de81") }
         ];
 
+        let modules = layoutNodes.map(node => {
+            const sys = window.YJaciCore && window.YJaciCore.getSystem ? window.YJaciCore.getSystem(node.sysId) : null;
+
+            let extractedIcon = node.icon || "fa-microchip";
+            if (sys && sys.icon) {
+                const match = sys.icon.match(/fa-([a-zA-Z0-9-]+)/g);
+                if (match && match.length > 1) {
+                    extractedIcon = match[1];
+                }
+            }
+
+            return {
+                ...node,
+                id: node.sysId, // Mantém ID pra conexão SVG
+                name: node.sysId,
+                subtitle: sys ? (sys.systemName + (sys.initiative ? " (" + sys.initiative.name + ")" : "")) : "Módulo de Infraestrutura",
+                icon: extractedIcon
+            };
+        });
+
         let connections = [
-            { id: "conn_1", from: "greywater_tank", to: "ro_purifier", status: "open" },
-            { id: "conn_2", from: "atm_collector", to: "uv_sterilizer", status: "open" },
-            { id: "conn_3", from: "biomass_collector", to: "comp_reactor", status: "open" },
-            { id: "conn_4", from: "ro_purifier", to: "potable_tank", status: "open" },
-            { id: "conn_5", from: "uv_sterilizer", to: "irrigation_tank", status: "open" },
-            { id: "conn_6", from: "comp_reactor", to: "biotic_fert", status: "open" },
-            { id: "conn_emergency", from: "potable_tank", to: "irrigation_tank", status: "open" }
+            { id: "conn_1", from: "URC-01", to: "RO-01", status: "open" },
+            { id: "conn_2", from: "CCA-04", to: "UV-02", status: "open" },
+            { id: "conn_3", from: "CVB-09", to: "BIO-03", status: "open" },
+            { id: "conn_4", from: "RO-01", to: "TK-POT", status: "open" },
+            { id: "conn_5", from: "UV-02", to: "SIS-02", status: "open" },
+            { id: "conn_6", from: "BIO-03", to: "FRT-01", status: "open" },
+            { id: "conn_emergency", from: "TK-POT", to: "SIS-02", status: "open" }
         ];
 
         let selectedElement = null;
@@ -106,7 +126,7 @@
                 `;
 
                 // Add connector sockets dynamically
-                if (module.category !== 'destination') {
+                if (module.category !== 'destino') {
                     const socketOut = document.createElement('div');
                     socketOut.className = 'fluxo-soquete fluxo-soquete--saida';
                     socketOut.title = "Criar conexão (Saída)";
@@ -120,7 +140,7 @@
                     card.appendChild(socketOut);
                 }
 
-                if (module.category !== 'source') {
+                if (module.category !== 'fonte') {
                     const socketIn = document.createElement('div');
                     socketIn.className = 'fluxo-soquete fluxo-soquete--entrada';
                     socketIn.title = "Engatar conexão (Entrada)";
@@ -446,106 +466,70 @@
                 const mobileCard = document.querySelector(`.fluxo-mobile-cartao[data-mod-id="${moduleId}"]`);
                 if (mobileCard) mobileCard.classList.add('selecionado');
 
-                const moduleData = modules.find(m => m.id === moduleId);
+                const sys = window.YJaciCore ? window.YJaciCore.getSystem(moduleId) : null;
+                const isSystem = !!sys;
+                const moduleData = modules.find(m => m.id === moduleId) || module;
+
+                const equipmentName = isSystem ? sys.systemName : module.name;
+                const equipmentClass = isSystem ? sys.equipmentClass : (module.category === 'fonte' ? 'Coletor' : module.category === 'tratamento' ? 'Sist. de Tratamento' : 'Armazenamento');
+                const initiativeName = isSystem && sys.initiative ? sys.initiative.name : module.subtitle;
+                const objectiveDesc = isSystem && sys.initiative ? sys.initiative.description : "Operação de infraestrutura isolada.";
+
                 inspectorPanel.innerHTML = `
                     <div class="inspetor-painel">
                         <div class="inspetor-painel__cabecalho">
                             <h2>
                                 <i class="fa-solid ${moduleData.icon} inspetor-painel__icone text-fluid-${moduleData.fluid}"></i>
-                                <span>/</span>Calibração
+                                <span>/</span>${moduleId}
                             </h2>
-                            <span class="etiqueta inspetor-painel__etiqueta">MÓDULO</span>
+                            <span class="etiqueta inspetor-painel__etiqueta ${isSystem ? 'etiqueta--success' : 'etiqueta--info'}">${isSystem ? 'SISTEMA OFICIAL' : 'NÓ LOCAL'}</span>
                         </div>
                         <form class="inspetor-painel__formulario" onsubmit="event.preventDefault();">
                             <div class="inspetor-painel__grupo-form">
-                                <label>Nome do Módulo</label>
-                                <input type="text" id="inspect-mod-name" value="${module.name}">
+                                <label>Sistema Físico</label>
+                                <input type="text" value="${equipmentName}" readonly class="input-readonly">
                             </div>
                             <div class="inspetor-painel__grupo-form">
-                                <label>Subtítulo / Descrição</label>
-                                <input type="text" id="inspect-mod-sub" value="${module.subtitle}">
+                                <label>Classe do Equipamento</label>
+                                <input type="text" value="${equipmentClass}" readonly class="input-readonly">
+                            </div>
+                            ${isSystem ? `
+                            <div class="inspetor-painel__grupo-form">
+                                <label>Recurso Vinculado</label>
+                                <input type="text" value="${sys.resource} (${sys.ods})" readonly class="input-readonly">
+                            </div>
+                            ` : `
+                            <div class="inspetor-painel__grupo-form">
+                                <label>Detalhes do Nó</label>
+                                <input type="text" value="${module.subtitle || initiativeName}" readonly class="input-readonly">
+                            </div>
+                            `}
+                            <div class="inspetor-painel__grupo-form">
+                                <label>Iniciativa Estratégica</label>
+                                <input type="text" value="${initiativeName}" readonly class="input-readonly">
                             </div>
                             <div class="inspetor-painel__grupo-form">
-                                <label>Categoria Física</label>
-                                <select id="inspect-mod-cat" disabled>
-                                    <option value="source" ${module.category === 'source' ? 'selected' : ''}>Fontes e Coletores</option>
-                                    <option value="treatment" ${module.category === 'treatment' ? 'selected' : ''}>Sistemas de Tratamento</option>
-                                    <option value="destination" ${module.category === 'destination' ? 'selected' : ''}>Destinos de Consumo</option>
-                                </select>
+                                <label>Descrição do Objetivo</label>
+                                <textarea readonly class="input-readonly" rows="3" style="resize: none;">${objectiveDesc}</textarea>
                             </div>
+                            
                             <div class="inspetor-painel__acoes">
                                 <button type="button" class="botao botao--secundario inspetor-painel__btn-cancelar" id="inspect-inspetor-painel__btn-cancelar">
-                                    <i class="fa-solid fa-xmark"></i> Cancelar
-                                </button>
-                                <button type="button" class="botao botao--primario inspetor-painel__btn-salvar" id="inspect-inspetor-painel__btn-salvar">
-                                    <i class="fa-solid fa-floppy-disk"></i> Salvar
+                                    <i class="fa-solid fa-xmark"></i> Fechar
                                 </button>
                             </div>
                         </form>
                     </div>
                 `;
 
-                const nameInput = document.getElementById('inspect-mod-name');
-                const subInput = document.getElementById('inspect-mod-sub');
-                const levelSlider = document.getElementById('inspect-mod-level');
-                const levelVal = document.getElementById('inspect-mod-level-val');
-                const btnSave = document.getElementById('inspect-inspetor-painel__btn-salvar');
                 const btnCancel = document.getElementById('inspect-inspetor-painel__btn-cancelar');
 
-                // Visual-only updates during slider drag
-                levelSlider.addEventListener('input', (e) => {
-                    levelVal.textContent = `${e.target.value}%`;
-                });
-
                 // Cancel button deselects the current module
-                btnCancel.addEventListener('click', () => {
-                    selectElement(null);
-                });
-
-                // Save button applies the changes
-                btnSave.addEventListener('click', () => {
-                    const newName = nameInput.value.trim();
-                    const newSub = subInput.value.trim();
-                    const newLvl = parseInt(levelSlider.value);
-
-                    if (!newName) {
-                        alert("O nome do módulo não pode ser vazio.");
-                        return;
-                    }
-
-                    const oldLvl = module.level;
-                    const oldName = module.name;
-                    const oldSub = module.subtitle;
-                    const oldStatus = module.status;
-
-                    // Update module data
-                    module.name = newName;
-                    module.subtitle = newSub;
-                    module.level = newLvl;
-                    module.status = (newLvl < 25 || newLvl > 80) ? 'warning' : 'nominal';
-
-                    // Update card visually
-                    if (card) {
-                        const cardTitle = card.querySelector('.fluxo-cartao__titulo');
-                        if (cardTitle) cardTitle.textContent = module.name;
-
-                        const cardSub = card.querySelector('.fluxo-cartao__subtitulo');
-                        if (cardSub) cardSub.textContent = module.subtitle;
-
-                        card.style.setProperty('--level-percent', `${newLvl}%`);
-                        const cardLvlVal = card.querySelector('.fluxo-cartao__valor-nivel');
-                        if (cardLvlVal) cardLvlVal.textContent = `${newLvl}%`;
-
-                        if (module.status === 'warning') {
-                            card.classList.add('fluxo-cartao--aviso');
-                        } else {
-                            card.classList.remove('fluxo-cartao--aviso');
-                        }
-                    }
-
-                    drawConnections();
-                    updateMobileView();
-                });
+                if (btnCancel) {
+                    btnCancel.addEventListener('click', () => {
+                        selectElement(null);
+                    });
+                }
 
             } else if (elementObj.type === 'connection') {
                 const conn = elementObj.data;
@@ -609,9 +593,9 @@
             mobileViewContainer.innerHTML = '';
 
             const categories = [
-                { key: 'source', title: 'Fontes e Coletores' },
-                { key: 'treatment', title: 'Sistemas de Tratamento' },
-                { key: 'destination', title: 'Destinos de Consumo' }
+                { key: 'fonte', title: 'Fontes e Coletores' },
+                { key: 'tratamento', title: 'Sistemas de Tratamento' },
+                { key: 'destino', title: 'Destinos de Consumo' }
             ];
 
             categories.forEach(cat => {
@@ -776,7 +760,7 @@
                     const displayLevel = Math.round(m.level);
                     const mobileLvlVal = mobileCard.querySelector('.fluxo-mobile-cartao__nivel');
                     if (mobileLvlVal) mobileLvlVal.textContent = `${displayLevel}%`;
-                    
+
                     if (m.level === 100) {
                         mobileCard.classList.add('fluxo-cartao--aviso');
                     } else {
@@ -807,6 +791,31 @@
         drawConnections();
         updateTransform();
         updateMobileView();
+
+        // Cross-linking investigativo (ex: ?focus=jaci ou ?focus=CCA-04)
+        const urlParams = new URLSearchParams(window.location.search);
+        const focusId = urlParams.get('focus');
+        if (focusId) {
+            setTimeout(() => {
+                const targetMod = modules.find(m => {
+                    const sys = window.YJaciCore ? window.YJaciCore.getSystem(m.id) : null;
+                    // Suporta buscar tanto pelo ID do sistema (ex: CCA-04) quanto pelo ID da iniciativa (ex: jaci)
+                    return m.id.toLowerCase() === focusId.toLowerCase() || (sys && sys.initiativeId === focusId);
+                });
+                if (targetMod) {
+                    const card = boardContent.querySelector(`#card-${targetMod.id}`);
+                    if (card) {
+                        selectElement({ type: 'module', data: targetMod, el: card });
+                        card.style.boxShadow = "0 0 40px var(--steel)";
+                        card.style.transform = "scale(1.1)";
+                        setTimeout(() => {
+                            card.style.boxShadow = "";
+                            card.style.transform = "";
+                        }, 2000);
+                    }
+                }
+            }, 500);
+        }
     };
 
     if (document.readyState === 'loading') {

@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(var(--cyan), 0.05) 0%, rgba(var(--bg-main), 1) 50%), rgb(var(--bg-main));
+    background: radial-gradient(circle at 50% 0%, rgba(var(--steel), 0.05) 0%, rgba(var(--bg-main), 1) 50%), rgb(var(--bg-main));
     color: rgb(var(--text-default));
     min-height: 100vh;
     display: flex;
@@ -20,18 +20,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(96, 108, 129);
+    background: rgb(var(--gray-blue));
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(17, 173, 193);
+    background: rgb(var(--steel));
     border-radius: 3px;
 }
 
 @supports not selector(::-webkit-scrollbar) {
     * {
-        scrollbar-color: rgb(17, 173, 193) rgb(96, 108, 129);
+        scrollbar-color: rgb(var(--steel)) rgb(var(--gray-blue));
     }
 }
 
@@ -42,7 +42,7 @@ html {
 
 /* Acessibilidade — Foco visível para navegação por teclado */
 :focus-visible {
-    outline: 2px solid rgb(var(--cyan));
+    outline: 2px solid rgb(var(--steel));
     outline-offset: 2px;
 }
 
@@ -66,7 +66,7 @@ html {
     left: 16px;
     z-index: 10000;
     padding: 12px 24px;
-    background: rgb(var(--cyan));
+    background: rgb(var(--steel));
     color: rgb(var(--bg-main));
     font-weight: 700;
     font-size: var(--text-sm);
@@ -77,4 +77,17 @@ html {
 
 .skip-link:focus {
     top: 16px;
+}
+
+/* --- Utility Classes (Added by Refactoring) --- */
+.flex-center-gap-12 {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.about-info-text {
+    font-size: 0.9em;
+    color: var(--text-muted, rgba(255,255,255,0.6));
+    margin-bottom: 15px;
 }

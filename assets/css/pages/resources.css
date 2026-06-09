@@ -6,14 +6,11 @@
     width: 100%;
 }
 
-
-
 .recursos-grade-cofres {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
-
 
 .recursos-cofre {
     padding: 0;
@@ -24,21 +21,21 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 80% 20%, rgba(var(--cyan), 0.04) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 80% 20%, rgba(var(--steel), 0.04) 0%, transparent 60%);
     pointer-events: none;
 }
 
 .recursos-cofre:hover {
-    border-color: rgba(var(--cyan), 0.3);
+    border-color: rgba(var(--steel), 0.3);
     transform: translateY(-2px);
 }
 
 .recursos-cofre--alerta {
-    border-color: rgba(var(--magenta), 0.3);
+    border-color: rgba(var(--critical), 0.3);
 }
 
 .recursos-cofre--alerta:hover {
-    border-color: rgba(var(--magenta), 0.6);
+    border-color: rgba(var(--critical), 0.6);
     transform: translateY(-2px);
 }
 
@@ -47,7 +44,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 18px;
+    padding: 18px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -64,7 +61,7 @@
 
     font-size: var(--text-paragraph);
     font-weight: 600;
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     letter-spacing: 0.05em;
 }
 
@@ -92,32 +89,31 @@
 .recursos-cofre__valor-massa {
     font-size: var(--text-heading-1);
     font-weight: 700;
-    color: rgb(var(--cyan));
+    color: rgb(var(--text-default));
     line-height: 1;
     letter-spacing: -0.02em;
 }
 
 .recursos-cofre__massa-maxima {
     font-size: var(--text-sm);
-    color: rgb(var(--text-secondary));
+    color: rgb(var(--text-default));
 }
 
 
 .recursos-cofre__percentual {
-
     font-size: var(--text-xs);
     color: rgb(var(--text-secondary));
-
-    text-align: right;
+    text-align: center;
 }
 
 
 .recursos-cofre__barra-progresso {
     height: 10px;
-    background: rgb(var(--bg-panel));
+    background: rgb(var(--black));
     border-radius: 2px;
     overflow: hidden;
     position: relative;
+    margin-top: 10px;
 }
 
 .recursos-cofre__preenchimento-progresso {
@@ -127,12 +123,20 @@
     transition: width 1s ease;
 }
 
-.recursos-cofre__preenchimento-progresso--ciano {
-    background: linear-gradient(90deg, rgb(var(--teal)), rgb(var(--cyan)));
+.recursos-cofre__preenchimento-progresso--pure_water {
+    background: linear-gradient(90deg, rgb(var(--water)), rgb(var(--steel)));
 }
 
-.recursos-cofre__preenchimento-progresso--amarelo {
-    background: linear-gradient(90deg, rgb(var(--orange)), rgb(var(--yellow)));
+.recursos-cofre__preenchimento-progresso--greywater {
+    background: linear-gradient(90deg, rgb(var(--steel)), rgb(var(--steel)));
+}
+
+.recursos-cofre__preenchimento-progresso--organic {
+    background: linear-gradient(90deg, rgb(var(--energy)), rgb(var(--warning)));
+}
+
+.recursos-cofre__preenchimento-progresso--agricultural {
+    background: linear-gradient(90deg, rgb(var(--success)), rgb(var(--success)));
 }
 
 
@@ -147,7 +151,7 @@
 
 .recursos-cofre__marcacoes-progresso span {
     width: 1px;
-    background: rgba(var(--black), 0.5);
+    background: rgba(var(--space-black), 0.5);
 }
 
 
@@ -180,7 +184,7 @@
 .recursos-cofre__valor-metrica {
 
     font-size: var(--text-sm);
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     letter-spacing: 0.05em;
 }
 
@@ -200,9 +204,6 @@
     letter-spacing: 0.08em;
 }
 
-
-
-
 .recursos-cofre__tanque {
     width: 64px;
     flex-shrink: 0;
@@ -214,7 +215,7 @@
 .recursos-cofre__corpo-tanque {
     width: 54px;
     height: 120px;
-    background: rgb(var(--bg-panel));
+    background: rgb(var(--black));
     border-radius: 6px 6px 4px 4px;
     position: relative;
     overflow: hidden;
@@ -231,7 +232,7 @@
     left: 4px;
     right: 4px;
     height: 30%;
-    background: linear-gradient(180deg, rgba(var(--white), 0.04) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(var(--text-primary), 0.04) 0%, transparent 100%);
     border-radius: 4px 4px 0 0;
     z-index: 2;
     pointer-events: none;
@@ -243,15 +244,15 @@
     position: absolute;
     inset: 0;
     background-image:
-        repeating-linear-gradient(0deg, rgba(var(--black), 0.15) 0px, rgba(var(--black), 0.15) 1px, transparent 1px, transparent 4px),
-        repeating-linear-gradient(90deg, rgba(var(--black), 0.1) 0px, rgba(var(--black), 0.1) 1px, transparent 1px, transparent 4px);
+        repeating-linear-gradient(0deg, rgba(var(--space-black), 0.15) 0px, rgba(var(--space-black), 0.15) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(90deg, rgba(var(--space-black), 0.1) 0px, rgba(var(--space-black), 0.1) 1px, transparent 1px, transparent 4px);
     z-index: 1;
     pointer-events: none;
 }
 
 .recursos-cofre__preenchimento-tanque {
-    background: linear-gradient(180deg, rgba(var(--cyan), 0.35) 0%, rgba(var(--cyan), 0.2) 100%);
-    border-top: 1px solid rgba(var(--cyan), 0.5);
+    background: linear-gradient(180deg, rgba(var(--steel), 0.35) 0%, rgba(var(--steel), 0.2) 100%);
+    border-top: 1px solid rgba(var(--steel), 0.5);
     position: relative;
     z-index: 3;
     transition: height 1.5s ease;
@@ -263,27 +264,32 @@
     position: absolute;
     top: 0;
     left: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     right: 0;
-    height: 2px;
-    background: rgba(var(--cyan), 0.7);
+    transition: height 1s ease, background 0.3s ease;
+    overflow: hidden;
 }
 
-.recursos-cofre__preenchimento-tanque--amarelo {
-    background: linear-gradient(180deg, rgba(var(--yellow), 0.35) 0%, rgba(var(--yellow), 0.2) 100%);
-    border-top-color: rgba(var(--yellow), 0.5);
+.recursos-cofre__preenchimento-tanque--pure_water {
+    background: linear-gradient(180deg, rgba(var(--steel), 0.8), rgba(var(--water), 0.9));
 }
 
-.recursos-cofre__preenchimento-tanque--amarelo::before {
-    background: rgba(var(--yellow), 0.7);
+.recursos-cofre__preenchimento-tanque--greywater {
+    background: linear-gradient(180deg, rgba(var(--steel), 0.6), rgba(var(--steel), 0.9));
+}
+
+.recursos-cofre__preenchimento-tanque--organic {
+    background: linear-gradient(180deg, rgba(var(--warning), 0.8), rgba(var(--energy), 0.9));
+}
+
+.recursos-cofre__preenchimento-tanque--agricultural {
+    background: linear-gradient(180deg, rgba(var(--success), 0.8), rgba(var(--success), 0.9));
 }
 
 .recursos-cofre__preenchimento-tanque--baixo {
-    background: linear-gradient(180deg, rgba(var(--magenta), 0.25) 0%, rgba(var(--magenta), 0.15) 100%);
-    border-top-color: rgba(var(--magenta), 0.5);
-}
-
-.recursos-cofre__preenchimento-tanque--baixo::before {
-    background: rgba(var(--magenta), 0.7);
+    background: linear-gradient(180deg, rgba(var(--energy), 0.8), rgba(var(--critical), 0.9)) !important;
 }
 
 
@@ -300,7 +306,7 @@
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: rgba(var(--white), 0.2);
+    background: rgba(var(--text-primary), 0.2);
 }
 
 .recursos-cofre__bolhas-tanque span:nth-child(1) {
@@ -326,7 +332,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: var(--text-lg);
-    color: rgba(var(--cyan), 0.4);
+    color: rgba(var(--steel), 0.4);
     z-index: 4;
     pointer-events: none;
 }
@@ -386,13 +392,13 @@
 }
 
 .legenda-cor--captacao {
-    background: rgb(var(--mint));
-    box-shadow: 0 0 6px rgba(var(--mint), 0.6);
+    background: rgb(var(--success));
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .legenda-cor--consumo {
-    background: rgb(var(--cyan));
-    box-shadow: 0 0 6px rgba(var(--cyan), 0.6);
+    background: rgb(var(--steel));
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .recursos-grafico__corpo {
@@ -411,7 +417,7 @@
 }
 
 .svg-grid-line {
-    stroke: rgba(var(--white), 0.05);
+    stroke: rgba(var(--text-primary), 0.05);
     stroke-width: 1;
     stroke-dasharray: 4, 4;
 }
@@ -436,7 +442,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
-    border-top: 1px solid rgba(var(--white), 0.1);
+    border-top: 1px solid rgba(var(--text-primary), 0.1);
 }
 
 .recursos-grafico__eixo-x span {
@@ -470,7 +476,7 @@
 
 .recursos-alocacao__nome {
     font-size: var(--text-sm);
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     display: flex;
     align-items: center;
     gap: 8px;
@@ -485,12 +491,12 @@
 .recursos-alocacao__porcentagem {
     font-size: var(--text-sm);
     font-weight: bold;
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
 }
 
 .recursos-alocacao__barra-container {
     height: 6px;
-    background: rgba(var(--white), 0.05);
+    background: rgba(var(--text-primary), 0.05);
     border-radius: 3px;
     overflow: hidden;
     position: relative;
@@ -500,26 +506,26 @@
     height: 100%;
     border-radius: 3px;
     position: relative;
-    box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 .recursos-alocacao__barra--hab {
-    background: linear-gradient(90deg, rgb(var(--cyan)), rgb(var(--teal)));
+    background: linear-gradient(90deg, rgb(var(--steel)), rgb(var(--water)));
 }
 
 .recursos-alocacao__barra--bot {
-    background: linear-gradient(90deg, rgb(var(--mint)), rgb(var(--teal)));
+    background: linear-gradient(90deg, rgb(var(--success)), rgb(var(--water)));
 }
 
 .recursos-alocacao__barra--lab {
-    background: linear-gradient(90deg, rgb(var(--magenta)), rgb(var(--purple)));
+    background: linear-gradient(90deg, rgb(var(--brand-primary)), rgb(var(--brand-secondary)));
 }
 
 .recursos-alocacao__alerta {
     margin-top: auto;
-    background: rgba(var(--yellow), 0.08);
-    border: 1px solid rgba(var(--yellow), 0.3);
-    border-left: 3px solid rgb(var(--yellow));
+    background: rgba(var(--warning), 0.08);
+    border: 1px solid rgba(var(--warning), 0.3);
+    border-left: 3px solid rgb(var(--warning));
     padding: 12px;
     border-radius: 4px;
     display: flex;
@@ -528,7 +534,7 @@
 }
 
 .recursos-alocacao__alerta i {
-    color: rgb(var(--yellow));
+    color: rgb(var(--warning));
     margin-top: 2px;
 }
 
@@ -566,11 +572,11 @@
 }
 
 .cartao-macro--danger {
-    border: 1px solid rgb(var(--danger));
+    border: 1px solid rgb(var(--critical));
 }
 
 .text-danger {
-    color: rgb(var(--danger));
+    color: rgb(var(--critical));
 }
 
 .flex-between {
@@ -581,7 +587,7 @@
 }
 
 .texto-destaque-mono {
-    color: rgb(var(--danger));
+    color: rgb(var(--critical));
     font-family: var(--font-mono);
     font-size: 1.1rem;
     font-weight: bold;
@@ -589,6 +595,6 @@
 }
 
 .texto-secundario-claro {
-    color: rgba(var(--white), 0.8);
+    color: rgba(var(--text-primary), 0.8);
     font-size: 0.9rem;
 }

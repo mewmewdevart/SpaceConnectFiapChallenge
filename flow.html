@@ -35,6 +35,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/components/button.css">
+    <link rel="stylesheet" href="assets/css/components/inspetor-painel.css">
     <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
 
@@ -48,7 +49,7 @@
       <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
         <a href="index.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-          <span class="menu-lateral__texto">Home</span>
+          <span class="menu-lateral__texto">Visão Geral</span>
         </a>
         <a href="flow.html" class="menu-lateral__link--ativo menu-lateral__link" aria-current="page">
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
@@ -93,7 +94,7 @@
 
       <div class="menu-superior__direita">
         <!-- Status -->
-        <div class="menu-superior__status" style="display: flex; gap: 12px; align-items: center;">
+        <div class="menu-superior__status flex-center-gap-12">
           <span class="etiqueta etiqueta--danger">
             <span class="etiqueta__dot"></span>
             1 Alerta Crítico
@@ -163,6 +164,9 @@
         </main>
         <aside class="painel-direito"></aside>
     </section>
+    <script src="assets/js/content/lore.js"></script>
+    <script src="assets/js/content/glossary.js"></script>
+    <script src="assets/js/utils/core.js"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/pages/flow.js"></script>

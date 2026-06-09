@@ -53,7 +53,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: var(--hud-line);
+    background: transparent;
 }
 
 .cabecalho-conteudo__bloco {
@@ -75,11 +75,11 @@
 }
 
 .cabecalho-conteudo__subtitulo {
-    color: rgb(var(--text-secondary));
+    color: rgb(var(--brand-primary));
 }
 
 .cabecalho-conteudo__separador {
-    color: rgb(var(--green));
+    color: rgb(var(--brand-secondary));
 }
 
 .painel-direito {
@@ -138,7 +138,7 @@
 }
 
 .cartao-vidro:hover {
-    border-color: rgba(var(--cyan), 0.3);
+    border-color: rgba(var(--steel), 0.3);
 }
 
 .painel-vidro-escuro {

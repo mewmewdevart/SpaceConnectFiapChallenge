@@ -1,5 +1,5 @@
 // ==========================================================================
-// CREW.JS - Base de Dados e Renderiza��o Din�mica da Tripulação
+// CREW.JS - Base de Dados e Renderização Dinâmica da Tripulação
 // ==========================================================================
 
 const crewDatabase = [
@@ -7,23 +7,23 @@ const crewDatabase = [
   {
     id: "CMD-01",
     name: "Cmdr. Oakes",
-    role: "Comandante da Miss�o",
+    role: "Comandante da Missão",
     department: "Comando",
     location: "Centro de Comando",
     status: "nominal",
     vitals: { bpm: 68, spo2: "99%", fatigue: "22%", lastSleep: "7.1h", stress: "BAIXO" },
     impact: { water: "1.8L/d", o2: "14kg/s", energy: "12 kWh", efficiency: "98%" },
-    mission: { name: "Supervis�o Geral do Ciclo 4", progress: 95, deadline: "02h" },
+    mission: { name: "Supervisão Geral do Ciclo 4", progress: 95, deadline: "02h" },
     responsibilities: [
-      { text: "Comunica��es DSN", status: "ok" },
-      { text: "Aprova��o de Aloca��o H2O", status: "ok" }
+      { text: "Comunicações DSN", status: "ok" },
+      { text: "Aprovação de Alocação H2O", status: "ok" }
     ],
-    impactText: "Eficiência t�tica est�vel"
+    impactText: "Eficiência tática estável"
   },
   {
     id: "CMD-02",
     name: "Sub-Cmdr. Vance",
-    role: "Oficial de Opera��es",
+    role: "Oficial de Operações",
     department: "Comando",
     location: "Centro de Comando",
     status: "atencao",
@@ -31,10 +31,10 @@ const crewDatabase = [
     impact: { water: "2.1L/d", o2: "16kg/s", energy: "18 kWh", efficiency: "85%" },
     mission: { name: "Planejamento de Rota de Fuga", progress: 60, deadline: "08h" },
     responsibilities: [
-      { text: "Simula��es de Pressuriza��o", status: "ok" },
-      { text: "Log�stica de Suprimentos", status: "alert" }
+      { text: "Simulações de Pressurização", status: "ok" },
+      { text: "Logística de Suprimentos", status: "alert" }
     ],
-    impactText: "Atraso no relat�rio de log�stica"
+    impactText: "Atraso no relatório de logística"
   },
 
   // ================= ENGENHARIA (6) =================
@@ -47,18 +47,18 @@ const crewDatabase = [
     status: "nominal",
     vitals: { bpm: 72, spo2: "98%", fatigue: "64%", lastSleep: "5.2h", stress: "NOMINAL" },
     impact: { water: "2.4L/d", o2: "18kg/s", energy: "34 kWh", efficiency: "96%" },
-    mission: { name: "Manuten��o da Estufa Alpha", progress: 78, deadline: "14h" },
+    mission: { name: "Manutenção da Estufa Alpha", progress: 78, deadline: "14h" },
     responsibilities: [
-      { text: "Sistema de Irriga��o", status: "ok" },
-      { text: "Reciclagem de �gua", status: "ok" },
+      { text: "Sistema de Irrigação", status: "ok" },
+      { text: "Reciclagem de Água", status: "ok" },
       { text: "Tanques H2O-03", status: "ok" }
     ],
-    impactText: "+12% efici�ncia h�drica"
+    impactText: "+12% eficiência hídrica"
   },
   {
     id: "ENG-02",
     name: "Hiroshi Tanaka",
-    role: "Engenheiro El�trico",
+    role: "Engenheiro Elétrico",
     department: "Engenharia",
     location: "Reator Primário",
     status: "nominal",
@@ -137,14 +137,14 @@ const crewDatabase = [
     id: "SCI-01",
     name: "Elara Thorne",
     role: "Geóloga Chefe (EVA)",
-    department: "Ci�ncia",
+    department: "Ciência",
     location: "Cratera de Cabeus",
     status: "critico",
     vitals: { bpm: 134, spo2: "92%", fatigue: "88%", lastSleep: "3.2h", stress: "ALTO" },
     impact: { water: "+4.2x / hr", o2: "34%", energy: "145 kg", efficiency: "72%" },
     mission: { name: "Extração de Gelo Profundo", progress: 45, deadline: "-02:14h" },
     responsibilities: [
-      { text: "Rover RV-04 (Offline)", status: "critical" },
+      { text: "Rover RV-04 (Inativo)", status: "critical" },
       { text: "Broca de Perfuração B-12", status: "ok" }
     ],
     impactText: "Atraso no ciclo H2O"
@@ -153,7 +153,7 @@ const crewDatabase = [
     id: "SCI-02",
     name: "Dr. Alistair Vance",
     role: "Astrofísico",
-    department: "Ci�ncia",
+    department: "Ciência",
     location: "Observatório Lunar",
     status: "nominal",
     vitals: { bpm: 62, spo2: "99%", fatigue: "15%", lastSleep: "8.0h", stress: "BAIXO" },
@@ -169,7 +169,7 @@ const crewDatabase = [
     id: "SCI-03",
     name: "Lin Wei",
     role: "Química Analítica",
-    department: "Ci�ncia",
+    department: "Ciência",
     location: "Laboratório Químico",
     status: "nominal",
     vitals: { bpm: 70, spo2: "98%", fatigue: "45%", lastSleep: "6.2h", stress: "NOMINAL" },
@@ -184,7 +184,7 @@ const crewDatabase = [
     id: "SCI-04",
     name: "James Holden",
     role: "Pesquisador de Materiais",
-    department: "Ci�ncia",
+    department: "Ciência",
     location: "Módulo de Síntese",
     status: "atencao",
     vitals: { bpm: 85, spo2: "97%", fatigue: "70%", lastSleep: "4.5h", stress: "MODERADO" },
@@ -209,7 +209,7 @@ const crewDatabase = [
     mission: { name: "Colheita de Microverdes", progress: 95, deadline: "01h" },
     responsibilities: [
       { text: "Hidroponia Central", status: "ok" },
-      { text: "N�veis de Iluminação UV", status: "ok" }
+      { text: "Níveis de Iluminação UV", status: "ok" }
     ],
     impactText: "+25kg de biomassa gerada"
   },
@@ -231,7 +231,7 @@ const crewDatabase = [
   {
     id: "AGR-03",
     name: "Priya Patel",
-    role: "T�cnica de Nutrição",
+    role: "Técnica de Nutrição",
     department: "Agricultura",
     location: "Bio-Domo 02",
     status: "atencao",
@@ -244,7 +244,7 @@ const crewDatabase = [
     impactText: "Desvio químico detectado"
   },
 
-  // ================= SA�DE (2) =================
+  // ================= SAÚDE (2) =================
   {
     id: "MED-01",
     name: "Dr. Julian Bashir",
@@ -319,7 +319,7 @@ function renderPagination() {
 
   const totalPages = Math.ceil(filteredCrew.length / itemsPerPage);
 
-  // Se houver 0 ou 1 página, e n�o tiver itens, pode limpar
+  // Se houver 0 ou 1 página, e não tiver itens, pode limpar
   if (totalPages <= 1) {
     pagContainer.innerHTML = '';
     return;
@@ -345,7 +345,7 @@ function renderPagination() {
   pagContainer.innerHTML = html;
 }
 
-// Exp�e a função globalmente para os botões inline
+// Expõe a função globalmente para os botões inline
 window.changePage = function (page) {
   const totalPages = Math.ceil(filteredCrew.length / itemsPerPage);
   if (page >= 1 && page <= totalPages) {
@@ -366,7 +366,7 @@ function renderCrew() {
     return;
   }
 
-  // Lógica de Pagina��o
+  // Lógica de Paginação
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const crewToRender = filteredCrew.slice(startIndex, endIndex);
@@ -390,11 +390,34 @@ function renderCrew() {
     }
 
     // Montar HTML de responsabilidades
-    const responsibilitiesHTML = member.responsibilities.map(r => `
-      <div class="crew-responsabilidades__item">
-        ${getStatusIcon(r.status)} <span class="${r.status === 'critical' ? 'text-critical' : ''}">${r.text}</span>
-      </div>
-    `).join('');
+    // Mapeamento Dinâmico Y-JACI Lore
+    let assignedInitiatives = [];
+    if (member.department === "Engenharia" && member.role.includes("Suporte")) assignedInitiatives = ["jaci", "naia"];
+    else if (member.department === "Engenharia") assignedInitiatives = ["boitata"];
+    else if (member.department === "Agricultura") assignedInitiatives = ["curupira", "yvy"];
+    else if (member.department === "Comando") assignedInitiatives = ["yjaci"];
+    else if (member.department === "Saúde") assignedInitiatives = ["jaci"];
+    else if (member.department === "Ciência") assignedInitiatives = ["yvy", "naia"];
+
+    const loreHTML = assignedInitiatives.map(initId => {
+        const entity = window.YJaciCore ? window.YJaciCore.getEntity(initId) : null;
+        if (entity) {
+            return `
+                <li class="crew-card__resp-item" style="background: rgba(43, 255, 209, 0.05); padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(43, 255, 209, 0.1);">
+                    <i class="fa-solid fa-link" style="color: var(--success);"></i>
+                    <a href="flow.html?focus=${initId}" style="color: var(--success); text-decoration: none; font-weight: bold; font-family: var(--font-mono); transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Especialista: ${entity.name}</a>
+                </li>`;
+        }
+        return '';
+    }).join("");
+
+    const responsibilitiesHTML = loreHTML + member.responsibilities.map(r => `
+        <li class="crew-card__resp-item">
+            <i class="fa-solid ${r.status === 'alert' ? 'fa-triangle-exclamation' : 'fa-check'}" 
+               style="color: var(--${r.status === 'alert' ? 'warning' : 'success'});"></i>
+            ${r.text}
+        </li>
+    `).join("");
 
     // Montar HTML do cartão
     const cardHTML = `

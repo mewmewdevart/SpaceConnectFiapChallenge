@@ -32,7 +32,7 @@
 }
 
 .sobre-destaque-cyan {
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
 }
 
 /* ODS Grid */
@@ -53,15 +53,15 @@
 }
 
 .ods-card--cyan {
-    border-left: 3px solid rgb(var(--cyan));
+    border-left: 3px solid rgb(var(--steel));
 }
 
 .ods-card--green {
-    border-left: 3px solid rgb(var(--green));
+    border-left: 3px solid rgb(var(--success));
 }
 
 .ods-card--yellow {
-    border-left: 3px solid rgb(var(--yellow));
+    border-left: 3px solid rgb(var(--warning));
 }
 
 .ods-card__icone {
@@ -70,20 +70,20 @@
 }
 
 .ods-card__icone--cyan {
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
 }
 
 .ods-card__icone--green {
-    color: rgb(var(--green));
+    color: rgb(var(--success));
 }
 
 .ods-card__icone--yellow {
-    color: rgb(var(--yellow));
+    color: rgb(var(--warning));
 }
 
 .ods-card__titulo {
     font-size: var(--text-sm);
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     margin-bottom: 6px;
 }
 
@@ -108,7 +108,7 @@
 .equipe-lista {
     list-style-type: none;
     padding-left: 10px;
-    border-left: 2px solid rgb(var(--cyan));
+    border-left: 2px solid rgb(var(--steel));
     display: flex;
     flex-direction: column;
     gap: 8px;

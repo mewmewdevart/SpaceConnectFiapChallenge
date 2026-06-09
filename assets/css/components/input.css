@@ -4,7 +4,7 @@
 
 .campo {
     background: rgba(var(--bg-main), 0.5);
-    border: 1px solid rgba(var(--white), 0.08);
+    border: 1px solid rgba(var(--text-primary), 0.08);
     border-radius: var(--radius-sm);
     padding: 12px;
     color: rgb(var(--text-primary));
@@ -17,9 +17,9 @@
 }
 
 .campo:focus {
-    border-color: rgb(var(--cyan));
-    background: rgba(var(--cyan), 0.05);
-    box-shadow: 0 0 12px rgba(var(--cyan), 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: rgb(var(--steel));
+    background: rgba(var(--steel), 0.05);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .campo--textarea {

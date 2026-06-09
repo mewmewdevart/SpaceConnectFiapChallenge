@@ -49,7 +49,7 @@
       <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
         <a href="index.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-          <span class="menu-lateral__texto">Home</span>
+          <span class="menu-lateral__texto">Visão Geral</span>
         </a>
         <a href="flow.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
@@ -94,7 +94,7 @@
 
       <div class="menu-superior__direita">
         <!-- Status -->
-        <div class="menu-superior__status" style="display: flex; gap: 12px; align-items: center;">
+        <div class="menu-superior__status flex-center-gap-12">
           <span class="etiqueta etiqueta--danger">
             <span class="etiqueta__dot"></span>
             1 Alerta Crítico
@@ -197,43 +197,19 @@
                     </section> <!-- List of recent tickets -->
                     <section class="secao-suporte painel-vidro-escuro ">
                         <h2 class="secao-titulo"><i class="fa-solid fa-list-check"></i> Chamados Recentes</h2>
-                        <div class="lista-chamados">
-                            <article class="chamado-cartao cartao-vidro ">
-                                <div class="chamado-cartao__cabecalho"> <span
-                                        class="chamado-cartao__id">#TKT-8942</span> <span
-                                        class="etiqueta etiqueta--danger">Aberto</span> </div>
-                                <h3 class="chamado-cartao__titulo">Falha na Bomba de Recirculação H2O</h3>
-                                <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-07T10:24">07/06/2026
-                                        - 10:24</time> | Prioridade: Alta</p>
-                                <div class="chamado-cartao__acoes"> <button class="botao botao--primario botao--sm"
-                                        aria-label="Ver detalhes do chamado TKT-8942">Ver Detalhes</button> </div>
-                            </article>
-                            <article class="chamado-cartao cartao-vidro ">
-                                <div class="chamado-cartao__cabecalho"> <span
-                                        class="chamado-cartao__id">#TKT-8935</span> <span
-                                        class="etiqueta etiqueta--warning">Em Andamento</span> </div>
-                                <h3 class="chamado-cartao__titulo">Atualização do Firmware de Telemetria (DSN)</h3>
-                                <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-06T14:15">06/06/2026
-                                        - 14:15</time> | Prioridade: Média</p>
-                                <div class="chamado-cartao__acoes"> <button class="botao botao--primario botao--sm"
-                                        aria-label="Ver detalhes do chamado TKT-8935">Ver Detalhes</button> </div>
-                            </article>
-                            <article class="chamado-cartao cartao-vidro ">
-                                <div class="chamado-cartao__cabecalho"> <span
-                                        class="chamado-cartao__id">#TKT-8910</span> <span
-                                        class="etiqueta etiqueta--success">Resolvido</span> </div>
-                                <h3 class="chamado-cartao__titulo">Vazamento contido no Silo de Biomassa (BIO-01)</h3>
-                                <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-05T08:30">05/06/2026
-                                        - 08:30</time> | Prioridade: Crítica</p>
-                                <div class="chamado-cartao__acoes"> <button class="botao botao--primario botao--sm"
-                                        aria-label="Ver detalhes do chamado TKT-8910">Ver Detalhes</button> </div>
-                            </article>
+                        <div class="lista-chamados" id="lista-chamados-container">
+                            <!-- Renderizado via JS dinâmico usando mock_alerts.js -->
                         </div>
                     </section>
                 </div>
             </div>
         </main>
     </section>
+    <script src="assets/js/content/lore.js"></script>
+    <script src="assets/js/content/glossary.js"></script>
+    <script src="assets/js/content/mock_alerts.js"></script>
+    <script src="assets/js/utils/core.js"></script>
+    <script src="assets/js/pages/support.js"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
     <footer class="barra-telemetria">

@@ -1,27 +1,40 @@
 /* Google Fonts carregado via <link> nos HTMLs para não bloquear parsing CSS */
 
 :root {
+    /* Estrutura */
+    --black: 20, 22, 36;
+    --space-black: 26, 28, 44;
+    /* #1A1A1E */
+    --panel: 26, 28, 44;
+    /* #182E41 */
+    --surface: 50, 73, 95;
+    /* #32495F */
+    --steel: 63, 160, 164;
+    /* #81AFB5 */
 
-    --white: 255, 255, 255;
-    --black: 0, 0, 0;
-    --mint: 109, 247, 193;
-    --cyan: 17, 173, 193;
-    --gray-blue: 96, 108, 129;
-    --dark-purple: 57, 52, 87;
-    --teal: 30, 136, 117;
-    --green: 91, 179, 97;
-    --lime: 161, 229, 90;
-    --yellow: 247, 228, 118;
-    --orange: 249, 146, 82;
-    --salmon: 203, 77, 104;
-    --purple: 106, 55, 113;
-    --magenta: 201, 36, 100;
-    --pink: 244, 140, 182;
-    --peach: 247, 182, 158;
-    --olive-gray: 155, 156, 130;
+    /* Recursos */
+    --water: 63, 160, 164;
+    --oxygen: 134, 224, 206;
+    --food: 93, 167, 93;
+    --energy: 226, 181, 112;
 
+    /* Estados */
+    --success: 93, 167, 93;
+    --warning: var(--brand-secondary);
+    --critical: 188, 89, 96;
 
+    /* Identidade */
+    --brand-primary: 17, 173, 193;
+    /* CYAN */
+    --brand-secondary: 247, 228, 118;
+    /* Dourado */
 
+    /* Texto */
+    --text-primary: 227, 245, 241;
+    --text-secondary: 129, 175, 181;
+    --text-default: 224, 224, 224;
+
+    /* Tipografia */
     --font-primary: 'Inter', sans-serif;
     --font-mono: 'Share Tech Mono', monospace;
 
@@ -37,100 +50,52 @@
     --text-4xl: 36px;
     --text-hero: 44px;
 
-
     --text-paragraph: var(--text-base);
     --text-heading-1: var(--text-4xl);
-    --text-heading-2: var(--text-3xl);
-    --text-heading-3: var(--text-2xl);
 
+    /* Cores Semânticas de Sistema */
+    --color-primary: var(--brand-primary);
+    --color-secondary: var(--steel);
+    --color-alert: var(--critical);
 
-    --color-primary: var(--green);
-    --color-secondary: var(--yellow);
-    --color-alert: var(--salmon);
-    --color-danger: var(--magenta);
-    --color-success: var(--green);
-    --color-warning: var(--yellow);
-    --color-info: var(--cyan);
-    --bg-main: 26, 28, 44;
-    --bg-panel: var(--bg-main);
+    --bg-main: var(--space-black);
+    --bg-panel: var(--panel);
 
+    --border-color: rgba(var(--text-secondary), 0.15);
 
-    --text-primary: var(--white);
-    --text-secondary: 192, 194, 165;
+    /* Backgrounds e Elevacao */
+    --bg-glass-light: rgba(var(--panel), 0.6);
+    --bg-glass-medium: rgba(var(--panel), 0.85);
+    --bg-glass-heavy: rgba(var(--space-black), 0.95);
+    --panel-border: 1px solid rgba(var(--steel), 0.15);
 
-    --text-default: 224, 224, 224;
-    --text-menu: 245, 245, 245;
-    --icon-menu: 192, 192, 192;
+    /* Shadows (Material Dark Theme) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 
-
-
-    --graph-color-lv0: 26, 28, 44;
-    --graph-color-lv1: var(--teal);
-    --graph-color-lv2: var(--green);
-    --graph-color-lv3: var(--lime);
-    --graph-color-lv4: var(--yellow);
-
-    --border-color: rgba(var(--white), 0.1);
-
-    --fluid-color-gray: var(--text-secondary);
-    --fluid-color-pure: var(--mint);
-    --fluid-color-organic: var(--yellow);
-    --fluid-color-disinfected: var(--salmon);
-    --fluid-color-fertilizer: var(--lime);
-    --fluid-color-potable: var(--cyan);
-    --fluid-color-nutrient: var(--green);
-
-    /* Glassmorphism & Sci-Fi Panels */
-    --bg-glass-light: rgba(var(--bg-main), 0.4);
-    --bg-glass-medium: rgba(var(--bg-main), 0.6);
-    --bg-glass-heavy: rgba(var(--bg-main), 0.85);
-    --panel-border: 2px solid rgba(var(--cyan), 0.08);
-
-    /* HUD and Glow Effects */
-    --glow-cyan: 0 0 10px rgba(var(--cyan), 0.5), 0 0 20px rgba(var(--cyan), 0.3);
-    --glow-green: 0 0 10px rgba(var(--green), 0.5), 0 0 20px rgba(var(--green), 0.3);
-    --glow-yellow: 0 0 10px rgba(var(--yellow), 0.5), 0 0 20px rgba(var(--yellow), 0.3);
-    --glow-salmon: 0 0 10px rgba(var(--salmon), 0.5), 0 0 20px rgba(var(--salmon), 0.3);
-
-    /* Technical Lines (HUD) */
-    --hud-line: linear-gradient(90deg, transparent 0%, rgba(var(--cyan), 0.2) 50%, transparent 100%);
-    --hud-line-vertical: linear-gradient(180deg, transparent 0%, rgba(var(--cyan), 0.2) 50%, transparent 100%);
-
-    /* Border Radius for Technical Panels */
+    /* Border Radius */
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
-    --radius-pill: 9999px;
 
     /* Transitions */
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Spacing Scale */
-    --space-2xs: 4px;
-    --space-xs: 6px;
     --space-sm: 8px;
     --space-md: 12px;
     --space-lg: 16px;
     --space-xl: 20px;
-    --space-2xl: 24px;
-    --space-3xl: 32px;
-
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
 
     /* Z-Index Layers */
-    --z-base: 1;
     --z-dropdown: 50;
     --z-sticky: 100;
-    --z-overlay: 500;
     --z-sidebar: 1000;
 
     /* Font Weights */
-    --font-regular: 400;
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
@@ -139,7 +104,7 @@
     --btn-height-sm: 32px;
     --btn-height-md: 40px;
     --btn-height-lg: 48px;
-    --btn-height-mobile: 44px; /* Touch safe */
+    --btn-height-mobile: 44px;
 
     --btn-padding-sm: 0 var(--space-md);
     --btn-padding-md: 0 var(--space-lg);

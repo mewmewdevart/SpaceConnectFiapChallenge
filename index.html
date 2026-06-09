@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
   <link rel="stylesheet" href="assets/css/components/button.css">
+  <link rel="stylesheet" href="assets/css/components/inspetor-painel.css">
   <link rel="stylesheet" href="assets/css/components/input.css">
   <link rel="stylesheet" href="assets/css/pages/home.css">
 </head>
@@ -50,7 +51,7 @@
       <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
         <a href="index.html" class="menu-lateral__link--ativo menu-lateral__link" aria-current="page">
           <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-          <span class="menu-lateral__texto">Home</span>
+          <span class="menu-lateral__texto">Visão Geral</span>
         </a>
         <a href="flow.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
@@ -95,7 +96,7 @@
 
       <div class="menu-superior__direita">
         <!-- Status -->
-        <div class="menu-superior__status" style="display: flex; gap: 12px; align-items: center;">
+        <div class="menu-superior__status flex-center-gap-12">
           <span class="etiqueta etiqueta--danger">
             <span class="etiqueta__dot"></span>
             1 Alerta Crítico
@@ -153,7 +154,7 @@
             <div class="alerta__corpo">
               <div class="alerta__linha-topo">
                 <div class="alerta__grupo-esquerdo"> <span class="etiqueta etiqueta--info">Info</span> <span
-                    class="alerta__codigo-evento">AGR-01</span> </div> <time class="alerta__tempo-evento"
+                    class="alerta__codigo-evento">CAIPORA-02</span> </div> <time class="alerta__tempo-evento"
                   datetime="PT0S" aria-label="Atual">AGORA</time>
               </div>
               <p class="alerta__texto-evento">Consumo Crítico na Botânica: Drenagem contínua não prevista nos
@@ -171,7 +172,7 @@
                     class="alerta__codigo-evento">A-242</span> </div> <time class="alerta__tempo-evento"
                   datetime="PT20S" aria-label="Ocorreu há 20 segundos">00:00:20</time>
               </div>
-              <p class="alerta__texto-evento">Pressão do Tanque H2O-01 Baixa: Falha de pressurização no módulo de
+              <p class="alerta__texto-evento">Pressão no Centro de Condensadores (JACI-04) Baixa: Falha de pressurização no módulo de
                 distribuição primária.</p> <span class="alerta__fonte-evento">Fonte: Alerta Ativo</span>
               <div class="alerta__acoes"> <a href="flow.html" class="botao botao--perigo botao--icone">Ajustar
                   Válvulas</a> </div>
@@ -183,6 +184,9 @@
     </main>
     <aside class="painel-direito" id="side-info-panel" aria-live="polite"> <!-- Injeção via home.js --> </aside>
   </div>
+  <script src="assets/js/content/lore.js"></script>
+  <script src="assets/js/content/glossary.js"></script>
+  <script src="assets/js/utils/core.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/pages/home.js"></script>

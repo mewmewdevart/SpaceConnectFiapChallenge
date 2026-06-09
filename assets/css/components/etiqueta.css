@@ -33,60 +33,60 @@
 /* Nominal / Success (Mint) */
 .etiqueta--nominal,
 .etiqueta--success {
-    color: rgb(var(--mint));
-    border-color: rgba(var(--mint), 0.35);
-    background: rgba(var(--mint), 0.06);
+    color: rgb(var(--success));
+    border-color: rgba(var(--success), 0.35);
+    background: rgba(var(--success), 0.06);
 }
 
 .etiqueta--nominal .etiqueta__dot,
 .etiqueta--success .etiqueta__dot {
-    background: rgb(var(--mint));
-    box-shadow: 0 0 6px rgba(var(--mint), 0.8);
+    background: rgb(var(--success));
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Warning / Alert / In Progress (Yellow) */
 .etiqueta--warning,
 .etiqueta--alerta {
-    color: rgb(var(--yellow));
-    border-color: rgba(var(--yellow), 0.35);
-    background: rgba(var(--yellow), 0.06);
+    color: rgb(var(--warning));
+    border-color: rgba(var(--warning), 0.35);
+    background: rgba(var(--warning), 0.06);
 }
 
 .etiqueta--warning .etiqueta__dot,
 .etiqueta--alerta .etiqueta__dot {
-    background: rgb(var(--yellow));
-    box-shadow: 0 0 6px rgba(var(--yellow), 0.8);
+    background: rgb(var(--warning));
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Critical / Danger / Open (Magenta) */
 .etiqueta--critical,
 .etiqueta--danger {
-    color: rgb(var(--magenta));
-    border-color: rgba(var(--magenta), 0.35);
-    background: rgba(var(--magenta), 0.06);
+    color: rgb(var(--critical));
+    border-color: rgba(var(--critical), 0.35);
+    background: rgba(var(--critical), 0.06);
 }
 
 .etiqueta--critical .etiqueta__dot,
 .etiqueta--danger .etiqueta__dot {
-    background: rgb(var(--magenta));
-    box-shadow: 0 0 6px rgba(var(--magenta), 0.8);
+    background: rgb(var(--critical));
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Down / Danger (for resource rates) */
 .etiqueta--vermelho {
-    color: rgb(var(--magenta));
-    border-color: rgba(var(--magenta), 0.35);
-    background: rgba(var(--magenta), 0.06);
+    color: rgb(var(--critical));
+    border-color: rgba(var(--critical), 0.35);
+    background: rgba(var(--critical), 0.06);
 }
 
 /* Info (Cyan) */
 .etiqueta--info {
-    color: rgb(var(--cyan));
-    border-color: rgba(var(--cyan), 0.35);
-    background: rgba(var(--cyan), 0.06);
+    color: rgb(var(--steel));
+    border-color: rgba(var(--steel), 0.35);
+    background: rgba(var(--steel), 0.06);
 }
 
 .etiqueta--info .etiqueta__dot {
-    background: rgb(var(--cyan));
-    box-shadow: 0 0 6px rgba(var(--cyan), 0.8);
+    background: rgb(var(--steel));
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }

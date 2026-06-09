@@ -71,11 +71,11 @@
         }
 
         .svg-drop-mint {
-            filter: drop-shadow(0 0 8px rgba(var(--mint), 0.6));
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
         }
 
         .svg-drop-cyan {
-            filter: drop-shadow(0 0 8px rgba(var(--cyan), 0.6));
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
         }
 
         .aloc-hab-width {
@@ -102,7 +102,7 @@
       <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
         <a href="index.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-          <span class="menu-lateral__texto">Home</span>
+          <span class="menu-lateral__texto">Visão Geral</span>
         </a>
         <a href="flow.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
@@ -147,7 +147,7 @@
 
       <div class="menu-superior__direita">
         <!-- Status -->
-        <div class="menu-superior__status" style="display: flex; gap: 12px; align-items: center;">
+        <div class="menu-superior__status flex-center-gap-12">
           <span class="etiqueta etiqueta--danger">
             <span class="etiqueta__dot"></span>
             1 Alerta Crítico
@@ -236,223 +236,8 @@
                                 class="cartao-macro__label">Perda Diária</span> </div>
                     </article>
                 </section> <!-- GRADE DE COFRES CRIOGÊNICOS -->
-                <section class="recursos-grade-cofres" aria-label="Cofres Criogênicos">
-                    <!-- H2O-01 Tanque de Água Potável -->
-                    <article class="recursos-cofre painel-vidro-escuro " id="tank-potable">
-                        <div class="recursos-cofre__cabecalho">
-                            <div class="recursos-cofre__cabecalho-esquerda"> <span
-                                    class="recursos-cofre__identificador">H2O-01</span>
-                                <h2 class="recursos-cofre__nome">Tanque de Água Potável</h2>
-                            </div>
-                            <div class="etiqueta etiqueta--success"><i class="fa-solid fa-arrow-trend-up"></i> 2.5%/D</div>
-                        </div>
-                        <div class="recursos-cofre__corpo">
-                            <div class="recursos-cofre__informacoes">
-                                <div class="recursos-cofre__massa"> <span
-                                        class="recursos-cofre__valor-massa">9.42</span> <span
-                                        class="recursos-cofre__massa-maxima">/ 12 t</span> </div>
-                                <div class="recursos-cofre__percentual">78.5%</div>
-                                <div class="recursos-cofre__barra-progresso">
-                                    <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--ciano prog-hab-width"></div>
-                                    <div class="recursos-cofre__marcacoes-progresso">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                </div>
-                                <div class="recursos-cofre__metricas">
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-temperature-half recursos-cofre__icone-metrica"></i>
-                                        <span class="recursos-cofre__rotulo-metrica">TEMP</span> <span
-                                            class="recursos-cofre__valor-metrica">18 °C</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-circle-dot recursos-cofre__icone-metrica"></i> <span
-                                            class="recursos-cofre__rotulo-metrica">PRESSÃO</span> <span
-                                            class="recursos-cofre__valor-metrica">1.0 atm</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-arrow-trend-down recursos-cofre__icone-metrica"></i>
-                                        <span class="recursos-cofre__rotulo-metrica">CONSUMO</span> <span
-                                            class="recursos-cofre__valor-metrica">420 L/d</span> </div>
-                                </div>
-                                <div class="recursos-cofre__rodape"> <span
-                                        class="recursos-cofre__rotulo-transferencia">Próxima filtragem: SOL+0.2</span>
-                                    <span class="etiqueta etiqueta--info"><span class="etiqueta__dot"></span> ESTÁVEL</span>
-                                </div>
-                            </div>
-                            <div class="recursos-cofre__tanque">
-                                <div class="recursos-cofre__corpo-tanque">
-                                    <div class="recursos-cofre__preenchimento-tanque prog-hab-height">
-                                        <div class="recursos-cofre__bolhas-tanque">
-                                            <span></span><span></span><span></span>
-                                        </div>
-                                    </div>
-                                    <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-glass-water"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article> <!-- H2O-02 Reservatório de Água Cinza -->
-                    <article class="recursos-cofre painel-vidro-escuro " id="tank-grey">
-                        <div class="recursos-cofre__cabecalho">
-                            <div class="recursos-cofre__cabecalho-esquerda"> <span
-                                    class="recursos-cofre__identificador">H₂O-02</span>
-                                <h2 class="recursos-cofre__nome">Reservatório Água Cinza</h2>
-                            </div>
-                            <div class="etiqueta etiqueta--warning"><i class="fa-solid fa-arrow-trend-up"></i> 4.2%/D</div>
-                        </div>
-                        <div class="recursos-cofre__corpo">
-                            <div class="recursos-cofre__informacoes">
-                                <div class="recursos-cofre__massa"> <span
-                                        class="recursos-cofre__valor-massa">6.21</span> <span
-                                        class="recursos-cofre__massa-maxima">/ 12 t</span> </div>
-                                <div class="recursos-cofre__percentual">51.7%</div>
-                                <div class="recursos-cofre__barra-progresso">
-                                    <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--ciano prog-bot-width"></div>
-                                    <div class="recursos-cofre__marcacoes-progresso">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                </div>
-                                <div class="recursos-cofre__metricas">
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-temperature-half recursos-cofre__icone-metrica"></i>
-                                        <span class="recursos-cofre__rotulo-metrica">TEMP</span> <span
-                                            class="recursos-cofre__valor-metrica">22 °C</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-circle-dot recursos-cofre__icone-metrica"></i> <span
-                                            class="recursos-cofre__rotulo-metrica">PRESSÃO</span> <span
-                                            class="recursos-cofre__valor-metrica">1.0 atm</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-arrow-trend-up recursos-cofre__icone-metrica"></i> <span
-                                            class="recursos-cofre__rotulo-metrica">CAPTAÇÃO</span> <span
-                                            class="recursos-cofre__valor-metrica">380 L/d</span> </div>
-                                </div>
-                                <div class="recursos-cofre__rodape"> <span
-                                        class="recursos-cofre__rotulo-transferencia">Purificação RO: SOL+0.5</span>
-                                    <span class="etiqueta etiqueta--info"><span class="etiqueta__dot"></span> RECEBENDO</span>
-                                </div>
-                            </div>
-                            <div class="recursos-cofre__tanque">
-                                <div class="recursos-cofre__corpo-tanque">
-                                    <div class="recursos-cofre__preenchimento-tanque prog-bot-height">
-                                        <div class="recursos-cofre__bolhas-tanque">
-                                            <span></span><span></span><span></span>
-                                        </div>
-                                    </div>
-                                    <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-sink"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </article> <!-- BIO-01 Silo de Biomassa -->
-                    <article class="recursos-cofre painel-vidro-escuro " id="silo-biomass">
-                        <div class="recursos-cofre__cabecalho">
-                            <div class="recursos-cofre__cabecalho-esquerda"> <span
-                                    class="recursos-cofre__identificador">BIO-01</span>
-                                <h2 class="recursos-cofre__nome">Silo de Biomassa</h2>
-                            </div>
-                            <div class="etiqueta etiqueta--success"><i class="fa-solid fa-arrow-trend-up"></i> 1.2%/D</div>
-                        </div>
-                        <div class="recursos-cofre__corpo">
-                            <div class="recursos-cofre__informacoes">
-                                <div class="recursos-cofre__massa"> <span
-                                        class="recursos-cofre__valor-massa">7.74</span> <span
-                                        class="recursos-cofre__massa-maxima">/ 8 t</span> </div>
-                                <div class="recursos-cofre__percentual">96.8%</div>
-                                <div class="recursos-cofre__barra-progresso">
-                                    <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--amarelo prog-lab-width"></div>
-                                    <div class="recursos-cofre__marcacoes-progresso">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                </div>
-                                <div class="recursos-cofre__metricas">
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-temperature-half recursos-cofre__icone-metrica"></i>
-                                        <span class="recursos-cofre__rotulo-metrica">TEMP</span> <span
-                                            class="recursos-cofre__valor-metrica">35 °C</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-circle-dot recursos-cofre__icone-metrica"></i> <span
-                                            class="recursos-cofre__rotulo-metrica">PRESSÃO</span> <span
-                                            class="recursos-cofre__valor-metrica">1.2 atm</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-arrow-trend-up recursos-cofre__icone-metrica"></i> <span
-                                            class="recursos-cofre__rotulo-metrica">PRODUÇÃO</span> <span
-                                            class="recursos-cofre__valor-metrica">45 kg/d</span> </div>
-                                </div>
-                                <div class="recursos-cofre__rodape"> <span
-                                        class="recursos-cofre__rotulo-transferencia">Compostagem ativa</span> <span
-                                        class="etiqueta etiqueta--success"><span class="etiqueta__dot"></span> ATIVO</span> </div>
-                            </div>
-                            <div class="recursos-cofre__tanque">
-                                <div class="recursos-cofre__corpo-tanque">
-                                    <div class="recursos-cofre__preenchimento-tanque recursos-cofre__preenchimento-tanque--amarelo"
-                                        style="height: 96.8%">
-                                        <div class="recursos-cofre__bolhas-tanque">
-                                            <span></span><span></span><span></span>
-                                        </div>
-                                    </div>
-                                    <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-leaf"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </article> <!-- AGR-01 Reservatório de Irrigação -->
-                    <article class="recursos-cofre recursos-cofre--alerta painel-vidro-escuro " id="tank-irrigation">
-                        <div class="recursos-cofre__cabecalho">
-                            <div class="recursos-cofre__cabecalho-esquerda"> <span
-                                    class="recursos-cofre__identificador">AGR-01</span>
-                                <h2 class="recursos-cofre__nome">Tanque de Irrigação</h2>
-                            </div>
-                            <div class="etiqueta etiqueta--danger"><i class="fa-solid fa-arrow-trend-down"></i> -5.5%/D</div>
-                        </div>
-                        <div class="recursos-cofre__corpo">
-                            <div class="recursos-cofre__informacoes">
-                                <div class="recursos-cofre__massa"> <span
-                                        class="recursos-cofre__valor-massa">0.98</span> <span
-                                        class="recursos-cofre__massa-maxima">/ 4 t</span> </div>
-                                <div class="recursos-cofre__percentual">24.5%</div>
-                                <div class="recursos-cofre__barra-progresso">
-                                    <div class="recursos-cofre__preenchimento-progresso recursos-cofre__preenchimento-progresso--ciano prog-med-width"></div>
-                                    <div class="recursos-cofre__marcacoes-progresso">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                </div>
-                                <div class="recursos-cofre__metricas">
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-temperature-half recursos-cofre__icone-metrica"></i>
-                                        <span class="recursos-cofre__rotulo-metrica">TEMP</span> <span
-                                            class="recursos-cofre__valor-metrica">20 °C</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-circle-dot recursos-cofre__icone-metrica"></i> <span
-                                            class="recursos-cofre__rotulo-metrica">PRESSÃO</span> <span
-                                            class="recursos-cofre__valor-metrica">1.5 atm</span> </div>
-                                    <div class="recursos-cofre__metrica"> <i
-                                            class="fa-solid fa-arrow-trend-down recursos-cofre__icone-metrica"></i>
-                                        <span class="recursos-cofre__rotulo-metrica">CONSUMO</span> <span
-                                            class="recursos-cofre__valor-metrica">150 L/d</span> </div>
-                                </div>
-                                <div class="recursos-cofre__rodape"> <span
-                                        class="recursos-cofre__rotulo-transferencia">Abastecimento hidro.:
-                                        SOL+0.1</span> <span class="etiqueta etiqueta--danger"><i class="fa-solid fa-triangle-exclamation"></i> ALERTA</span> </div>
-                            </div>
-                            <div class="recursos-cofre__tanque">
-                                <div class="recursos-cofre__corpo-tanque">
-                                    <div class="recursos-cofre__preenchimento-tanque recursos-cofre__preenchimento-tanque--baixo"
-                                        style="height: 24.5%">
-                                        <div class="recursos-cofre__bolhas-tanque"> <span></span> </div>
-                                    </div>
-                                    <div class="recursos-cofre__icone-tanque"><i class="fa-solid fa-seedling"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                <section class="recursos-grade-cofres" id="resources-grid" aria-label="Reserva Estratégica Vital">
+                    <!-- Cards dinâmicos gerados via resources.js a partir do YJaciCore -->
                 </section> <!-- ANÁLISE E DISTRIBUIÇÃO -->
                 <section class="recursos-analise" aria-label="Análise e Distribuição de Recursos">
                     <!-- Gráfico de Tendência -->
@@ -468,12 +253,12 @@
                                 class="recursos-svg-grafico">
                                 <defs>
                                     <linearGradient id="grad-captacao" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="rgba(var(--mint), 0.3)" />
-                                        <stop offset="100%" stop-color="rgba(var(--mint), 0)" />
+                                        <stop offset="0%" stop-color="rgba(var(--success), 0.3)" />
+                                        <stop offset="100%" stop-color="rgba(var(--success), 0)" />
                                     </linearGradient>
                                     <linearGradient id="grad-consumo" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stop-color="rgba(var(--cyan), 0.3)" />
-                                        <stop offset="100%" stop-color="rgba(var(--cyan), 0)" />
+                                        <stop offset="0%" stop-color="rgba(var(--steel), 0.3)" />
+                                        <stop offset="100%" stop-color="rgba(var(--steel), 0)" />
                                     </linearGradient>
                                 </defs> <!-- Grid lines -->
                                 <line x1="0" y1="40" x2="800" y2="40" class="svg-grid-line" />
@@ -485,16 +270,15 @@
                                     fill="url(#grad-captacao)" /> <!-- Line Captação -->
                                 <path
                                     d="M 0 140 C 100 130, 200 160, 300 120 C 400 80, 500 140, 600 100 C 700 60, 800 90, 800 90"
-                                    fill="none" stroke="rgb(var(--mint))" stroke-width="3"
+                                    fill="none" stroke="rgb(var(--success))" stroke-width="3"
                                     class="svg-path-anim svg-drop-mint" /> <!-- Area Consumo -->
                                 <path
                                     d="M 0 190 L 0 160 C 100 150, 200 120, 300 140 C 400 160, 500 100, 600 130 C 700 160, 800 110, 800 110 L 800 190 Z"
                                     fill="url(#grad-consumo)" /> <!-- Line Consumo -->
                                 <path
                                     d="M 0 160 C 100 150, 200 120, 300 140 C 400 160, 500 100, 600 130 C 700 160, 800 110, 800 110"
-                                    fill="none" stroke="rgb(var(--cyan))" stroke-width="3"
-                                    class="svg-path-anim svg-path-anim-delay svg-drop-cyan"
-                                    class="svg-path-anim svg-path-anim-delay" />
+                                    fill="none" stroke="rgb(var(--steel))" stroke-width="3"
+                                    class="svg-path-anim svg-path-anim-delay svg-drop-cyan svg-path-anim svg-path-anim-delay" />
                             </svg>
                             <div class="recursos-grafico__eixo-x"> <span>SOL -6</span> <span>SOL -5</span> <span>SOL
                                     -4</span> <span>SOL -3</span> <span>SOL -2</span> <span>SOL -1</span>
@@ -544,8 +328,12 @@
             </div>
         </main>
     </section>
+    <script src="assets/js/content/lore.js"></script>
+    <script src="assets/js/content/glossary.js"></script>
+    <script src="assets/js/utils/core.js"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/resources.js"></script>
     <footer class="barra-telemetria">
       <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
       <div class="barra-telemetria__janela-letreiro">

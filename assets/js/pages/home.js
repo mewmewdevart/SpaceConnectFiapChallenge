@@ -3,13 +3,9 @@
 
     const MISSIONS = [
         {
-            id: "NAIA-01",
-            name: "NAIÁ (CICLO DE RECICLAGEM)",
-            type: "ÁGUAS CINZAS",
+            systemId: "URC-01",
             top: "35%",
             left: "72%",
-            icon: "<i class=\"fa-solid fa-recycle \"></i>",
-            desc: "Processamento e filtragem de águas cinzas para reuso contínuo.",
             val: "4.20",
             unit: "t/h",
             stats: [
@@ -23,13 +19,9 @@
             ]
         },
         {
-            id: "JACI-04",
-            name: "JACI (CENTRO DE CONDENSADORES)",
-            type: "ESTOQUE POTÁVEL",
+            systemId: "CCA-04",
             top: "55%",
             left: "32%",
-            icon: "<i class=\"fa-solid fa-droplet text-fluid-pure\"></i>",
-            desc: "Coleta e monitoramento da umidade atmosférica e condensação.",
             val: "850",
             unit: "m³",
             stats: [
@@ -42,13 +34,9 @@
             ]
         },
         {
-            id: "YVY-09",
-            name: "YVY (CONVERSOR DE BIOMASSA)",
-            type: "BIOMASSA",
+            systemId: "CVB-09",
             top: "75%",
             left: "55%",
-            icon: "<i class=\"fa-solid fa-seedling text-fluid-organic\"></i>",
-            desc: "Conversão de resíduos orgânicos em nutrientes e umidade para sustentar a vida.",
             val: "1.15",
             unit: "kg/h",
             stats: [
@@ -70,18 +58,29 @@
     function renderScanner() {
         sidePanel.innerHTML = `
             <div class="inspetor-painel">
+                <div class="inspetor-painel__cabecalho">
+                    <h2>
+                        <span>/</span>Painel de Contexto
+                    </h2>
+                </div>
                 <div class="inspetor-painel__vazio">
-                    <i class="fa-solid fa-satellite-dish inspetor-painel__vazio-icone"></i>
-                    <p>
-                        Aguardando seleção.<br>
-                        Selecione uma missão na malha lunar.
-                    </p>
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Aguardando seleção.<br>Selecione um nó na malha lunar para inspecionar.</p>
                 </div>
             </div>
         `;
     }
 
     function renderDetails(m) {
+        const sys = window.YJaciCore ? window.YJaciCore.getSystem(m.systemId) : null;
+        if (!sys) return;
+
+        const icon = sys.icon || "<i class=\"fa-solid fa-microchip\"></i>";
+        const physicalName = sys.systemName;
+        const protocolName = sys.initiative ? sys.initiative.name : "N/A";
+        const desc = sys.initiative ? sys.initiative.description : "Descrição indisponível.";
+        const sysId = sys.id;
+
         const history = Array(70)
             .fill()
             .map(
@@ -92,52 +91,53 @@
             )
             .join("");
 
+        let iconColor = "var(--steel)";
+        if (m.systemId === "URC-01") iconColor = "var(--steel)";
+        else if (m.systemId === "CVB-09") iconColor = "var(--warning)";
+        else if (m.systemId === "SIS-02") iconColor = "var(--success)";
+
         sidePanel.innerHTML = `
             <div class="inspetor-painel animate-in">
 
                 <div class="inspetor-painel__cabecalho">
-                    <h2>
-                        ${m.icon}
-                        <span> /</span>${m.name}
+                    <h2 style="display: flex; align-items: center; gap: 8px;">
+                        <span class="inspetor-painel__icone" style="display: flex; align-items: center; color: rgb(${iconColor});">${icon}</span>
+                        <span>/</span>${sysId}
                     </h2>
-
-                    <button
-                        id="close-hud"
-                        class="botao botao--ghost botao--icone"
-                        aria-label="Fechar painel de detalhes"
-                    >
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+                    <span class="etiqueta inspetor-painel__etiqueta ${sys.criticality === 'critical' ? 'etiqueta--danger' : 'etiqueta--success'}">
+                        ${sys.criticality === 'critical' ? 'ALERTA' : 'SISTEMA OFICIAL'}
+                    </span>
                 </div>
 
                 <div class="inspetor-painel__formulario">
 
                     <div class="inspetor-painel__grupo-form">
-                        <label>Tipo de Missão</label>
+                        <label>Sistema Físico</label>
 
                         <input
                             type="text"
-                            value="${m.type}"
+                            value="${physicalName}"
                             readonly
                             class="input-readonly"
                         >
                     </div>
 
                     <div class="inspetor-painel__grupo-form">
-                        <label>ID</label>
+                        <label>Iniciativa Estratégica</label>
 
                         <input
                             type="text"
-                            value="${m.id}"
+                            value="${protocolName}"
                             readonly
                             class="input-readonly"
+                            style="color: rgb(var(--steel)); font-weight: bold;"
                         >
                     </div>
 
                     <div class="inspetor-painel__grupo-form">
-                        <label>Descrição Operacional</label>
-                        <div class="input-readonly" style="height: auto; min-height: 40px; font-weight: normal; line-height: 1.5; white-space: normal;">
-                            ${m.desc}
+                        <label>Descrição da Operação</label>
+                        <div class="input-readonly" style="height: auto; min-height: 40px; font-weight: normal; line-height: 1.5; white-space: normal; cursor: not-allowed;">
+                            ${desc}
                         </div>
                     </div>
 
@@ -172,7 +172,7 @@
                 .join("")}
                     </div>
 
-                    <div class="inspetor-painel__grupo-form" style="margin-top: 10px;">
+                    <div class="inspetor-painel__grupo-form">
                         <label>Unidades operacionais</label>
 
                         <div class="unit-list-container">
@@ -211,14 +211,15 @@
                         <div class="history-grid">
                             ${history}
                         </div>
-
-                        <button
-                            class="botao botao--outline"
-                            style="width: 100%; margin-top: 10px;"
-                            onclick="window.location.href='alerts.html'"
-                        >
-                            CENTRAL DE COMANDO
+                    </div>
+                    
+                    <div class="inspetor-painel__acoes">
+                        <button type="button" class="botao botao--secundario inspetor-painel__btn-cancelar" id="close-hud-btn">
+                            <i class="fa-solid fa-xmark"></i> Fechar
                         </button>
+                        <a href="flow.html?focus=${sysId}" class="botao botao--primario" style="text-align: center; text-decoration: none;">
+                            <i class="fa-solid fa-diagram-project"></i> Malha
+                        </a>
                     </div>
 
                 </div>
@@ -227,7 +228,7 @@
         `;
 
         document
-            .getElementById("close-hud")
+            .getElementById("close-hud-btn")
             ?.addEventListener("click", () => {
                 document
                     .querySelectorAll(".water-node")
@@ -241,24 +242,32 @@
         renderScanner();
 
         MISSIONS.forEach((m) => {
-            const btn = document.createElement("button");
+            const sys = window.YJaciCore ? window.YJaciCore.getSystem(m.systemId) : null;
+            const displayId = sys ? sys.id : m.systemId;
+            const icon = sys && sys.icon ? sys.icon : "<i class=\"fa-solid fa-microchip\"></i>";
 
+            const btn = document.createElement("button");
             btn.className = "water-node";
             btn.style.top = m.top;
             btn.style.left = m.left;
-
+            
             btn.setAttribute(
                 "aria-label",
-                `Nó de missão: ${m.name}`
+                `Nó de missão: ${displayId}`
             );
 
+            let iconColor = "var(--steel)";
+            if (m.systemId === "URC-01") iconColor = "var(--steel)";
+            else if (m.systemId === "CVB-09") iconColor = "var(--warning)";
+            else if (m.systemId === "SIS-02") iconColor = "var(--success)";
+
             btn.innerHTML = `
-                <span class="node-icon" aria-hidden="true">
-                    ${m.icon}
+                <span class="node-icon" aria-hidden="true" style="color: rgb(${iconColor}); text-shadow: 0 0 10px rgb(${iconColor});">
+                    ${icon}
                 </span>
 
                 <small class="node-label">
-                    ${m.id}
+                    ${displayId}
                 </small>
             `;
 

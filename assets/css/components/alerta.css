@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .alerta {
-    --alerta-cor-rgb: var(--cyan);
+    --alerta-cor-rgb: var(--steel);
     /* Default info */
     display: flex;
     gap: 16px;
@@ -30,20 +30,20 @@
 /* Modificadores de cor (Tokens de Estado) */
 .alerta--critico,
 .alerta--danger {
-    --alerta-cor-rgb: var(--magenta);
+    --alerta-cor-rgb: var(--critical);
 }
 
 .alerta--aviso,
 .alerta--warning {
-    --alerta-cor-rgb: var(--yellow);
+    --alerta-cor-rgb: var(--warning);
 }
 
 .alerta--info {
-    --alerta-cor-rgb: var(--cyan);
+    --alerta-cor-rgb: var(--steel);
 }
 
 .alerta--sucesso {
-    --alerta-cor-rgb: var(--green);
+    --alerta-cor-rgb: var(--success);
 }
 
 .alerta__indicador-lateral {
@@ -121,7 +121,7 @@
 
 .alerta__titulo {
     font-size: var(--text-base);
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     font-weight: 600;
     margin-bottom: 4px;
 }
@@ -134,7 +134,7 @@
 
 .alerta__texto-evento {
     font-size: var(--text-sm);
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     font-weight: 400;
     margin-bottom: 6px;
     line-height: 1.4;
@@ -179,13 +179,13 @@
 
 .alerta--critico .alerta__botao-acao--protocolo,
 .alerta--danger .alerta__botao-acao--protocolo {
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
 }
 
 .alerta .alerta__botao-acao--desabilitado {
     color: rgb(var(--text-secondary));
     border-color: var(--border-color);
-    background: rgba(var(--white), 0.05);
+    background: rgba(var(--text-primary), 0.05);
     cursor: not-allowed;
 }
 

@@ -43,7 +43,7 @@
    ========================================================================== */
 
 .botao:focus-visible {
-    box-shadow: 0 0 0 2px rgba(var(--bg-main), 1), 0 0 0 4px rgb(var(--cyan));
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5), 0 0 0 4px rgb(var(--steel));
 }
 
 .botao:disabled,
@@ -65,10 +65,10 @@
 /* Primário (Ação Principal) */
 .botao--primario {
     --btn-cor-texto: rgb(var(--bg-main));
-    --btn-cor-fundo: rgb(var(--cyan));
-    --btn-cor-borda: rgb(var(--cyan));
-    --btn-cor-fundo-hover: rgba(var(--cyan), 0.9);
-    --btn-cor-borda-hover: rgb(var(--cyan));
+    --btn-cor-fundo: rgb(var(--brand-secondary));
+    --btn-cor-borda: rgb(var(--brand-secondary));
+    --btn-cor-fundo-hover: rgba(var(--brand-secondary), 0.9);
+    --btn-cor-borda-hover: rgb(var(--brand-secondary));
     --btn-cor-texto-hover: rgb(var(--bg-main));
 }
 
@@ -79,35 +79,41 @@
 /* Secundário (Ação Menor) */
 .botao--secundario {
     --btn-cor-texto: rgb(var(--text-secondary));
-    --btn-cor-fundo: rgba(var(--white), 0.05);
-    --btn-cor-borda: rgba(var(--white), 0.2);
-    --btn-cor-fundo-hover: rgba(var(--white), 0.1);
-    --btn-cor-borda-hover: rgba(var(--white), 0.4);
-    --btn-cor-texto-hover: rgb(var(--white));
+    --btn-cor-fundo: rgba(var(--text-primary), 0.05);
+    --btn-cor-borda: rgba(var(--text-primary), 0.2);
+    --btn-cor-fundo-hover: rgba(var(--text-primary), 0.1);
+    --btn-cor-borda-hover: rgba(var(--text-primary), 0.4);
+    --btn-cor-texto-hover: rgb(var(--text-primary));
 }
 
 /* Base utility for other solid color buttons */
 .botao--perigo {
-    --btn-color-base: var(--salmon);
-}
-.botao--alerta {
-    --btn-color-base: var(--yellow);
-}
-.botao--sucesso {
-    --btn-color-base: var(--green);
+    --btn-color-base: var(--critical);
 }
 
-.botao--perigo, .botao--alerta, .botao--sucesso {
+.botao--alerta {
+    --btn-color-base: var(--warning);
+}
+
+.botao--sucesso {
+    --btn-color-base: var(--success);
+}
+
+.botao--perigo,
+.botao--alerta,
+.botao--sucesso {
     --btn-cor-texto: rgb(var(--btn-color-base));
     --btn-cor-fundo: rgba(var(--btn-color-base), 0.1);
     --btn-cor-borda: rgb(var(--btn-color-base));
     --btn-cor-fundo-hover: rgb(var(--btn-color-base));
     --btn-cor-borda-hover: rgb(var(--btn-color-base));
-    --btn-cor-texto-hover: rgb(var(--white));
+    --btn-cor-texto-hover: rgb(var(--text-primary));
 }
 
-.botao--alerta, .botao--sucesso {
-    --btn-cor-texto-hover: rgb(var(--bg-main)); /* Exception for light colors */
+.botao--alerta,
+.botao--sucesso {
+    --btn-cor-texto-hover: rgb(var(--bg-main));
+    /* Exception for light colors */
 }
 
 /* ==========================================================================
@@ -118,32 +124,33 @@
 .botao--outline {
     --btn-cor-fundo: transparent;
 }
+
 .botao--outline.botao--primario {
-    --btn-cor-texto: rgb(var(--cyan));
-    --btn-cor-fundo-hover: rgba(var(--cyan), 0.1);
+    --btn-cor-texto: rgb(var(--steel));
+    --btn-cor-fundo-hover: rgba(var(--steel), 0.1);
 }
 
 /* Ghost (Sem borda, mostra fundo no hover) */
 .botao--ghost {
     --btn-cor-borda: transparent;
     --btn-cor-borda-hover: transparent;
-    --btn-cor-fundo-hover: rgba(var(--white), 0.1);
-    --btn-cor-texto-hover: rgb(var(--white));
+    --btn-cor-fundo-hover: rgba(var(--text-primary), 0.1);
+    --btn-cor-texto-hover: rgb(var(--text-primary));
 }
 
 .botao--ghost.botao--primario {
-    --btn-cor-texto: rgb(var(--cyan));
-    --btn-cor-fundo-hover: rgba(var(--cyan), 0.1);
+    --btn-cor-texto: rgb(var(--steel));
+    --btn-cor-fundo-hover: rgba(var(--steel), 0.1);
 }
 
 .botao--ghost.botao--perigo {
-    --btn-cor-texto: rgb(var(--salmon));
-    --btn-cor-fundo-hover: rgba(var(--salmon), 0.1);
+    --btn-cor-texto: rgb(var(--critical));
+    --btn-cor-fundo-hover: rgba(var(--critical), 0.1);
 }
 
 .botao--ghost.botao--alerta {
-    --btn-cor-texto: rgb(var(--yellow));
-    --btn-cor-fundo-hover: rgba(var(--yellow), 0.1);
+    --btn-cor-texto: rgb(var(--warning));
+    --btn-cor-fundo-hover: rgba(var(--warning), 0.1);
 }
 
 /* Tab (Aba de filtro) */
@@ -151,8 +158,8 @@
     --btn-cor-texto: rgb(var(--text-secondary));
     --btn-cor-fundo: var(--bg-glass-light);
     --btn-cor-borda: var(--border-color);
-    --btn-cor-texto-hover: rgb(var(--white));
-    --btn-cor-borda-hover: rgba(var(--cyan), 0.4);
+    --btn-cor-texto-hover: rgb(var(--text-primary));
+    --btn-cor-borda-hover: rgba(var(--steel), 0.4);
     --btn-cor-fundo-hover: var(--bg-glass-light);
     backdrop-filter: blur(4px);
     font-weight: var(--font-medium);
@@ -160,13 +167,13 @@
 
 .botao--tab[aria-pressed="true"],
 .botao--tab.botao--ativo {
-    --btn-cor-texto: rgb(var(--cyan));
-    --btn-cor-borda: rgb(var(--cyan));
-    --btn-cor-fundo: rgba(var(--cyan), 0.1);
-    --btn-cor-texto-hover: rgb(var(--cyan));
-    --btn-cor-borda-hover: rgb(var(--cyan));
-    --btn-cor-fundo-hover: rgba(var(--cyan), 0.1);
-    box-shadow: inset 0 0 10px rgba(var(--cyan), 0.2);
+    --btn-cor-texto: rgb(var(--steel));
+    --btn-cor-borda: rgb(var(--steel));
+    --btn-cor-fundo: rgba(var(--steel), 0.1);
+    --btn-cor-texto-hover: rgb(var(--steel));
+    --btn-cor-borda-hover: rgb(var(--steel));
+    --btn-cor-fundo-hover: rgba(var(--steel), 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Válvula (Toggle Flow) */
@@ -176,20 +183,20 @@
 
 .botao--valvula[aria-pressed="true"],
 .botao--valvula.valvula-aberta {
-    --btn-cor-texto: rgb(var(--green));
-    --btn-cor-borda: rgb(var(--green));
-    --btn-cor-fundo: rgba(var(--green), 0.1);
-    --btn-cor-fundo-hover: rgba(var(--green), 0.2);
-    --btn-cor-texto-hover: rgb(var(--green));
+    --btn-cor-texto: rgb(var(--success));
+    --btn-cor-borda: rgb(var(--success));
+    --btn-cor-fundo: rgba(var(--success), 0.1);
+    --btn-cor-fundo-hover: rgba(var(--success), 0.2);
+    --btn-cor-texto-hover: rgb(var(--success));
 }
 
 .botao--valvula[aria-pressed="false"],
 .botao--valvula.valvula-fechada {
-    --btn-cor-texto: rgb(var(--salmon));
-    --btn-cor-borda: rgb(var(--salmon));
-    --btn-cor-fundo: rgba(var(--salmon), 0.1);
-    --btn-cor-fundo-hover: rgba(var(--salmon), 0.2);
-    --btn-cor-texto-hover: rgb(var(--salmon));
+    --btn-cor-texto: rgb(var(--critical));
+    --btn-cor-borda: rgb(var(--critical));
+    --btn-cor-fundo: rgba(var(--critical), 0.1);
+    --btn-cor-fundo-hover: rgba(var(--critical), 0.2);
+    --btn-cor-texto-hover: rgb(var(--critical));
 }
 
 /* ==========================================================================
@@ -230,6 +237,7 @@
 }
 
 @media (max-width: 768px) {
+
     /* Auto aplica área segura para touch no celular em botões ícone */
     .botao--icone {
         min-height: var(--btn-height-mobile);

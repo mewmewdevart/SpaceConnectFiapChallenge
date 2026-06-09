@@ -21,7 +21,7 @@
     background: rgba(var(--bg-main), 0.3);
     padding: 12px 20px;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(var(--white), 0.05);
+    border: 1px solid rgba(var(--text-primary), 0.05);
 }
 
 
@@ -69,17 +69,17 @@
 }
 
 .crew-card:hover {
-    border-color: rgba(var(--cyan), 0.4);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), var(--glow-cyan);
+    border-color: rgba(var(--steel), 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .crew-card--alerta {
-    border-color: rgba(var(--salmon), 0.3);
+    border-color: rgba(var(--critical), 0.3);
 }
 
 .crew-card--alerta:hover {
-    border-color: rgba(var(--salmon), 0.6);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), var(--glow-salmon);
+    border-color: rgba(var(--critical), 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Header do Cartão (Perfil) */
@@ -88,8 +88,8 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px 20px 16px;
-    border-bottom: 1px solid rgba(var(--white), 0.05);
-    background: linear-gradient(90deg, rgba(var(--bg-main), 0.8), rgba(var(--cyan), 0.02));
+    border-bottom: 1px solid rgba(var(--text-primary), 0.05);
+    background: linear-gradient(90deg, rgba(var(--bg-main), 0.8), rgba(var(--steel), 0.02));
 }
 
 .crew-card__perfil {
@@ -102,13 +102,13 @@
     width: 60px;
     height: 60px;
     border-radius: var(--radius-sm);
-    background: rgba(var(--cyan), 0.1);
-    border: 1px solid rgba(var(--cyan), 0.4);
+    background: rgba(var(--steel), 0.1);
+    border: 1px solid rgba(var(--steel), 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
     position: relative;
 }
 
@@ -119,16 +119,16 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: rgb(var(--green));
+    background: rgb(var(--success));
     border: 3px solid rgb(var(--bg-main));
 }
 
 .crew-card--alerta .crew-card__status-dot {
-    background: rgb(var(--salmon));
+    background: rgb(var(--critical));
 }
 
 .crew-card__status-dot--warning {
-    background: rgb(var(--yellow));
+    background: rgb(var(--warning));
 }
 
 .crew-card__info {
@@ -140,7 +140,7 @@
 .crew-card__nome {
     font-size: var(--text-xl);
     font-weight: 700;
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     line-height: 1;
 }
 
@@ -152,15 +152,15 @@
 }
 
 .crew-card__setor {
-    background: rgba(var(--cyan), 0.1);
+    background: rgba(var(--steel), 0.1);
     padding: 6px 12px;
     border-radius: var(--radius-sm);
     font-size: var(--text-xs);
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
     display: flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid rgba(var(--cyan), 0.3);
+    border: 1px solid rgba(var(--steel), 0.3);
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -188,7 +188,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding-bottom: 8px;
-    border-bottom: 1px dashed rgba(var(--white), 0.1);
+    border-bottom: 1px dashed rgba(var(--text-primary), 0.1);
 }
 
 /* Linha de Dado (Comum em Saúde e Impacto) */
@@ -207,7 +207,7 @@
 }
 
 .crew-dado__label i {
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
     width: 16px;
     text-align: center;
 }
@@ -216,26 +216,26 @@
     font-family: var(--font-primary);
     font-size: var(--text-md);
     font-weight: 700;
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
 }
 
 .crew-dado__valor--positivo {
-    color: rgb(var(--green));
+    color: rgb(var(--success));
 }
 
 .crew-dado__valor--alerta {
-    color: rgb(var(--yellow));
+    color: rgb(var(--warning));
 }
 
 .crew-dado__valor--critico {
-    color: rgb(var(--salmon));
+    color: rgb(var(--critical));
 }
 
 
 /* Impacto Operacional - Estilos Específicos */
 .crew-impacto {
     background: rgba(var(--bg-main), 0.4);
-    border: 1px solid rgba(var(--white), 0.05);
+    border: 1px solid rgba(var(--text-primary), 0.05);
     border-radius: var(--radius-sm);
     padding: 12px;
     display: flex;
@@ -244,7 +244,7 @@
 }
 
 .crew-impacto--critical {
-    border-color: rgba(var(--salmon), 0.2);
+    border-color: rgba(var(--critical), 0.2);
 }
 
 /* Contexto de Missão e Responsabilidades */
@@ -255,8 +255,8 @@
 }
 
 .crew-missao__card {
-    background: rgba(var(--white), 0.02);
-    border: 1px solid rgba(var(--white), 0.1);
+    background: rgba(var(--text-primary), 0.02);
+    border: 1px solid rgba(var(--text-primary), 0.1);
     border-radius: var(--radius-sm);
     padding: 12px;
     display: flex;
@@ -267,7 +267,7 @@
 .crew-missao__nome {
     font-size: var(--text-sm);
     font-weight: 700;
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
 }
 
 .crew-missao__progresso {
@@ -279,20 +279,20 @@
 .crew-missao__barra {
     flex: 1;
     height: 4px;
-    background: rgba(var(--white), 0.1);
+    background: rgba(var(--text-primary), 0.1);
     border-radius: 2px;
     overflow: hidden;
 }
 
 .crew-missao__fill {
     height: 100%;
-    background: rgb(var(--cyan));
+    background: rgb(var(--steel));
 }
 
 .crew-missao__pct {
     font-family: var(--font-primary);
     font-size: var(--text-xs);
-    color: rgb(var(--cyan));
+    color: rgb(var(--steel));
 }
 
 .crew-responsabilidades {
@@ -310,7 +310,7 @@
 }
 
 .crew-responsabilidades__item i {
-    color: rgb(var(--green));
+    color: rgb(var(--success));
 }
 
 /* ==========================================================================
@@ -318,27 +318,27 @@
    ========================================================================== */
 
 .crew-missao__card--critical {
-    border-color: rgba(var(--salmon), 0.3);
+    border-color: rgba(var(--critical), 0.3);
 }
 
 .crew-missao__nome--critical {
-    color: rgb(var(--salmon));
+    color: rgb(var(--critical));
 }
 
 .crew-missao__fill--critical {
-    background: rgb(var(--salmon));
+    background: rgb(var(--critical));
 }
 
 .crew-missao__pct--critical {
-    color: rgb(var(--salmon));
+    color: rgb(var(--critical));
 }
 
 .text-critical {
-    color: rgb(var(--salmon));
+    color: rgb(var(--critical));
 }
 
 .text-warning {
-    color: rgb(var(--yellow));
+    color: rgb(var(--warning));
 }
 
 .crew-no-results {

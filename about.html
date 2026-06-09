@@ -36,7 +36,7 @@
       <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
         <a href="index.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-          <span class="menu-lateral__texto">Home</span>
+          <span class="menu-lateral__texto">Visão Geral</span>
         </a>
         <a href="flow.html" class=" menu-lateral__link" >
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
@@ -81,7 +81,7 @@
 
       <div class="menu-superior__direita">
         <!-- Status -->
-        <div class="menu-superior__status" style="display: flex; gap: 12px; align-items: center;">
+        <div class="menu-superior__status flex-center-gap-12">
           <span class="etiqueta etiqueta--danger">
             <span class="etiqueta__dot"></span>
             1 Alerta Crítico
@@ -119,50 +119,47 @@
     <section class="conteudo">
         <main class="conteudo__principal"> <!-- Seção ODS e Controles de Simulação -->
             <section class="painel-vidro-escuro secao-sobre">
-                <div class="sobre-cabecalho"> <!-- Texto Explicativo -->
-                    <div class="sobre-texto-bloco"> <!-- Título padronizado globalmente -->
-                        <h2 class="secao-titulo"><i class="fa-solid fa-graduation-cap"></i> Diretrizes de Missão &
-                            Integração ODS</h2>
-                        <p class="sobre-paragrafo"> <span class="sobre-destaque-cyan"><i class="fa-solid fa-flask"></i>
-                                <strong>Nota de Simulação:</strong></span> Este ambiente é um <strong>protótipo
-                                navegável simulado</strong>, concebido exclusivamente para a avaliação <strong>Global
-                                Solution (FIAP) - Indústria Espacial</strong>. Os dados de recursos e telemetria aqui
-                            exibidos são fictícios e não requerem integração backend real. </p>
-                        <p class="sobre-paragrafo"> O <strong>Y-JACI</strong> atende aos requisitos do desafio
-                            conectando-se a múltiplos Objetivos de Desenvolvimento Sustentavel (ODS) da ONU. A
-                            proposta é que as tecnologias de Sobrevivencia espacial idealizadas aqui sejam aplicáveis
-                            aos desafios urbanos terrestres. </p>
+                <div class="sobre-cabecalho"> 
+                    <div class="sobre-texto-bloco"> 
+                        <h2 class="secao-titulo"><i class="fa-solid fa-book-journal-whills"></i> Arquivo Estratégico Y-JACI</h2>
+                        <p class="sobre-paragrafo">
+                            <span class="sobre-destaque-cyan"><i class="fa-solid fa-microchip"></i> <strong>A Inteligência Central:</strong></span> 
+                            Y-JACI é o sistema de gestão vital e telemetria preditiva da colônia lunar Prime. Nossa missão é sustentar a vida através do balanço estrito entre consumo de recursos vitais e manutenção da malha logística extraterrestre.
+                        </p>
+                        <p class="sobre-paragrafo"> 
+                            Todos os subsistemas da base (como o CCA-04 e SIS-02) operam sob rigorosos protocolos de desenvolvimento escalável estabelecidos pelo Comando da Terra, inspirados nos marcos da engenharia terrestre e diretrizes das missões anteriores.
+                        </p>
                     </div>
-                </div> <!-- Cards ODS FontAwesome -->
-                <div class="sobre-ods-grid"> <!-- ODS 6 -->
+                </div> 
+                
+                <div class="sobre-ods-grid"> 
                     <div class="cartao-vidro ods-card ods-card--cyan">
                         <div class="ods-card__icone ods-card__icone--cyan"><i class="fa-solid fa-droplet"></i></div>
-                        <h3 class="ods-card__titulo">ODS 6</h3>
-                        <p class="ods-card__descricao">Água Potável e Saneamento via malha hídrica e osmose
-                            contínua.</p>
-                    </div> <!-- ODS 2 -->
+                        <h3 class="ods-card__titulo">Protocolo Jaci / Naiá</h3>
+                        <p class="ods-card__descricao">Garantia de segurança hídrica por extração atmosférica e filtragem osmótica de ponta.</p>
+                    </div> 
                     <div class="cartao-vidro ods-card ods-card--green">
                         <div class="ods-card__icone ods-card__icone--green"><i class="fa-solid fa-leaf"></i></div>
-                        <h3 class="ods-card__titulo">ODS 2</h3>
-                        <p class="ods-card__descricao">Agricultura Sustentavel através de controle de estufas e
-                            biomassa.</p>
-                    </div> <!-- ODS 11 -->
+                        <h3 class="ods-card__titulo">Programa Curupira</h3>
+                        <p class="ods-card__descricao">Sustentação agrícola extraterrestre: estufas automatizadas e controle de biomassa.</p>
+                    </div> 
                     <div class="cartao-vidro ods-card ods-card--yellow">
-                        <div class="ods-card__icone ods-card__icone--yellow"><i class="fa-solid fa-city"></i></div>
-                        <h3 class="ods-card__titulo">ODS 11</h3>
-                        <p class="ods-card__descricao">Cidades Sustentáveis escalando tecnologias de infraestrutura
-                            extrema.</p>
+                        <div class="ods-card__icone ods-card__icone--yellow"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 class="ods-card__titulo">Programa Boitatá</h3>
+                        <p class="ods-card__descricao">Gestão energética central e malha termo-elétrica do habitat Prime.</p>
                     </div>
                 </div>
-            </section> <!-- Equipe -->
+            </section> 
+
+            <!-- Equipe Operacional -->
             <section class="painel-vidro-escuro secao-sobre secao-equipe">
-                <h2 class="secao-titulo"><i class="fa-solid fa-users"></i> Equipe Desenvolvedora</h2>
+                <h2 class="secao-titulo"><i class="fa-solid fa-users"></i> Arquitetos do Sistema (Créditos)</h2>
                 <div class="equipe-container">
-                    <p>Projeto SPA desenvolvido para a avaliação FIAP Global Solution.</p>
+                    <p class="about-info-text">* Nota Confidencial: Este painel tático foi concebido originalmente como uma Solução Global (Avaliação Acadêmica) para exploração de UI/UX aplicada à indústria espacial. O motor lógico e o design system foram projetados por:</p>
                     <ul class="equipe-lista">
-                        <li><strong>Integrante 1:</strong> Ingrid</li>
-                        <li><strong>Integrante 2:</strong> Larissa</li>
-                        <li><strong>Integrante 3:</strong> Mayla</li>
+                        <li><strong>Oficial de Engenharia:</strong> Ingrid</li>
+                        <li><strong>Oficial de Dados:</strong> Larissa</li>
+                        <li><strong>Oficial de Operações:</strong> Mayla</li>
                     </ul>
                 </div>
             </section>

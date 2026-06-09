@@ -14,7 +14,9 @@
     }
   }
 
-  updateClock();
+  document.addEventListener("DOMContentLoaded", () => {
+    updateClock();
+  });
   setInterval(updateClock, 1000);
 
   // Lógica de Log da Telemetria Dinâmica
@@ -46,6 +48,8 @@
     });
   };
 
-  window.addTelemetryLog("SISTEMAS ONLINE");
+  document.addEventListener("DOMContentLoaded", () => {
+    window.addTelemetryLog("SISTEMAS ONLINE");
+  });
 
 })();

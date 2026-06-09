@@ -41,10 +41,10 @@
 
 .menu-lateral__link:hover,
 .menu-lateral__link--ativo {
-    background: linear-gradient(90deg, rgba(var(--cyan), 0.15) 0%, transparent 100%);
-    color: rgb(var(--cyan));
+    background: linear-gradient(90deg, rgba(var(--brand-primary), 0.15) 0%, transparent 100%);
+    color: rgb(var(--brand-primary));
     font-weight: bold;
-    border-left: 3px solid rgb(var(--cyan));
+    border-left: 3px solid rgb(var(--brand-primary));
 
 }
 
@@ -57,8 +57,8 @@
 
 .menu-lateral__link:hover .menu-lateral__icone,
 .menu-lateral__link--ativo .menu-lateral__icone {
-    color: rgb(var(--cyan));
-    filter: drop-shadow(0 0 5px rgba(var(--cyan), 0.5));
+    color: rgb(var(--brand-primary));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 .menu-lateral__texto {
@@ -78,7 +78,7 @@
 
 .menu-lateral__separador {
     height: 1px;
-    background: rgba(var(--white), 0.1);
+    background: rgba(var(--text-primary), 0.1);
     margin: 10px 20px;
 }
 

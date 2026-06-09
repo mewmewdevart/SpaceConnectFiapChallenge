@@ -1,9 +1,9 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    cartao-macro COMPONENT (Métricas e Destaques)
    ========================================================================== */
 
 .cartao-macro {
-    --macro-color: var(--cyan);
+    --macro-color: var(--steel);
     display: flex;
     align-items: center;
     gap: 16px;
@@ -38,7 +38,7 @@
     height: 50px;
     border-radius: var(--radius-sm);
     background: rgba(var(--bg-main), 0.5);
-    border: 1px solid rgba(var(--white), 0.1);
+    border: 1px solid rgba(var(--text-primary), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,14 +56,13 @@
     font-size: var(--text-3xl);
     font-family: var(--font-primary);
     font-weight: 700;
-    color: rgb(var(--white));
+    color: rgb(var(--text-primary));
     line-height: 1;
     margin-bottom: 4px;
 }
 
 .cartao-macro__valor--destaque {
-    color: rgb(var(--macro-color));
-    text-shadow: 0 0 16px rgba(var(--macro-color), 0.4);
+    color: rgb(var(--text-default));
 }
 
 .cartao-macro__unidade {
@@ -87,19 +86,19 @@
 
 /* Colors */
 .cartao-macro--magenta {
-    --macro-color: var(--magenta);
+    --macro-color: var(--critical);
 }
 
 .cartao-macro--yellow {
-    --macro-color: var(--yellow);
+    --macro-color: var(--warning);
 }
 
 .cartao-macro--green {
-    --macro-color: var(--green);
+    --macro-color: var(--success);
 }
 
 .cartao-macro--cyan {
-    --macro-color: var(--cyan);
+    --macro-color: var(--steel);
 }
 
 .cartao-variacao {
