@@ -3,7 +3,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
+    width: 3.75rem;
     background: var(--bg-glass-heavy);
     backdrop-filter: blur(10px);
     overflow: hidden;
@@ -14,7 +14,9 @@
 .menu-lateral:hover,
 .menu-lateral--aberto {
     background: var(--bg-glass-heavy);
-    width: 300px;
+    width: 18.75rem;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 .menu-lateral .menu-lateral__hamburguer {
@@ -29,11 +31,11 @@
 .menu-lateral__link {
     display: flex;
     align-items: center;
-    padding: 15px;
-    color: rgb(var(--text-menu));
+    padding: 0.9375rem;
+    color: rgb(var(--text-secondary));
     font-size: var(--text-lg);
     text-decoration: none;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
     transition: all var(--transition-normal);
     width: 100%;
     position: relative;
@@ -44,15 +46,14 @@
     background: linear-gradient(90deg, rgba(var(--brand-primary), 0.15) 0%, transparent 100%);
     color: rgb(var(--brand-primary));
     font-weight: bold;
-    border-left: 3px solid rgb(var(--brand-primary));
-
+    border-left: 0.1875rem solid rgb(var(--brand-primary));
 }
 
 .menu-lateral__icone {
-    margin-right: 10px;
-    font-size: 20px;
-    transition: margin-right 0.3s, color 0.3s;
-    color: rgb(var(--icon-menu));
+    margin-right: 0.625rem;
+    font-size: 1.25rem;
+    transition: margin-right var(--transition-normal), color var(--transition-normal);
+    color: rgb(var(--text-secondary));
 }
 
 .menu-lateral__link:hover .menu-lateral__icone,
@@ -66,26 +67,34 @@
     max-width: 0;
     overflow: hidden;
     white-space: nowrap;
-    transition: opacity 0.3s ease, max-width 0.3s ease, margin-left 0.3s ease;
+    transition: opacity var(--transition-normal), max-width var(--transition-normal), margin-left var(--transition-normal);
 }
 
 .menu-lateral:hover .menu-lateral__texto,
 .menu-lateral--aberto .menu-lateral__texto {
     opacity: 1;
-    max-width: 200px;
-    margin-left: 15px;
+    max-width: 12.5rem;
+    margin-left: 0.9375rem;
 }
 
 .menu-lateral__separador {
     height: 1px;
     background: rgba(var(--text-primary), 0.1);
-    margin: 10px 20px;
+    margin: 0.625rem 1.25rem;
 }
 
-@media screen and (max-width: 1117px) {
+/* ======================================================
+   Topbar mobile — visível apenas dentro do sidebar mobile
+   Escondido no desktop via ausência de media query match
+   ====================================================== */
+.menu-lateral__topbar-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1188px) {
     .menu-lateral {
         width: 100%;
-        height: 60px;
+        height: 3.75rem;
         top: 0;
         transform: none;
         border-radius: 0;
@@ -93,7 +102,7 @@
         border-bottom: 2px solid var(--border-color);
         display: flex;
         flex-direction: column;
-        transition: height 0.3s ease;
+        transition: height var(--transition-normal);
     }
 
     .menu-lateral:hover {
@@ -108,8 +117,9 @@
     .menu-lateral .menu-lateral__hamburguer {
         display: flex;
         align-items: center;
-        min-height: 60px;
-        padding: 0 20px;
+        justify-content: flex-start;
+        min-height: 3.75rem;
+        padding: 0 1.25rem;
         font-size: var(--text-xl);
         color: rgb(var(--text-default));
         cursor: pointer;
@@ -118,9 +128,7 @@
     }
 
     .menu-lateral__marca-mobile {
-        margin-left: 15px;
-        font-size: var(--text-lg);
-        font-weight: bold;
+        display: none;
     }
 
     .menu-lateral__navegacao {
@@ -134,13 +142,65 @@
     }
 
     .menu-lateral__link {
-        padding: 20px;
+        padding: 1.25rem;
         border-radius: 0;
     }
 
     .menu-lateral__link .menu-lateral__texto {
         opacity: 1;
         max-width: none;
-        margin-left: 15px;
+        margin-left: 0.9375rem;
+    }
+
+    /* --- Topbar mobile dentro do sidebar --- */
+    .menu-lateral__topbar-mobile {
+        display: none;
+    }
+
+    .menu-lateral--aberto .menu-lateral__topbar-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+        border-bottom: 1px solid rgba(var(--text-primary), 0.1);
+    }
+
+    /* Busca dentro do sidebar mobile */
+    .menu-lateral__topbar-mobile .menu-lateral__buscar-mobile {
+        display: flex;
+        width: 100%;
+    }
+
+    .menu-lateral__topbar-mobile .menu-superior__buscar-container {
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+
+    /* Ações (status, notificações, dropdown) dentro do sidebar mobile */
+    .menu-lateral__topbar-mobile .menu-lateral__acoes-mobile {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /* Dropdown do usuário dentro do sidebar — position relative para evitar clipping */
+    .menu-lateral__topbar-mobile .menu-superior__usuario-dropdown {
+        position: relative;
+    }
+
+    .menu-lateral__topbar-mobile .menu-superior__dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 2.8125rem;
+        z-index: 10;
+    }
+
+    /* Exibe dropdown quando a classe ativa está presente */
+    .menu-superior__dropdown-menu.menu-superior__dropdown-menu--aberto {
+        display: block !important;
     }
 }

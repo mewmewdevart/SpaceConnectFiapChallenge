@@ -40,6 +40,10 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/components/button.css">
   <link rel="stylesheet" href="assets/css/components/input.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
 </head>
 
 <body>
@@ -50,6 +54,47 @@
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span class="menu-lateral__marca-mobile">Y-JACI</span>
     </button>
+    <div class="menu-lateral__topbar-mobile">
+      <div class="menu-lateral__buscar-mobile">
+        <div class="menu-superior__buscar-container">
+          <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
+          <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
+        </div>
+      </div>
+      <div class="menu-lateral__acoes-mobile">
+        <div class="menu-superior__status flex-center-gap-12">
+          <span class="etiqueta etiqueta--danger">
+            <span class="etiqueta__dot"></span>
+            1 Alerta Crítico
+          </span>
+          <div class="etiqueta etiqueta--nominal">
+            <span class="etiqueta__dot"></span>
+            <span class="status-text">Nominal</span>
+          </div>
+        </div>
+        <button class="botao botao--terciario botao--icone menu-superior__acao menu-superior__notificacoes"
+          aria-label="Notificações">
+          <i class="fa-solid fa-bell"></i>
+          <span class="menu-superior__etiqueta">5</span>
+        </button>
+        <div class="menu-superior__usuario-dropdown">
+          <button class="botao botao--terciario menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
+            <div class="menu-superior__avatar">
+              <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <span class="menu-superior__nome">Administrador</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="menu-superior__dropdown-menu cartao-vidro" role="menu">
+            <a href="#" role="menuitem"><i class="fa-solid fa-id-etiqueta"></i> Meu Perfil</a>
+            <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
+            <div class="dropdown-divisor"></div>
+            <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
+              Desconectar</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
       <a href="index.html" class=" menu-lateral__link">
         <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
@@ -84,6 +129,7 @@
   </aside>
   <header class="menu-superior">
     <div class="menu-superior__esquerda">
+      <img src="./assets/img/logo.svg" alt="Logo Y-JACI">
       <span class="menu-superior__logo">
         Y-JACI
       </span>
@@ -155,19 +201,22 @@
             <div class="cartao-macro__icone"> <i class="fa-solid fa-triangle-exclamation"></i> </div>
             <div class="cartao-macro__dados"> <span class="cartao-macro__valor cartao-macro__valor--destaque">1</span>
               <span class="cartao-macro__label">Críticos</span> <span class="cartao-macro__sub">Incidente
-                ativo</span> </div>
+                ativo</span>
+            </div>
           </article>
           <article class="cartao-macro cartao-macro--yellow cartao-vidro ">
             <div class="cartao-macro__icone"> <i class="fa-solid fa-circle-exclamation"></i> </div>
             <div class="cartao-macro__dados"> <span class="cartao-macro__valor cartao-macro__valor--destaque">3</span>
               <span class="cartao-macro__label">Avisos</span> <span class="cartao-macro__sub">Ações
-                sugeridas</span> </div>
+                sugeridas</span>
+            </div>
           </article>
           <article class="cartao-macro cartao-macro--cyan cartao-vidro ">
             <div class="cartao-macro__icone"> <i class="fa-solid fa-circle-info"></i> </div>
             <div class="cartao-macro__dados"> <span class="cartao-macro__valor cartao-macro__valor--destaque">1</span>
               <span class="cartao-macro__label">Informativos</span> <span class="cartao-macro__sub">Eventos
-                recentes</span> </div>
+                recentes</span>
+            </div>
           </article>
         </div>
         <section class="linha-tempo painel-vidro-escuro ">

@@ -16,22 +16,22 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: var(--sb-size, 8px);
+    width: var(--sb-size, 0.5rem);
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(var(--gray-blue));
-    border-radius: 3px;
+    background: rgb(var(--panel));
+    border-radius: var(--radius-sm);
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgb(var(--steel));
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
 }
 
 @supports not selector(::-webkit-scrollbar) {
     * {
-        scrollbar-color: rgb(var(--steel)) rgb(var(--gray-blue));
+        scrollbar-color: rgb(var(--steel)) rgb(var(--panel));
     }
 }
 
@@ -63,9 +63,9 @@ html {
 .skip-link {
     position: absolute;
     top: -100%;
-    left: 16px;
+    left: 1rem;
     z-index: 10000;
-    padding: 12px 24px;
+    padding: 0.75rem 1.5rem;
     background: rgb(var(--steel));
     color: rgb(var(--bg-main));
     font-weight: 700;
@@ -76,18 +76,12 @@ html {
 }
 
 .skip-link:focus {
-    top: 16px;
+    top: 1rem;
 }
 
 /* --- Utility Classes (Added by Refactoring) --- */
 .flex-center-gap-12 {
     display: flex;
-    gap: 12px;
+    gap: 0.75rem;
     align-items: center;
-}
-
-.about-info-text {
-    font-size: 0.9em;
-    color: var(--text-muted, rgba(255,255,255,0.6));
-    margin-bottom: 15px;
 }

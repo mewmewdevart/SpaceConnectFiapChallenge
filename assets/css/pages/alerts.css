@@ -1,16 +1,14 @@
-﻿.painel-alertas {
+.painel-alertas {
     width: 100%;
-    padding: 20px;
-    min-height: calc(100vh - 100px);
+    padding: 1.25rem;
+    min-height: calc(100vh - 6.25rem);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
-
-
 .linha-tempo {
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .linha-tempo__cabecalho {
@@ -18,24 +16,23 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 16px;
-    margin-bottom: 24px;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .linha-tempo__titulo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
 }
 
 .linha-tempo__marcador {
-    width: 4px;
-    height: 24px;
+    width: 0.25rem;
+    height: 1.5rem;
     background: rgb(var(--steel));
 }
 
 .linha-tempo__titulo {
-
     font-size: var(--text-sm);
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -43,26 +40,19 @@
 }
 
 .linha-tempo__contador-eventos {
-
     font-size: var(--text-xs);
     color: rgb(var(--text-secondary));
-    margin-top: 2px;
+    margin-top: 0.125rem;
 }
 
-
-
-
-
 @media (max-width: 900px) {
-
     .linha-tempo {
-        padding: 18px;
+        padding: 1.125rem;
     }
 
     .linha-tempo__cabecalho {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 1rem;
     }
-
-    
+}

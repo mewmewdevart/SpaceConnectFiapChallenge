@@ -4,10 +4,13 @@
 
 /* Sections */
 .secao-sobre {
-    margin: 24px 0;
+    margin: 1.5rem 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
 }
 
 .sobre-cabecalho {
@@ -15,20 +18,20 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .sobre-texto-bloco {
     flex: 1;
-    min-width: 300px;
+    min-width: 18.75rem;
 }
 
 .sobre-paragrafo {
     color: rgb(var(--text-secondary));
     font-size: var(--text-sm);
     line-height: 1.6;
-    max-width: 650px;
-    margin-bottom: 12px;
+    max-width: 40.625rem;
+    margin-bottom: 0.75rem;
 }
 
 .sobre-destaque-cyan {
@@ -38,35 +41,35 @@
 /* ODS Grid */
 .sobre-ods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+    gap: 1rem;
 }
 
 .ods-card {
-    padding: 16px;
+    padding: 1rem;
     border-radius: var(--radius-sm);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-normal);
 }
 
 .ods-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
 }
 
 .ods-card--cyan {
-    border-left: 3px solid rgb(var(--steel));
+    border-left: 0.1875rem solid rgb(var(--steel));
 }
 
 .ods-card--green {
-    border-left: 3px solid rgb(var(--success));
+    border-left: 0.1875rem solid rgb(var(--success));
 }
 
 .ods-card--yellow {
-    border-left: 3px solid rgb(var(--warning));
+    border-left: 0.1875rem solid rgb(var(--warning));
 }
 
 .ods-card__icone {
-    font-size: 28px;
-    margin-bottom: 12px;
+    font-size: var(--text-2xl);
+    margin-bottom: 0.75rem;
 }
 
 .ods-card__icone--cyan {
@@ -84,7 +87,7 @@
 .ods-card__titulo {
     font-size: var(--text-sm);
     color: rgb(var(--text-primary));
-    margin-bottom: 6px;
+    margin-bottom: 0.375rem;
 }
 
 .ods-card__descricao {
@@ -95,21 +98,21 @@
 
 /* Team Section */
 .secao-equipe {
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .equipe-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
     color: rgb(var(--text-secondary));
 }
 
 .equipe-lista {
     list-style-type: none;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     border-left: 2px solid rgb(var(--steel));
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
 }

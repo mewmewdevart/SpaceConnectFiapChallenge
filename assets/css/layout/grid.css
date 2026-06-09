@@ -1,11 +1,11 @@
 .conteudo {
     display: flex;
-    width: calc(100% - 60px);
+    width: calc(100% - 3.75rem);
     flex: 1;
     flex-direction: row;
-    margin-left: 60px;
-    padding: 0 20px;
-    gap: 20px;
+    margin-left: 3.75rem;
+    padding: 0 1.25rem;
+    gap: 1.25rem;
     color: rgb(var(--text-default));
     overflow-y: auto;
     overflow-x: hidden;
@@ -23,20 +23,11 @@
     margin: 0 0 1rem;
 }
 
-.conteudo__principal-recursos {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-glass-light);
-    backdrop-filter: blur(10px);
-    border: var(--panel-border);
-}
-
 .cabecalho-conteudo {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
+    padding: 1.25rem;
     border-bottom: var(--panel-border);
     gap: 0.5rem;
     position: relative;
@@ -71,7 +62,7 @@
 
 .cabecalho-conteudo__status {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .cabecalho-conteudo__subtitulo {
@@ -83,15 +74,15 @@
 }
 
 .painel-direito {
-    width: 320px;
+    width: 20rem;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     position: sticky;
-    max-height: calc(100vh - 130px);
+    max-height: calc(100vh - 8.125rem);
     background: var(--bg-glass-light);
     backdrop-filter: blur(10px);
     border: var(--panel-border);
@@ -99,7 +90,13 @@
     margin: 0 0 1rem;
 }
 
-@media screen and (max-width: 1117px) {
+/* @media screen and (max-width: 1188px) {
+    .conteudo-flow {
+        flex-direction: row;
+    }
+} */
+
+@media screen and (max-width: 1188px) {
     body {
         overflow-y: auto;
         height: auto;
@@ -108,14 +105,13 @@
 
     .conteudo {
         margin-left: 0;
-        margin-top: 0;
+        margin-top: 3.75rem;
         width: 100%;
         flex-direction: column;
         overflow: visible;
     }
 
-    .conteudo__principal,
-    .conteudo__principal-recursos {
+    .conteudo__principal {
         flex: none;
         height: auto;
     }
@@ -153,8 +149,8 @@
    ========================================================================== */
 .macro-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+    gap: 1rem;
 }
 
 /* cartao-macro componentizado para assets/css/components/cartao-macro.css */
