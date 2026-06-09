@@ -2,8 +2,7 @@
 #lunar-system-container {
     position: relative;
     width: 100%;
-    max-width: 90%;
-
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +32,6 @@
     height: 55px;
     background: rgba(var(--white), 0.05);
     border: 1px dashed rgba(var(--green), 1);
-    border-radius: 50%;
     cursor: pointer;
     z-index: 100;
     transform: translate(-50%, -50%);
@@ -239,4 +237,17 @@
     to {
         transform: translateX(-50%);
     }
+}
+
+/* Painel Resumo Home */
+.painel-resumo {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 20px;
+    width: 35%;
 }

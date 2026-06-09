@@ -5,25 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Space Connect é o sistema definitivo para monitoramento e gestão de recursos em colônias lunares. Acompanhe energia, água e oxigênio em tempo real.">
+    content="Y-JACI é o sistema definitivo para monitoramento e gestão de recursos em colônias lunares. Acompanhe energia, água e oxigênio em tempo real.">
   <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
-  <meta name="author" content="Space Connect">
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Y-JACI">
+  <meta name="author" content="Y-JACI">
   <meta name="theme-color" content="#0b1021">
 
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/index.html">
-  <meta property="og:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
+  <meta property="og:title" content="Y-JACI - Gestão Inteligente de Recursos Lunares">
   <meta property="og:description"
     content="Sistema definitivo para monitoramento e gestão de recursos em colônias lunares.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/index.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
+  <meta name="twitter:title" content="Y-JACI - Gestão Inteligente de Recursos Lunares">
   <meta name="twitter:description"
     content="Sistema definitivo para monitoramento e gestão de recursos em colônias lunares.">
 
-  <title>Space Connect - Gestão Inteligente de Recursos Lunares</title>
+  <title>Y-JACI - Gestão Inteligente de Recursos Lunares</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,8 @@
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
-  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/etiqueta.css">
+  <link rel="stylesheet" href="assets/css/components/alerta.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
@@ -45,122 +46,84 @@
 
 <body>
   <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-
-  <!-- Sidebar -->
-  <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
-      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-      <span class="menu-lateral__marca-mobile">Space Connect</span>
-    </button>
-    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
-      <a href="index.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
-        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-        <span class="menu-lateral__texto">Home</span>
-      </a>
-      <a href="flow.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-        <span class="menu-lateral__texto">Fluxo de Interações</span>
-      </a>
-      <a href="resources.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-        <span class="menu-lateral__texto">Gestão de Recursos</span>
-      </a>
-      <a href="alerts.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
-        <span class="menu-lateral__texto">Central de Alertas</span>
-      </a>
-      <a href="crew.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-        <span class="menu-lateral__texto">Tripulação</span>
-      </a>
-      <a href="support.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
-        <span class="menu-lateral__texto">Suporte</span>
-      </a>
-      <div class="menu-lateral__separador"></div>
-      <a href="about.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
-        <span class="menu-lateral__texto">Sobre</span>
-      </a>
-    </nav>
-  </aside>
-
-  <!-- Topbar -->
-  <header class="menu-superior">
-    <div class="menu-superior__esquerda">
-      <span class="menu-superior__logo">
-        <i class="fa-solid fa-moon"></i> Space Connect
-      </span>
-    </div>
-
-    <div class="menu-superior__buscar">
-      <div class="menu-superior__buscar-container">
-        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
-      </div>
-    </div>
-
-    <div class="menu-superior__direita">
-      <!-- Status -->
-      <span class="badge badge--danger">
-        <span class="badge__dot"></span>
-        1 Alerta Críticos
-      </span>
-      <div class="badge badge--success">
-        <span class="badge__dot"></span>
-        <span class="status-text">Nominal</span>
-      </div>
-
-      <!-- Notificações -->
-      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
-        aria-label="Notificações">
-        <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">5</span>
-      </button>
-
-      <!-- Usuário Dropdown -->
-      <div class="menu-superior__usuario-dropdown">
-        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
-          <div class="menu-superior__avatar">
-            <i class="fa-solid fa-user-astronaut"></i>
-          </div>
-          <span class="menu-superior__nome">Administrador</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="menu-superior__dropdown-menu card-glass" role="menu">
-          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
-          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
-          <div class="dropdown-divisor"></div>
-          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
-            Desconectar</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <!-- Main Content -->
   <div class="conteudo">
     <main class="conteudo__principal" id="main-content">
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
-              Sistema</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Y-JACI<span class="cabecalho-conteudo__separador"> /
+              Terminal Principal</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Visão Geral do Sistema</h1>
+        <h1 class="cabecalho-conteudo__titulo">Centro de Comando e Controle</h1>
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Gestão de Recursos e Reservatórios</p>
-          <span class="cabecalho-conteudo__status badge badge--success">
-            <span class="badge__dot"></span>
-            Malha Operacional Conectada
+          <p class="cabecalho-conteudo__descricao">Monitoramento Ativo de Sobrevivência e Matrizes de Suporte à Vida</p>
+          <span class="cabecalho-conteudo__status etiqueta etiqueta--success">
+            <span class="etiqueta__dot"></span>
+            Uplink DSN Estabelecido
           </span>
         </div>
       </header>
 
       <!-- Planet / Lunar System -->
       <div id="lunar-system-container" role="region" aria-label="Mapa interativo do sistema lunar">
-        <div id="central-moon" class="moon-core"></div>
+        <!-- Painel Resumo (Dashboard) -->
+        <section class="painel-resumo">
+          <article class="alerta alerta--info cartao-vidro">
+            <div class="alerta__indicador-lateral" aria-hidden="true">
+              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.75 6.5a.75.75 0 0 1-1.5 0V7a.75.75 0 0 1 1.5 0v1.5zm0 3.5a.75.75 0 0 1-.75.75h-1.5A.75.75 0 0 1 9 12.5v-1.5A.75.75 0 0 1 9.75 10h1.5A.75.75 0 0 1 12 10.75v1.75z">
+                </path>
+              </svg>
+            </div>
+            <div class="alerta__corpo">
+              <div class="alerta__linha-topo">
+                <div class="alerta__grupo-esquerdo">
+                  <span class="etiqueta etiqueta--info">Info</span>
+                  <span class="alerta__codigo-evento">AGR-01</span>
+                </div>
+                <time class="alerta__tempo-evento" datetime="PT0S" aria-label="Atual">AGORA</time>
+              </div>
+              <p class="alerta__texto-evento">Consumo Crítico na Botânica: Drenagem contínua não prevista nos sistemas
+                de irrigação.</p>
+              <span class="alerta__fonte-evento">Fonte: Status Hídrico</span>
+              <div class="alerta__acoes">
+                <a href="resources.html" class="botao botao--primario botao--sm"
+                  style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Ver
+                  Recursos</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="alerta alerta--critico cartao-vidro">
+            <div class="alerta__indicador-lateral" aria-hidden="true">
+              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M11.001 2.001a1 1 0 0 1 1.998 0l1.681 9.533a1 1 0 0 1-.984 1.196h-3.39a1 1 0 0 1-.984-1.196L11.001 2.001zm1.999 16a1.5 1.5 0 1 1-2.999 0 1.5 1.5 0 0 1 2.999 0z">
+                </path>
+              </svg>
+            </div>
+            <div class="alerta__corpo">
+              <div class="alerta__linha-topo">
+                <div class="alerta__grupo-esquerdo">
+                  <span class="etiqueta etiqueta--danger">Crítico</span>
+                  <span class="alerta__codigo-evento">A-242</span>
+                </div>
+                <time class="alerta__tempo-evento" datetime="PT20S" aria-label="Ocorreu há 20 segundos">00:00:20</time>
+              </div>
+              <p class="alerta__texto-evento">Pressão do Tanque H2O-01 Baixa: Falha de pressurização no módulo de
+                distribuição primária.</p>
+              <span class="alerta__fonte-evento">Fonte: Alerta Ativo</span>
+              <div class="alerta__acoes">
+                <a href="flow.html" class="botao botao--perigo botao--icone"
+                  style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Ajustar
+                  Válvulas</a>
+              </div>
+            </div>
+          </article>
+        </section>
+        <img src="assets/img/lua.gif" alt="Moon Surface" class="moon-render">
         <div id="nodes-overlay"></div>
       </div>
     </main>
@@ -170,22 +133,7 @@
     </aside>
   </div>
 
-  <!-- Bottombar de Telemetria -->
-  <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
-    <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro" aria-hidden="true">
-        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
-        <span class="barra-telemetria__item">POWER 96.4 kW</span>
-        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
-        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
-        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
-        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
-      </div>
-    </div>
-    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
-  </footer>
-
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/pages/home.js"></script>
 </body>

@@ -1,16 +1,6 @@
 (function () {
   "use strict";
 
-  // Lógica do Menu Mobile
-  const hamburgerBtn = document.getElementById('btn-hamburguer');
-  const sidenav = document.getElementById('menu-lateral');
-  
-  if (hamburgerBtn && sidenav) {
-    hamburgerBtn.addEventListener('click', () => {
-      const isOpen = sidenav.classList.toggle('menu-lateral--aberto');
-      hamburgerBtn.setAttribute('aria-expanded', isOpen);
-    });
-  }
 
   // Relógio de Telemetria
   function updateClock() {

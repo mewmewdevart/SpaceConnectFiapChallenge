@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/592444d4-dd4c-440b-b3b6-738d2ff2c236" width="200" alt="Space Connect Logo" />
+  <img src="https://github.com/user-attachments/assets/592444d4-dd4c-440b-b3b6-738d2ff2c236" width="200" alt="Y-JACI Logo" />
 
 
-<h1>Space Connect 🌌</h1>
+<h1>Y-JACI 🌌</h1>
 
 <p>
     🛰️ | Protótipo web navegável de gestão de recursos para colônia lunar e cidades inteligentes, desenvolvido para o Global Solution 2026 (FIAP).
@@ -38,7 +38,7 @@
 
 ## 📖 Introdução e Contexto
 
-O **Space Connect** foi desenvolvido como parte do **Global Solution (FIAP) | Indústria Espacial**, focando na interseção entre tecnologia, web design e a economia espacial.
+O **Y-JACI** foi desenvolvido como parte do **Global Solution (FIAP) | Indústria Espacial**, focando na interseção entre tecnologia, web design e a economia espacial.
 
 ### 🎯 O Foco: Controle de Água e Reaproveitamento
 Nossa solução foca na criação de uma interface para o **tratamento e reaproveitamento de água e resíduos** em uma colônia lunar. Em vez de painéis estáticos, o sistema é desenhado em torno de um **diagrama de fluxo interativo**, permitindo que o usuário compreenda e controle o caminho dos recursos em tempo real.

@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    // Dados das missões
+    // Dados das miss�es
     const MISSIONS = [
         {
             id: "W-REC-01", name: "HIDRO-RECICLADOR", type: "ÁGUAS CINZAS",
@@ -26,10 +26,10 @@
     const sidePanel = document.getElementById('side-info-panel');
     const overlay = document.getElementById('nodes-overlay');
 
-    // Sem overlay ou painel, não há nada a fazer
+    // Sem overlay ou painel, n�o h� nada a fazer
     if (!overlay || !sidePanel) return;
 
-    // Versão de scanner (estado padrão do painel)
+    // Vers�o de scanner (estado padr�o do painel)
     function renderScanner() {
         sidePanel.innerHTML = `
             <div class="inspetor-painel">
@@ -38,12 +38,12 @@
                 </div>
                 <div class="inspetor-painel__vazio">
                     <i class="fa-solid fa-satellite-dish" style="font-size: var(--text-hero); opacity: 0.3; margin-bottom: 10px;"></i>
-                    <p>Aguardando seleção.<br>Selecione uma missão na malha lunar.</p>
+                    <p>Aguardando sele��o.<br>Selecione uma miss�o na malha lunar.</p>
                 </div>
             </div>`;
     }
 
-    // Detalhes de uma missão selecionada
+    // Detalhes de uma miss�o selecionada
     function renderDetails(m) {
         const history = Array(70).fill().map(() =>
             `<div class="sq lv${Math.floor(Math.random() * 5)}"></div>`
@@ -61,7 +61,7 @@
 
                 <div class="inspetor-painel__formulario">
                     <div class="inspetor-painel__grupo-form">
-                        <label>Tipo de Missão / ID</label>
+                        <label>Tipo de Miss�o / ID</label>
                         <input type="text" value="${m.type} // ID: ${m.id}" readonly class="input-readonly">
                     </div>
 
@@ -77,7 +77,7 @@
 
                     <div class="grid-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px;">
                         ${m.stats.map(s => `
-                            <div class="stat-item card-glass" style="padding: 12px; border-radius: 8px; background: rgba(var(--white), 0.02); border: 1px solid var(--border-color);">
+                            <div class="stat-item cartao-vidro" style="padding: 12px; border-radius: 8px; background: rgba(var(--white), 0.02); border: 1px solid var(--border-color);">
                                 <label style="font-size: var(--text-xs); color: rgb(var(--text-secondary)); font-weight: bold; text-transform: uppercase;">${s.l}</label>
                                 <span style="display: block; font-size: var(--text-lg); font-weight: bold; margin-top: 4px; color: rgb(var(--text-primary));">${s.v}</span>
                             </div>
@@ -100,8 +100,8 @@
                         </div>
                     </div>
 
-                    <div class="history-box" aria-label="Histórico de variações" style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color);">
-                        <label style="font-size: var(--text-xs); color: rgb(var(--text-secondary)); font-weight: bold; text-transform: uppercase;">/ HISTÓRICO DE VARIAÇÕES</label>
+                    <div class="history-box" aria-label="Hist�rico de varia��es" style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                        <label style="font-size: var(--text-xs); color: rgb(var(--text-secondary)); font-weight: bold; text-transform: uppercase;">/ HIST�RICO DE VARIA��ES</label>
                         <div class="history-grid" style="display: grid; grid-template-rows: repeat(5, 12px); grid-auto-flow: column; grid-auto-columns: 12px; gap: 4px; margin: 15px 0;">${history}</div>
                         <button class="botao botao--outline" style="width: 100%; margin-top: 10px;" onclick="window.location.href='alerts.html'">CENTRAL DE COMANDO</button>
                     </div>
@@ -114,17 +114,17 @@
         });
     }
 
-    // Inicialização
+    // Inicializa��o
     function init() {
         renderScanner();
 
-        // Cria os marcadores de missão
+        // Cria os marcadores de miss�o
         MISSIONS.forEach(m => {
             const btn = document.createElement('button');
             btn.className = 'water-node';
             btn.style.top = m.top;
             btn.style.left = m.left;
-            btn.setAttribute('aria-label', `Nó de missão: ${m.name}`);
+            btn.setAttribute('aria-label', `N� de miss�o: ${m.name}`);
             btn.innerHTML = `
                 <span class="node-icon" aria-hidden="true">${m.icon}</span>
                 <small class="node-label">${m.id}</small>

@@ -6,21 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Histórico e correlações do sistema de controle hídrico.">
   <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
-  <meta name="author" content="Space Connect">
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Y-JACI">
+  <meta name="author" content="Y-JACI">
   <meta name="theme-color" content="#0b1021">
 
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
-  <meta property="og:title" content="Space Connect - Fluxo de Interações">
+  <meta property="og:title" content="Y-JACI - Fluxo de Interações">
   <meta property="og:description" content="Histórico e correlações do sistema de controle hídrico.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/flow.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Fluxo de Interações">
+  <meta name="twitter:title" content="Y-JACI - Fluxo de Interações">
   <meta name="twitter:description" content="Histórico e correlações do sistema de controle hídrico.">
 
-  <title>Space Connect - Fluxo de Interações</title>
+  <title>Y-JACI - Fluxo de Interações</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
-  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/etiqueta.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
@@ -45,118 +45,21 @@
 <body>
   <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
-  <!-- Sidebar -->
-  <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
-      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-      <span class="menu-lateral__marca-mobile">Space Connect</span>
-    </button>
-    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
-      <a href="index.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-        <span class="menu-lateral__texto">Home</span>
-      </a>
-      <a href="flow.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-        <span class="menu-lateral__texto">Fluxo de Interações</span>
-      </a>
-      <a href="resources.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-        <span class="menu-lateral__texto">Gestão de Recursos</span>
-      </a>
-      <a href="alerts.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
-        <span class="menu-lateral__texto">Central de Alertas</span>
-      </a>
-      <a href="crew.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-        <span class="menu-lateral__texto">Tripulação</span>
-      </a>
-      <a href="support.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
-        <span class="menu-lateral__texto">Suporte</span>
-      </a>
-      <div class="menu-lateral__separador"></div>
-      <a href="about.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
-        <span class="menu-lateral__texto">Sobre</span>
-      </a>
-    </nav>
-  </aside>
-
-  <!-- Topbar -->
-  <header class="menu-superior">
-    <div class="menu-superior__esquerda">
-      <span class="menu-superior__logo">
-        <i class="fa-solid fa-moon"></i> Space Connect
-      </span>
-    </div>
-
-    <div class="menu-superior__buscar">
-      <div class="menu-superior__buscar-container">
-        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
-
-      </div>
-    </div>
-
-    <div class="menu-superior__direita">
-      <!-- Status -->
-      <span class="badge badge--danger">
-        <span class="badge__dot"></span>
-        1 Alerta Críticos
-      </span>
-      <div class="badge badge--success">
-        <span class="badge__dot"></span>
-        <span class="status-text">Nominal</span>
-      </div>
-
-
-
-      <!-- Notificações -->
-      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
-        aria-label="Notificações">
-        <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">5</span>
-      </button>
-
-      <!-- Usuário Dropdown -->
-      <div class="menu-superior__usuario-dropdown">
-        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
-          <div class="menu-superior__avatar">
-            <i class="fa-solid fa-user-astronaut"></i>
-          </div>
-          <span class="menu-superior__nome">Administrador</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="menu-superior__dropdown-menu card-glass " role="menu">
-          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
-          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
-          <div class="dropdown-divisor"></div>
-          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
-            Desconectar</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <!-- Main Content -->
   <section class="conteudo">
     <main class="conteudo__principal">
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
-              Interações</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Y-JACI<span class="cabecalho-conteudo__separador"> /
+              Malha de Fluxo</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Malha de Tratamento e Biomassa</h1>
+        <h1 class="cabecalho-conteudo__titulo">Topologia de Tratamento e Processamento</h1>
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Controle interativo do ciclo de água, osmose reversa e reatores de
-            compostagem.</p>
-          <span class="cabecalho-conteudo__status badge badge--warning">
-            <span class="badge__dot"></span>
-            Fluxo Contínuo Ativo
+          <p class="cabecalho-conteudo__descricao">Visualização em tempo real do ciclo hídrico, malha de osmose reversa e reatores de biomassa.</p>
+          <span class="cabecalho-conteudo__status etiqueta etiqueta--warning">
+            <span class="etiqueta__dot"></span>
+            Ciclo Fechado Nominal
           </span>
         </div>
       </header>
@@ -185,22 +88,7 @@
     <aside class="painel-direito"></aside>
   </section>
 
-  <!-- Bottombar de Telemetria -->
-  <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
-    <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro" aria-hidden="true">
-        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
-        <span class="barra-telemetria__item">POWER 96.4 kW</span>
-        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
-        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
-        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
-        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
-      </div>
-    </div>
-    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
-  </footer>
-
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
 
   <script src="assets/js/pages/flow.js"></script>

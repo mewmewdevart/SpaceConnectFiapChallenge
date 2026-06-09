@@ -6,21 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Visão de recursos disponíveis.">
   <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
-  <meta name="author" content="Space Connect">
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Y-JACI">
+  <meta name="author" content="Y-JACI">
   <meta name="theme-color" content="#0b1021">
 
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/resources.html">
-  <meta property="og:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
+  <meta property="og:title" content="Y-JACI - Gestão Inteligente de Recursos Lunares">
   <meta property="og:description" content="Visão de recursos disponíveis, gestão de reservatórios e estoques.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/resources.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Gestão Inteligente de Recursos Lunares">
+  <meta name="twitter:title" content="Y-JACI - Gestão Inteligente de Recursos Lunares">
   <meta name="twitter:description" content="Visão de recursos disponíveis, gestão de reservatórios e estoques.">
 
-  <title>Space Connect - Gestão Inteligente de Recursos Lunares</title>
+  <title>Y-JACI - Gestão Inteligente de Recursos Lunares</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
-  <link rel="stylesheet" href="assets/css/components/badge.css">
-  <link rel="stylesheet" href="assets/css/components/macro-card.css">
+  <link rel="stylesheet" href="assets/css/components/etiqueta.css">
+  <link rel="stylesheet" href="assets/css/components/cartao-macro.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
@@ -99,117 +99,22 @@
 <body>
   <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
-  <!-- Sidebar -->
-  <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
-      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-      <span class="menu-lateral__marca-mobile">Space Connect</span>
-    </button>
-    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
-      <a href="index.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-        <span class="menu-lateral__texto">Home</span>
-      </a>
-      <a href="flow.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-        <span class="menu-lateral__texto">Fluxo de Interações</span>
-      </a>
-      <a href="resources.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-        <span class="menu-lateral__texto">Gestão de Recursos</span>
-      </a>
-      <a href="alerts.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
-        <span class="menu-lateral__texto">Central de Alertas</span>
-      </a>
-      <a href="crew.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-        <span class="menu-lateral__texto">Tripulação</span>
-      </a>
-      <a href="support.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
-        <span class="menu-lateral__texto">Suporte</span>
-      </a>
-      <div class="menu-lateral__separador"></div>
-      <a href="about.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
-        <span class="menu-lateral__texto">Sobre</span>
-      </a>
-    </nav>
-  </aside>
-
-  <!-- Topbar -->
-  <header class="menu-superior">
-    <div class="menu-superior__esquerda">
-      <span class="menu-superior__logo">
-        <i class="fa-solid fa-moon"></i> Space Connect
-      </span>
-    </div>
-
-    <div class="menu-superior__buscar">
-      <div class="menu-superior__buscar-container">
-        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
-
-      </div>
-    </div>
-
-    <div class="menu-superior__direita">
-      <!-- Status -->
-      <span class="badge badge--danger">
-        <span class="badge__dot"></span>
-        1 Alerta Críticos
-      </span>
-      <div class="badge badge--success">
-        <span class="badge__dot"></span>
-        <span class="status-text">Nominal</span>
-      </div>
-
-
-
-      <!-- Notificações -->
-      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
-        aria-label="Notificações">
-        <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">5</span>
-      </button>
-
-      <!-- Usuário Dropdown -->
-      <div class="menu-superior__usuario-dropdown">
-        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
-          <div class="menu-superior__avatar">
-            <i class="fa-solid fa-user-astronaut"></i>
-          </div>
-          <span class="menu-superior__nome">Administrador</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="menu-superior__dropdown-menu card-glass " role="menu">
-          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
-          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
-          <div class="dropdown-divisor"></div>
-          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
-            Desconectar</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <!-- Main Content -->
   <section class="conteudo">
     <main class="conteudo__principal">
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> /
-              Recursos</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Y-JACI<span class="cabecalho-conteudo__separador"> /
+              Inventário Vital</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Gestão de Recursos Críticos</h1>
+        <h1 class="cabecalho-conteudo__titulo">Matriz de Recursos de Suporte à Vida</h1>
 
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Monitoramento de Capacidade, Estoque e Tendências Bióticas</p>
-          <span class="cabecalho-conteudo__status badge badge--warning">
-            <span class="badge__dot"></span>
+          <p class="cabecalho-conteudo__descricao">Análise de Reservatórios, Capacidade de Carga e Curvas de
+            Sustentabilidade Térmica</p>
+          <span class="cabecalho-conteudo__status etiqueta etiqueta--warning">
+            <span class="etiqueta__dot"></span>
             Telemetria DSN Ativa
           </span>
         </div>
@@ -219,74 +124,97 @@
       <!-- CONTEÚDO PRINCIPAL -->
       <div class="recursos-painel">
 
+        <!-- PAINEL PREDITIVO (IMPACTO EM CADEIA) -->
+        <section class="painel-resumo" style="margin-bottom: 30px; display: grid; gap: 20px;">
+          <div class="cartao-macro cartao-vidro" style="border: 1px solid rgb(var(--danger));">
+            <div class="cartao-macro__cabecalho">
+              <h3 class="cartao-macro__titulo"><i class="fa-solid fa-link" style="color: rgb(var(--danger));"></i>
+                Impacto em Cadeia</h3>
+            </div>
+            <div class="cartao-macro__corpo"
+              style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+              <div>
+                <p class="alerta-texto"
+                  style="color: rgb(var(--danger)); font-family: var(--font-mono); font-size: 1.1rem; font-weight: bold; margin-bottom: 5px;">
+                  O consumo da Botânica (AGR-01) está drenando a Água Potável.
+                </p>
+                <p style="color: rgba(var(--white), 0.8); font-size: 0.9rem;">
+                  Estimativa de esgotamento crítico: <strong>2 SOLS</strong>.
+                </p>
+              </div>
+              <a href="flow.html" class="botao botao--perigo">Ajustar Válvulas no Fluxo Hídrico</a>
+            </div>
+          </div>
+        </section>
+
         <!-- LINHA DE ESTATÍSTICAS SUPERIORES -->
         <section class="macro-grid" aria-label="Estatísticas Gerais">
-          <article class="macro-card macro-card--cyan card-glass " id="stat-capacidade">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--cyan cartao-vidro " id="stat-capacidade">
+            <div class="cartao-macro__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M12 2C8 2 5 5.5 5 9c0 5 4 8 7 10 3-2 7-5 7-10 0-3.5-3-7-7-7z" />
                 <path d="M12 7v5l3 2" stroke-width="2" />
               </svg>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">36<span
-                  class="macro-card__unidade">t</span></span>
-              <span class="macro-card__label">Capacidade Total</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">36<span
+                  class="cartao-macro__unidade">t</span></span>
+              <span class="cartao-macro__label">Capacidade Total</span>
             </div>
           </article>
 
-          <article class="macro-card macro-card--green card-glass " id="stat-estoque">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--green cartao-vidro " id="stat-estoque">
+            <div class="cartao-macro__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">24.4<span
-                  class="macro-card__unidade">t</span></span>
-              <span class="macro-card__label">Estoque Atual</span>
-              <span class="macro-card__sub">67.6% ocupado</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">24.4<span
+                  class="cartao-macro__unidade">t</span></span>
+              <span class="cartao-macro__label">Estoque Atual</span>
+              <span class="cartao-macro__sub">67.6% ocupado</span>
             </div>
           </article>
 
-          <article class="macro-card macro-card--cyan card-glass " id="stat-temp">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--cyan cartao-vidro " id="stat-temp">
+            <div class="cartao-macro__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
               </svg>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">39.8<span
-                  class="macro-card__unidade">K</span></span>
-              <span class="macro-card__label">Temp. Média</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">39.8<span
+                  class="cartao-macro__unidade">K</span></span>
+              <span class="cartao-macro__label">Temp. Média</span>
             </div>
           </article>
 
-          <article class="macro-card macro-card--cyan card-glass " id="stat-pressao">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--cyan cartao-vidro " id="stat-pressao">
+            <div class="cartao-macro__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 8v4l3 3" />
               </svg>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">0.97<span
-                  class="macro-card__unidade">kPa</span></span>
-              <span class="macro-card__label">Pressão Média</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">0.97<span
+                  class="cartao-macro__unidade">kPa</span></span>
+              <span class="cartao-macro__label">Pressão Média</span>
             </div>
           </article>
 
-          <article class="macro-card macro-card--cyan card-glass " id="stat-perda">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--cyan cartao-vidro " id="stat-perda">
+            <div class="cartao-macro__icone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                 <polyline points="17 6 23 6 23 12" />
               </svg>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">46<span
-                  class="macro-card__unidade">kg/s</span></span>
-              <span class="macro-card__label">Perda Diária</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">46<span
+                  class="cartao-macro__unidade">kg/s</span></span>
+              <span class="cartao-macro__label">Perda Diária</span>
             </div>
           </article>
         </section>
@@ -295,13 +223,13 @@
         <section class="recursos-grade-cofres" aria-label="Cofres Criogênicos">
 
           <!-- H2O-01 Tanque de Água Potável -->
-          <article class="recursos-cofre panel-glass-heavy " id="tank-potable">
+          <article class="recursos-cofre painel-vidro-escuro " id="tank-potable">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
                 <span class="recursos-cofre__identificador">H2O-01</span>
                 <h2 class="recursos-cofre__nome">Tanque de Água Potável</h2>
               </div>
-              <div class="badge badge--success">↑ 2.5%/D</div>
+              <div class="etiqueta etiqueta--success">↑ 2.5%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -342,7 +270,7 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Próxima filtragem: SOL+0.2</span>
-                  <span class="badge badge--info">● ESTÁVEL</span>
+                  <span class="etiqueta etiqueta--info">● ESTÁVEL</span>
                 </div>
               </div>
 
@@ -360,13 +288,13 @@
           </article>
 
           <!-- H2O-02 Reservatório de Água Cinza -->
-          <article class="recursos-cofre panel-glass-heavy " id="tank-grey">
+          <article class="recursos-cofre painel-vidro-escuro " id="tank-grey">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
                 <span class="recursos-cofre__identificador">H2O-02</span>
                 <h2 class="recursos-cofre__nome">Reservatório Água Cinza</h2>
               </div>
-              <div class="badge badge--warning">↑ 4.2%/D</div>
+              <div class="etiqueta etiqueta--warning">↑ 4.2%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -407,7 +335,7 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Purificação RO: SOL+0.5</span>
-                  <span class="badge badge--info">● RECEBENDO</span>
+                  <span class="etiqueta etiqueta--info">● RECEBENDO</span>
                 </div>
               </div>
 
@@ -425,13 +353,13 @@
           </article>
 
           <!-- BIO-01 Silo de Biomassa -->
-          <article class="recursos-cofre panel-glass-heavy " id="silo-biomass">
+          <article class="recursos-cofre painel-vidro-escuro " id="silo-biomass">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
                 <span class="recursos-cofre__identificador">BIO-01</span>
                 <h2 class="recursos-cofre__nome">Silo de Biomassa</h2>
               </div>
-              <div class="badge badge--success">↑ 1.2%/D</div>
+              <div class="etiqueta etiqueta--success">↑ 1.2%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -472,7 +400,7 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Compostagem ativa</span>
-                  <span class="badge badge--success">● ATIVO</span>
+                  <span class="etiqueta etiqueta--success">● ATIVO</span>
                 </div>
               </div>
 
@@ -491,13 +419,13 @@
           </article>
 
           <!-- AGR-01 Reservatório de Irrigação -->
-          <article class="recursos-cofre recursos-cofre--alerta panel-glass-heavy " id="tank-irrigation">
+          <article class="recursos-cofre recursos-cofre--alerta painel-vidro-escuro " id="tank-irrigation">
             <div class="recursos-cofre__cabecalho">
               <div class="recursos-cofre__cabecalho-esquerda">
                 <span class="recursos-cofre__identificador">AGR-01</span>
                 <h2 class="recursos-cofre__nome">Tanque de Irrigação</h2>
               </div>
-              <div class="badge badge--danger">↓ -5.5%/D</div>
+              <div class="etiqueta etiqueta--danger">↓ -5.5%/D</div>
             </div>
 
             <div class="recursos-cofre__corpo">
@@ -538,7 +466,7 @@
 
                 <div class="recursos-cofre__rodape">
                   <span class="recursos-cofre__rotulo-transferencia">Abastecimento hidro.: SOL+0.1</span>
-                  <span class="badge badge--danger">⚠ ALERTA</span>
+                  <span class="etiqueta etiqueta--danger">⚠ ALERTA</span>
                 </div>
               </div>
 
@@ -562,7 +490,7 @@
         <section class="recursos-analise" aria-label="Análise e Distribuição de Recursos">
 
           <!-- Gráfico de Tendência -->
-          <article class="recursos-grafico panel-glass-heavy">
+          <article class="recursos-grafico painel-vidro-escuro">
             <div class="recursos-analise__cabecalho">
               <h3 class="recursos-analise__titulo">Tendência de Ciclo Hídrico</h3>
               <div class="recursos-grafico__legendas">
@@ -623,10 +551,10 @@
           </article>
 
           <!-- Distribuição Setorial -->
-          <article class="recursos-alocacao panel-glass-heavy">
+          <article class="recursos-alocacao painel-vidro-escuro">
             <div class="recursos-analise__cabecalho">
               <h3 class="recursos-analise__titulo">Alocação de Recursos</h3>
-              <span class="badge badge--info">H₂O / BIO</span>
+              <span class="etiqueta etiqueta--info">H₂O / BIO</span>
             </div>
 
             <div class="recursos-alocacao__lista">
@@ -672,22 +600,7 @@
     </main>
   </section>
 
-  <!-- Bottombar de Telemetria -->
-  <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
-    <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro" aria-hidden="true">
-        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
-        <span class="barra-telemetria__item">POWER 96.4 kW</span>
-        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
-        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
-        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
-        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
-      </div>
-    </div>
-    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
-  </footer>
-
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

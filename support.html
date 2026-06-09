@@ -6,21 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Suporte técnico e atendimento especializado.">
   <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Space Connect">
-  <meta name="author" content="Space Connect">
+    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Y-JACI">
+  <meta name="author" content="Y-JACI">
   <meta name="theme-color" content="#0b1021">
 
   <!-- SEO & Open Graph -->
   <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/support.html">
-  <meta property="og:title" content="Space Connect - Suporte Técnico">
+  <meta property="og:title" content="Y-JACI - Suporte Técnico">
   <meta property="og:description" content="Suporte técnico e atendimento especializado para a colônia lunar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/support.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Space Connect - Suporte Técnico">
+  <meta name="twitter:title" content="Y-JACI - Suporte Técnico">
   <meta name="twitter:description" content="Suporte técnico e atendimento especializado para a colônia lunar.">
 
-  <title>Space Connect - Suporte</title>
+  <title>Y-JACI - Suporte</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
-  <link rel="stylesheet" href="assets/css/components/badge.css">
-  <link rel="stylesheet" href="assets/css/components/macro-card.css">
+  <link rel="stylesheet" href="assets/css/components/etiqueta.css">
+  <link rel="stylesheet" href="assets/css/components/cartao-macro.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
@@ -46,117 +46,21 @@
 <body>
   <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
-  <!-- Sidebar -->
-  <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
-      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-      <span class="menu-lateral__marca-mobile">Space Connect</span>
-    </button>
-    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
-      <a href="index.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-        <span class="menu-lateral__texto">Home</span>
-      </a>
-      <a href="flow.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-        <span class="menu-lateral__texto">Fluxo de Interações</span>
-      </a>
-      <a href="resources.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-        <span class="menu-lateral__texto">Gestão de Recursos</span>
-      </a>
-      <a href="alerts.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
-        <span class="menu-lateral__texto">Central de Alertas</span>
-      </a>
-      <a href="crew.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-        <span class="menu-lateral__texto">Tripulação</span>
-      </a>
-      <a href="support.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
-        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
-        <span class="menu-lateral__texto">Suporte</span>
-      </a>
-      <div class="menu-lateral__separador"></div>
-      <a href="about.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
-        <span class="menu-lateral__texto">Sobre</span>
-      </a>
-    </nav>
-  </aside>
-
-  <!-- Topbar -->
-  <header class="menu-superior">
-    <div class="menu-superior__esquerda">
-      <span class="menu-superior__logo">
-        <i class="fa-solid fa-moon"></i> Space Connect
-      </span>
-    </div>
-
-    <div class="menu-superior__buscar">
-      <div class="menu-superior__buscar-container">
-        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
-
-      </div>
-    </div>
-
-    <div class="menu-superior__direita">
-      <!-- Status -->
-      <span class="badge badge--danger">
-        <span class="badge__dot"></span>
-        1 Alerta Críticos
-      </span>
-      <div class="badge badge--success">
-        <span class="badge__dot"></span>
-        <span class="status-text">Nominal</span>
-      </div>
-
-
-
-      <!-- Notificações -->
-      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
-        aria-label="Notificações">
-        <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">5</span>
-      </button>
-
-      <!-- Usuário Dropdown -->
-      <div class="menu-superior__usuario-dropdown">
-        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
-          <div class="menu-superior__avatar">
-            <i class="fa-solid fa-user-astronaut"></i>
-          </div>
-          <span class="menu-superior__nome">Administrador</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="menu-superior__dropdown-menu card-glass " role="menu">
-          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
-          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
-          <div class="dropdown-divisor"></div>
-          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
-            Desconectar</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <!-- Main Content -->
   <section class="conteudo">
     <main class="conteudo__principal">
       <!-- Header -->
       <header class="cabecalho-conteudo">
         <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Space Connect<span class="cabecalho-conteudo__separador"> / Suporte
-              Operacional</span></p>
+          <p class="cabecalho-conteudo__subtitulo">Y-JACI<span class="cabecalho-conteudo__separador"> /
+              Comunicações Terra-Lua</span></p>
         </div>
-        <h1 class="cabecalho-conteudo__titulo">Central de Comunicações DSN</h1>
+        <h1 class="cabecalho-conteudo__titulo">Terminal de Suporte DSN (Deep Space Network)</h1>
 
         <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Protocolos de Engenharia Terra-Lua e Acompanhamento de Chamados</p>
-          <span class="cabecalho-conteudo__status badge badge--warning">
-            <span class="badge__dot"></span>
+          <p class="cabecalho-conteudo__descricao">Gerenciamento de tickets de manutenção e protocolos de contingência com a base terrestre.</p>
+          <span class="cabecalho-conteudo__status etiqueta etiqueta--warning">
+            <span class="etiqueta__dot"></span>
             Link DSN Estável
           </span>
         </div>
@@ -164,43 +68,43 @@
 
       <div class="painel-suporte">
         <div class="macro-grid">
-          <article class="macro-card macro-card--cyan card-glass ">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--cyan cartao-vidro ">
+            <div class="cartao-macro__icone">
               <i class="fa-solid fa-layer-group"></i>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">3</span>
-              <span class="macro-card__label">Chamados Totais</span>
-              <span class="macro-card__sub">Últimos 30 dias</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">3</span>
+              <span class="cartao-macro__label">Chamados Totais</span>
+              <span class="cartao-macro__sub">Últimos 30 dias</span>
             </div>
           </article>
 
-          <article class="macro-card macro-card--yellow card-glass ">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--yellow cartao-vidro ">
+            <div class="cartao-macro__icone">
               <i class="fa-solid fa-spinner fa-spin-pulse"></i>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">2</span>
-              <span class="macro-card__label">Em Andamento</span>
-              <span class="macro-card__sub">Aguardando técnicos</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">2</span>
+              <span class="cartao-macro__label">Em Andamento</span>
+              <span class="cartao-macro__sub">Aguardando técnicos</span>
             </div>
           </article>
 
-          <article class="macro-card macro-card--green card-glass ">
-            <div class="macro-card__icone">
+          <article class="cartao-macro cartao-macro--green cartao-vidro ">
+            <div class="cartao-macro__icone">
               <i class="fa-solid fa-check-double"></i>
             </div>
-            <div class="macro-card__dados">
-              <span class="macro-card__valor macro-card__valor--destaque">1</span>
-              <span class="macro-card__label">Resolvidos</span>
-              <span class="macro-card__sub">Encerrados com sucesso</span>
+            <div class="cartao-macro__dados">
+              <span class="cartao-macro__valor cartao-macro__valor--destaque">1</span>
+              <span class="cartao-macro__label">Resolvidos</span>
+              <span class="cartao-macro__sub">Encerrados com sucesso</span>
             </div>
           </article>
         </div>
 
         <div class="painel-suporte__conteudo-duplo">
           <!-- Form to open a ticket -->
-          <section class="secao-suporte panel-glass-heavy ">
+          <section class="secao-suporte painel-vidro-escuro ">
             <h2 class="secao-titulo"><i class="fa-solid fa-headset"></i> Abrir Novo Chamado</h2>
             <form class="formulario-suporte" onsubmit="event.preventDefault();">
               <div class="formulario-grupo">
@@ -236,13 +140,13 @@
           </section>
 
           <!-- List of recent tickets -->
-          <section class="secao-suporte panel-glass-heavy ">
+          <section class="secao-suporte painel-vidro-escuro ">
             <h2 class="secao-titulo"><i class="fa-solid fa-list-check"></i> Chamados Recentes</h2>
             <div class="lista-chamados">
-              <article class="chamado-cartao card-glass ">
+              <article class="chamado-cartao cartao-vidro ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8942</span>
-                  <span class="badge badge--danger">Aberto</span>
+                  <span class="etiqueta etiqueta--danger">Aberto</span>
                 </div>
                 <h3 class="chamado-cartao__titulo">Falha na Bomba de Recirculação H2O</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-07T10:24">07/06/2026 - 10:24</time> |
@@ -253,10 +157,10 @@
                 </div>
               </article>
 
-              <article class="chamado-cartao card-glass ">
+              <article class="chamado-cartao cartao-vidro ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8935</span>
-                  <span class="badge badge--warning">Em Andamento</span>
+                  <span class="etiqueta etiqueta--warning">Em Andamento</span>
                 </div>
                 <h3 class="chamado-cartao__titulo">Atualização do Firmware de Telemetria (DSN)</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-06T14:15">06/06/2026 - 14:15</time> |
@@ -267,10 +171,10 @@
                 </div>
               </article>
 
-              <article class="chamado-cartao card-glass ">
+              <article class="chamado-cartao cartao-vidro ">
                 <div class="chamado-cartao__cabecalho">
                   <span class="chamado-cartao__id">#TKT-8910</span>
-                  <span class="badge badge--success">Resolvido</span>
+                  <span class="etiqueta etiqueta--success">Resolvido</span>
                 </div>
                 <h3 class="chamado-cartao__titulo">Vazamento contido no Silo de Biomassa (BIO-01)</h3>
                 <p class="chamado-cartao__meta">Aberto em: <time datetime="2026-06-05T08:30">05/06/2026 - 08:30</time> |
@@ -287,22 +191,7 @@
     </main>
   </section>
 
-  <!-- Bottombar de Telemetria -->
-  <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
-    <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro" aria-hidden="true">
-        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
-        <span class="barra-telemetria__item">POWER 96.4 kW</span>
-        <span class="barra-telemetria__item">H₂O ACI 42.5 G</span>
-        <span class="barra-telemetria__item">SHAB SYS 14.7 V</span>
-        <span class="barra-telemetria__item">EXT 8,200 kg/h</span>
-        <span class="barra-telemetria__item">CIV 24.33 / 26.08 I</span>
-      </div>
-    </div>
-    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
-  </footer>
-
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 

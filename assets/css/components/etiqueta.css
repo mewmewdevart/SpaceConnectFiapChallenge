@@ -1,8 +1,8 @@
-/* ==========================================================================
-   BADGE COMPONENT
+﻿/* ==========================================================================
+   etiqueta COMPONENT
    ========================================================================== */
 
-.badge {
+.etiqueta {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -16,7 +16,7 @@
     transition: all var(--transition-normal);
 }
 
-.badge__dot {
+.etiqueta__dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -29,62 +29,62 @@
    -------------------------------------------------------------------------- */
 
 /* Nominal / Success (Mint) */
-.badge--nominal,
-.badge--success {
+.etiqueta--nominal,
+.etiqueta--success {
     color: rgb(var(--mint));
     border-color: rgba(var(--mint), 0.35);
     background: rgba(var(--mint), 0.06);
 }
 
-.badge--nominal .badge__dot,
-.badge--success .badge__dot {
+.etiqueta--nominal .etiqueta__dot,
+.etiqueta--success .etiqueta__dot {
     background: rgb(var(--mint));
     box-shadow: 0 0 6px rgba(var(--mint), 0.8);
 }
 
 /* Warning / Alert / In Progress (Yellow) */
-.badge--warning,
-.badge--alerta {
+.etiqueta--warning,
+.etiqueta--alerta {
     color: rgb(var(--yellow));
     border-color: rgba(var(--yellow), 0.35);
     background: rgba(var(--yellow), 0.06);
 }
 
-.badge--warning .badge__dot,
-.badge--alerta .badge__dot {
+.etiqueta--warning .etiqueta__dot,
+.etiqueta--alerta .etiqueta__dot {
     background: rgb(var(--yellow));
     box-shadow: 0 0 6px rgba(var(--yellow), 0.8);
 }
 
 /* Critical / Danger / Open (Magenta) */
-.badge--critical,
-.badge--danger {
+.etiqueta--critical,
+.etiqueta--danger {
     color: rgb(var(--magenta));
     border-color: rgba(var(--magenta), 0.35);
     background: rgba(var(--magenta), 0.06);
 }
 
-.badge--critical .badge__dot,
-.badge--danger .badge__dot {
+.etiqueta--critical .etiqueta__dot,
+.etiqueta--danger .etiqueta__dot {
     background: rgb(var(--magenta));
     box-shadow: 0 0 6px rgba(var(--magenta), 0.8);
 }
 
 /* Down / Danger (for resource rates) */
-.badge--vermelho {
+.etiqueta--vermelho {
     color: rgb(var(--magenta));
     border-color: rgba(var(--magenta), 0.35);
     background: rgba(var(--magenta), 0.06);
 }
 
 /* Info (Cyan) */
-.badge--info {
+.etiqueta--info {
     color: rgb(var(--cyan));
     border-color: rgba(var(--cyan), 0.35);
     background: rgba(var(--cyan), 0.06);
 }
 
-.badge--info .badge__dot {
+.etiqueta--info .etiqueta__dot {
     background: rgb(var(--cyan));
     box-shadow: 0 0 6px rgba(var(--cyan), 0.8);
 }

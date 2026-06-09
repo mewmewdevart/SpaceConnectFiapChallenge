@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sobre o projeto Space Connect.">
-  <title>Space Connect - Sobre</title>
+  <meta name="description" content="Sobre o projeto Y-JACI.">
+  <title>Y-JACI - Sobre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/base/variables.css">
   <link rel="stylesheet" href="assets/css/base/reset.css">
   <link rel="stylesheet" href="assets/css/layout/grid.css">
-  <link rel="stylesheet" href="assets/css/components/badge.css">
+  <link rel="stylesheet" href="assets/css/components/etiqueta.css">
   <link rel="stylesheet" href="assets/css/components/sidebar.css">
   <link rel="stylesheet" href="assets/css/components/topbar.css">
   <link rel="stylesheet" href="assets/css/components/bottombar.css">
@@ -28,105 +28,18 @@
 
 <body>
   <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-  <!-- Sidebar -->
-  <aside class="menu-lateral" id="menu-lateral">
-    <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer"
-      id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-      <span class="menu-lateral__marca-mobile">Space Connect</span>
-    </button>
-    <nav class="menu-lateral__navegacao" aria-label="Menu Principal">
-      <a href="index.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fas fa-home"></i></span>
-        <span class="menu-lateral__texto">Home</span>
-      </a>
-      <a href="flow.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-        <span class="menu-lateral__texto">Fluxo de Interações</span>
-      </a>
-      <a href="resources.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-        <span class="menu-lateral__texto">Gestão de Recursos</span>
-      </a>
-      <a href="alerts.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
-        <span class="menu-lateral__texto">Central de Alertas</span>
-      </a>
-      <a href="crew.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-        <span class="menu-lateral__texto">Tripulação</span>
-      </a>
-      <a href="support.html" class="menu-lateral__link">
-        <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
-        <span class="menu-lateral__texto">Suporte</span>
-      </a>
-      <div class="menu-lateral__separador"></div>
-      <a href="about.html" class="menu-lateral__link menu-lateral__link--ativo" aria-current="page">
-        <span class="menu-lateral__icone"><i class="fa-solid fa-circle-info"></i></span>
-        <span class="menu-lateral__texto">Sobre</span>
-      </a>
-    </nav>
-  </aside>
-
-  <!-- Topbar -->
-  <header class="menu-superior">
-    <div class="menu-superior__esquerda">
-      <span class="menu-superior__logo">
-        <i class="fa-solid fa-moon"></i> Space Connect
-      </span>
-    </div>
-
-    <div class="menu-superior__buscar">
-      <div class="menu-superior__buscar-container">
-        <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-        <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
-      </div>
-    </div>
-
-    <div class="menu-superior__direita">
-      <span class="badge badge--danger">
-        <span class="badge__dot"></span>
-        1 Alerta Críticos
-      </span>
-      <div class="badge badge--success">
-        <span class="badge__dot"></span>
-        <span class="status-text">Nominal</span>
-      </div>
-      <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes"
-        aria-label="Notificações">
-        <i class="fa-solid fa-bell"></i>
-        <span class="menu-superior__badge">5</span>
-      </button>
-      <div class="menu-superior__usuario-dropdown">
-        <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
-          <div class="menu-superior__avatar">
-            <i class="fa-solid fa-user-astronaut"></i>
-          </div>
-          <span class="menu-superior__nome">Administrador</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="menu-superior__dropdown-menu card-glass" role="menu">
-          <a href="#" role="menuitem"><i class="fa-solid fa-id-badge"></i> Meu Perfil</a>
-          <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
-          <div class="dropdown-divisor"></div>
-          <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i>
-            Desconectar</a>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <section class="conteudo">
     <main class="conteudo__principal">
 
       <!-- Seção ODS e Controles de Simulação -->
-      <section class="panel-glass-heavy secao-sobre">
+      <section class="painel-vidro-escuro secao-sobre">
 
         <div class="sobre-cabecalho">
           <!-- Texto Explicativo -->
           <div class="sobre-texto-bloco">
             <!-- Título padronizado globalmente -->
-            <h2 class="secao-titulo"><i class="fa-solid fa-graduation-cap"></i> Contexto Acadêmico & ODS</h2>
+            <h2 class="secao-titulo"><i class="fa-solid fa-graduation-cap"></i> Diretrizes de Missão & Integração ODS</h2>
 
             <p class="sobre-paragrafo">
               <span class="sobre-destaque-cyan"><i class="fa-solid fa-flask"></i> <strong>Nota de
@@ -136,7 +49,7 @@
             </p>
 
             <p class="sobre-paragrafo">
-              O <strong>Space Connect</strong> atende aos requisitos do desafio conectando-se a múltiplos Objetivos de
+              O <strong>Y-JACI</strong> atende aos requisitos do desafio conectando-se a múltiplos Objetivos de
               Desenvolvimento Sustentável (ODS) da ONU. A proposta é que as tecnologias de sobrevivência espacial
               idealizadas aqui sejam aplicáveis aos desafios urbanos terrestres.
             </p>
@@ -147,21 +60,21 @@
         <!-- Cards ODS FontAwesome -->
         <div class="sobre-ods-grid">
           <!-- ODS 6 -->
-          <div class="card-glass ods-card ods-card--cyan">
+          <div class="cartao-vidro ods-card ods-card--cyan">
             <div class="ods-card__icone ods-card__icone--cyan"><i class="fa-solid fa-droplet"></i></div>
             <h3 class="ods-card__titulo">ODS 6</h3>
             <p class="ods-card__descricao">Água Potável e Saneamento via malha hídrica e osmose contínua.</p>
           </div>
 
           <!-- ODS 2 -->
-          <div class="card-glass ods-card ods-card--green">
+          <div class="cartao-vidro ods-card ods-card--green">
             <div class="ods-card__icone ods-card__icone--green"><i class="fa-solid fa-leaf"></i></div>
             <h3 class="ods-card__titulo">ODS 2</h3>
             <p class="ods-card__descricao">Agricultura Sustentável através de controle de estufas e biomassa.</p>
           </div>
 
           <!-- ODS 11 -->
-          <div class="card-glass ods-card ods-card--yellow">
+          <div class="cartao-vidro ods-card ods-card--yellow">
             <div class="ods-card__icone ods-card__icone--yellow"><i class="fa-solid fa-city"></i></div>
             <h3 class="ods-card__titulo">ODS 11</h3>
             <p class="ods-card__descricao">Cidades Sustentáveis escalando tecnologias de infraestrutura extrema.</p>
@@ -170,7 +83,7 @@
       </section>
 
       <!-- Equipe -->
-      <section class="panel-glass-heavy secao-sobre secao-equipe">
+      <section class="painel-vidro-escuro secao-sobre secao-equipe">
         <h2 class="secao-titulo"><i class="fa-solid fa-users"></i> Equipe Desenvolvedora</h2>
         <div class="equipe-container">
           <p>Projeto SPA desenvolvido para a avaliação FIAP Global Solution.</p>
@@ -185,18 +98,7 @@
     </main>
   </section>
 
-  <!-- Bottombar de Telemetria -->
-  <footer class="barra-telemetria">
-    <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
-    <div class="barra-telemetria__janela-letreiro">
-      <div class="barra-telemetria__letreiro" aria-hidden="true">
-        <span class="barra-telemetria__item">DSN NOMINAL · 1.28s</span>
-        <span class="barra-telemetria__item">POWER 96.4 kW</span>
-      </div>
-    </div>
-    <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 · 00:00:00</time>
-  </footer>
-
+  <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 

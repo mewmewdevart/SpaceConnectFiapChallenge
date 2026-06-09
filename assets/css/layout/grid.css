@@ -1,4 +1,4 @@
-.conteudo {
+﻿.conteudo {
     display: flex;
     width: calc(100% - 60px);
     flex: 1;
@@ -118,7 +118,7 @@
 /* CLASSES UTILITÁRIAS GLOBAIS            */
 /* -------------------------------------- */
 
-.card-glass {
+.cartao-vidro {
     background: var(--bg-glass-medium);
     backdrop-filter: blur(10px);
     border: var(--panel-border);
@@ -126,11 +126,11 @@
     transition: all var(--transition-normal);
 }
 
-.card-glass:hover {
+.cartao-vidro:hover {
     border-color: rgba(var(--cyan), 0.3);
 }
 
-.panel-glass-heavy {
+.painel-vidro-escuro {
     background: var(--bg-glass-heavy);
     backdrop-filter: blur(10px);
     border: var(--panel-border);
@@ -146,4 +146,4 @@
     gap: 16px;
 }
 
-/* Macro-card componentizado para assets/css/components/macro-card.css */
+/* cartao-macro componentizado para assets/css/components/cartao-macro.css */

@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // L√≥gica para confirmar alertas
+    // LÛgica para confirmar alertas
     const confirmButtons = document.querySelectorAll('.alerta__botao-acao--confirmar');
     
     confirmButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const alerta = e.target.closest('.alerta');
             if (alerta) {
-                // Adiciona anima√ß√£o de resolu√ß√£o
+                // Adiciona animaÁ„o de resoluÁ„o
                 alerta.classList.add('alerta--resolvido');
                 
-                // Modifica o bot√£o
+                // Modifica o bot„o
                 e.target.innerHTML = '<i class="fa-solid fa-check"></i> Confirmado';
                 e.target.disabled = true;
                 e.target.classList.add('alerta__botao-acao--desabilitado');
 
                 // Atualiza o contador de alertas macro card
-                // Simples simula√ß√£o de diminui√ß√£o de n√∫mero se poss√≠vel
-                const cardBadge = document.querySelector('.macro-card--yellow .macro-card__valor');
-                if (alerta.classList.contains('alerta--aviso') && cardBadge) {
-                    let num = parseInt(cardBadge.textContent);
+                // Simples simulaÁ„o de diminuiÁ„o de n˙mero se possÌvel
+                const cardetiqueta = document.querySelector('.cartao-macro--yellow .cartao-macro__valor');
+                if (alerta.classList.contains('alerta--aviso') && cardetiqueta) {
+                    let num = parseInt(cardetiqueta.textContent);
                     if (!isNaN(num) && num > 0) {
-                        cardBadge.textContent = num - 1;
+                        cardetiqueta.textContent = num - 1;
                     }
                 }
             }

@@ -57,7 +57,8 @@
             { id: "conn_3", from: "biomass_collector", to: "comp_reactor", status: "open" },
             { id: "conn_4", from: "ro_purifier", to: "potable_tank", status: "open" },
             { id: "conn_5", from: "uv_sterilizer", to: "irrigation_tank", status: "open" },
-            { id: "conn_6", from: "comp_reactor", to: "biotic_fert", status: "open" }
+            { id: "conn_6", from: "comp_reactor", to: "biotic_fert", status: "open" },
+            { id: "conn_emergency", from: "potable_tank", to: "irrigation_tank", status: "open" }
         ];
 
         let selectedElement = null;
@@ -68,7 +69,7 @@
 
             modules.forEach(module => {
                 const card = document.createElement('div');
-                card.classList.add('fluxo-cartao', 'card-glass', 'hud-corners');
+                card.classList.add('fluxo-cartao', 'cartao-vidro', 'hud-corners');
                 card.id = `card-${module.id}`;
                 card.style.left = `${module.x}px`;
                 card.style.top = `${module.y}px`;
@@ -449,7 +450,7 @@
                                 <i class="fa-solid ${moduleData.icon} inspetor-painel__icone" style="color: ${moduleData.color};"></i>
                                 <span>/</span>Calibração
                             </h2>
-                            <span class="badge inspetor-painel__badge">MÓDULO</span>
+                            <span class="etiqueta inspetor-painel__etiqueta">MÓDULO</span>
                         </div>
                         <form class="inspetor-painel__formulario" onsubmit="event.preventDefault();">
                             <div class="inspetor-painel__grupo-form">
@@ -553,7 +554,7 @@
                     <div class="inspetor-painel">
                         <div class="inspetor-painel__cabecalho">
                             <h2><i class="fa-solid fa-arrow-right-arrow-left inspetor-painel__icone"></i><span>/</span>Calibração</h2>
-                            <span class="badge inspetor-painel__badge">TUBULAÇÃO</span>
+                            <span class="etiqueta inspetor-painel__etiqueta">TUBULAÇÃO</span>
                         </div>
                         <div class="inspetor-painel__formulario">
                             <div class="inspetor-painel__grupo-form">
@@ -622,7 +623,7 @@
 
                 catModules.forEach(mod => {
                     const cardItem = document.createElement('div');
-                    cardItem.className = `fluxo-mobile-cartao card-glass  ${mod.status === 'warning' ? 'fluxo-cartao--aviso' : ''}`;
+                    cardItem.className = `fluxo-mobile-cartao cartao-vidro  ${mod.status === 'warning' ? 'fluxo-cartao--aviso' : ''}`;
                     cardItem.setAttribute('data-mod-id', mod.id);
                     if (selectedElement && selectedElement.type === 'module' && selectedElement.id === mod.id) {
                         cardItem.classList.add('selecionado');

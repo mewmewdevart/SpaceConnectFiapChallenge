@@ -1,4 +1,4 @@
-.menu-superior {
+﻿.menu-superior {
     position: sticky;
     top: 0;
     z-index: var(--z-sticky);
@@ -111,7 +111,7 @@
     position: relative;
 }
 
-.menu-superior__badge {
+.menu-superior__etiqueta {
     position: absolute;
     top: -2px;
     right: -4px;

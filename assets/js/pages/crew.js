@@ -1,5 +1,5 @@
 // ==========================================================================
-// CREW.JS - Base de Dados e Renderiza√ß√£o Din√¢mica da Tripula√ß√£o
+// CREW.JS - Base de Dados e RenderizaÁ„o Din‚mica da TripulaÁ„o
 // ==========================================================================
 
 const crewDatabase = [
@@ -7,23 +7,23 @@ const crewDatabase = [
   {
     id: "CMD-01",
     name: "Cmdr. Oakes",
-    role: "Comandante da Miss√£o",
+    role: "Comandante da Miss„o",
     department: "Comando",
     location: "Centro de Comando",
     status: "nominal",
     vitals: { bpm: 68, spo2: "99%", fatigue: "22%", lastSleep: "7.1h", stress: "BAIXO" },
     impact: { water: "1.8L/d", o2: "14kg/s", energy: "12 kWh", efficiency: "98%" },
-    mission: { name: "Supervis√£o Geral do Ciclo 4", progress: 95, deadline: "02h" },
+    mission: { name: "Supervis„o Geral do Ciclo 4", progress: 95, deadline: "02h" },
     responsibilities: [
-      { text: "Comunica√ß√µes DSN", status: "ok" },
-      { text: "Aprova√ß√£o de Aloca√ß√£o H2O", status: "ok" }
+      { text: "ComunicaÁıes DSN", status: "ok" },
+      { text: "AprovaÁ„o de AlocaÁ„o H2O", status: "ok" }
     ],
-    impactText: "Efici√™ncia t√°tica est√°vel"
+    impactText: "EficiÍncia t·tica est·vel"
   },
   {
     id: "CMD-02",
     name: "Sub-Cmdr. Vance",
-    role: "Oficial de Opera√ß√µes",
+    role: "Oficial de OperaÁıes",
     department: "Comando",
     location: "Centro de Comando",
     status: "atencao",
@@ -31,10 +31,10 @@ const crewDatabase = [
     impact: { water: "2.1L/d", o2: "16kg/s", energy: "18 kWh", efficiency: "85%" },
     mission: { name: "Planejamento de Rota de Fuga", progress: 60, deadline: "08h" },
     responsibilities: [
-      { text: "Simula√ß√µes de Pressuriza√ß√£o", status: "ok" },
-      { text: "Log√≠stica de Suprimentos", status: "alert" }
+      { text: "SimulaÁıes de PressurizaÁ„o", status: "ok" },
+      { text: "LogÌstica de Suprimentos", status: "alert" }
     ],
-    impactText: "Atraso no relat√≥rio de log√≠stica"
+    impactText: "Atraso no relatÛrio de logÌstica"
   },
 
   // ================= ENGENHARIA (6) =================
@@ -47,33 +47,33 @@ const crewDatabase = [
     status: "nominal",
     vitals: { bpm: 72, spo2: "98%", fatigue: "64%", lastSleep: "5.2h", stress: "NOMINAL" },
     impact: { water: "2.4L/d", o2: "18kg/s", energy: "34 kWh", efficiency: "96%" },
-    mission: { name: "Manuten√ß√£o da Estufa Alpha", progress: 78, deadline: "14h" },
+    mission: { name: "ManutenÁ„o da Estufa Alpha", progress: 78, deadline: "14h" },
     responsibilities: [
-      { text: "Sistema de Irriga√ß√£o", status: "ok" },
-      { text: "Reciclagem de √Ågua", status: "ok" },
+      { text: "Sistema de IrrigaÁ„o", status: "ok" },
+      { text: "Reciclagem de ¡gua", status: "ok" },
       { text: "Tanques H2O-03", status: "ok" }
     ],
-    impactText: "+12% efici√™ncia h√≠drica"
+    impactText: "+12% eficiÍncia hÌdrica"
   },
   {
     id: "ENG-02",
     name: "Hiroshi Tanaka",
-    role: "Engenheiro El√©trico",
+    role: "Engenheiro ElÈtrico",
     department: "Engenharia",
-    location: "Reator Prim√°rio",
+    location: "Reator Prim·rio",
     status: "nominal",
     vitals: { bpm: 65, spo2: "99%", fatigue: "30%", lastSleep: "6.5h", stress: "BAIXO" },
     impact: { water: "1.9L/d", o2: "15kg/s", energy: "45 kWh", efficiency: "100%" },
-    mission: { name: "Calibra√ß√£o da Rede El√©trica", progress: 90, deadline: "04h" },
+    mission: { name: "CalibraÁ„o da Rede ElÈtrica", progress: 90, deadline: "04h" },
     responsibilities: [
       { text: "Grid de Energia Central", status: "ok" }
     ],
-    impactText: "+4% estabilidade energ√©tica"
+    impactText: "+4% estabilidade energÈtica"
   },
   {
     id: "ENG-03",
     name: "Elena Rostova",
-    role: "Mec√¢nica de Rovers",
+    role: "Mec‚nica de Rovers",
     department: "Engenharia",
     location: "Garagem B",
     status: "atencao",
@@ -88,18 +88,18 @@ const crewDatabase = [
   {
     id: "ENG-04",
     name: "Marcus Cole",
-    role: "T√©cnico de Suporte √† Vida",
+    role: "TÈcnico de Suporte ‡ Vida",
     department: "Engenharia",
-    location: "M√≥dulo Habitacional",
+    location: "MÛdulo Habitacional",
     status: "nominal",
     vitals: { bpm: 70, spo2: "98%", fatigue: "40%", lastSleep: "7.0h", stress: "NOMINAL" },
     impact: { water: "2.0L/d", o2: "16kg/s", energy: "15 kWh", efficiency: "95%" },
-    mission: { name: "Limpeza de Filtros CO2", progress: 100, deadline: "Conclu√≠do" },
+    mission: { name: "Limpeza de Filtros CO2", progress: 100, deadline: "ConcluÌdo" },
     responsibilities: [
       { text: "Purificadores de Ar", status: "ok" },
-      { text: "Controle T√©rmico", status: "ok" }
+      { text: "Controle TÈrmico", status: "ok" }
     ],
-    impactText: "Qualidade do ar no m√°ximo"
+    impactText: "Qualidade do ar no m·ximo"
   },
   {
     id: "ENG-05",
@@ -110,97 +110,97 @@ const crewDatabase = [
     status: "nominal",
     vitals: { bpm: 74, spo2: "97%", fatigue: "50%", lastSleep: "6.0h", stress: "NOMINAL" },
     impact: { water: "2.2L/d", o2: "17kg/s", energy: "18 kWh", efficiency: "90%" },
-    mission: { name: "Inspe√ß√£o de Veda√ß√£o", progress: 85, deadline: "05h" },
+    mission: { name: "InspeÁ„o de VedaÁ„o", progress: 85, deadline: "05h" },
     responsibilities: [
-      { text: "Airlocks Prim√°rios", status: "ok" }
+      { text: "Airlocks Prim·rios", status: "ok" }
     ],
-    impactText: "Seguran√ßa estrutural garantida"
+    impactText: "SeguranÁa estrutural garantida"
   },
   {
     id: "ENG-06",
     name: "David Chen",
-    role: "Especialista em Rob√≥tica",
+    role: "Especialista em RobÛtica",
     department: "Engenharia",
-    location: "Laborat√≥rio Tech",
+    location: "LaboratÛrio Tech",
     status: "nominal",
     vitals: { bpm: 68, spo2: "98%", fatigue: "35%", lastSleep: "6.8h", stress: "BAIXO" },
     impact: { water: "1.8L/d", o2: "14kg/s", energy: "25 kWh", efficiency: "92%" },
-    mission: { name: "Atualiza√ß√£o Drones de Minera√ß√£o", progress: 50, deadline: "22h" },
+    mission: { name: "AtualizaÁ„o Drones de MineraÁ„o", progress: 50, deadline: "22h" },
     responsibilities: [
-      { text: "Drones Aut√¥nomos", status: "ok" }
+      { text: "Drones AutÙnomos", status: "ok" }
     ],
-    impactText: "Automa√ß√£o operando bem"
+    impactText: "AutomaÁ„o operando bem"
   },
 
-  // ================= CI√äNCIA (4) =================
+  // ================= CI NCIA (4) =================
   {
     id: "SCI-01",
     name: "Elara Thorne",
-    role: "Ge√≥loga Chefe (EVA)",
-    department: "Ci√™ncia",
+    role: "GeÛloga Chefe (EVA)",
+    department: "CiÍncia",
     location: "Cratera de Cabeus",
     status: "critico",
     vitals: { bpm: 134, spo2: "92%", fatigue: "88%", lastSleep: "3.2h", stress: "ALTO" },
     impact: { water: "+4.2x / hr", o2: "34%", energy: "145 kg", efficiency: "72%" },
-    mission: { name: "Extra√ß√£o de Gelo Profundo", progress: 45, deadline: "-02:14h" },
+    mission: { name: "ExtraÁ„o de Gelo Profundo", progress: 45, deadline: "-02:14h" },
     responsibilities: [
       { text: "Rover RV-04 (Offline)", status: "critical" },
-      { text: "Broca de Perfura√ß√£o B-12", status: "ok" }
+      { text: "Broca de PerfuraÁ„o B-12", status: "ok" }
     ],
     impactText: "Atraso no ciclo H2O"
   },
   {
     id: "SCI-02",
     name: "Dr. Alistair Vance",
-    role: "Astrof√≠sico",
-    department: "Ci√™ncia",
-    location: "Observat√≥rio Lunar",
+    role: "AstrofÌsico",
+    department: "CiÍncia",
+    location: "ObservatÛrio Lunar",
     status: "nominal",
     vitals: { bpm: 62, spo2: "99%", fatigue: "15%", lastSleep: "8.0h", stress: "BAIXO" },
     impact: { water: "1.5L/d", o2: "12kg/s", energy: "40 kWh", efficiency: "99%" },
     mission: { name: "Mapeamento de Tempestades Solares", progress: 80, deadline: "48h" },
     responsibilities: [
-      { text: "Telesc√≥pio de Raio-X", status: "ok" },
-      { text: "Escudos de Radia√ß√£o", status: "ok" }
+      { text: "TelescÛpio de Raio-X", status: "ok" },
+      { text: "Escudos de RadiaÁ„o", status: "ok" }
     ],
-    impactText: "Previs√£o solar atualizada"
+    impactText: "Previs„o solar atualizada"
   },
   {
     id: "SCI-03",
     name: "Lin Wei",
-    role: "Qu√≠mica Anal√≠tica",
-    department: "Ci√™ncia",
-    location: "Laborat√≥rio Qu√≠mico",
+    role: "QuÌmica AnalÌtica",
+    department: "CiÍncia",
+    location: "LaboratÛrio QuÌmico",
     status: "nominal",
     vitals: { bpm: 70, spo2: "98%", fatigue: "45%", lastSleep: "6.2h", stress: "NOMINAL" },
     impact: { water: "2.5L/d", o2: "15kg/s", energy: "28 kWh", efficiency: "94%" },
-    mission: { name: "An√°lise de Amostras de Regolito", progress: 65, deadline: "12h" },
+    mission: { name: "An·lise de Amostras de Regolito", progress: 65, deadline: "12h" },
     responsibilities: [
-      { text: "Espectr√¥metros de Massa", status: "ok" }
+      { text: "EspectrÙmetros de Massa", status: "ok" }
     ],
-    impactText: "Dados minerais dispon√≠veis"
+    impactText: "Dados minerais disponÌveis"
   },
   {
     id: "SCI-04",
     name: "James Holden",
     role: "Pesquisador de Materiais",
-    department: "Ci√™ncia",
-    location: "M√≥dulo de S√≠ntese",
+    department: "CiÍncia",
+    location: "MÛdulo de SÌntese",
     status: "atencao",
     vitals: { bpm: 85, spo2: "97%", fatigue: "70%", lastSleep: "4.5h", stress: "MODERADO" },
     impact: { water: "2.1L/d", o2: "16kg/s", energy: "38 kWh", efficiency: "82%" },
-    mission: { name: "Impress√£o 3D de Pe√ßas Cr√≠ticas", progress: 20, deadline: "06h" },
+    mission: { name: "Impress„o 3D de PeÁas CrÌticas", progress: 20, deadline: "06h" },
     responsibilities: [
       { text: "Sintetizador de Ligas", status: "alert" }
     ],
-    impactText: "Falta de mat√©ria-prima"
+    impactText: "Falta de matÈria-prima"
   },
 
   // ================= AGRICULTURA (3) =================
   {
     id: "AGR-01",
     name: "Dr. Maya Lin",
-    role: "Bot√¢nica Chefe",
+    role: "Bot‚nica Chefe",
     department: "Agricultura",
     location: "Bio-Domo Principal",
     status: "nominal",
@@ -209,7 +209,7 @@ const crewDatabase = [
     mission: { name: "Colheita de Microverdes", progress: 95, deadline: "01h" },
     responsibilities: [
       { text: "Hidroponia Central", status: "ok" },
-      { text: "N√≠veis de Ilumina√ß√£o UV", status: "ok" }
+      { text: "NÌveis de IluminaÁ„o UV", status: "ok" }
     ],
     impactText: "+25kg de biomassa gerada"
   },
@@ -218,72 +218,72 @@ const crewDatabase = [
     name: "Carlos Mendes",
     role: "Especialista em Fungos",
     department: "Agricultura",
-    location: "C√¢mara de Compostagem",
+    location: "C‚mara de Compostagem",
     status: "nominal",
     vitals: { bpm: 71, spo2: "98%", fatigue: "40%", lastSleep: "6.5h", stress: "NOMINAL" },
     impact: { water: "2.0L/d", o2: "14kg/s", energy: "10 kWh", efficiency: "90%" },
-    mission: { name: "Ciclo de Reciclagem Org√¢nica", progress: 50, deadline: "24h" },
+    mission: { name: "Ciclo de Reciclagem Org‚nica", progress: 50, deadline: "24h" },
     responsibilities: [
       { text: "Reator de Compostagem", status: "ok" }
     ],
-    impactText: "Fertilizante em produ√ß√£o"
+    impactText: "Fertilizante em produÁ„o"
   },
   {
     id: "AGR-03",
     name: "Priya Patel",
-    role: "T√©cnica de Nutri√ß√£o",
+    role: "TÈcnica de NutriÁ„o",
     department: "Agricultura",
     location: "Bio-Domo 02",
     status: "atencao",
     vitals: { bpm: 80, spo2: "97%", fatigue: "60%", lastSleep: "5.5h", stress: "MODERADO" },
     impact: { water: "2.2L/d", o2: "15kg/s", energy: "18 kWh", efficiency: "85%" },
-    mission: { name: "Equil√≠brio de PH no Solo", progress: 40, deadline: "08h" },
+    mission: { name: "EquilÌbrio de PH no Solo", progress: 40, deadline: "08h" },
     responsibilities: [
       { text: "Sensores de PH", status: "alert" }
     ],
-    impactText: "Desvio qu√≠mico detectado"
+    impactText: "Desvio quÌmico detectado"
   },
 
-  // ================= SA√öDE (2) =================
+  // ================= SA⁄DE (2) =================
   {
     id: "MED-01",
     name: "Dr. Julian Bashir",
-    role: "Oficial M√©dico Chefe",
-    department: "Sa√∫de",
-    location: "Ala M√©dica",
+    role: "Oficial MÈdico Chefe",
+    department: "Sa˙de",
+    location: "Ala MÈdica",
     status: "nominal",
     vitals: { bpm: 64, spo2: "99%", fatigue: "20%", lastSleep: "7.2h", stress: "BAIXO" },
     impact: { water: "1.7L/d", o2: "13kg/s", energy: "20 kWh", efficiency: "98%" },
     mission: { name: "Check-up da Equipe de Engenharia", progress: 80, deadline: "03h" },
     responsibilities: [
       { text: "Estoque de Medicamentos", status: "ok" },
-      { text: "C√°psulas de Criogenia", status: "ok" }
+      { text: "C·psulas de Criogenia", status: "ok" }
     ],
-    impactText: "Sa√∫de da tripula√ß√£o nominal"
+    impactText: "Sa˙de da tripulaÁ„o nominal"
   },
   {
     id: "MED-02",
     name: "Enfa. Clara Oswald",
-    role: "Param√©dica de Resgate",
-    department: "Sa√∫de",
-    location: "Ala M√©dica (Em prontid√£o)",
+    role: "ParamÈdica de Resgate",
+    department: "Sa˙de",
+    location: "Ala MÈdica (Em prontid„o)",
     status: "nominal",
     vitals: { bpm: 68, spo2: "98%", fatigue: "35%", lastSleep: "6.8h", stress: "NOMINAL" },
     impact: { water: "1.8L/d", o2: "14kg/s", energy: "12 kWh", efficiency: "95%" },
-    mission: { name: "Standby para EVA da Cratera", progress: 100, deadline: "Cont√≠nuo" },
+    mission: { name: "Standby para EVA da Cratera", progress: 100, deadline: "ContÌnuo" },
     responsibilities: [
-      { text: "Ve√≠culo de Resgate M√©dico", status: "ok" }
+      { text: "VeÌculo de Resgate MÈdico", status: "ok" }
     ],
     impactText: "Tempo de resposta: < 5 min"
   }
 ];
 
 // ==========================================================================
-// RENDERIZA√á√ÉO
+// RENDERIZA«√O
 // ==========================================================================
 
 // ==========================================================================
-// ESTADO GLOBAL (PESQUISA E PAGINA√á√ÉO)
+// ESTADO GLOBAL (PESQUISA E PAGINA«√O)
 // ==========================================================================
 let filteredCrew = [];
 let currentPage = 1;
@@ -319,7 +319,7 @@ function renderPagination() {
 
   const totalPages = Math.ceil(filteredCrew.length / itemsPerPage);
 
-  // Se houver 0 ou 1 p√°gina, e n√£o tiver itens, pode limpar
+  // Se houver 0 ou 1 p·gina, e n„o tiver itens, pode limpar
   if (totalPages <= 1) {
     pagContainer.innerHTML = '';
     return;
@@ -327,17 +327,17 @@ function renderPagination() {
 
   let html = '';
 
-  // Bot√£o Anterior
+  // Bot„o Anterior
   html += `<button class="botao botao--ghost botao--icone botao--sm crew-btn-page" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
             <i class="fa-solid fa-chevron-left"></i>
           </button>`;
 
-  // Bot√µes num√©ricos (simplificado para mostrar todos se forem poucos)
+  // Botıes numÈricos (simplificado para mostrar todos se forem poucos)
   for (let i = 1; i <= totalPages; i++) {
     html += `<button class="botao ${currentPage === i ? 'botao--primario' : 'botao--ghost'} botao--icone botao--sm crew-btn-page" onclick="changePage(${i})">${i}</button>`;
   }
 
-  // Bot√£o Pr√≥ximo
+  // Bot„o PrÛximo
   html += `<button class="botao botao--ghost botao--icone botao--sm crew-btn-page" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
             <i class="fa-solid fa-chevron-right"></i>
           </button>`;
@@ -345,7 +345,7 @@ function renderPagination() {
   pagContainer.innerHTML = html;
 }
 
-// Exp√µe a fun√ß√£o globalmente para os bot√µes inline
+// Expıe a funÁ„o globalmente para os botıes inline
 window.changePage = function (page) {
   const totalPages = Math.ceil(filteredCrew.length / itemsPerPage);
   if (page >= 1 && page <= totalPages) {
@@ -366,7 +366,7 @@ function renderCrew() {
     return;
   }
 
-  // L√≥gica de Pagina√ß√£o
+  // LÛgica de PaginaÁ„o
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const crewToRender = filteredCrew.slice(startIndex, endIndex);
@@ -376,16 +376,16 @@ function renderCrew() {
     const isCritical = member.status === 'critico';
     const isAlert = member.status === 'atencao';
 
-    let cardClass = 'crew-card card-glass ';
+    let cardClass = 'crew-card cartao-vidro ';
     let statusIcon = '<i class="fa-solid fa-location-dot"></i>';
-    let badgeClass = 'badge--success';
+    let etiquetaClass = 'etiqueta--success';
 
     if (isCritical) {
       cardClass += ' crew-card--alerta';
-      badgeClass = 'badge--danger';
+      etiquetaClass = 'etiqueta--danger';
       statusIcon = '<i class="fa-solid fa-triangle-exclamation"></i>';
     } else if (isAlert) {
-      badgeClass = 'badge--warning';
+      etiquetaClass = 'etiqueta--warning';
       statusIcon = '<i class="fa-solid fa-triangle-exclamation"></i>';
     }
 
@@ -396,7 +396,7 @@ function renderCrew() {
       </div>
     `).join('');
 
-    // Montar HTML do cart√£o
+    // Montar HTML do cart„o
     const cardHTML = `
       <article class="${cardClass}">
         <header class="crew-card__header">
@@ -410,13 +410,13 @@ function renderCrew() {
               <span class="crew-card__funcao">${member.role}</span>
             </div>
           </div>
-          <div class="badge ${badgeClass}">
+          <div class="etiqueta ${etiquetaClass}">
             ${statusIcon} ${member.location}
           </div>
         </header>
 
         <div class="crew-card__body">
-          <!-- Coluna 1: Vitais e Sa√∫de -->
+          <!-- Coluna 1: Vitais e Sa˙de -->
           <div class="crew-coluna">
             <h3 class="crew-coluna__titulo">Biometria e Fadiga</h3>
             
@@ -425,7 +425,7 @@ function renderCrew() {
               <span class="crew-dado__valor ${getVitalClass(member.vitals.bpm, 'bpm')}">${member.vitals.bpm}</span>
             </div>
             <div class="crew-dado">
-              <span class="crew-dado__label"><i class="fa-solid fa-lungs"></i> SpO‚ÇÇ</span>
+              <span class="crew-dado__label"><i class="fa-solid fa-lungs"></i> SpO2</span>
               <span class="crew-dado__valor ${isCritical ? 'crew-dado__valor--alerta' : ''}">${member.vitals.spo2}</span>
             </div>
             <div class="crew-dado">
@@ -440,15 +440,15 @@ function renderCrew() {
 
           <!-- Coluna 2: Impacto Operacional -->
           <div class="crew-coluna">
-            <h3 class="crew-coluna__titulo">Impacto na Col√¥nia</h3>
+            <h3 class="crew-coluna__titulo">Impacto na ColÙnia</h3>
             
             <div class="crew-impacto" ${isCritical ? 'style="border-color: rgba(var(--salmon), 0.2);"' : ''}>
               <div class="crew-dado">
-                <span class="crew-dado__label">Consumo H√≠drico</span>
+                <span class="crew-dado__label">Consumo HÌdrico</span>
                 <span class="crew-dado__valor ${isCritical ? 'crew-dado__valor--critico' : ''}">${member.impact.water}</span>
               </div>
               <div class="crew-dado">
-                <span class="crew-dado__label">Consumo de O‚ÇÇ</span>
+                <span class="crew-dado__label">Consumo de O2</span>
                 <span class="crew-dado__valor ${isAlert ? 'crew-dado__valor--alerta' : ''}">${member.impact.o2}</span>
               </div>
               <div class="crew-dado">
@@ -456,15 +456,15 @@ function renderCrew() {
                 <span class="crew-dado__valor">${member.impact.energy}</span>
               </div>
               <div class="crew-dado">
-                <span class="crew-dado__label">Efici√™ncia Oper.</span>
+                <span class="crew-dado__label">EficiÍncia Oper.</span>
                 <span class="crew-dado__valor ${isCritical ? '' : 'crew-dado__valor--positivo'}">${member.impact.efficiency}</span>
               </div>
             </div>
           </div>
 
-          <!-- Coluna 3: Contexto Sist√™mico -->
+          <!-- Coluna 3: Contexto SistÍmico -->
           <div class="crew-coluna">
-            <h3 class="crew-coluna__titulo">Contexto Sist√™mico</h3>
+            <h3 class="crew-coluna__titulo">Contexto SistÍmico</h3>
             
             <div class="crew-missao">
               <div class="crew-missao__card" ${isCritical ? 'style="border-color: rgba(var(--salmon), 0.3);"' : ''}>
@@ -479,7 +479,7 @@ function renderCrew() {
               </div>
 
               <div class="crew-responsabilidades">
-                <span class="crew-coluna__titulo" style="border:none; padding:0; margin-top:8px;">Respons√°vel Por</span>
+                <span class="crew-coluna__titulo" style="border:none; padding:0; margin-top:8px;">Respons·vel Por</span>
                 ${responsibilitiesHTML}
                 <span class="crew-dado__valor ${isCritical ? 'crew-dado__valor--critico' : (isAlert ? 'crew-dado__valor--alerta' : 'crew-dado__valor--positivo')}" style="font-size: 12px; margin-top: 4px;">
                   Impacto: ${member.impactText}
@@ -516,7 +516,7 @@ function applyFilters() {
   renderCrew();
 }
 
-// Inicializar na carga da p√°gina
+// Inicializar na carga da p·gina
 document.addEventListener('DOMContentLoaded', () => {
   filteredCrew = [...crewDatabase];
   renderCrew();
