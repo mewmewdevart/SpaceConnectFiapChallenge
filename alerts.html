@@ -2,262 +2,195 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
-  <meta name="keywords"
-    content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Y-JACI">
-  <meta name="author" content="Y-JACI">
-  <meta name="theme-color" content="#0b1021">
-
-  <!-- SEO & Open Graph -->
-  <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
-  <meta property="og:title" content="Y-JACI - Central de Alertas">
-  <meta property="og:description"
-    content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Y-JACI - Central de Alertas">
-  <meta name="twitter:description"
-    content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
-
-  <title>Y-JACI - Central de Alertas</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/base/variables.css">
-  <link rel="stylesheet" href="assets/css/base/reset.css">
-  <link rel="stylesheet" href="assets/css/layout/grid.css">
-  <link rel="stylesheet" href="assets/css/components/etiqueta.css">
-  <link rel="stylesheet" href="assets/css/components/alerta.css">
-  <link rel="stylesheet" href="assets/css/components/cartao-macro.css">
-  <link rel="stylesheet" href="assets/css/components/sidebar.css">
-  <link rel="stylesheet" href="assets/css/components/topbar.css">
-  <link rel="stylesheet" href="assets/css/components/bottombar.css">
-  <link rel="stylesheet" href="assets/css/pages/alerts.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/input.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+    <meta name="keywords"
+        content="Gestão de recursos, colônia lunar, monitoramento de energia, sustentabilidade espacial, dashboard espacial, ODS, inovação espacial, Y-JACI">
+    <meta name="author" content="Y-JACI">
+    <meta name="theme-color" content="#0b1021"> <!-- SEO & Open Graph -->
+    <link rel="canonical" href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
+    <meta property="og:title" content="Y-JACI - Central de Alertas">
+    <meta property="og:description"
+        content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/alerts.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Y-JACI - Central de Alertas">
+    <meta name="twitter:description"
+        content="Acompanhe os alertas críticos, avisos e informações do sistema em tempo real.">
+    <title>Y-JACI - Central de Alertas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/base/variables.css">
+    <link rel="stylesheet" href="assets/css/base/reset.css">
+    <link rel="stylesheet" href="assets/css/layout/grid.css">
+    <link rel="stylesheet" href="assets/css/components/etiqueta.css">
+    <link rel="stylesheet" href="assets/css/components/alerta.css">
+    <link rel="stylesheet" href="assets/css/components/cartao-macro.css">
+    <link rel="stylesheet" href="assets/css/components/sidebar.css">
+    <link rel="stylesheet" href="assets/css/components/topbar.css">
+    <link rel="stylesheet" href="assets/css/components/bottombar.css">
+    <link rel="stylesheet" href="assets/css/pages/alerts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/components/button.css">
+    <link rel="stylesheet" href="assets/css/components/input.css">
 </head>
 
-<body>
-  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-
-  <!-- Main Content -->
-  <section class="conteudo">
-    <main class="conteudo__principal">
-      <!-- Header -->
-      <header class="cabecalho-conteudo">
-        <div class="cabecalho-conteudo__cabecalho">
-          <p class="cabecalho-conteudo__subtitulo">Y-JACI<span class="cabecalho-conteudo__separador"> /
-              Log de Ocorrências</span></p>
-        </div>
-        <h1 class="cabecalho-conteudo__titulo">Monitoramento de Incidentes Críticos</h1>
-
-        <div class="cabecalho-conteudo__bloco">
-          <p class="cabecalho-conteudo__descricao">Registro sistêmico de falhas, anomalias e intervenções ativas na infraestrutura da base.</p>
-          <span class="cabecalho-conteudo__status etiqueta etiqueta--danger">
-            <span class="etiqueta__dot"></span>
-            1 Alerta Críticos
-          </span>
-        </div>
-      </header>
-
-      <div class="painel-alertas">
-        <div class="macro-grid">
-          <article class="cartao-macro cartao-macro--magenta cartao-vidro ">
-            <div class="cartao-macro__icone">
-              <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-            <div class="cartao-macro__dados">
-              <span class="cartao-macro__valor cartao-macro__valor--destaque">1</span>
-              <span class="cartao-macro__label">Críticos</span>
-              <span class="cartao-macro__sub">Incidente ativo</span>
-            </div>
-          </article>
-
-          <article class="cartao-macro cartao-macro--yellow cartao-vidro ">
-            <div class="cartao-macro__icone">
-              <i class="fa-solid fa-circle-exclamation"></i>
-            </div>
-            <div class="cartao-macro__dados">
-              <span class="cartao-macro__valor cartao-macro__valor--destaque">3</span>
-              <span class="cartao-macro__label">Avisos</span>
-              <span class="cartao-macro__sub">Ações sugeridas</span>
-            </div>
-          </article>
-
-          <article class="cartao-macro cartao-macro--cyan cartao-vidro ">
-            <div class="cartao-macro__icone">
-              <i class="fa-solid fa-circle-info"></i>
-            </div>
-            <div class="cartao-macro__dados">
-              <span class="cartao-macro__valor cartao-macro__valor--destaque">1</span>
-              <span class="cartao-macro__label">Informativos</span>
-              <span class="cartao-macro__sub">Eventos recentes</span>
-            </div>
-          </article>
-        </div>
-
-        <section class="linha-tempo painel-vidro-escuro ">
-          <div class="linha-tempo__cabecalho">
-            <div class="linha-tempo__titulo-container">
-              <span class="linha-tempo__marcador"></span>
-              <div>
-                <h2 class="linha-tempo__titulo">Linha do Tempo</h2>
-                <div class="linha-tempo__contador-eventos">5 eventos</div>
-              </div>
-            </div>
-          </div>
-
-          <article class="alerta alerta--critico ">
-            <div class="alerta__indicador-lateral" aria-hidden="true">
-              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M11.001 2.001a1 1 0 0 1 1.998 0l1.681 9.533a1 1 0 0 1-.984 1.196h-3.39a1 1 0 0 1-.984-1.196L11.001 2.001zm1.999 16a1.5 1.5 0 1 1-2.999 0 1.5 1.5 0 0 1 2.999 0z">
-                </path>
-              </svg>
-            </div>
-            <div class="alerta__corpo">
-              <div class="alerta__linha-topo">
-                <div class="alerta__grupo-esquerdo">
-                  <span class="etiqueta etiqueta--danger">Crítico</span>
-                  <span class="alerta__codigo-evento">A-241</span>
+<body> <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <section class="conteudo">
+        <main class="conteudo__principal">
+            <header class="cabecalho-conteudo">
+                <div class="cabecalho-conteudo__cabecalho">
+                    <p class="cabecalho-conteudo__subtitulo">Y-JACI<span class="cabecalho-conteudo__separador"> / Log de
+                            Ocorrências</span></p>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT2M47S"
-                  aria-label="Tempo decorrido: 2 minutos e 47 segundos">T-00:02:47</time>
-              </div>
-              <p class="alerta__texto-evento">RV-04 perdeu telemetria por 2m47s durante perfuração</p>
-              <span class="alerta__fonte-evento">Fonte: Haworth</span>
-              <div class="alerta__acoes">
-                <button class="botao botao--primario botao--sm"
-                  aria-label="Ver detalhes do alerta A-241">Detalhes</button>
-                <button class="botao botao--perigo botao--icone"
-                  aria-label="Acionar protocolo para alerta A-241">Acionar Protocolo</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="alerta alerta--aviso ">
-            <div class="alerta__indicador-lateral" aria-hidden="true">
-              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M12 2a1 1 0 0 1 .993.883L13 3v10a1 1 0 0 1-1.993.117L11 13V3a1 1 0 0 1 1-1zm0 18a1.5 1.5 0 1 1-.001-2.999A1.5 1.5 0 0 1 12 20z">
-                </path>
-              </svg>
-            </div>
-            <div class="alerta__corpo">
-              <div class="alerta__linha-topo">
-                <div class="alerta__grupo-esquerdo">
-                  <span class="etiqueta etiqueta--warning">Aviso</span>
-                  <span class="alerta__codigo-evento">A-240</span>
+                <h1 class="cabecalho-conteudo__titulo">Monitoramento de Incidentes Críticos</h1>
+                <div class="cabecalho-conteudo__bloco">
+                    <p class="cabecalho-conteudo__descricao">Registro sistêmico de falhas, anomalias e intervenções
+                        ativas na infraestrutura da base.</p> <span
+                        class="cabecalho-conteudo__status etiqueta etiqueta--danger"> <span
+                            class="etiqueta__dot"></span> 1 Alerta Críticos </span>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT10M2S"
-                  aria-label="Tempo decorrido: 10 minutos e 2 segundos">T-00:10:02</time>
-              </div>
-              <p class="alerta__texto-evento">Pressão acima do limite no Tanque de Irrigação (AGR-01)</p>
-              <span class="alerta__fonte-evento">Fonte: Sistema de Irrigação</span>
-              <div class="alerta__acoes">
-                <button class="botao botao--primario botao--sm"
-                  aria-label="Ver detalhes do aviso A-240">Detalhes</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="alerta alerta--aviso ">
-            <div class="alerta__indicador-lateral" aria-hidden="true">
-              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M12 2a1 1 0 0 1 .993.883L13 3v10a1 1 0 0 1-1.993.117L11 13V3a1 1 0 0 1 1-1zm0 18a1.5 1.5 0 1 1-.001-2.999A1.5 1.5 0 0 1 12 20z">
-                </path>
-              </svg>
-            </div>
-            <div class="alerta__corpo">
-              <div class="alerta__linha-topo">
-                <div class="alerta__grupo-esquerdo">
-                  <span class="etiqueta etiqueta--warning">Aviso</span>
-                  <span class="alerta__codigo-evento">A-239</span>
+            </header>
+            <div class="painel-alertas">
+                <div class="macro-grid">
+                    <article class="cartao-macro cartao-macro--magenta cartao-vidro ">
+                        <div class="cartao-macro__icone"> <i class="fa-solid fa-triangle-exclamation"></i> </div>
+                        <div class="cartao-macro__dados"> <span
+                                class="cartao-macro__valor cartao-macro__valor--destaque">1</span> <span
+                                class="cartao-macro__label">Críticos</span> <span class="cartao-macro__sub">Incidente
+                                ativo</span> </div>
+                    </article>
+                    <article class="cartao-macro cartao-macro--yellow cartao-vidro ">
+                        <div class="cartao-macro__icone"> <i class="fa-solid fa-circle-exclamation"></i> </div>
+                        <div class="cartao-macro__dados"> <span
+                                class="cartao-macro__valor cartao-macro__valor--destaque">3</span> <span
+                                class="cartao-macro__label">Avisos</span> <span class="cartao-macro__sub">Ações
+                                sugeridas</span> </div>
+                    </article>
+                    <article class="cartao-macro cartao-macro--cyan cartao-vidro ">
+                        <div class="cartao-macro__icone"> <i class="fa-solid fa-circle-info"></i> </div>
+                        <div class="cartao-macro__dados"> <span
+                                class="cartao-macro__valor cartao-macro__valor--destaque">1</span> <span
+                                class="cartao-macro__label">Informativos</span> <span class="cartao-macro__sub">Eventos
+                                recentes</span> </div>
+                    </article>
                 </div>
-                <time class="alerta__tempo-evento" datetime="PT1H4M11S"
-                  aria-label="Tempo decorrido: 1 hora, 4 minutos e 11 segundos">T-01:04:11</time>
-              </div>
-              <p class="alerta__texto-evento">Tanque de Água Potável (H2O-01) acima de 78% – agendar filtragem</p>
-              <span class="alerta__fonte-evento">Fonte: Sistema H2O Principal</span>
-              <div class="alerta__acoes">
-                <button class="botao botao--alerta botao--icone" aria-label="Confirmar aviso A-239">Confirmar</button>
-                <button class="botao botao--primario botao--sm"
-                  aria-label="Ver detalhes do aviso A-239">Detalhes</button>
-              </div>
+                <section class="linha-tempo painel-vidro-escuro ">
+                    <div class="linha-tempo__cabecalho">
+                        <div class="linha-tempo__titulo-container"> <span class="linha-tempo__marcador"></span>
+                            <div>
+                                <h2 class="linha-tempo__titulo">Linha do Tempo</h2>
+                                <div class="linha-tempo__contador-eventos">5 eventos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <article class="alerta alerta--critico ">
+                        <div class="alerta__indicador-lateral" aria-hidden="true"> <i class="fa-solid fa-triangle-exclamation alerta__icone-svg"></i> </div>
+                        <div class="alerta__corpo">
+                            <div class="alerta__linha-topo">
+                                <div class="alerta__grupo-esquerdo"> <span
+                                        class="etiqueta etiqueta--danger">Crítico</span> <span
+                                        class="alerta__codigo-evento">A-241</span> </div> <time
+                                    class="alerta__tempo-evento" datetime="PT2M47S"
+                                    aria-label="Tempo decorrido: 2 minutos e 47 segundos">T-00:02:47</time>
+                            </div>
+                            <p class="alerta__texto-evento">RV-04 perdeu telemetria por 2m47s durante perfuração</p>
+                            <span class="alerta__fonte-evento">Fonte: Haworth</span>
+                            <div class="alerta__acoes"> <button class="botao botao--primario botao--sm"
+                                    aria-label="Ver detalhes do alerta A-241">Detalhes</button> <button
+                                    class="botao botao--perigo botao--icone"
+                                    aria-label="Acionar protocolo para alerta A-241">Acionar Protocolo</button> </div>
+                        </div>
+                    </article>
+                    <article class="alerta alerta--aviso ">
+                        <div class="alerta__indicador-lateral" aria-hidden="true"> <i class="fa-solid fa-circle-exclamation alerta__icone-svg"></i> </div>
+                        <div class="alerta__corpo">
+                            <div class="alerta__linha-topo">
+                                <div class="alerta__grupo-esquerdo"> <span
+                                        class="etiqueta etiqueta--warning">Aviso</span> <span
+                                        class="alerta__codigo-evento">A-240</span> </div> <time
+                                    class="alerta__tempo-evento" datetime="PT10M2S"
+                                    aria-label="Tempo decorrido: 10 minutos e 2 segundos">T-00:10:02</time>
+                            </div>
+                            <p class="alerta__texto-evento">Pressão acima do limite no Tanque de Irrigação (AGR-01)
+                            </p> <span class="alerta__fonte-evento">Fonte: Sistema de Irrigação</span>
+                            <div class="alerta__acoes"> <button class="botao botao--primario botao--sm"
+                                    aria-label="Ver detalhes do aviso A-240">Detalhes</button> </div>
+                        </div>
+                    </article>
+                    <article class="alerta alerta--aviso ">
+                        <div class="alerta__indicador-lateral" aria-hidden="true"> <svg class="alerta__icone-svg"
+                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 2a1 1 0 0 1 .993.883L13 3v10a1 1 0 0 1-1.993.117L11 13V3a1 1 0 0 1 1-1zm0 18a1.5 1.5 0 1 1-.001-2.999A1.5 1.5 0 0 1 12 20z">
+                                </path>
+                            </svg> </div>
+                        <div class="alerta__corpo">
+                            <div class="alerta__linha-topo">
+                                <div class="alerta__grupo-esquerdo"> <span
+                                        class="etiqueta etiqueta--warning">Aviso</span> <span
+                                        class="alerta__codigo-evento">A-239</span> </div> <time
+                                    class="alerta__tempo-evento" datetime="PT1H4M11S"
+                                    aria-label="Tempo decorrido: 1 hora, 4 minutos e 11 segundos">T-01:04:11</time>
+                            </div>
+                            <p class="alerta__texto-evento">Tanque de Água Potável (H2O-01) acima de 78% – agendar
+                                filtragem</p> <span class="alerta__fonte-evento">Fonte: Sistema H2O Principal</span>
+                            <div class="alerta__acoes"> <button class="botao botao--alerta botao--icone"
+                                    aria-label="Confirmar aviso A-239">Confirmar</button> <button
+                                    class="botao botao--primario botao--sm"
+                                    aria-label="Ver detalhes do aviso A-239">Detalhes</button> </div>
+                        </div>
+                    </article>
+                    <article class="alerta alerta--info ">
+                        <div class="alerta__indicador-lateral" aria-hidden="true"> <i class="fa-solid fa-circle-info alerta__icone-svg"></i> </div>
+                        <div class="alerta__corpo">
+                            <div class="alerta__linha-topo">
+                                <div class="alerta__grupo-esquerdo"> <span class="etiqueta etiqueta--info">Info</span>
+                                    <span class="alerta__codigo-evento">A-238</span> </div> <time
+                                    class="alerta__tempo-evento" datetime="PT1H42M30S"
+                                    aria-label="Tempo decorrido: 1 hora, 42 minutos e 30 segundos">T-01:42:30</time>
+                            </div>
+                            <p class="alerta__texto-evento">RV-03 iniciou ciclo de recarga solar na cratera de Cabeus
+                            </p> <span class="alerta__fonte-evento">Fonte: Cabeus</span>
+                            <div class="alerta__acoes"> <button class="botao botao--primario botao--sm"
+                                    aria-label="Ver detalhes do evento A-238">Detalhes</button> </div>
+                        </div>
+                    </article>
+                    <article class="alerta alerta--aviso ">
+                        <div class="alerta__indicador-lateral" aria-hidden="true"> <svg class="alerta__icone-svg"
+                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 2a1 1 0 0 1 .993.883L13 3v10a1 1 0 0 1-1.993.117L11 13V3a1 1 0 0 1 1-1zm0 18a1.5 1.5 0 1 1-.001-2.999A1.5 1.5 0 0 1 12 20z">
+                                </path>
+                            </svg> </div>
+                        <div class="alerta__corpo">
+                            <div class="alerta__linha-topo">
+                                <div class="alerta__grupo-esquerdo"> <span
+                                        class="etiqueta etiqueta--warning">Aviso</span> <span
+                                        class="alerta__codigo-evento">A-237</span> </div> <time
+                                    class="alerta__tempo-evento" datetime="PT2H10M55S"
+                                    aria-label="Tempo decorrido: 2 horas, 10 minutos e 55 segundos">T-02:10:55</time>
+                            </div>
+                            <p class="alerta__texto-evento">Pressão no Reservatório de Água Cinza (H2O-02) acima do
+                                nominal</p> <span class="alerta__fonte-evento">Fonte: Coletor de Efluentes</span>
+                            <div class="alerta__acoes"> <button class="botao botao--primario botao--sm"
+                                    aria-label="Ver detalhes do aviso A-237">Detalhes</button> </div>
+                        </div>
+                    </article>
+                </section>
             </div>
-          </article>
-
-          <article class="alerta alerta--info ">
-            <div class="alerta__indicador-lateral" aria-hidden="true">
-              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.75 6.5a.75.75 0 0 1-1.5 0V7a.75.75 0 0 1 1.5 0v1.5zm0 3.5a.75.75 0 0 1-.75.75h-1.5A.75.75 0 0 1 9 12.5v-1.5A.75.75 0 0 1 9.75 10h1.5A.75.75 0 0 1 12 10.75v1.75z">
-                </path>
-              </svg>
-            </div>
-            <div class="alerta__corpo">
-              <div class="alerta__linha-topo">
-                <div class="alerta__grupo-esquerdo">
-                  <span class="etiqueta etiqueta--info">Info</span>
-                  <span class="alerta__codigo-evento">A-238</span>
-                </div>
-                <time class="alerta__tempo-evento" datetime="PT1H42M30S"
-                  aria-label="Tempo decorrido: 1 hora, 42 minutos e 30 segundos">T-01:42:30</time>
-              </div>
-              <p class="alerta__texto-evento">RV-03 iniciou ciclo de recarga solar na cratera de Cabeus</p>
-              <span class="alerta__fonte-evento">Fonte: Cabeus</span>
-              <div class="alerta__acoes">
-                <button class="botao botao--primario botao--sm"
-                  aria-label="Ver detalhes do evento A-238">Detalhes</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="alerta alerta--aviso ">
-            <div class="alerta__indicador-lateral" aria-hidden="true">
-              <svg class="alerta__icone-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M12 2a1 1 0 0 1 .993.883L13 3v10a1 1 0 0 1-1.993.117L11 13V3a1 1 0 0 1 1-1zm0 18a1.5 1.5 0 1 1-.001-2.999A1.5 1.5 0 0 1 12 20z">
-                </path>
-              </svg>
-            </div>
-            <div class="alerta__corpo">
-              <div class="alerta__linha-topo">
-                <div class="alerta__grupo-esquerdo">
-                  <span class="etiqueta etiqueta--warning">Aviso</span>
-                  <span class="alerta__codigo-evento">A-237</span>
-                </div>
-                <time class="alerta__tempo-evento" datetime="PT2H10M55S"
-                  aria-label="Tempo decorrido: 2 horas, 10 minutos e 55 segundos">T-02:10:55</time>
-              </div>
-              <p class="alerta__texto-evento">Pressão no Reservatório de Água Cinza (H2O-02) acima do nominal</p>
-              <span class="alerta__fonte-evento">Fonte: Coletor de Efluentes</span>
-              <div class="alerta__acoes">
-                <button class="botao botao--primario botao--sm"
-                  aria-label="Ver detalhes do aviso A-237">Detalhes</button>
-              </div>
-            </div>
-          </article>
-        </section>
-      </div>
-    </main>
-  </section>
-
-  <script src="assets/js/layout.js"></script>
-  <script src="assets/js/main.js"></script>
-  <!-- Scripts -->
-  <script src="assets/js/pages/alerts.js"></script>
-
+        </main>
+    </section>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/alerts.js"></script>
 </body>
 
 </html>

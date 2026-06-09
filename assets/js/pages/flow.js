@@ -184,6 +184,10 @@
             });
         }
 
+        /**
+         * Renderiza as linhas SVG conectando os módulos.
+         * Calcula o caminho utilizando Curvas de Bézier e posiciona a válvula no ponto médio (t=0.5).
+         */
         function drawConnections() {
             svg.innerHTML = '';
             boardContent.querySelectorAll('.fluxo-valvula-btn').forEach(v => v.remove());
@@ -447,7 +451,7 @@
                     <div class="inspetor-painel">
                         <div class="inspetor-painel__cabecalho">
                             <h2>
-                                <i class="fa-solid ${moduleData.icon} inspetor-painel__icone" style="color: ${moduleData.color};"></i>
+                                <i class="fa-solid ${moduleData.icon} inspetor-painel__icone text-fluid-${moduleData.fluid}"></i>
                                 <span>/</span>Calibração
                             </h2>
                             <span class="etiqueta inspetor-painel__etiqueta">MÓDULO</span>
@@ -663,9 +667,9 @@
                     cardItem.innerHTML = `
                         <div class="fluxo-mobile-cartao__cabecalho">
                             <span class="fluxo-mobile-cartao__nome">
-                                <i class="fa-solid ${mod.icon}" style="color: ${mod.color}; margin-right: 6px;"></i>${mod.name}
+                                <i class="fa-solid ${mod.icon} fluxo-mobile-cartao__nome-icone text-fluid-${mod.fluid}"></i>${mod.name}
                             </span>
-                            <span class="fluxo-mobile-cartao__nivel" style="color: ${mod.color}">${mod.level}%</span>
+                            <span class="fluxo-mobile-cartao__nivel text-fluid-${mod.fluid}">${mod.level}%</span>
                         </div>
                         <div class="fluxo-mobile-cartao__subtitulo">${mod.subtitle}</div>
                         ${valveActionsHTML}
@@ -709,7 +713,13 @@
         };
         window.addEventListener('resize', window.flowResizeHandler);
 
-        // --- SIMULAÇÃO DE FÍSICA DE FLUIDOS E BACKPRESSURE ---
+        /* ==========================================================================
+           SIMULAÇÃO DE FÍSICA DE FLUIDOS E BACKPRESSURE
+           ========================================================================== */
+        /**
+         * Calcula o fluxo de transferência e recalcula os volumes a cada tick.
+         * Considera pressão de retorno (backpressure) quando o fluxo atinge capacidade total.
+         */
         function simulateFlow() {
             const transferRate = 6;
 

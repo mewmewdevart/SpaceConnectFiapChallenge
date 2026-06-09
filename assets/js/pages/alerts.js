@@ -1,22 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
+ï»¿document.addEventListener('DOMContentLoaded', () => {
 
-    // Lógica para confirmar alertas
+    // LÃ³gica para confirmar alertas
     const confirmButtons = document.querySelectorAll('.alerta__botao-acao--confirmar');
     
     confirmButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const alerta = e.target.closest('.alerta');
             if (alerta) {
-                // Adiciona animação de resolução
+                // Adiciona animaï¿½ï¿½o de resoluï¿½ï¿½o
                 alerta.classList.add('alerta--resolvido');
                 
-                // Modifica o botão
+                // Modifica o botï¿½o
                 e.target.innerHTML = '<i class="fa-solid fa-check"></i> Confirmado';
                 e.target.disabled = true;
                 e.target.classList.add('alerta__botao-acao--desabilitado');
 
                 // Atualiza o contador de alertas macro card
-                // Simples simulação de diminuição de número se possível
+                // Simples simulaï¿½ï¿½o de diminuiï¿½ï¿½o de nï¿½mero se possï¿½vel
                 const cardetiqueta = document.querySelector('.cartao-macro--yellow .cartao-macro__valor');
                 if (alerta.classList.contains('alerta--aviso') && cardetiqueta) {
                     let num = parseInt(cardetiqueta.textContent);
@@ -28,3 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

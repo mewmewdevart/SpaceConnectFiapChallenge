@@ -674,3 +674,20 @@
 #inspect-mod-cat {
     cursor: not-allowed;
 }
+
+/* ==========================================================================
+   Estilos Extraídos do JS (Modificadores de Cor por Fluido)
+   ========================================================================== */
+
+.text-fluid-greywater { color: var(--fluid-color-gray, #81afb5); }
+.text-fluid-pure_water { color: var(--fluid-color-pure, #00d2ff); }
+.text-fluid-organic { color: var(--fluid-color-organic, #f7e476); }
+.text-fluid-disinfected { color: var(--fluid-color-disinfected, #a55eea); }
+.text-fluid-fertilizer { color: var(--fluid-color-fertilizer, #a1e55a); }
+.text-fluid-potable { color: var(--fluid-color-potable, #0984e3); }
+.text-fluid-agricultural { color: var(--fluid-color-agricultural, #38b764); }
+.text-fluid-nutrient { color: var(--fluid-color-nutrient, #26de81); }
+
+.fluxo-mobile-cartao__nome-icone {
+    margin-right: 6px;
+}

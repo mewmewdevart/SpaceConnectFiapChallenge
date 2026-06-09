@@ -127,6 +127,10 @@
     background: rgb(var(--salmon));
 }
 
+.crew-card__status-dot--warning {
+    background: rgb(var(--yellow));
+}
+
 .crew-card__info {
     display: flex;
     flex-direction: column;
@@ -239,6 +243,10 @@
     gap: 12px;
 }
 
+.crew-impacto--critical {
+    border-color: rgba(var(--salmon), 0.2);
+}
+
 /* Contexto de Missão e Responsabilidades */
 .crew-missao {
     display: flex;
@@ -304,6 +312,58 @@
 .crew-responsabilidades__item i {
     color: rgb(var(--green));
 }
+
+/* ==========================================================================
+   Estilos Extraídos do JS (Modificadores de Estado e Utilitários)
+   ========================================================================== */
+
+.crew-missao__card--critical {
+    border-color: rgba(var(--salmon), 0.3);
+}
+
+.crew-missao__nome--critical {
+    color: rgb(var(--salmon));
+}
+
+.crew-missao__fill--critical {
+    background: rgb(var(--salmon));
+}
+
+.crew-missao__pct--critical {
+    color: rgb(var(--salmon));
+}
+
+.text-critical {
+    color: rgb(var(--salmon));
+}
+
+.text-warning {
+    color: rgb(var(--yellow));
+}
+
+.crew-no-results {
+    color: rgb(var(--text-secondary));
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 40px;
+}
+
+.crew-prazo-label {
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.crew-responsavel-titulo {
+    border: none;
+    padding: 0;
+    margin-top: 8px;
+}
+
+.crew-responsavel-valor {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
 
 
 /* ==========================================================================

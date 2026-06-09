@@ -21,7 +21,6 @@
   window.telemetryQueue = ["SISTEMA INICIADO", "LEITURA NOMINAL", "AGUARDANDO COMANDOS..."];
 
   window.addTelemetryLog = function(message, severityClass = "") {
-    // Adiciona a nova mensagem no final da fila
     window.telemetryQueue.push(`[ AÇÃO ] ${message}`);
     
     // Mantém no máximo as últimas 10 ações no histórico para não quebrar a animação
@@ -47,7 +46,6 @@
     });
   };
 
-  // Inicializa o letreiro na primeira vez
   window.addTelemetryLog("SISTEMAS ONLINE");
 
 })();

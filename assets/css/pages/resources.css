@@ -555,3 +555,40 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Classes de Utilidade (Limpeza Fase 2)
+   ========================================================================== */
+.painel-resumo--grid {
+    margin-bottom: 30px;
+    display: grid;
+    gap: 20px;
+}
+
+.cartao-macro--danger {
+    border: 1px solid rgb(var(--danger));
+}
+
+.text-danger {
+    color: rgb(var(--danger));
+}
+
+.flex-between {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.texto-destaque-mono {
+    color: rgb(var(--danger));
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.texto-secundario-claro {
+    color: rgba(var(--white), 0.8);
+    font-size: 0.9rem;
+}

@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return currentPath === path ? 'menu-lateral__link--ativo' : '';
   }
 
-  // Defini��o do Sidebar
+  // Definição do Sidebar
   const sidebarHTML = `
-    <a href="#main-content" class="skip-link">Pular para o conte�do</a>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <aside class="menu-lateral" id="menu-lateral">
       <button type="button" class="botao botao--ghost botao--icone botao--mobile menu-lateral__hamburguer" id="btn-hamburguer" aria-expanded="false" aria-label="Abrir menu">
         <i class="fas fa-bars" aria-hidden="true"></i>
@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
         <a href="flow.html" class="${getActiveClass('flow.html')} menu-lateral__link" ${currentPath === 'flow.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-timeline"></i></span>
-          <span class="menu-lateral__texto">Fluxo de Intera��es</span>
+          <span class="menu-lateral__texto">Fluxo de Interações</span>
         </a>
         <a href="resources.html" class="${getActiveClass('resources.html')} menu-lateral__link" ${currentPath === 'resources.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-water"></i></span>
-          <span class="menu-lateral__texto">Gest�o de Recursos</span>
+          <span class="menu-lateral__texto">Gestão de Recursos</span>
         </a>
         <a href="alerts.html" class="${getActiveClass('alerts.html')} menu-lateral__link" ${currentPath === 'alerts.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-circle-exclamation"></i></span>
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </a>
         <a href="crew.html" class="${getActiveClass('crew.html')} menu-lateral__link" ${currentPath === 'crew.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-solid fa-user-astronaut"></i></span>
-          <span class="menu-lateral__texto">Tripula��o</span>
+          <span class="menu-lateral__texto">Tripulação</span>
         </a>
         <a href="support.html" class="${getActiveClass('support.html')} menu-lateral__link" ${currentPath === 'support.html' ? 'aria-current="page"' : ''}>
           <span class="menu-lateral__icone"><i class="fa-regular fa-envelope"></i></span>
@@ -48,19 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
     </aside>
   `;
 
-  // Defini��o da Topbar
+  // Definição da Topbar
   const topbarHTML = `
     <header class="menu-superior">
       <div class="menu-superior__esquerda">
         <span class="menu-superior__logo">
-          <img src="assets/img/2.png" alt="Logo" class="menu-superior__logo-img"> Y-JACI
+           Y-JACI
         </span>
       </div>
 
       <div class="menu-superior__buscar">
         <div class="menu-superior__buscar-container">
           <i class="fa-solid fa-magnifying-glass menu-superior__buscar-icone"></i>
-          <input type="text" placeholder="Buscar m�dulos, recursos..." aria-label="Buscar m�dulos e recursos">
+          <input type="text" placeholder="Buscar módulos, recursos..." aria-label="Buscar módulos e recursos">
         </div>
       </div>
 
@@ -68,20 +68,20 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Status -->
         <span class="etiqueta etiqueta--perigo">
           <span class="etiqueta__dot"></span>
-          1 Alerta Cr�tico
+          1 Alerta Crítico
         </span>
         <div class="etiqueta etiqueta--sucesso">
           <span class="etiqueta__dot"></span>
           <span class="status-text">Nominal</span>
         </div>
 
-        <!-- Notifica��es -->
-        <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes" aria-label="Notifica��es">
+        <!-- Notificações -->
+        <button class="botao botao--ghost botao--icone botao--mobile menu-superior__acao menu-superior__notificacoes" aria-label="Notificações">
           <i class="fa-solid fa-bell"></i>
           <span class="menu-superior__etiqueta">5</span>
         </button>
 
-        <!-- Usu�rio Dropdown -->
+        <!-- Usuário Dropdown -->
         <div class="menu-superior__usuario-dropdown">
           <button class="botao botao--ghost menu-superior__usuario" aria-haspopup="menu" aria-expanded="false">
             <div class="menu-superior__avatar">
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </button>
           <div class="menu-superior__dropdown-menu cartao-vidro" role="menu">
             <a href="#" role="menuitem"><i class="fa-solid fa-id-etiqueta"></i> Meu Perfil</a>
-            <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Prefer�ncias</a>
+            <a href="#" role="menuitem"><i class="fa-solid fa-sliders"></i> Preferências</a>
             <div class="dropdown-divisor"></div>
             <a href="#" role="menuitem" class="dropdown-logout"><i class="fa-solid fa-right-from-bracket"></i> Desconectar</a>
           </div>
@@ -101,23 +101,20 @@ document.addEventListener("DOMContentLoaded", function () {
     </header>
   `;
 
-  // Defini��o da Bottombar (Telemetria)
+  // Definição da Bottombar (Telemetria)
   const bottombarHTML = `
     <footer class="barra-telemetria">
       <span class="barra-telemetria__titulo"><span class="barra-telemetria__ponto"></span>Logs do Sistema</span>
       <div class="barra-telemetria__janela-letreiro">
         <div class="barra-telemetria__letreiro" aria-hidden="true">
-          <!-- Os itens s�o gerados pelo main.js -->
+          <!-- Os itens são gerados pelo main.js -->
         </div>
       </div>
       <time class="barra-telemetria__relogio" id="relogio-telemetria" aria-live="polite">PRIME SOL 0427 � 00:00:00</time>
     </footer>
   `;
 
-  // Injetar elementos no body
-  // Vamos encapsular o conteudo principal, inserindo o layout antes e depois dele.
-  // Assumimos que cada p�gina tem um elemento principal como <div class="conteudo"> ou <section class="conteudo"> ou algo assim
-  // Ou simplesmente inserimos usando insertAdjacentHTML no body.
+  // Injeção de componentes globais (Header/Sidebar/Footer) para simular comportamento SPA.
 
   const body = document.body;
   body.insertAdjacentHTML('afterbegin', topbarHTML);
@@ -135,3 +132,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
