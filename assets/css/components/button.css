@@ -212,10 +212,11 @@
    SIZES
    ========================================================================== */
 
+/* Repetição intencional */
 .botao--sm {
-    min-height: var(--btn-height-sm);
-    padding: var(--btn-padding-sm);
-    font-size: var(--text-sm);
+    height: var(--btn-height-lg);
+    padding: var(--btn-padding-lg);
+    font-size: var(--text-base);
 }
 
 .botao--lg {
@@ -246,6 +247,7 @@
 }
 
 @media (max-width: 768px) {
+
     /* Auto aplica área segura para touch no celular em botões ícone */
     .botao--icone {
         min-height: var(--btn-height-mobile);

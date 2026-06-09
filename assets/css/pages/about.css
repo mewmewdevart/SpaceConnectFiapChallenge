@@ -103,7 +103,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    color: rgb(var(--text-secondary));
+    color: rgb(var(--brand-primary));
 }
 
 .equipe-lista {
@@ -113,4 +113,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.equipe-lista a {
+    color: rgb(var(--text-secondary));
 }

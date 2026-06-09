@@ -101,9 +101,9 @@
     --font-bold: 700;
 
     /* Buttons Design System */
-    --btn-height-sm: 2rem;
+    --btn-height-sm: 2.5rem;
     --btn-height-md: 2.5rem;
-    --btn-height-lg: 3rem;
+    --btn-height-lg: 2.5rem;
     --btn-height-mobile: 2.75rem;
 
     --btn-padding-sm: 0 var(--space-md);
