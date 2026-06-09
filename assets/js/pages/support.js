@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     alerts.forEach((alerta, index) => {
         // Obter contexto ontológico
         const sys = window.YJaciCore ? window.YJaciCore.getSystem(alerta.systemId) : null;
-        
+
         let protocolText = sys && sys.initiative ? ` — ${sys.initiative.name}` : "";
         let titulo = `Manutenção: ${alerta.systemId}${protocolText}`;
-        
+
         let badgeClass = "danger";
         let badgeLabel = "Aberto";
-        
+
         if (alerta.type === "info") {
             badgeClass = "success";
             badgeLabel = "Resolvido";
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     "${alerta.message}"
                 </div>
                 <div class="chamado-cartao__acoes">
-                    <button class="botao botao--primario botao--sm">Ver Detalhes</button>
-                    ${sys ? `<a href="resources.html?focus=${sys.id}" class="botao botao--ghost botao--sm"><i class="fa-solid fa-water"></i> Ver Módulo</a>` : ''}
+                    <button class="botao botao--secundario botao--sm">Ver Detalhes</button>
+                    ${sys ? `<button disabled href="resources.html?focus=${sys.id}" class="botao botao--secundario botao--sm"><i class="fa-solid fa-water"></i> Ver Módulo</button>` : ''}
                 </div>
             </article>
         `;
@@ -53,21 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // Verificar se viemos pelo Efeito Dominó de Acionar Protocolo
     const urlParams = new URLSearchParams(window.location.search);
     const createTicketId = urlParams.get('create_ticket');
-    
+
     if (createTicketId) {
         const sys = window.YJaciCore ? window.YJaciCore.getSystem(createTicketId) : null;
         const matchingAlert = alerts.find(a => a.systemId === createTicketId);
-        
+
         const assuntoSelect = document.getElementById('assunto');
         const descTextarea = document.getElementById('descricao');
-        
+
         if (assuntoSelect) assuntoSelect.value = "hardware"; // Default para máquina
         if (descTextarea) {
             let desc = `[AUTO-DISPATCH] Solicitação de intervenção.\n\n`;
             desc += `Módulo Afetado: ${createTicketId}\n`;
             if (sys) desc += `Sistema: ${sys.systemName}\nProtocolo Vinculado: ${sys.initiative ? sys.initiative.name : 'N/A'}\n`;
             if (matchingAlert) desc += `\nLogs do Alerta:\n- Timestamp: ${matchingAlert.time}\n- Evento: ${matchingAlert.message}\n- Sensor: ${matchingAlert.source}`;
-            
+
             descTextarea.value = desc;
             descTextarea.style.border = "1px solid var(--critical)";
             setTimeout(() => {

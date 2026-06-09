@@ -477,7 +477,7 @@
 
                 inspectorPanel.innerHTML = `
                     <div class="inspetor-painel">
-                        <div class="inspetor-painel__cabecalho">
+                        <div class="inspetor-painel__cabecalho" style="--header-color: ${moduleData.color};">
                             <h2>
                                 <i class="fa-solid ${moduleData.icon} inspetor-painel__icone text-fluid-${moduleData.fluid}"></i>
                                 <span>/</span>${moduleId}
@@ -540,7 +540,7 @@
 
                 inspectorPanel.innerHTML = `
                     <div class="inspetor-painel">
-                        <div class="inspetor-painel__cabecalho">
+                        <div class="inspetor-painel__cabecalho" style="--header-color: ${fromMod.color};">
                             <h2><i class="fa-solid fa-arrow-right-arrow-left inspetor-painel__icone"></i><span>/</span>Calibração</h2>
                             <span class="etiqueta inspetor-painel__etiqueta">TUBULAÇÃO</span>
                         </div>
@@ -557,13 +557,13 @@
                                 <label>Controle de Fluxo</label>
                                 <div class="inspetor-painel__container-valvula">
                                     <span>Válvula de Fechamento</span>
-                                    <button class="botao botao--outline botao--valvula inspetor-painel__btn-valvula ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" id="inspect-valve-toggle" aria-pressed="${conn.status === 'open' ? 'true' : 'false'}">
+                                    <button class="botao botao--primario botao--valvula inspetor-painel__btn-valvula ${conn.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" id="inspect-valve-toggle" aria-pressed="${conn.status === 'open' ? 'true' : 'false'}">
                                         ${conn.status === 'open' ? 'LIVRE' : 'BLOQUEADA'}
                                     </button>
                                 </div>
                             </div>
                             
-                            <button class="botao botao--perigo inspetor-painel__btn-perigo" id="inspect-delete-conn">
+                            <button class="botao botao--primario inspetor-painel__btn-perigo" id="inspect-delete-conn">
                                 <i class="fa-solid fa-trash"></i> Desconectar Tubulação
                             </button>
                         </div>
@@ -637,7 +637,7 @@
                             const dest = modules.find(m => m.id === c.to);
                             const btnLabel = c.status === 'open' ? 'Bloquear' : 'Liberar';
                             return `
-                                            <button class="botao botao--outline botao--valvula botao--sm inspetor-painel__btn-valvula inspetor-painel__btn-valvula-sm ${c.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" 
+                                            <button class="botao botao--primario botao--valvula botao--sm inspetor-painel__btn-valvula inspetor-painel__btn-valvula-sm ${c.status === 'open' ? 'valvula-aberta' : 'valvula-fechada'}" 
                                                     data-conn-id="${c.id}" aria-pressed="${c.status === 'open' ? 'true' : 'false'}">
                                                 ${btnLabel} ${dest.name.split(' ')[0]}
                                             </button>

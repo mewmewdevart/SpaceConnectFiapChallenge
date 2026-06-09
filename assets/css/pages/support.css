@@ -163,6 +163,7 @@
 .chamado-cartao__acoes {
     display: flex;
     justify-content: flex-end;
+    gap: 0.5rem;
 }
 
 .botao-acao-chamado {

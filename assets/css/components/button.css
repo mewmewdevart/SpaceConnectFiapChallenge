@@ -48,7 +48,6 @@
 
 .botao:disabled,
 .botao[disabled] {
-    opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
     filter: grayscale(100%);
@@ -78,7 +77,7 @@
 
 /* Secundário (Ação Menor) */
 .botao--secundario {
-    --btn-cor-texto: rgb(var(--text-secondary));
+    --btn-cor-texto: rgb(var(--text-primary));
     --btn-cor-fundo: rgba(var(--text-primary), 0.05);
     --btn-cor-borda: rgba(var(--text-primary), 0.2);
     --btn-cor-fundo-hover: rgba(var(--text-primary), 0.1);
@@ -86,7 +85,17 @@
     --btn-cor-texto-hover: rgb(var(--text-primary));
 }
 
-/* Base utility for other solid color buttons */
+/* Terciário (Ação de Suporte / Transparente) */
+.botao--terciario {
+    --btn-cor-texto: rgb(var(--text-secondary));
+    --btn-cor-fundo: transparent;
+    --btn-cor-borda: transparent;
+    --btn-cor-fundo-hover: rgba(var(--text-primary), 0.1);
+    --btn-cor-borda-hover: transparent;
+    --btn-cor-texto-hover: rgb(var(--text-primary));
+}
+
+/* Cores Semânticas (Perigo, Alerta, Sucesso) */
 .botao--perigo {
     --btn-color-base: var(--critical);
 }
@@ -102,11 +111,11 @@
 .botao--perigo,
 .botao--alerta,
 .botao--sucesso {
-    --btn-cor-texto: rgb(var(--btn-color-base));
-    --btn-cor-fundo: rgba(var(--btn-color-base), 0.1);
-    --btn-cor-borda: rgb(var(--btn-color-base));
-    --btn-cor-fundo-hover: rgb(var(--btn-color-base));
-    --btn-cor-borda-hover: rgb(var(--btn-color-base));
+    --btn-cor-texto: rgb(var(--bg-main));
+    --btn-cor-fundo: rgba(var(--btn-color-base), 1);
+    --btn-cor-borda: rgb(var(--btn-color-base), 1);
+    --btn-cor-fundo-hover: rgba(var(--btn-color-base), 0.8);
+    --btn-cor-borda-hover: rgba(var(--btn-color-base), 0.8);
     --btn-cor-texto-hover: rgb(var(--text-primary));
 }
 

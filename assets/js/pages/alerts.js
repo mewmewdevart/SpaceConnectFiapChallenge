@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        let acoesHTML = `<button class="botao botao--primario botao--sm" aria-label="Ver detalhes do evento ${alerta.id}">Detalhes</button>`;
+        let acoesHTML = `<button class="botao botao--secundario botao--sm" aria-label="Ver detalhes do evento ${alerta.id}">Detalhes</button>`;
         
         if (alerta.type === "critico" || alerta.requiresConfirm) {
-            acoesHTML += ` <a href="support.html?create_ticket=${alerta.systemId}" class="botao botao--perigo botao--icone" style="text-decoration: none;" aria-label="Acionar protocolo de emergência">Acionar Protocolo</a>`;
+            acoesHTML += ` <a href="support.html?create_ticket=${alerta.systemId}" class="botao botao--primario botao--icone" style="text-decoration: none;" aria-label="Acionar protocolo de emergência">Acionar Protocolo</a>`;
         }
 
         html += `

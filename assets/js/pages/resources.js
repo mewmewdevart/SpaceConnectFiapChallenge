@@ -112,11 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
 
-            <butto class="recursos-cofre__percentual" style="margin-bottom: 20px;">
-              <a href="flow.html?focus=${initiativeId}" class="botao botao--outline" style="width: 100%; justify-content: center; text-decoration: none; font-size: var(--text-xs);">
+            <div class="recursos-cofre__percentual" style="margin-bottom: 20px;">
+              <a href="flow.html?focus=${initiativeId}" class="botao botao--secundario" style="width: 100%; justify-content: center; text-decoration: none; font-size: var(--text-xs);">
                 <i class="fa-solid fa-diagram-project"></i> INICIATIVA ${initiativeName.toUpperCase()}
               </a>
-            </button>
+            </div>
           </article>
         `;
 

@@ -99,7 +99,7 @@
         sidePanel.innerHTML = `
             <div class="inspetor-painel animate-in">
 
-                <div class="inspetor-painel__cabecalho">
+                <div class="inspetor-painel__cabecalho" style="--header-color: rgb(${iconColor});">
                     <h2 style="display: flex; align-items: center; gap: 8px;">
                         <span class="inspetor-painel__icone" style="display: flex; align-items: center; color: rgb(${iconColor});">${icon}</span>
                         <span>/</span>${sysId}

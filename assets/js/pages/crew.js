@@ -328,17 +328,17 @@ function renderPagination() {
   let html = '';
 
   // Botão Anterior
-  html += `<button class="botao botao--ghost botao--icone botao--sm crew-btn-page" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
+  html += `<button class="botao botao--terciario botao--icone botao--sm crew-btn-page" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">
             <i class="fa-solid fa-chevron-left"></i>
           </button>`;
 
   // Botões numéricos (simplificado para mostrar todos se forem poucos)
   for (let i = 1; i <= totalPages; i++) {
-    html += `<button class="botao ${currentPage === i ? 'botao--primario' : 'botao--ghost'} botao--icone botao--sm crew-btn-page" onclick="changePage(${i})">${i}</button>`;
+    html += `<button class="botao ${currentPage === i ? 'botao--primario' : 'botao--terciario'} botao--icone botao--sm crew-btn-page" onclick="changePage(${i})">${i}</button>`;
   }
 
   // Botão Próximo
-  html += `<button class="botao botao--ghost botao--icone botao--sm crew-btn-page" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
+  html += `<button class="botao botao--terciario botao--icone botao--sm crew-btn-page" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">
             <i class="fa-solid fa-chevron-right"></i>
           </button>`;
 

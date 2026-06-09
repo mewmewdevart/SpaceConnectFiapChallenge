@@ -22,12 +22,17 @@
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.campo option {
+    color: #000;
+}
+
 .campo--textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-.campo--select {
+.campo--select,
+select.campo {
     cursor: pointer;
 }
 
