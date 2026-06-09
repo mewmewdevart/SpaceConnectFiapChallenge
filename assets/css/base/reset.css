@@ -15,23 +15,22 @@ body {
     font-family: var(--font-primary);
 }
 
-body::-webkit-scrollbar {
-    width: var(--sb-size)
+::-webkit-scrollbar {
+    width: var(--sb-size, 8px);
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: rgb(96, 108, 129);
     border-radius: 3px;
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgb(17, 173, 193);
     border-radius: 3px;
-
 }
 
 @supports not selector(::-webkit-scrollbar) {
-    body {
+    * {
         scrollbar-color: rgb(17, 173, 193) rgb(96, 108, 129);
     }
 }

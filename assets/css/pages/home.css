@@ -1,12 +1,17 @@
-/* Container do sistema lunar */
 #lunar-system-container {
     position: relative;
+    overflow: hidden;
+    height: 60vh;
+    /* position: relative;
     width: 100%;
     max-width: 100%;
+    flex: 1;
+    min-height: 70vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 
 #nodes-overlay {
@@ -23,6 +28,7 @@
     height: 100%;
     object-fit: contain;
     pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(var(--cyan), 0.5)) drop-shadow(0 0 60px rgba(var(--cyan), 0.1));
 }
 
 /* Nós Interativos (Missões) */
@@ -126,6 +132,7 @@
     font-weight: 600;
     display: flex;
     align-items: center;
+    gap: 0.5rem
 }
 
 .inspetor-painel__cabecalho h2 span {
@@ -223,10 +230,12 @@
 }
 
 .wave-line {
+    display: block;
     width: 200%;
     height: 100%;
     fill: rgb(var(--color-primary));
     animation: waveMove 4s linear infinite;
+    transform-origin: center bottom;
 }
 
 @keyframes waveMove {
@@ -271,10 +280,12 @@
     position: relative;
     overflow: hidden;
     margin-top: 10px;
-    padding: 15px;
+    padding: 15px 15px 45px 15px;
+    /* Espaço inferior para a onda */
     border-radius: 8px;
     background: rgba(var(--white), 0.02);
     border: 1px solid var(--border-color);
+    min-height: 90px;
 }
 
 .hero-stat-container label {

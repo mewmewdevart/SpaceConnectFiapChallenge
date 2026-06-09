@@ -3,12 +3,13 @@
 
     const MISSIONS = [
         {
-            id: "W-REC-01",
-            name: "HIDRO-RECICLADOR",
+            id: "NAIA-01",
+            name: "NAIÁ (CICLO DE RECICLAGEM)",
             type: "ÁGUAS CINZAS",
             top: "35%",
             left: "72%",
             icon: "<i class=\"fa-solid fa-recycle \"></i>",
+            desc: "Processamento e filtragem de águas cinzas para reuso contínuo.",
             val: "4.20",
             unit: "t/h",
             stats: [
@@ -22,12 +23,13 @@
             ]
         },
         {
-            id: "W-RES-04",
-            name: "RESERVA ALPHA",
+            id: "JACI-04",
+            name: "JACI (CENTRO DE CONDENSADORES)",
             type: "ESTOQUE POTÁVEL",
             top: "55%",
             left: "32%",
             icon: "<i class=\"fa-solid fa-droplet text-fluid-pure\"></i>",
+            desc: "Coleta e monitoramento da umidade atmosférica e condensação.",
             val: "850",
             unit: "m³",
             stats: [
@@ -40,12 +42,13 @@
             ]
         },
         {
-            id: "BIO-09",
-            name: "BIO-CONVERSOR",
+            id: "YVY-09",
+            name: "YVY (CONVERSOR DE BIOMASSA)",
             type: "BIOMASSA",
             top: "75%",
             left: "55%",
             icon: "<i class=\"fa-solid fa-seedling text-fluid-organic\"></i>",
+            desc: "Conversão de resíduos orgânicos em nutrientes e umidade para sustentar a vida.",
             val: "1.15",
             unit: "kg/h",
             stats: [
@@ -67,10 +70,6 @@
     function renderScanner() {
         sidePanel.innerHTML = `
             <div class="inspetor-painel">
-                <div class="inspetor-painel__cabecalho">
-                    <h2><span>/</span> Telemetria</h2>
-                </div>
-
                 <div class="inspetor-painel__vazio">
                     <i class="fa-solid fa-satellite-dish inspetor-painel__vazio-icone"></i>
                     <p>
@@ -98,8 +97,8 @@
 
                 <div class="inspetor-painel__cabecalho">
                     <h2>
-                        <i class="fa-solid fa-chart-line inspetor-painel__icone inspetor-painel__cabecalho-icone"></i>
-                        <span>/</span>${m.name}
+                        ${m.icon}
+                        <span> /</span>${m.name}
                     </h2>
 
                     <button
@@ -114,14 +113,32 @@
                 <div class="inspetor-painel__formulario">
 
                     <div class="inspetor-painel__grupo-form">
-                        <label>Tipo de Missão / ID</label>
+                        <label>Tipo de Missão</label>
 
                         <input
                             type="text"
-                            value="${m.type} // ID: ${m.id}"
+                            value="${m.type}"
                             readonly
                             class="input-readonly"
                         >
+                    </div>
+
+                    <div class="inspetor-painel__grupo-form">
+                        <label>ID</label>
+
+                        <input
+                            type="text"
+                            value="${m.id}"
+                            readonly
+                            class="input-readonly"
+                        >
+                    </div>
+
+                    <div class="inspetor-painel__grupo-form">
+                        <label>Descrição Operacional</label>
+                        <div class="input-readonly" style="height: auto; min-height: 40px; font-weight: normal; line-height: 1.5; white-space: normal;">
+                            ${m.desc}
+                        </div>
                     </div>
 
                     <div class="inspetor-painel__grupo-form hero-stat-container">

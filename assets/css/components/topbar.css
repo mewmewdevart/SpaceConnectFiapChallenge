@@ -12,10 +12,10 @@
 }
 
 .menu-superior__esquerda {
+    flex: 1;
     display: flex;
     align-items: center;
     gap: 16px;
-    width: 250px;
 }
 
 .menu-superior__logo {
@@ -43,10 +43,10 @@
 }
 
 .menu-superior__buscar {
-    flex: 1;
+    flex: 0 1 600px;
     display: flex;
     justify-content: center;
-    max-width: 600px;
+    width: 100%;
 }
 
 .menu-superior__buscar-container {
@@ -104,10 +104,10 @@
 }
 
 .menu-superior__direita {
+    flex: 1;
     display: flex;
     align-items: center;
     gap: 20px;
-    width: 250px;
     justify-content: flex-end;
 }
 

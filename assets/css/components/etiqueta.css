@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    etiqueta COMPONENT
    ========================================================================== */
 
@@ -14,6 +14,8 @@
     letter-spacing: 0.1em;
     border: 1px solid transparent;
     transition: all var(--transition-normal);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .etiqueta__dot {

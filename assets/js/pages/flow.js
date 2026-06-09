@@ -669,7 +669,7 @@
                             <span class="fluxo-mobile-cartao__nome">
                                 <i class="fa-solid ${mod.icon} fluxo-mobile-cartao__nome-icone text-fluid-${mod.fluid}"></i>${mod.name}
                             </span>
-                            <span class="fluxo-mobile-cartao__nivel text-fluid-${mod.fluid}">${mod.level}%</span>
+                            <span class="fluxo-mobile-cartao__nivel text-fluid-${mod.fluid}">${Math.round(mod.level)}%</span>
                         </div>
                         <div class="fluxo-mobile-cartao__subtitulo">${mod.subtitle}</div>
                         ${valveActionsHTML}
@@ -768,6 +768,19 @@
                         card.classList.add('fluxo-cartao--aviso');
                     } else {
                         card.classList.remove('fluxo-cartao--aviso');
+                    }
+                }
+
+                const mobileCard = document.querySelector(`.fluxo-mobile-cartao[data-mod-id="${m.id}"]`);
+                if (mobileCard) {
+                    const displayLevel = Math.round(m.level);
+                    const mobileLvlVal = mobileCard.querySelector('.fluxo-mobile-cartao__nivel');
+                    if (mobileLvlVal) mobileLvlVal.textContent = `${displayLevel}%`;
+                    
+                    if (m.level === 100) {
+                        mobileCard.classList.add('fluxo-cartao--aviso');
+                    } else {
+                        mobileCard.classList.remove('fluxo-cartao--aviso');
                     }
                 }
             });

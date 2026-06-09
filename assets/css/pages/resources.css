@@ -154,7 +154,7 @@
 .recursos-cofre__metricas {
     display: flex;
     gap: 22px;
-    margin-bottom: 14px;
+    margin: 14px 0;
 }
 
 .recursos-cofre__metrica {
