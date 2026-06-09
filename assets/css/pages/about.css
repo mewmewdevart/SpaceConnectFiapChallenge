@@ -4,7 +4,6 @@
 
 /* Sections */
 .secao-sobre {
-    margin: 1.5rem 0;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -28,9 +27,8 @@
 
 .sobre-paragrafo {
     color: rgb(var(--text-secondary));
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     line-height: 1.6;
-    max-width: 40.625rem;
     margin-bottom: 0.75rem;
 }
 
@@ -85,13 +83,13 @@
 }
 
 .ods-card__titulo {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: rgb(var(--text-primary));
     margin-bottom: 0.375rem;
 }
 
 .ods-card__descricao {
-    font-size: var(--text-xs);
+    font-size: var(--text-base);
     color: rgb(var(--text-secondary));
     line-height: 1.5;
 }

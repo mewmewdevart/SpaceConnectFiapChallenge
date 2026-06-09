@@ -90,12 +90,6 @@
     margin: 0 0 1rem;
 }
 
-/* @media screen and (max-width: 1188px) {
-    .conteudo-flow {
-        flex-direction: row;
-    }
-} */
-
 @media screen and (max-width: 1188px) {
     body {
         overflow-y: auto;

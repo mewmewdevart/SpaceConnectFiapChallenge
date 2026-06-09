@@ -15,11 +15,10 @@
 .menu-lateral--aberto {
     background: var(--bg-glass-heavy);
     width: 18.75rem;
-    min-height: 100vh;
     overflow-y: auto;
 }
 
-.menu-lateral .menu-lateral__hamburguer {
+.menu-lateral__hamburguer {
     display: none;
 }
 
