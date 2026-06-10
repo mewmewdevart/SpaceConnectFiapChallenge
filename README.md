@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/35ad9fb6-fec8-4fd0-b6c9-c72acc9896e6" width="200" alt="Y-JACI Logo" />
-  
+
 # Y-JACI 🌌
 
 🛰️ | Protótipo web navegável de gestão de recursos para colônia lunar e cidades inteligentes, desenvolvido para o Global Solution 2026 (FIAP).
@@ -17,27 +17,28 @@
 </p>
 </div>
 
-## 📖 Índice
 
-- [📖 Introdução e Contexto](#introdução-e-contexto)
-- [🎯 O Foco: Controle de Água e Reaproveitamento](#o-foco-controle-de-água-e-reaproveitamento)
-- [⚡ Alta Performance & Arquitetura MPA](#alta-performance--arquitetura-mpa)
-- [♿ Acessibilidade (a11y) e SEO](#acessibilidade-a11y-e-seo)
-- [🖥️ As Telas do Sistema](#as-telas-do-sistema)
-- [🛠️ Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [🚀 Instruções de Uso](#instruções-de-uso)
-- [📂 Estrutura do Projeto](#estrutura-do-projeto)
-- [👥 Integrantes](#integrantes)
-- [📚 Referências](#referências)
+## Índice
+
+- [Introdução e Contexto](#introducao-e-contexto)
+- [O Foco: Controle de Água e Reaproveitamento](#o-foco-controle-de-agua-e-reaproveitamento)
+- [Alta Performance e Arquitetura MPA](#alta-performance-e-arquitetura-mpa)
+- [Acessibilidade a11y e SEO](#acessibilidade-a11y-e-seo)
+- [As Telas do Sistema](#as-telas-do-sistema)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instruções de Uso](#instrucoes-de-uso)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Integrantes](#integrantes)
+- [Referências](#referencias)
 
 
-## 📖 Introdução e Contexto
+## Introducao e Contexto
 
 O **Y-JACI** foi desenvolvido como parte do **Global Solution (FIAP) | Indústria Espacial**, explorando a interseção entre tecnologia, web design e sustentabilidade aplicada a ambientes extremos.
 
 <img width="1920" height="869" alt="FireShot Capture 002 - Y-JACI - Gestão Inteligente de Recursos Lunares -  mewmewdevart github io" src="https://github.com/user-attachments/assets/b80e0c1b-4525-448f-853d-cf03cfa6f0a7" />
 
-## 🎯 O Foco: Controle de Água e Reaproveitamento
+## O Foco: Controle de Agua e Reaproveitamento
 
 A solução propõe uma interface de monitoramento e gestão do ciclo da água em colônias lunares, baseada em um fluxo operacional contínuo e inteligente.
 
@@ -49,7 +50,8 @@ O sistema é estruturado em três etapas principais:
 
 A interface transforma esse fluxo em uma experiência visual interativa, permitindo compreensão rápida e tomada de decisão operacional.
 
-## ⚡ Alta Performance & Arquitetura MPA
+
+## Alta Performance e Arquitetura MPA
 
 O projeto foi desenvolvido como uma **Multi-Page Application (MPA)** utilizando HTML, CSS e JavaScript puro.
 
@@ -61,11 +63,11 @@ A arquitetura foi estruturada em páginas independentes e especializadas, garant
 - Facilidade de manutenção  
 - Compatibilidade com hospedagem estática (GitHub Pages)  
 
-Essa abordagem prioriza simplicidade estrutural e desempenho. <br>
-📎 Veja o nosso video pitch aqui: [Assistir no YouTube](https://youtu.be/Y8g5gG-wjkA?si=NBHP72VvJtph5CsT) <br>
-📎 Documentação entrre aqui: [docs/YJACI - Global Solution 2026 - Space Connect.pdf](https://github.com/mewmewdevart/SpaceConnectFiapChallenge/blob/main/docs/YJACI%20-%20Global%20Solution%202026%20-%C2%A0Space%20Connect.pdf)
+📎 Veja o vídeo pitch: https://youtu.be/Y8g5gG-wjkA?si=NBHP72VvJtph5CsT  
+📎 Documentação: https://github.com/mewmewdevart/SpaceConnectFiapChallenge/blob/main/docs/YJACI%20-%20Global%20Solution%202026%20-%C2%A0Space%20Connect.pdf
 
-## ♿ Acessibilidade (a11y) e SEO
+
+## Acessibilidade a11y e SEO
 
 O Y-JACI segue boas práticas modernas de acessibilidade:
 
@@ -80,7 +82,8 @@ Também inclui otimização básica de SEO com:
 - Twitter Cards  
 - Organização semântica de headings  
 
-## 🖥️ As Telas do Sistema
+
+## As Telas do Sistema
 
 O sistema é composto pelas seguintes interfaces:
 
@@ -89,11 +92,14 @@ O sistema é composto pelas seguintes interfaces:
 - `resources.html` — Gestão de recursos e métricas  
 - `alerts.html` — Central de alertas operacionais  
 - `support.html` — Suporte técnico  
-- `about.html` — Informações do projeto
+- `about.html` — Informações do projeto  
 
-Observação: O código possui alguns estilos inline e funcionalidades em JavaScript e SEO (foco no PWA e Acessibilidade [Tool de Aumentar/Diminuir textos, ajustar contraste etc]) que serão implementadas e refatoradas após a avaliação do projeto, com o objetivo de evoluí-lo ainda mais.
 
-## 🛠️ Tecnologias Utilizadas
+> [!IMPORTANT]  
+> O código possui alguns estilos inline e funcionalidades em JavaScript e SEO (foco no PWA e acessibilidade) que serão refinadas após a avaliação do projeto.
+
+
+## Tecnologias Utilizadas
 
 - HTML5  
 - CSS3  
@@ -101,18 +107,18 @@ Observação: O código possui alguns estilos inline e funcionalidades em JavaSc
 - Figma (UX/UI Design)  
 - Git & GitHub  
 
-## 🚀 Instruções de Uso
+## Instrucoes de Uso
 
 ### Pré-requisitos
 - Navegador moderno (Chrome, Firefox ou Edge)  
 - Git (opcional)
 
-### Execução
+### Execucao
 
 ```bash
-git clone [https://github.com/mewmewdevart/SpaceConnectFiapChallenge.git](https://github.com/mewmewdevart/SpaceConnectFiapChallenge.git)
+git clone https://github.com/mewmewdevart/SpaceConnectFiapChallenge.git
 cd SpaceConnectFiapChallenge
-```
+````
 
 Abra o arquivo:
 
@@ -120,7 +126,8 @@ Abra o arquivo:
 index.html
 ```
 
-## 📂 Estrutura do Projeto
+
+## Estrutura do Projeto
 
 ```bash
 assets/
@@ -142,16 +149,18 @@ support.html
 about.html
 ```
 
-## 👥 Integrantes
+## Integrantes
 
-* Ingrid Silva de Lima — [rm570149@fiap.com.br](https://www.google.com/search?q=mailto%3Arm570149%40fiap.com.br)
-* Larissa Cristina Benedito — [rm570970@fiap.com.br](https://www.google.com/search?q=mailto%3Arm570970%40fiap.com.br)
-* Mayla Mayumi Motobe — [rm571213@fiap.com.br](https://www.google.com/search?q=mailto%3Arm571213%40fiap.com.br)
+* Ingrid Silva de Lima — [rm570149@fiap.com.br](mailto:rm570149@fiap.com.br)
+* Larissa Cristina Benedito — [rm570970@fiap.com.br](mailto:rm570970@fiap.com.br)
+* Mayla Mayumi Motobe — [rm571213@fiap.com.br](mailto:rm571213@fiap.com.br)
 
-## 📚 Referências
+
+## Referencias
 
 * [https://www.esa.int](https://www.esa.int)
 * [https://www.nasa.gov](https://www.nasa.gov)
 * [https://disasterscharter.org](https://disasterscharter.org)
 * [https://www.w3.org/WAI](https://www.w3.org/WAI)
 * [https://developer.mozilla.org](https://developer.mozilla.org)
+
