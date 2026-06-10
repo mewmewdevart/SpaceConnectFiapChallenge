@@ -7,7 +7,6 @@
     overflow: hidden;
 }
 
-
 .fluxo-quadro {
     position: relative;
     flex: 1;
@@ -27,7 +26,6 @@
 .fluxo-quadro.modo-conexao {
     cursor: cell;
 }
-
 
 .fluxo-quadro__conteudo {
     position: absolute;

@@ -33,8 +33,6 @@
     flex-wrap: wrap;
 }
 
-/* A caixa de pesquisa usará as classes padrão menu-superior__buscar-container */
-
 .crew-controls__paginacao {
     display: flex;
     gap: 0.5rem;

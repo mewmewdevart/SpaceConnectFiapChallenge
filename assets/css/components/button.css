@@ -122,7 +122,6 @@
 .botao--alerta,
 .botao--sucesso {
     --btn-cor-texto-hover: rgb(var(--bg-main));
-    /* Exception for light colors */
 }
 
 /* ==========================================================================
