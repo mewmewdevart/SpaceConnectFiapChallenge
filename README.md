@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/592444d4-dd4c-440b-b3b6-738d2ff2c236" width="200" alt="Y-JACI Logo" />
-
-
+  <img src="https://github.com/user-attachments/assets/35ad9fb6-fec8-4fd0-b6c9-c72acc9896e6" width="200" alt="Y-JACI Logo" />
+  
 <h1>Y-JACI 🌌</h1>
 
 <p>
@@ -9,7 +8,7 @@
   </p>
 
   <p align="center">
-    <a href="">🔗 Acesse o protótipo (Em breve)</a>
+    <a href="https://mewmewdevart.github.io/SpaceConnectFiapChallenge/">🔗 Acesse o protótipo </a>
   </p>
 
   <p align="center">
