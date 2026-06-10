@@ -18,6 +18,13 @@
     gap: 1rem;
 }
 
+.menu-superior__esquerda a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
 .menu-superior__esquerda img {
     width: 64px;
     height: 64px;
