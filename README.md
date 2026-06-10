@@ -96,7 +96,7 @@ O sistema é composto pelas seguintes interfaces:
 
 
 > [!IMPORTANT]  
-> O código possui alguns estilos inline e funcionalidades em JavaScript e SEO (foco no PWA e acessibilidade) que serão refinadas após a avaliação do projeto.
+> O projeto encontra-se em fase de protótipo navegável, portanto os dados são intencionalmente simulados para fins de demonstração. Alguns estilos inline serão migrados para os arquivos CSS correspondentes, e melhorias adicionais de acessibilidade (WCAG), SEO avançado e suporte a PWA foram pensadas e implementadas em partes.
 
 
 ## Tecnologias Utilizadas
